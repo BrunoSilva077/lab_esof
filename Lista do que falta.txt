@@ -1,6 +1,6 @@
 Painel Admin
-About Us
-Menu checkout
-Menu login/register
+About Us (fica para o fim)
+Menu checkout (esta)
+Menu login/register -> https://www.youtube.com/watch?v=PlpM2LJWu-s&ab_channel=AsmrProg (esta)
 Footer
 Subscriçao newsletter (Pôr no menu haburguer)
