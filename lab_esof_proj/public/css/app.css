@@ -18,7 +18,7 @@ body{
     font-family: 'Hannari', sans-serif;
 }
 
-/*  navbar  */
+        /*  NAVBAR  */
 
 .grid-container {
     display: grid;
@@ -33,7 +33,7 @@ body{
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 20px 0px;
-    font-size: 30px;
+    /* font-size: 30px; */
 }
 
 @media (min-width: 320px ) and (max-width: 374px) {
@@ -48,11 +48,11 @@ body{
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
         /* padding: 20px 0px; */
-        font-size: 30px;
+        /* font-size: 30px; */
     }
 }
 
- nav h1 {
+nav h1 { /*o titulo nao esta 100% alinhado com o resto da navbar e tambem nao consigo subir mais nao sei porque */
     font-size: 0;
     position: absolute;
 }
@@ -60,16 +60,11 @@ nav h1:before {
     content: 'Proto';
     color: #fff;
     font-size: 32px;
-    
 }
 nav h1:after {
     content: 'type';
     color: #787878;
     font-size: 32px;
-}
-/*
-h1{
-    color: red;
 }
 
 ul{
@@ -87,37 +82,150 @@ li a{
     text-decoration: none;
     text-align: center;
 }
-.nav_container{
-    /* background-color: aqua;  /
-}
-.nav_container h1{
-    float: left;
-}
-.nav_container ul{
+
+.grid-item.item5 ul{
+    position: absolute;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-right: 150px;
+    /* margin-right: 150px; */
 }
-.nav_container ul li{
-    margin: 0 20px 0 0;
+
+.grid-item.item5 ul li{
+    margin: 0 50px 0 0;
 }
-.nav_container ul li a{
+
+.grid-item.item5 ul li a{
     font-size: 20px;
-    padding: 10px 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    /* padding: 10px 10px; */
 }
 
 .active{
     border-bottom: 2px solid #fff;
-} */
+} 
+
+.search-container form{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.search-container input{ /*aqui nao estou a conseguir alinhas a input com o resto dos icons nao sei porque, o margin-bottom nao esta a mudar nada*/
+    border: none;
+    outline: none;
+    padding: 6px;
+    font-size: 16px;
+    width: 100px;
+}
+.search-container input[type=text], textarea{
+    /* background: linear-gradient(45deg, #1F1C1C , #1A1717); */
+}
+
+.search-container button{
+    border: none;
+    outline: none;
+    padding: 6px 10px;
+    font-size: 30px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #1F1C1C , #1A1717);
+    color: #fff;   
+}
+
+.cart-container{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.vertical-line{
+    border-left: 2px solid #989494;
+    height: 30px;
+    margin: 0 15px 20px 30px;
+}
+
+.cart-container a{
+    text-decoration: none;
+}
+
+.cart-container .cart{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+.cart-container .menu{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+        /* SLIDESHOW IMG  HOMEPAGE */
+
+.wrapper{
+    margin-top: 45px;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.wrapper section{
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.wrapper .mySlides .fade{
+    width: 100%;
+}
+
+.grid-item.item1.slider{
+    /* background-color: red; */
+    grid-row: 1/12;
+    grid-column: 1/13;
+    height: 100%;
+}
+
+.wrapper .text{
+    position: absolute;
+    font-size: 60px;
+    text-align: left;
+    color: #fff;
+    width: 20%;
+}
+
+.wrapper .buy-now{ /*  aqui nao estou a conseguir posiçionar muito bem o botao */
+    position: absolute;
+    border: none;
+    outline: none;
+    padding: 13px 40px;
+    border-radius: 6px;
+    background-color: #989494;
+    color: #fff;
+    display: flex;
+    align-items: left;
+    margin-bottom: 50px;
+}
+
+.wrapper .tracos-slideshow .dot{
+    text-align: center;
+    cursor: pointer;
+    background-color: #bbb;
+    width: 38px;
+    height: 4px;
+    margin: 0 5px;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
 
 
-
-
-
-/* Login / Register */
+        /* Login / Register */
 
 .container-form-global{
     height: 100vh;
