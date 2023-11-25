@@ -18,20 +18,56 @@ body{
     font-family: 'Hannari', sans-serif;
 }
 
-nav h1 {
+/*  navbar  */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-auto-rows: 100px; */
+    gap: 20px;
+    background-color: #2196F3;
+    padding: 0px 70px; 
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 30px;
+}
+
+@media (min-width: 320px ) and (max-width: 374px) {
+    .grid-container {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      background-color: #2196F3;
+      padding: 0px 20px; 
+    }
+
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        /* padding: 20px 0px; */
+        font-size: 30px;
+    }
+}
+
+ nav h1 {
     font-size: 0;
+    position: absolute;
 }
 nav h1:before {
     content: 'Proto';
     color: #fff;
     font-size: 32px;
+    
 }
 nav h1:after {
     content: 'type';
     color: #787878;
     font-size: 32px;
 }
-
+/*
 h1{
     color: red;
 }
@@ -52,7 +88,7 @@ li a{
     text-align: center;
 }
 .nav_container{
-    /* background-color: aqua;  */
+    /* background-color: aqua;  /
 }
 .nav_container h1{
     float: left;
@@ -75,7 +111,7 @@ li a{
 
 .active{
     border-bottom: 2px solid #fff;
-}
+} */
 
 
 
