@@ -4,8 +4,18 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Hannari';
+    src: url('/fonts/hannari.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body{
-    background: linear-gradient(118deg, #1F1C1C -4.2%, rgba(26, 23, 23, 0.00) 99.82%);
+    background: linear-gradient(45deg, #1F1C1C , #1A1717);
+    background-size: 400% 400%;
+    font-family: 'Hannari', sans-serif;
 }
 
 nav h1 {
@@ -20,4 +30,114 @@ nav h1:after {
     content: 'type';
     color: #787878;
     font-size: 32px;
+}
+
+h1{
+    color: red;
+}
+
+ul{
+    list-style: none;
+    overflow: hidden;
+}
+
+li{
+    float: left;
+}
+
+li a{
+    display: block;
+    color: #989494;
+    text-decoration: none;
+    text-align: center;
+}
+.nav_container{
+    /* background-color: aqua;  */
+}
+.nav_container h1{
+    float: left;
+}
+.nav_container ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 150px;
+}
+.nav_container ul li{
+    margin: 0 20px 0 0;
+}
+.nav_container ul li a{
+    font-size: 20px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.active{
+    border-bottom: 2px solid #fff;
+}
+
+
+
+
+
+/* Login / Register */
+
+.container-form-global{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-form{
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.container-form p{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container-form span{
+    font-size: 12px;
+}
+
+.container-form a{
+    color:#333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;  
+}
+
+.container-form a:hover{
+    text-decoration: underline;
+}
+
+.container-form button{
+    background-color: #2C2929;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container-form button.hidden{
+    background-color: transparent;
 }

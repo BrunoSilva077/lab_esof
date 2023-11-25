@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', ['App\Http\Controllers\MainController@home']);
-Route::get('/home', 'App\Http\Controllers\MainController@Home');
-//Route::get('/',[MainController::class, 'home']);
+Route::get('/', [MainController::class, 'home'])->name('home');
+Route::get('/login', [MainController::class, 'login'])->name('login');
+Route::get('/test', [MainController::class, 'test'])->name('test');
