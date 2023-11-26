@@ -13,4 +13,8 @@ class MainController extends Controller
     public function Login() {
         return view('login');
     }
+
+    public function Newsletter() {
+        return view('newsletter');
+    }
 }

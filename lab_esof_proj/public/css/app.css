@@ -18,12 +18,10 @@ body{
     font-family: 'Hannari', sans-serif;
 }
 
-        /*  NAVBAR  */
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    /* grid-auto-rows: 100px; */
     gap: 20px;
     background-color: #2196F3;
     padding: 0px 70px; 
@@ -33,35 +31,33 @@ body{
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 20px 0px;
-    /* font-size: 30px; */
 }
 
-@media (min-width: 320px ) and (max-width: 374px) {
-    .grid-container {
-      grid-template-columns: repeat(6, 1fr);
-      gap: 20px;
-      background-color: #2196F3;
-      padding: 0px 20px; 
-    }
-
-    .grid-item {
-        background-color: rgba(255, 255, 255, 0.8);
-        text-align: center;
-        /* padding: 20px 0px; */
-        /* font-size: 30px; */
-    }
+.grid-item.item1{
+    grid-column: span 1;
 }
 
-nav h1 { /*o titulo nao esta 100% alinhado com o resto da navbar e tambem nao consigo subir mais nao sei porque */
+.grid-item.item4{
+    grid-column: span 4;
+}
+
+.grid-item.item12{
+    grid-column: span 12;
+}
+
+    /*  NAVBAR  */
+
+
+.logo  h1 {
     font-size: 0;
     position: absolute;
 }
-nav h1:before {
+.logo h1:before {
     content: 'Proto';
     color: #fff;
     font-size: 32px;
 }
-nav h1:after {
+.logo h1:after {
     content: 'type';
     color: #787878;
     font-size: 32px;
@@ -83,20 +79,28 @@ li a{
     text-align: center;
 }
 
-.grid-item.item5 ul{
+.products{
+display: none;
+}
+
+.contact-us{
+display: none;
+}
+
+.ul-container{
     position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* margin-right: 150px; */
+    margin-top: 10px;
 }
 
-.grid-item.item5 ul li{
-    margin: 0 50px 0 0;
+.ul-container li{
+    margin: 0 93px 0 0;
 }
 
-.grid-item.item5 ul li a{
+.ul-container li a{
     font-size: 20px;
     /* padding: 10px 10px; */
 }
@@ -106,12 +110,13 @@ li a{
 } 
 
 .search-container form{
-    position: relative;
+    /* position: absolute; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     text-align: left;
+    /* margin-right: px; */
 }
 
 .search-container input{ /*aqui nao estou a conseguir alinhas a input com o resto dos icons nao sei porque, o margin-bottom nao esta a mudar nada*/
@@ -136,11 +141,12 @@ li a{
 }
 
 .cart-container{
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-top: 5px;
 }
 
 .vertical-line{
@@ -166,6 +172,72 @@ li a{
     margin-left: 5px;
     margin-bottom: 20px;
 }
+
+@media (min-width: 320px ) and (max-width: 374px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      background-color: #2196F3;
+      padding: 0px 0px; 
+    }
+
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+    }
+
+     .grid-item.item4{
+        grid-column: span 1;
+    }
+
+    .grid-item.item1{
+        grid-column: span 1;
+    }
+
+    /* .grid-item.item2, .grid-item.item3 ,.grid-item.item4, .grid-item.item6 ,.grid-item.item7 ,.grid-item.item8  ,.grid-item.item9 ,.grid-item.item10{
+        display: none;    
+    }  */
+
+    .grid-container ul li{
+        display: none;    
+    } 
+    
+    .search-container {
+        display: none;    
+    }
+
+    .cart-container .cart {
+        display: none;    
+    }
+
+    .cart-container{
+        margin: 0px 20px 0px 0px;
+    }
+
+    .vertical-line{
+        display: none;    
+    }
+
+    /* .grid-item.item4, .grid-item.item1 {
+        grid-column: span 4;
+    }
+
+    .grid-item:not(.item4):not(.item1) {
+        display: none;
+    } */
+
+
+    .logo h1::before{
+        font-size: 30px;
+    }
+
+    .logo h1::after{
+        font-size: 30px;
+    }
+}
+
+
+
 
         /* SLIDESHOW IMG  HOMEPAGE */
 
@@ -201,7 +273,7 @@ li a{
 }
 
 .wrapper .buy-now{ /*  aqui nao estou a conseguir posiçionar muito bem o botao */
-    position: absolute;
+    /* position: absolute; */
     border: none;
     outline: none;
     padding: 13px 40px;
@@ -209,8 +281,8 @@ li a{
     background-color: #989494;
     color: #fff;
     display: flex;
-    align-items: left;
-    margin-bottom: 50px;
+    /* align-items: left; */
+    /* margin-bottom: 50px; */
 }
 
 .wrapper .tracos-slideshow .dot{
@@ -222,6 +294,10 @@ li a{
     margin: 0 5px;
     display: inline-block;
     transition: background-color 0.6s ease;
+}
+
+.wrapper .tracos-slideshow .dot.active{
+    background-color: #fff;
 }
 
 
@@ -284,4 +360,48 @@ li a{
 
 .container-form button.hidden{
     background-color: transparent;
+}
+
+    /*   NEWSLETTER   */
+
+.container-newsletter{
+    margin-top: 55px;   
+    height: 100vh;
+    width: 100%;
+} 
+
+.background-newsletter{
+    background-color: #D9D9D9;
+    /* height: 100%; */
+    width: 100%;
+}
+
+.background-newsletter .text h1{
+    font-size: 20px;
+    text-align: left;
+}
+
+.background-newsletter .text p{
+    font-size: 15px;
+    margin: 5px 0px 30px 0px;
+}
+
+.background-newsletter .text{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-newsletter .text input{
+    float: left;
+    border: 1px solid #fff;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.background-newsletter .text input[type=email], textarea{
+    background-color: #D9D9D9;
 }

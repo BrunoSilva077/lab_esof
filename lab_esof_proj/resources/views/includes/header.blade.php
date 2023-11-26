@@ -1,27 +1,27 @@
 <script src="{{ asset('js/navbar.js') }}"></script>
 <nav>
         <div class="grid-container">
-        <div class="grid-item item1">
+        <div class="grid-item item4">
             <div class="logo">
                 <h1></h1>
             </div>
         </div>
-        <div class="grid-item item2"></div>
-        <div class="grid-item item3"></div>  
-        <div class="grid-item item4"></div>
-        <div class="grid-item item5">
+        <div class="grid-item item1">
             <ul class="ul-container">
-                <li class="btn active"><a href="#home">Home</a></li>
+                <li class="btn active"><a href="/home">Home</a></li>
+            </ul>
+        </div>
+        <div class="grid-item item1">
+            <ul class="ul-container">
                 <li class="btn"><a href="#products">Products</a></li>
+            </ul>
+        </div>
+        <div class="grid-item item4">
+            <ul class="ul-container">
                 <li class="btn"><a href="#contacts">Contact us</a></li>
             </ul>
         </div>
-        <div class="grid-item item6"></div>
-        <div class="grid-item item7"></div>
-        <div class="grid-item item8"></div>
-        <div class="grid-item item9"></div>
-        <div class="grid-item item10"></div>
-        <div class="grid-item item11">
+        <div class="grid-item item1">
             <div class="search-container">
                 <form>
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -29,7 +29,7 @@
                 </form>
             </div>
         </div>
-        <div class="grid-item item12">
+        <div class="grid-item item1">
             <div class="cart-container">
                 <a href="" class="cart">
                     <i class="fas fa-shopping-bag fa-2x"></i>
