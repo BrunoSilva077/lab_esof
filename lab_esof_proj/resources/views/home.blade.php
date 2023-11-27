@@ -20,7 +20,7 @@
                     
                     </div>
                     <div class="tracos-slideshow">
-                        <span class="dot active"></span>  <!--onclick="currentSlide(1)" -->
+                        <span class="dot active"></span>  <!--onclick="currentSlide(1)"
                         <span class="dot"></span> 
                         <span class="dot"></span> 
                     </div>

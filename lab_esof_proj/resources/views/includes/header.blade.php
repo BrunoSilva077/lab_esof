@@ -6,22 +6,22 @@
                 <h1></h1>
             </div>
         </div>
-        <div class="grid-item item1">
+        <div class="grid-item item1 home">
             <ul class="ul-container">
                 <li class="btn active"><a href="/home">Home</a></li>
             </ul>
         </div>
-        <div class="grid-item item1">
+        <div class="grid-item item1 products">
             <ul class="ul-container">
                 <li class="btn"><a href="#products">Products</a></li>
             </ul>
         </div>
-        <div class="grid-item item4">
+        <div class="grid-item item4 contact">
             <ul class="ul-container">
                 <li class="btn"><a href="#contacts">Contact us</a></li>
             </ul>
         </div>
-        <div class="grid-item item1">
+        <div class="grid-item item1 search">
             <div class="search-container">
                 <form>
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
