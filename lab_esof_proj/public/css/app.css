@@ -23,12 +23,12 @@ body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
-    background-color: #2196F3;
+    /*background-color: #2196F3;*/
     padding: 0px 70px; 
 }
 
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
+    /*background-color: rgba(255, 255, 255, 0.8);*/
     text-align: center;
     padding: 20px 0px;
 }
@@ -37,9 +37,52 @@ body{
     grid-column: span 1;
 }
 
+.grid-item.item2{
+    grid-column: span 2;
+}
+
+.grid-item.item3{
+    grid-column: span 3;
+}
+
 .grid-item.item4{
     grid-column: span 4;
 }
+
+.grid-item.item5{
+    grid-column: span 5;
+}
+
+
+.grid-item.item6{
+    grid-column: span 6;
+}
+
+
+.grid-item.item7{
+    grid-column: span 7;
+}
+
+
+.grid-item.item8{
+    grid-column: span 8;
+}
+
+
+.grid-item.item9{
+    grid-column: span 9;
+}
+
+
+.grid-item.item10{
+    grid-column: span 10;
+}
+
+
+.grid-item.item11{
+    grid-column: span 11;
+}
+
 
 .grid-item.item12{
     grid-column: span 12;
@@ -497,3 +540,342 @@ li a{
 .background-newsletter .text input[type=email], textarea{
     background-color: #D9D9D9;
 }
+
+/* About US */
+
+.titAbout{
+    font-size: 40px;
+    padding: 3% 0% 0%;
+}
+
+
+.text{
+    padding: 3% 10%;
+}
+
+
+.About-container{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    border-radius: 25px;
+}
+
+/* Contact */
+
+
+
+.contact-title{
+    display: flex;
+    justify-content: left;
+    padding: 2% 0% 0% 10%;
+    font-size: 40px;
+}
+
+.image-Contact{
+    max-height: 150%;
+    min-height: 150%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.grid-container.contact{
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.Form-Contact{
+    background-color: white;
+    width: 100%;
+}
+
+.input-contact{
+    background-color: white;
+    outline: none;
+    border: none;
+    height: 10%;
+    margin-top: 9%;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.container-contact{
+    height: 100vh;
+    margin-top: 2%;
+}
+
+.button-contact{
+    background-color: black;
+    color: white;
+    width:25%;
+    height: 5vh;
+    border-radius: 13% 13% 13% 13%;
+}
+
+.button-div{
+    display: flex;
+    justify-content: right;
+    margin-top: 10%;
+}
+
+.send-file{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 50%;
+}
+
+.img-up{
+    width: 7%;
+    height: 70%;
+}
+
+.test{
+    margin: 4% 12% 4% 12%;
+}
+
+.grid-item.item6.cont{
+    background-color: white;
+}
+
+/* Products */
+
+.grid-item.item3.products{
+    border-radius: 5%;
+    background-color: #333;
+    height: 100%;
+}
+
+.form-products{
+    margin-left: 7%;
+    margin-top: 3%;
+}
+
+.form{
+    text-align: left;
+    color: white;
+}
+
+.stock{
+    margin-top: 10%;
+    color: white;
+    margin-bottom: 5%;
+}
+
+.sto-wit{
+    display: flex;
+    justify-content: left;
+    width: 50%;
+}
+
+.stock-text{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.stock-text li{
+    margin-right: 7%;
+    width: 100%;
+    text-align: right;
+}
+
+.fa-solid.fa-chevron-down{
+    color: #FF7352;
+}
+
+/* Style for the dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  /* Style for the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Style for the dropdown links */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Style for the FontAwesome chevron-down icon */
+  .fa-chevron-down {
+    margin-left: 5px;
+  }
+
+  /* Show the dropdown content when the dropdown is open */
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  .stock-menu{
+    display: block;
+    text-align: left;
+    margin-bottom: 10%;
+  }
+
+  .stock-menu2{
+    display: block;
+    text-align: left;
+    margin-bottom: 10%;
+  }
+
+  .stock-menu3{
+    display: block;
+    text-align: left;
+    margin-bottom: 10%;
+  }
+
+  .input-product{
+    margin-top: 5%;
+  }
+
+  .label-product{
+    color: white;
+  }
+
+  .line-prod{
+    margin-right: 7%;
+    border-top: 20%;
+    background-color: white;
+  }
+
+  .stock-menu input{
+    outline: none;
+    border: none;
+    border-radius: 5%;
+  }
+
+  .input-price{
+    width: 20%;
+    margin-left: 15%;
+  }
+
+  .productf{
+    border-radius: 2%;
+    background-color: #333;
+    height: 6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+
+ /* Dropdown Button */
+.dropbtn {
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropbtn1 {
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #333;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    width: 20%;
+    margin: auto;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .dropdown1 {
+    width: 20%;
+    margin: auto;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+
+  .dropdown-content1 a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;} 
+
+  .show1 {display:block;} 
+
+  .all-prod{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+  }
+
+  .each-prod{
+    background-color: #333;
+    margin-top: 5%;
+    height: 30vh;
+    width: 25%;
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+
+  .space{
+    width: 12.5%;
+  }
