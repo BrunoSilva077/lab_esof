@@ -380,13 +380,18 @@ li a{
 .lowres{
     display: none;
 }
+.footerColumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
 @media (min-width: 2560px) {
     footer{
         background-color: #2C2929;
         width: 100%;
         height: 21.5%;
         bottom: 0;
-        position: absolute;
     }
     .newsletter{
         font-size: 22px;
@@ -406,27 +411,25 @@ li a{
     }
     .horizontal-line{
         border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .horizontal-line2{
+        margin-top: 24px;
+        border-bottom: 1px solid white;
+        width: 100%;
     }
     .logo-footer h1:before, .logo-footer h1:after {
         font-size: 40px;
     }
     .logo-footer{
         padding-top: 20px;
-        display: flex;
-        justify-content: center;
     }
     .ul-container-footer {
-        display: flex;
         font-size: 22px;
-        justify-content: center;
         margin-top: 40px;
     } 
     .ul-container-footer li {
         margin: 0 10px; /* Ajuste conforme necessário para a distância entre os itens da lista */
-    }
-    .horizontal-line2{
-        margin-top: 24px;
-        border-bottom: 1px solid white;
     }
     .therights{
         color: white;
@@ -441,7 +444,6 @@ li a{
         width: 100%;
         height: 35%;
         bottom: 0;
-        position: absolute;
     }
     .newsletter{
         font-size: 14px;
@@ -491,22 +493,28 @@ li a{
     }
 }
 @media (min-width: 1024px ) and (max-width: 1439px) {
+    .checkoutinputline{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
     footer{
         background-color: #2C2929;
         width: 100%;
-        height: 28%;
+        height: 35%;
         bottom: 0;
-        position: absolute;
     }
     .newsletter{
-        font-size: 8px;
+        font-size: 14px;
         text-align: left;
     }
     .newsletter h1, h2{
         color: white;
     }
     .newsletter p{
-        color: #EEEEEE;
+        /*color: #EEEEEE;*/
+        color: red;
         opacity: 0.7;
     }
     .newsletter h2{
@@ -518,18 +526,18 @@ li a{
         border-bottom: 1px solid white;
     }
     .logo-footer h1:before, .logo-footer h1:after {
-        font-size: 20px;
+        font-size: 30px;
     }
     .logo-footer{
-        padding-top: 10px;
+        padding-top: 20px;
         display: flex;
         justify-content: center;
     }
     .ul-container-footer {
         display: flex;
-        font-size: 12px;
+        font-size: 18px;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 40px;
     } 
     .ul-container-footer li {
         margin: 0 10px; /* Ajuste conforme necessário para a distância entre os itens da lista */
@@ -541,8 +549,8 @@ li a{
     .therights{
         color: white;
         text-align: center;
-        margin-top: 10px;
-        font-size: 14px;
+        margin-top: 20px;
+        font-size: 20px;
     }
 }
 @media (min-width: 768px ) and (max-width: 1023px) {
@@ -551,7 +559,6 @@ li a{
         width: 100%;
         height: 28%;
         bottom: 0;
-        position: absolute;
     }
     .newsletter{
         font-size: 12px;
@@ -613,7 +620,6 @@ li a{
         width: 100%;
         height: 28%;
         bottom: 0;
-        position: absolute;
     }
     .newsletter{
         font-size: 12px;
@@ -675,7 +681,6 @@ li a{
         width: 100%;
         height: 28%;
         bottom: 0;
-        position: absolute;
     }
     .newsletter{
         font-size: 6px;
@@ -1171,15 +1176,15 @@ li a{
         }
     }
 @media (min-width: 1024px ) and (max-width: 1439px) {
-    .grid-item.item4{
+    .grid-item.item4.checkout{
         grid-column: span 5;
         margin-top: 100px;
     }
-    .grid-item.item3{
+    .grid-item.item3.checkout{
         grid-column: span 4;
         margin-top: 100px;
     }
-    .grid-item.item1{
+    .grid-item.item1.checkout{
         display: none;
     }
     input{
@@ -1324,15 +1329,15 @@ li a{
     }
 }
 @media (min-width: 768px ) and (max-width: 1023px) {
-    .grid-item.item4{
+    .grid-item.item4.checkout{
         grid-column: span 6;
         margin-top: 100px;
     }
-    .grid-item.item3{
+    .grid-item.item3.checkout{
         grid-column: span 6;
         margin-top: 100px;
     }
-    .grid-item.item2, .grid-item.item1{
+    .grid-item.item2.checkout, .grid-item.item1.checkout{
         display: none;
     }
     input{
@@ -1483,15 +1488,15 @@ li a{
         margin-bottom: 0px;
         padding: 20px 0px;
     }
-    .grid-item.item4{
+    .grid-item.item4.checkout{
         grid-column: span 6;
         margin-top: 100px;
         margin-bottom: 0px;
     }
-    .grid-item.item3{
+    .grid-item.item3.checkout{
         grid-column: span 6;
     }
-    .grid-item.item2, .grid-item.item1{
+    .grid-item.item2.checkout, .grid-item.item1.checkout{
         display: none;
     }
     input{
@@ -1642,15 +1647,15 @@ li a{
         margin-bottom: 0px;
         padding: 20px 0px;
     }
-    .grid-item.item4{
+    .grid-item.item4.checkout{
         grid-column: span 6;
         margin-top: 100px;
         margin-bottom: 0px;
     }
-    .grid-item.item3{
+    .grid-item.item3.checkout{
         grid-column: span 6;
     }
-    .grid-item.item2, .grid-item.item1{
+    .grid-item.item2.checkout, .grid-item.item1.checkout{
         display: none;
     }
     input{
@@ -1801,15 +1806,15 @@ li a{
         margin-bottom: 0px;
         padding: 20px 0px;
     }
-    .grid-item.item4{
+    .grid-item.item4.checkout{
         grid-column: span 6;
         margin-top: 100px;
         margin-bottom: 0px;
     }
-    .grid-item.item3{
+    .grid-item.item3.checkout{
         grid-column: span 6;
     }
-    .grid-item.item2, .grid-item.item1{
+    .grid-item.item2.checkout, .grid-item.item1.checkout{
         display: none;
     }
     input{

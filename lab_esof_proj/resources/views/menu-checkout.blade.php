@@ -7,8 +7,8 @@
 @section('content')
 <div class="checkoutmenu">
     <div class="grid-container">
-        <div class="grid-item item2"></div>
-        <div class="grid-item item4">
+        <div class="grid-item item2 checkout"></div>
+        <div class="grid-item item4 checkout">
             <div class="menu1">
                 <h1>Delivery Options</h1>
                     <div class="inputsdelivery"><!--Depois meter os required e meter form tb-->
@@ -49,8 +49,8 @@
                     </div>
             </div>
         </div>
-        <div class="grid-item item1"></div>
-        <div class="grid-item item3">
+        <div class="grid-item item1 checkout"></div>
+        <div class="grid-item item3 checkout">
             <div class="menu2">
                 <div class="checkoutinputline"> 
                     <h1 class="inyourbag">In Your Bag</h1>

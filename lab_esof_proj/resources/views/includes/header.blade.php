@@ -3,7 +3,7 @@
         <div class="grid-container">
         <div class="grid-item item4">
             <div class="logo">
-                <h1></h1>
+                <h1>ProtoType</h1>
             </div>
         </div>
         <div class="grid-item item1 home">
