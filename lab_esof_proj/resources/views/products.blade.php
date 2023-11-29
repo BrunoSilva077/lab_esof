@@ -7,7 +7,7 @@
 @section('content')
 
 
-<div class="grid-container"> 
+<div class="grid-container medi-prod"> 
     <div class="grid-item item3 products">
         <div class="form-products">
             <div class="form">
@@ -96,43 +96,150 @@
     <div class="grid-item item8" style="padding: 0px 0px">
         <div class="productf">
             <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                Order by:
+                <button onclick="myFunction()" class="dropbtn">Relevance <i class="fa-solid fa-chevron-down"></i></button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">Highest price</a><hr class="border-hr">
+                    <a href="#">Lowest price</a><hr class="border-hr">
+                    <a href="#">Most Recent</a><hr class="border-hr">
+                    <a href="#">Relevance</a><hr class="border-hr">
                 </div>
             </div>
             <div class="dropdown1">
-                <button onclick="myFunction1()" class="dropbtn1">Dropdown</button>
+                Products per page:
+                <button onclick="myFunction1()" class="dropbtn1">3<i class="fa-solid fa-chevron-down"></i></button>
                 <div id="myDropdown1" class="dropdown-content1">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">3</a><hr class="border-hr">
+                    <a href="#">6</a><hr class="border-hr">
+                    <a href="#">9</a><hr class="border-hr">
+                    <a href="#">12</a><hr class="border-hr">
                 </div>
             </div> 
         </div>
         <div class="all-prod">
             <div class="each-prod">
-        
+                <div class="fav-prod">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="img-prod">
+                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                </div>
+                <div class="text-prod">
+                    Iphone 14
+                </div>
+                <div class="precfrab-prod">
+                    PVPR: 899€
+                </div>
+                <div class="prec-prod">
+                    699.99€
+                </div>
+                <div class="stock-prod">
+                    <i class="fa-solid fa-circle-check"></i>In Stock
+                </div>
             </div>
             
             <div class="each-prod">
-                
+                <div class="fav-prod">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="img-prod">
+                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                </div>
+                <div class="text-prod">
+                    Iphone 14
+                </div>
+                <div class="precfrab-prod">
+                    PVPR: 899€
+                </div>
+                <div class="prec-prod">
+                    699.99€
+                </div>
+                <div class="stock-prod">
+                    <i class="fa-solid fa-circle-check"></i>In Stock
+                </div>
             </div>
             
             <div class="each-prod">
-                
+                <div class="fav-prod">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="img-prod">
+                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                </div>
+                <div class="text-prod">
+                    Iphone 14
+                </div>
+                <div class="precfrab-prod">
+                    PVPR: 899€
+                </div>
+                <div class="prec-prod">
+                    699.99€
+                </div>
+                <div class="stock-prod">
+                    <i class="fa-solid fa-circle-check"></i>In Stock
+                </div>
             </div>
             <div class="each-prod">
-                
+                <div class="fav-prod">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="img-prod">
+                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                </div>
+                <div class="text-prod">
+                    Iphone 14
+                </div>
+                <div class="precfrab-prod">
+                    PVPR: 899€
+                </div>
+                <div class="prec-prod">
+                    699.99€
+                </div>
+                <div class="stock-prod">
+                    <i class="fa-solid fa-circle-check"></i>In Stock
+                </div>
             </div>
             <div class="each-prod">
-                
+                <div class="fav-prod">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="img-prod">
+                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                </div>
+                <div class="text-prod">
+                    Iphone 14
+                </div>
+                <div class="precfrab-prod">
+                    PVPR: 899€
+                </div>
+                <div class="prec-prod">
+                    699.99€
+                </div>
+                <div class="stock-prod">
+                    <i class="fa-solid fa-circle-check"></i>In Stock
+                </div>
             </div>
             <div class="each-prod">
-                
+                <div class="fav-prod">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="img-prod">
+                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                </div>
+                <div class="text-prod">
+                    Iphone 14
+                </div>
+                <div class="precfrab-prod">
+                    PVPR: 899€
+                </div>
+                <div class="prec-prod">
+                    699.99€
+                </div>
+                <div class="stock-prod">
+                    <i class="fa-solid fa-circle-check"></i>In Stock
+                </div>
             </div>
+            
 
         </div> 
     </div>

@@ -30,7 +30,7 @@
                 
             </div>
             <div class="button-div">
-                <img src="https://cdn.pixabay.com/photo/2016/01/03/00/43/upload-1118928_960_720.png" class="img-up">
+                <i class="fa-solid fa-upload img-up"></i>
                 <div class="send-file"> Send File
                 
                 </div>
