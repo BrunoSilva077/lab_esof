@@ -37,8 +37,44 @@ body{
     grid-column: span 1;
 }
 
+.grid-item.item2{
+    grid-column: span 2;
+}
+
+.grid-item.item3{
+    grid-column: span 3;
+}
+
 .grid-item.item4{
     grid-column: span 4;
+}
+
+.grid-item.item5{
+    grid-column: span 5;
+}
+
+.grid-item.item6{
+    grid-column: span 6;
+}
+
+.grid-item.item7{
+    grid-column: span 7;
+}
+
+.grid-item.item8{
+    grid-column: span 8;
+}
+
+.grid-item.item9{
+    grid-column: span 9;
+}
+
+.grid-item.item10{
+    grid-column: span 10;
+}
+
+.grid-item.item11{
+    grid-column: span 11;
 }
 
 .grid-item.item12{
@@ -49,8 +85,9 @@ body{
 
 
 .logo  h1 {
+    display: flex;
     font-size: 0;
-    position: absolute;
+    justify-content: left;
 }
 .logo h1:before {
     content: 'Proto';
@@ -58,6 +95,16 @@ body{
     font-size: 32px;
 }
 .logo h1:after {
+    content: 'type';
+    color: #787878;
+    font-size: 32px;
+}
+.logo-footer h1:before {
+    content: 'Proto';
+    color: #fff;
+    font-size: 32px;
+}
+.logo-footer h1:after {
     content: 'type';
     color: #787878;
     font-size: 32px;
@@ -329,7 +376,355 @@ li a{
     }
 
 }
-
+/* Footer */
+.lowres{
+    display: none;
+}
+@media (min-width: 2560px) {
+    footer{
+        background-color: #2C2929;
+        width: 100%;
+        height: 21.5%;
+        bottom: 0;
+        position: absolute;
+    }
+    .newsletter{
+        font-size: 22px;
+        text-align: left;
+    }
+    .newsletter h1, h2{
+        color: white;
+    }
+    .newsletter p{
+        color: #EEEEEE;
+        opacity: 0.7;
+    }
+    .newsletter h2{
+        border: 1px solid white;
+        padding: 10px; /* Reduzi o padding para manter o texto mais próximo da borda */
+        text-align: center;
+    }
+    .horizontal-line{
+        border-bottom: 1px solid white;
+    }
+    .logo-footer h1:before, .logo-footer h1:after {
+        font-size: 40px;
+    }
+    .logo-footer{
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .ul-container-footer {
+        display: flex;
+        font-size: 22px;
+        justify-content: center;
+        margin-top: 40px;
+    } 
+    .ul-container-footer li {
+        margin: 0 10px; /* Ajuste conforme necessário para a distância entre os itens da lista */
+    }
+    .horizontal-line2{
+        margin-top: 24px;
+        border-bottom: 1px solid white;
+    }
+    .therights{
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+}
+@media (min-width: 1440px ) and (max-width: 2559px) {
+    footer{
+        background-color: #2C2929;
+        width: 100%;
+        height: 35%;
+        bottom: 0;
+        position: absolute;
+    }
+    .newsletter{
+        font-size: 14px;
+        text-align: left;
+    }
+    .newsletter h1, h2{
+        color: white;
+    }
+    .newsletter p{
+        color: #EEEEEE;
+        opacity: 0.7;
+    }
+    .newsletter h2{
+        border: 1px solid white;
+        padding: 10px; /* Reduzi o padding para manter o texto mais próximo da borda */
+        text-align: center;
+    }
+    .horizontal-line{
+        border-bottom: 1px solid white;
+    }
+    .logo-footer h1:before, .logo-footer h1:after {
+        font-size: 30px;
+    }
+    .logo-footer{
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .ul-container-footer {
+        display: flex;
+        font-size: 18px;
+        justify-content: center;
+        margin-top: 40px;
+    } 
+    .ul-container-footer li {
+        margin: 0 10px; /* Ajuste conforme necessário para a distância entre os itens da lista */
+    }
+    .horizontal-line2{
+        margin-top: 20px;
+        border-bottom: 1px solid white;
+    }
+    .therights{
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+}
+@media (min-width: 1024px ) and (max-width: 1439px) {
+    footer{
+        background-color: #2C2929;
+        width: 100%;
+        height: 28%;
+        bottom: 0;
+        position: absolute;
+    }
+    .newsletter{
+        font-size: 8px;
+        text-align: left;
+    }
+    .newsletter h1, h2{
+        color: white;
+    }
+    .newsletter p{
+        color: #EEEEEE;
+        opacity: 0.7;
+    }
+    .newsletter h2{
+        border: 1px solid white;
+        padding: 10px; /* Reduzi o padding para manter o texto mais próximo da borda */
+        text-align: center;
+    }
+    .horizontal-line{
+        border-bottom: 1px solid white;
+    }
+    .logo-footer h1:before, .logo-footer h1:after {
+        font-size: 20px;
+    }
+    .logo-footer{
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .ul-container-footer {
+        display: flex;
+        font-size: 12px;
+        justify-content: center;
+        margin-top: 20px;
+    } 
+    .ul-container-footer li {
+        margin: 0 10px; /* Ajuste conforme necessário para a distância entre os itens da lista */
+    }
+    .horizontal-line2{
+        margin-top: 20px;
+        border-bottom: 1px solid white;
+    }
+    .therights{
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
+@media (min-width: 768px ) and (max-width: 1023px) {
+    footer{
+        background-color: #2C2929;
+        width: 100%;
+        height: 28%;
+        bottom: 0;
+        position: absolute;
+    }
+    .newsletter{
+        font-size: 12px;
+        text-align: left;
+    }
+    .newsletter h1, h2{
+        color: white;
+    }
+    .newsletter p{
+        color: #EEEEEE;
+        opacity: 0.7;
+    }
+    .newsletter h2{
+        border: 1px solid white;
+        padding: 10px; /* Reduzi o padding para manter o texto mais próximo da borda */
+        text-align: center;
+        font-size: 9px;
+    }
+    .horizontal-line{
+        border-bottom: 1px solid white;
+    }
+    .logo-footer h1:before, .logo-footer h1:after {
+        font-size: 20px;
+    }
+    .logo-footer{
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .ul-container-footer {
+        display: flex;
+        font-size: 12px;
+        justify-content: center;
+        margin-top: 20px;
+    } 
+    .ul-container-footer li {
+        margin: 0 10px; /* Ajuste conforme necessário para a distância entre os itens da lista */
+    }
+    .horizontal-line2{
+        margin-top: 20px;
+        border-bottom: 1px solid white;
+    }
+    .therights{
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
+@media (min-width: 425px ) and (max-width: 767px) {
+    .grid-item.item7.footer{
+        grid-column: span 12;
+    }
+    .grid-item.item4.footer{
+        display: none;
+    }
+    footer{
+        background-color: #2C2929;
+        width: 100%;
+        height: 28%;
+        bottom: 0;
+        position: absolute;
+    }
+    .newsletter{
+        font-size: 12px;
+        text-align: left;
+    }
+    .newsletter h1, h2{
+        color: white;
+    }
+    .newsletter p{
+        color: #EEEEEE;
+        opacity: 0.7;
+    }
+    .newsletter h2{
+        border: 1px solid white;
+        padding: 10px; /* Reduzi o padding para manter o texto mais próximo da borda */
+        text-align: center;
+        font-size: 9px;
+    }
+    .lowres{
+        display: block;
+    }
+    .horizontal-line{
+        border-bottom: 1px solid white;
+    }
+    .logo-footer h1:before, .logo-footer h1:after {
+        font-size: 20px;
+    }
+    .logo-footer{
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .ul-container-footer {
+        display: flex;
+        font-size: 12px;
+        justify-content: center;
+        margin-top: 20px;
+    } 
+    .ul-container-footer li {
+        margin: 0 10px; /* Ajuste conforme necessário para a distância entre os itens da lista */
+    }
+    .horizontal-line2{
+        margin-top: 20px;
+        border-bottom: 1px solid white;
+    }
+    .therights{
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
+@media (min-width: 375px ) and (max-width: 424px) {
+    .grid-item.item7.footer, .grid-item.item4.footer{
+        grid-column: span 12;
+    }
+    footer{
+        background-color: #2C2929;
+        width: 100%;
+        height: 28%;
+        bottom: 0;
+        position: absolute;
+    }
+    .newsletter{
+        font-size: 6px;
+        text-align: left;
+    }
+    .newsletter h1, h2{
+        color: white;
+    }
+    .newsletter p{
+        color: #EEEEEE;
+        opacity: 0.7;
+    }
+    .newsletter h2{
+        border: 1px solid white;
+        padding: 10px; /* Reduzi o padding para manter o texto mais próximo da borda */
+        text-align: center;
+        font-size: 9px;
+    }
+    .horizontal-line{
+        border-bottom: 1px solid white;
+    }
+    .logo-footer h1:before, .logo-footer h1:after {
+        font-size: 20px;
+    }
+    .logo-footer{
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .ul-container-footer {
+        display: flex;
+        font-size: 12px;
+        justify-content: center;
+        margin-top: 20px;
+    } 
+    .ul-container-footer li {
+        margin: 0 10px; /* Ajuste conforme necessário para a distância entre os itens da lista */
+    }
+    .horizontal-line2{
+        margin-top: 20px;
+        border-bottom: 1px solid white;
+    }
+    .therights{
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
 
         /* SLIDESHOW IMG  HOMEPAGE */
 
@@ -454,6 +849,1112 @@ li a{
     background-color: transparent;
 }
 
+/*checkoutmenu*/
+
+.menu1{/*caixa preta da esquerda*/
+    background-color: #2C2929;
+    border-radius: 20px;
+    margin-bottom: 200px;
+    padding: 20px 0px;
+}
+.menu2{/*caixa preta da direita*/
+    background-color: #2C2929;
+    border-radius: 20px;
+    margin-bottom: 200px;
+    padding: 20px 0px;
+}
+
+@media (min-width: 2560px) {
+    input{
+        outline: none;
+        border: none;
+    }
+    .checkoutmenu{
+        margin-top: 50px;
+    }
+    .checkoutinputline{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+    /*menu 1*/
+    .inputsdelivery{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputsdelivery input{
+        height: 48px;
+        padding-left: 20px;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    .inputsdelivery button{
+        font-size: 20px;
+    }
+    #fname,#lname,#pcode,#VillCity,#email,#pnumber{
+        width: 50%;
+    }
+    #fname,#pcode,#email{
+        margin-right: 3%;
+    }
+    #address,#ContRegion{
+       width: 90%;
+    }
+    .linhacheckout{
+        margin-top: 30px;
+        width: 90%;
+    }
+    /*menu 2*/
+    .inputspayment{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputspayment input{
+        height: 48px;
+        padding-left: 20px;
+        font-size: 20px;
+    }
+    .inputspayment button{
+        font-size: 20px;
+    }
+    .inputspayment h2{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    #mmyy,#cvv{
+        width: 20%;
+    }
+    .checkoutinputline label{
+        font-size: 20px;
+    }
+    #habilitarInput{
+        width: 4%;
+    }
+    #cnumb{
+        width: 40%;
+    }
+    #textoInput{
+        width: 81%;
+    }
+    #cnumb{
+        margin-bottom: 20px;
+    }
+    #cntbutton,#placeorder{
+        height: 48px;
+        margin-top: 20px;
+        padding: 10px;  
+        border: 2px solid white;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+        float: right;
+    }
+    .linhacheckout2{
+        margin-top: 50px;
+        width: 85%;
+    }
+    #menuescondido h1,.menu1 h1{
+        margin-top: 20px;
+        font-size: 40px;
+    }
+    #menuescondido{
+        display: none;
+    }
+    
+    /*menu 3*/
+    .contentyourbag{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+    .menu1 h1  {/*titulos principais menu 3*/
+        color: white;
+    }
+    .inyourbag{/*titulos principais menu 3*/
+        color: white;
+        width: 400px;
+        display: flex;
+        justify-content: left;
+        margin-left: 40px;
+    }
+    .editproduct{/*titulos principais menu 3*/
+        color: white;
+    }
+    .contentyourbag h4 {
+        font-size: 24px;
+        margin-bottom: 20px; /* Adiciona uma margem na parte inferior para separação visual */
+      }
+    .contentyourbag .preco{
+        float: right;
+    }
+    #fotoprod{
+        float: right;
+    }
+    .menu2 h1{/*titulos principais menu 3*/
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+    .Subtotal,.EstShip,.EstTax,.Total,.arrivesDate{
+        display: flex;
+        width: 400px;
+        justify-content: left;
+        align-items: left;
+    }
+    .arrivesDate{
+        font-size: 20px;
+        display: flex;
+        width: 470px;
+        justify-content: left;
+        align-items: left;
+    }
+    .classcolumn{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 20px 200px 0px 20px;
+        font-size: 20px;
+    }
+    .contentyourbag img{
+        margin-top: auto;
+        width: 90px;
+        height: 90px;
+    }
+    }
+    @media (min-width: 1440px ) and (max-width: 2559px) {
+        input{
+            outline: none;
+            border: none;
+        }
+        .checkoutmenu{
+            margin-top: 50px;
+        }
+        .checkoutinputline{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        /*menu 1*/
+        .inputsdelivery{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .inputsdelivery input{
+            height: 48px;
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+        #fname,#lname,#pcode,#VillCity,#email,#pnumber{
+            width: 50%;
+        }
+        #fname,#pcode,#email{
+            margin-right: 3%;
+        }
+        #address,#ContRegion{
+           width: 90%;
+        }
+        .linhacheckout{
+            margin-top: 30px;
+            width: 85%;
+        }
+    
+        /*menu 2*/
+        .inputspayment{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .inputspayment input{
+            height: 48px;
+            padding-left: 20px;
+        }
+        .inputspayment h2{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        #mmyy,#cvv{
+            width: 30%;
+        }
+        #textoInput,#cnumb{
+            width: 85%;
+        }
+        #cnumb{
+            margin-bottom: 20px;
+        }
+        #cntbutton,#placeorder{
+            height: 48px;
+            margin-top: 20px;
+            padding: 10px;  
+            border: 2px solid white;
+            border-radius: 10px;
+            width: 50%;
+            text-align: center;
+            float: right;
+        }
+        .linhacheckout2{
+            margin-top: 50px;
+            width: 85%;
+        }
+        #menuescondido h1{
+            margin-top: 20px;
+        }
+        #menuescondido{
+            display: none;
+        }
+        
+        /*menu 3*/
+        .contentyourbag{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+        .menu1 h1  {/*titulos principais menu 3*/
+            color: white;
+        }
+        .inyourbag{/*titulos principais menu 3*/
+            color: white;
+            margin-right: 80px;
+        }
+        .editproduct{
+            padding-left: 25px;
+            color: white;
+        }
+        .contentyourbag h4 {
+            font-size: 16px;
+            margin-bottom: 20px; /* Adiciona uma margem na parte inferior para separação visual */
+          }
+        .contentyourbag .preco{
+            float: right;
+        }
+        #fotoprod{
+            float: right;
+        }
+        .menu2 h1{
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        .Subtotal,.EstShip,.EstTax,.Total,.arrivesDate{
+            display: flex;
+            width: 200px;
+            justify-content: left;
+            align-items: left;
+        }
+        .arrivesDate{
+            font-size: 14px;
+            display: flex;
+            width: 250px;
+            justify-content: left;
+            align-items: left;
+        }
+        .classcolumn{
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 20px 65px 0px 20px;
+            font-size: 14px;
+        }
+        .contentyourbag img{
+            margin-top: auto;
+        }
+    }
+@media (min-width: 1024px ) and (max-width: 1439px) {
+    .grid-item.item4{
+        grid-column: span 5;
+        margin-top: 100px;
+    }
+    .grid-item.item3{
+        grid-column: span 4;
+        margin-top: 100px;
+    }
+    .grid-item.item1{
+        display: none;
+    }
+    input{
+        outline: none;
+        border: none;
+    }
+    .checkoutmenu{
+        margin-top: 50px;
+    }
+    .checkoutinputline{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    /*menu 1*/
+    .inputsdelivery{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputsdelivery input{
+        height: 48px;
+        padding-left: 20px;
+        margin-top: 20px;
+    }
+    #fname,#lname,#pcode,#VillCity,#email,#pnumber{
+        width: 40%;
+    }
+    #fname,#pcode,#email{
+        margin-right: 3%;
+    }
+    #address,#ContRegion{
+       width: 83%;
+    }
+    .linhacheckout{
+        margin-top: 30px;
+        width: 85%;
+    }
+
+    /*menu 2*/
+    .inputspayment{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputspayment input{
+        height: 48px;
+        padding-left: 20px;
+    }
+    .inputspayment h2{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    #mmyy,#cvv{
+        width: 30%;
+    }
+    #textoInput,#cnumb{
+        width: 85%;
+    }
+    #cnumb{
+        margin-bottom: 20px;
+    }
+    #cntbutton,#placeorder{
+        height: 48px;
+        margin-top: 20px;
+        padding: 10px;  
+        border: 2px solid white;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+        float: right;
+    }
+    .linhacheckout2{
+        margin-top: 50px;
+        width: 85%;
+    }
+    #menuescondido h1{
+        margin-top: 20px;
+    }
+    #menuescondido{
+        display: none;
+    }
+    
+    /*menu 3*/
+    .contentyourbag{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+    .menu1 h1  {/*titulos principais menu 3*/
+        color: white;
+    }
+    .inyourbag{/*titulos principais menu 3*/
+        color: white;
+
+    }
+    .editproduct{
+        padding-left: 25px;
+        color: white;
+    }
+    .contentyourbag h4 {
+        font-size: 14px;
+        margin-bottom: 20px; /* Adiciona uma margem na parte inferior para separação visual */
+      }
+    .contentyourbag .preco{
+        float: right;
+    }
+    #fotoprod{
+        float: right;
+    }
+    .menu2 h1{
+        margin-bottom: 30px;
+        font-size: 20px;
+    }
+    .Subtotal,.EstShip,.EstTax,.Total,.arrivesDate{
+        display: flex;
+        width: 140px;
+        justify-content: left;
+        align-items: left;
+    }
+    .arrivesDate{
+        font-size: 12px;
+        display: flex;
+        width: 180px;
+        justify-content: left;
+        align-items: left;
+    }
+    .classcolumn{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 20px 65px 0px 20px;
+        font-size: 12px;
+    }
+    .contentyourbag img{
+        margin: auto;
+    }
+}
+@media (min-width: 768px ) and (max-width: 1023px) {
+    .grid-item.item4{
+        grid-column: span 6;
+        margin-top: 100px;
+    }
+    .grid-item.item3{
+        grid-column: span 6;
+        margin-top: 100px;
+    }
+    .grid-item.item2, .grid-item.item1{
+        display: none;
+    }
+    input{
+        outline: none;
+        border: none;
+    }
+    .checkoutmenu{
+        margin-top: 50px;
+    }
+    .checkoutinputline{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    /*menu 1*/
+    .inputsdelivery{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputsdelivery input{
+        height: 48px;
+        padding-left: 20px;
+        margin-top: 20px;
+    }
+    #fname,#lname,#pcode,#VillCity,#email,#pnumber{
+        width: 40%;
+    }
+    #fname,#pcode,#email{
+        margin-right: 3%;
+    }
+    #address,#ContRegion{
+       width: 83%;
+    }
+    .linhacheckout{
+        margin-top: 30px;
+        width: 85%;
+    }
+
+    /*menu 2*/
+    .inputspayment{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputspayment input{
+        height: 48px;
+        padding-left: 20px;
+    }
+    .inputspayment h2{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    #mmyy,#cvv{
+        width: 30%;
+    }
+    #textoInput,#cnumb{
+        width: 85%;
+    }
+    #cnumb{
+        margin-bottom: 20px;
+    }
+    #cntbutton,#placeorder{
+        height: 48px;
+        margin-top: 20px;
+        padding: 10px;  
+        border: 2px solid white;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+        float: right;
+    }
+    .linhacheckout2{
+        margin-top: 50px;
+        width: 85%;
+    }
+    #menuescondido h1{
+        margin-top: 20px;
+    }
+    #menuescondido{
+        display: none;
+    }
+    
+    /*menu 3*/
+    .contentyourbag{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+    .menu1 h1  {/*titulos principais menu 3*/
+        color: white;
+    }
+    .inyourbag{/*titulos principais menu 3*/
+        color: white;
+
+    }
+    .editproduct{
+        padding-left: 25px;
+        color: white;
+    }
+    .contentyourbag h4 {
+        font-size: 17px;
+        margin-bottom: 20px; /* Adiciona uma margem na parte inferior para separação visual */
+      }
+    .contentyourbag .preco{
+        float: right;
+    }
+    #fotoprod{
+        float: right;
+    }
+    .menu2 h1{
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+    .Subtotal,.EstShip,.EstTax,.Total,.arrivesDate{
+        display: flex;
+        width: 200px;
+        justify-content: left;
+        align-items: left;
+    }
+    .arrivesDate{
+        font-size: 15px;
+        display: flex;
+        width: 250px;
+        justify-content: left;
+        align-items: left;
+    }
+    .classcolumn{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 20px 65px 0px 20px;
+        font-size: 13px;
+    }
+    .contentyourbag img{
+        margin-top: auto;
+    }
+}
+@media (min-width: 425px ) and (max-width: 767px) {
+    .menu1{/*caixa preta da esquerda*/
+        background-color: #2C2929;
+        border-radius: 20px;
+        margin-bottom: 0px;
+        padding: 20px 0px;
+    }
+    .grid-item.item4{
+        grid-column: span 6;
+        margin-top: 100px;
+        margin-bottom: 0px;
+    }
+    .grid-item.item3{
+        grid-column: span 6;
+    }
+    .grid-item.item2, .grid-item.item1{
+        display: none;
+    }
+    input{
+        outline: none;
+        border: none;
+    }
+    .checkoutmenu{
+        margin-top: 50px;
+    }
+    .checkoutinputline{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    /*menu 1*/
+    .inputsdelivery{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputsdelivery input{
+        height: 48px;
+        padding-left: 20px;
+        margin-top: 20px;
+    }
+    #fname,#lname,#pcode,#VillCity,#email,#pnumber{
+        width: 50%;
+    }
+    #fname,#pcode,#email{
+        margin-right: 3%;
+    }
+    #address,#ContRegion{
+       width: 90%;
+    }
+    .linhacheckout{
+        margin-top: 30px;
+        width: 85%;
+    }
+
+    /*menu 2*/
+    .inputspayment{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputspayment input{
+        height: 48px;
+        padding-left: 20px;
+    }
+    .inputspayment h2{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    #mmyy,#cvv{
+        width: 30%;
+    }
+    #textoInput,#cnumb{
+        width: 85%;
+    }
+    #cnumb{
+        margin-bottom: 20px;
+    }
+    #cntbutton,#placeorder{
+        height: 48px;
+        margin-top: 20px;
+        padding: 10px;  
+        border: 2px solid white;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+        float: right;
+    }
+    .linhacheckout2{
+        margin-top: 50px;
+        width: 85%;
+    }
+    #menuescondido h1{
+        margin-top: 20px;
+    }
+    #menuescondido{
+        display: none;
+    }
+    
+    /*menu 3*/
+    .contentyourbag{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+    .menu1 h1  {/*titulos principais menu 3*/
+        color: white;
+    }
+    .inyourbag{/*titulos principais menu 3*/
+        color: white;
+
+    }
+    .editproduct{
+        padding-left: 25px;
+        color: white;
+    }
+    .contentyourbag h4 {
+        font-size: 17px;
+        margin-bottom: 20px; /* Adiciona uma margem na parte inferior para separação visual */
+      }
+    .contentyourbag .preco{
+        float: right;
+    }
+    #fotoprod{
+        float: right;
+    }
+    .menu2 h1{
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+    .Subtotal,.EstShip,.EstTax,.Total,.arrivesDate{
+        display: flex;
+        width: 200px;
+        justify-content: left;
+        align-items: left;
+    }
+    .arrivesDate{
+        font-size: 15px;
+        display: flex;
+        width: 250px;
+        justify-content: left;
+        align-items: left;
+    }
+    .classcolumn{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 20px 65px 0px 20px;
+        font-size: 13px;
+    }
+    .contentyourbag img{
+        margin-top: auto;
+    }
+}
+@media (min-width: 375px ) and (max-width: 424px) {
+    .menu1{/*caixa preta da esquerda*/
+        background-color: #2C2929;
+        border-radius: 20px;
+        margin-bottom: 0px;
+        padding: 20px 0px;
+    }
+    .grid-item.item4{
+        grid-column: span 6;
+        margin-top: 100px;
+        margin-bottom: 0px;
+    }
+    .grid-item.item3{
+        grid-column: span 6;
+    }
+    .grid-item.item2, .grid-item.item1{
+        display: none;
+    }
+    input{
+        outline: none;
+        border: none;
+    }
+    .checkoutmenu{
+        margin-top: 50px;
+    }
+    .checkoutinputline{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    /*menu 1*/
+    .inputsdelivery{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputsdelivery input{
+        height: 48px;
+        padding-left: 20px;
+        margin-top: 20px;
+    }
+    #fname,#lname,#pcode,#VillCity,#email,#pnumber{
+        width: 40%;
+    }
+    #fname,#pcode,#email{
+        margin-right: 3%;
+    }
+    #address,#ContRegion{
+       width: 83%;
+    }
+    .linhacheckout{
+        margin-top: 30px;
+        width: 85%;
+    }
+
+    /*menu 2*/
+    .inputspayment{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputspayment input{
+        height: 48px;
+        padding-left: 20px;
+    }
+    .inputspayment h2{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    #mmyy,#cvv{
+        width: 30%;
+    }
+    #textoInput,#cnumb{
+        width: 85%;
+    }
+    #cnumb{
+        margin-bottom: 20px;
+    }
+    #cntbutton,#placeorder{
+        height: 48px;
+        margin-top: 20px;
+        padding: 10px;  
+        border: 2px solid white;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+        float: right;
+    }
+    .linhacheckout2{
+        margin-top: 50px;
+        width: 85%;
+    }
+    #menuescondido h1{
+        margin-top: 20px;
+    }
+    #menuescondido{
+        display: none;
+    }
+    
+    /*menu 3*/
+    .contentyourbag{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+    .menu1 h1  {/*titulos principais menu 3*/
+        color: white;
+    }
+    .inyourbag{/*titulos principais menu 3*/
+        color: white;
+
+    }
+    .editproduct{
+        padding-left: 25px;
+        color: white;
+    }
+    .contentyourbag h4 {
+        font-size: 17px;
+        margin-bottom: 20px; /* Adiciona uma margem na parte inferior para separação visual */
+      }
+    .contentyourbag .preco{
+        float: right;
+    }
+    #fotoprod{
+        float: right;
+    }
+    .menu2 h1{
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+    .Subtotal,.EstShip,.EstTax,.Total,.arrivesDate{
+        display: flex;
+        width: 200px;
+        justify-content: left;
+        align-items: left;
+    }
+    .arrivesDate{
+        font-size: 15px;
+        display: flex;
+        width: 250px;
+        justify-content: left;
+        align-items: left;
+    }
+    .classcolumn{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 20px 65px 0px 20px;
+        font-size: 13px;
+    }
+    .contentyourbag img{
+        margin-top: auto;
+    }
+}
+@media (min-width: 320px ) and (max-width: 374px) {
+    .menu1{/*caixa preta da esquerda*/
+        background-color: #2C2929;
+        border-radius: 20px;
+        margin-bottom: 0px;
+        padding: 20px 0px;
+    }
+    .grid-item.item4{
+        grid-column: span 6;
+        margin-top: 100px;
+        margin-bottom: 0px;
+    }
+    .grid-item.item3{
+        grid-column: span 6;
+    }
+    .grid-item.item2, .grid-item.item1{
+        display: none;
+    }
+    input{
+        outline: none;
+        border: none;
+    }
+    .checkoutmenu{
+        margin-top: 50px;
+    }
+    .checkoutinputline{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*menu 1*/
+    .inputsdelivery{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputsdelivery input{
+        height: 48px;
+        padding-left: 20px;
+        margin-top: 20px;
+    }
+    #fname,#lname,#pcode,#VillCity,#email,#pnumber{
+        width: 40%;
+    }
+    #fname,#pcode,#email{
+        margin-right: 3%;
+    }
+    #address,#ContRegion{
+       width: 83%;
+    }
+    .linhacheckout{
+        margin-top: 30px;
+        width: 85%;
+    }
+
+    /*menu 2*/
+    .inputspayment{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputspayment input{
+        height: 48px;
+        padding-left: 20px;
+    }
+    .inputspayment h2{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        color:white;
+    }
+    #mmyy,#cvv{
+        width: 30%;
+    }
+    #textoInput,#cnumb{
+        width: 85%;
+    }
+    #cnumb{
+        margin-bottom: 20px;
+    }
+    #cntbutton,#placeorder{
+        height: 48px;
+        margin-top: 20px;
+        padding: 10px;  
+        border: 2px solid white;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+        float: right;
+    }
+    .linhacheckout2{
+        margin-top: 50px;
+        width: 85%;
+    }
+    #menuescondido h1{
+        margin-top: 20px;
+    }
+    #menuescondido{
+        display: none;
+    }
+    
+    /*menu 3*/
+    .contentyourbag{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+    .menu1 h1  {/*titulos principais menu 3*/
+        color: white;
+    }
+    .inyourbag{/*titulos principais menu 3*/
+        color: white;
+
+    }
+    .editproduct{
+        padding-left: 25px;
+        color: white;
+    }
+    .contentyourbag h4 {
+        font-size: 17px;
+        margin-bottom: 20px; /* Adiciona uma margem na parte inferior para separação visual */
+      }
+    .contentyourbag .preco{
+        float: right;
+    }
+    #fotoprod{
+        float: right;
+    }
+    .menu2 h1{
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+    .Subtotal,.EstShip,.EstTax,.Total,.arrivesDate{
+        display: flex;
+        width: 200px;
+        justify-content: left;
+        align-items: left;
+    }
+    .arrivesDate{
+        font-size: 15px;
+        display: flex;
+        width: 250px;
+        justify-content: left;
+        align-items: left;
+    }
+    .classcolumn{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 20px 65px 0px 20px;
+        font-size: 13px;
+    }
+    .contentyourbag img{
+        margin-top: auto;
+    }
+}
     /*   NEWSLETTER   */
 
 .container-newsletter{
