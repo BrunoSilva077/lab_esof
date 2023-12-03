@@ -76,7 +76,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="grid-item item5"></div>
+            <div class="grid-item item5 item-space"></div>
             <div class="grid-item item1 user-menu-item">
                 <div class="user-menu">
                     <ul class="ul-container-menu">
@@ -120,12 +120,10 @@
         const divsResponsiveInput = document.querySelector('.responsive-input'); // caixa com as opçoes do menu
         const divHamburguerMenu = document.querySelector('.user-menu-item');
         const divItem5 = document.querySelector('.grid-item.item5');
-
-        console.log(menuBtnSearchCartContainer);
-
         menuBtnSearchCartContainer.addEventListener('click',() =>{
 
             if(divHamburguerMenu.style.display === 'none' || divHamburguerMenu.style.display === ''){
+                console.log('entrou');
                 divHamburguerMenu.style.display = 'block';
                 divItem5.style.display = 'block';
             }else{
