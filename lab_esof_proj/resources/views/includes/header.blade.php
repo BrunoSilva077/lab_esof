@@ -1,4 +1,111 @@
 <nav>
+<div class="side-cart">
+                <div class="side-cart-name">
+                    <h1>Cart</h1>
+                    <i class="fas fa-times" onclick="closeCart(this)"></i>
+                </div>
+                <div class="side-cart-options">
+                    <div class="items">
+                        <div class="total-price">
+                            <h1>Total(2 items): 1399.98€</h1>
+                        </div>
+                        <hr class="barra-opcoes">
+                        <div class="each-item">
+                            <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>    
+                        </div>
+                        <hr class="barra-opcoes">
+                        <div class="each-item">
+                            <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>    
+                        </div>
+                        <hr class="barra-opcoes">
+                        <div class="each-item">
+                            <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>    
+                        </div>
+                        <hr class="barra-opcoes">
+                        <div class="each-item">
+                            <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>    
+                        </div>
+                        <hr class="barra-opcoes">
+                        <div class="each-item">
+                            <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>    
+                        </div>
+                        <hr class="barra-opcoes">
+                    </div>
+                    <div class="side-cart-checkout">
+                        <a>checkout</a>
+                    </div>
+                </div>
+            </div>
         <div class="grid-container">
             <div class="grid-item item4">
                 <div class="logo">
@@ -29,8 +136,8 @@
                         </form>
                     </div>
                     <div class="cart-container">
-                        <a href="" class="cart">
-                            <i class="fas fa-shopping-bag fa-2x"></i>
+                        <a class="cart">
+                            <i class="fas fa-shopping-bag fa-2x" onclick="openCart()"></i>
                         </a>
                         <div class="vertical-line"></div>
                         <a class="menu">
@@ -41,7 +148,7 @@
             </div>
             <div class="grid-item item1 menu">
                 <div class="cart-container">
-                    <a href="" class="cart">
+                    <a class="cart" onclick="openCart()">
                         <i class="fas fa-shopping-bag fa-2x"></i>
                     </a>
                     <div class="vertical-line"></div>
@@ -104,14 +211,24 @@
                         <hr class="user-menu-hr">
                     </ul>
                 </div>
-            </div>
-
-
-            
+            </div>    
         </div>
+
 </nav>
 
 <script>
+
+    function closeCart(clickedElement) {
+        clickedElement.parentElement.parentElement.classList.remove('active');
+        clickedElement.parentElement.parentElement.style.position = 'fixed';
+    }
+
+    function openCart(clickedElement) {
+        const carMenu = document.querySelector('.side-cart')
+        carMenu.classList.add('active')
+        carMenu.style.position = 'absolute';
+    }
+
     document.addEventListener('DOMContentLoaded', function(){
         const menuBtn = document.querySelector('.menu .menu i');
         const menuBtnSearchCartContainer = document.querySelector('.search-cart-container .cart-container .menu i');
@@ -120,17 +237,23 @@
         const divsResponsiveInput = document.querySelector('.responsive-input'); // caixa com as opçoes do menu
         const divHamburguerMenu = document.querySelector('.user-menu-item');
         const divItem5 = document.querySelector('.grid-item.item5');
+        const carMenu = document.querySelector('.side-cart');
         menuBtnSearchCartContainer.addEventListener('click',() =>{
 
-            if(divHamburguerMenu.style.display === 'none' || divHamburguerMenu.style.display === ''){
-                console.log('entrou');
-                divHamburguerMenu.style.display = 'block';
-                divItem5.style.display = 'block';
-            }else{
-                divHamburguerMenu.style.display = 'none';
-                divItem5.style.display = 'none';
-            }
+        
 
+            divHamburguerMenu.addEventListener('click',function(){
+
+                if(divHamburguerMenu.style.display === 'none' || divHamburguerMenu.style.display === ''){
+                    console.log('entrou');
+                    divHamburguerMenu.style.display = 'block';
+                    divItem5.style.display = 'block';
+                }else{
+                    divHamburguerMenu.style.display = 'none';
+                    divItem5.style.display = 'none';
+                }
+    
+            })
         })
 
         menuBtn.addEventListener('click',function(){
@@ -138,9 +261,11 @@
             if(divHamburguerMenu.style.display === 'none' || divHamburguerMenu.style.display === ''){
                 divHamburguerMenu.style.display = 'block';
                 divItem5.style.display = 'block';
+
             }else{
                 divHamburguerMenu.style.display = 'none';
                 divItem5.style.display = 'none';
+
             }
 
             const windowWidth = window.innerWidth;

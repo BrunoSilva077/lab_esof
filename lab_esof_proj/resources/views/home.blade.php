@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="wrapper">
+    <!-- <div class="wrapper">
         <section>
             <div class="grid-container">
                 <div class="grid-item item12">
@@ -20,12 +20,12 @@
                     
                     </div>
                     <div class="tracos-slideshow">
-                        <span class="dot active"></span>  <!--onclick="currentSlide(1)"-->
+                        <span class="dot active"></span>  <!--onclick="currentSlide(1)"
                         <span class="dot"></span> 
                         <span class="dot"></span> 
                     </div>
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
 @endsection
