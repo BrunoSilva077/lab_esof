@@ -19,5 +19,4 @@ class MainController extends Controller
     }
     public function Menucheckout() {
         return view('menu-checkout');
-    }
 }

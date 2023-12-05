@@ -14,7 +14,7 @@
                             <div class="text">
                                 Unleash Innovation with your New iPhone.
                             </div>
-                            <img src="{{ asset('img/products/iphone14/imagem_iphone14_00.png') }}" style="width:50%">
+                            <img src="img/products/iphone14/imagem_principal.png" style="width:50%">
                             <button class="buy-now">Buy now</button>
                         </div>
                     
