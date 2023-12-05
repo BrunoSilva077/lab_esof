@@ -245,6 +245,7 @@ body{
     height: auto;
     right: -30%; /* Posição inicial fora da tela */
     transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1;
 }
 
 .side-cart.active {
@@ -1053,7 +1054,7 @@ body{
         display: flex;
         text-align: left;
     }
-}
+
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .grid-container {
@@ -1467,6 +1468,17 @@ body{
     letter-spacing: 0.3px;
     margin: 20px 0;
 }
+
+.container-form form{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 40px;
+    height: 100%;
+}
+
 
 .container-form span{
     font-size: 12px;

@@ -18,5 +18,5 @@ Route::get('/', [MainController::class, 'home'])->name('home');
 Route::get('/home', [MainController::class, 'home'])->name('home');
 Route::get('/login', [MainController::class, 'login'])->name('login');
 Route::get('/newsletter', [MainController::class, 'newsletter'])->name('newsletter');
-
+Route::get('/product-page', [MainController::class, 'productpage'])->name('product-page');
 Route::get('/menucheckout', [MainController::class, 'menucheckout'])->name('menucheckout');
