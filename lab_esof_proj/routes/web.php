@@ -19,3 +19,7 @@ Route::get('/home', [MainController::class, 'home'])->name('home');
 Route::get('/login', [MainController::class, 'login'])->name('login');
 Route::get('/newsletter', [MainController::class, 'newsletter'])->name('newsletter');
 Route::get('/menucheckout', [MainController::class, 'menucheckout'])->name('menucheckout');
+Route::get('/adminorders', [MainController::class, 'adminorders'])->name('adminorders');
+Route::get('/adminclients', [MainController::class, 'adminclients'])->name('adminclients');
+Route::get('/adminproducts', [MainController::class, 'adminproducts'])->name('adminproducts');
+Route::get('/editprofile', [MainController::class, 'editprofile'])->name('editprofile');

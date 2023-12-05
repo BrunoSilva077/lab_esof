@@ -548,7 +548,7 @@ li a{
     }
     .therights{
         color: white;
-        text-align: center;
+        text-align: center; 
         margin-top: 20px;
         font-size: 20px;
     }
@@ -730,68 +730,57 @@ li a{
         font-size: 14px;
     }
 }
-
-        /* SLIDESHOW IMG  HOMEPAGE */
-
-.wrapper{
-    margin-top: 45px;
-    height: 100vh;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
+/*slideshow*/
+.slideshow-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
 }
-
-.wrapper section{
-    height: 100vh;
-    scroll-snap-align: start;
+.slide {
+    display: none;
 }
-
-.wrapper .mySlides .fade{
+.slideshow-container.img {
     width: 100%;
+    height: auto;
 }
-
-.grid-item.item1.slider{
-    /* background-color: red; */
-    grid-row: 1/12;
-    grid-column: 1/13;
-    height: 100%;
-}
-
-.wrapper .text{
+.prev,.next {
     position: absolute;
-    font-size: 60px;
-    text-align: left;
-    color: #fff;
-    width: 20%;
+    top: 50%;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    padding: 16px;
+    margin-top: -32px;
 }
-
-.wrapper .buy-now{ /*  aqui nao estou a conseguir posiçionar muito bem o botao */
-    /* position: absolute; */
-    border: none;
-    outline: none;
-    padding: 13px 40px;
-    border-radius: 6px;
-    background-color: #989494;
-    color: #fff;
-    display: flex;
-    /* align-items: left; */
-    /* margin-bottom: 50px; */
+.prev {
+    left: 10px;
 }
-
-.wrapper .tracos-slideshow .dot{
-    text-align: center;
-    cursor: pointer;
+.next {
+    right: 10px;
+}
+.trace {
+    height: 5px;
+    width: 35px;
+    margin: 0 2px;
     background-color: #bbb;
-    width: 38px;
-    height: 4px;
-    margin: 0 5px;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
-
-.wrapper .tracos-slideshow .dot.active{
-    background-color: #fff;
+.trace.active {
+    background-color: white;
+    height: 7px;
 }
-
+.linhahome,.linhahome2{
+    border-bottom:1px solid #989494 ;
+    width: 30%;
+}
+.linhahome{
+    margin-right: 5%;
+}
+.linhahome2{
+    margin-left: 5%;
+}
 
         /* Login / Register */
 
@@ -854,6 +843,676 @@ li a{
     background-color: transparent;
 }
 
+/*EDIT PROFILE*/
+
+@media (min-width: 2560px) {
+    .sidemenuedit{
+        width: 100%;
+        height: auto;
+        background-color: #2C2929;
+        border-radius: 20px;
+        color: white;
+    }
+    .sidemenuedit .profileinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuedit .profileinputline h3{
+        margin: 40px 0px;
+        text-align: left;
+        width: 100%;
+        font-size: 50px;
+    }
+    .sidemenuedit .profileinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .sidemenuedit .profileinputline{
+        margin: 5% auto;
+    }
+    .sidemenuedit .profileinputline.active i {
+        opacity: 1.0;
+    }
+    .profileinputline{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+    .profileinputline h3, .profileinputline h2{
+        margin: 1% 10% 0% 2%;
+        text-align: left;
+    }
+
+    .profileinputline h2{
+        font-size: 60px;
+    }
+    .profileinputline button{
+        margin: 1% 10% 0% 2%;
+    }
+    .mainmenuedit{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 22px;
+    }
+    .mainmenuedit .profileinputline{
+        margin: 1% 0%;
+        font-size: 30px;
+    }
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+        margin: 1% 0%;
+        font-size: 30px;
+        border-radius: 5px;
+        padding-left: 10px;
+        height: 50px;
+        width: 20%;
+    }
+    .sizeradio{
+        transform: scale(2.5);
+        margin-right: 1%;
+    }
+    .profileinputline.radio{
+        font-size: 40px;
+    }
+    .space{
+        margin: 0% 1%;
+    }
+    .mainmenuedit h3, .mainmenuedit h4, .mainmenuedit button,.mainmenuedit h3{
+        width: 15%;
+        overflow: auto;
+        font-size: 40px;
+    }
+    .horizontal-menuedit{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .grid-item.item9.menuedit button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 50px;
+        color: white;
+        font-size: 30px;
+    }
+}
+@media (min-width: 1440px ) and (max-width: 2559px) {
+    .sidemenuedit{
+        width: 100%;
+        height: auto;
+        background-color: #2C2929;
+        border-radius: 20px;
+        color: white;
+        font-size: 30px;
+    }
+    .sidemenuedit .profileinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuedit .profileinputline h3{
+        margin: 40px 0px;
+        text-align: left;
+        width: 100%;
+        font-size: 30px;
+    }
+    .sidemenuedit .profileinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .sidemenuedit .profileinputline{
+        margin: 5% auto;
+    }
+    .sidemenuedit .profileinputline.active i {
+        opacity: 1.0;
+    }
+    .profileinputline{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+    .profileinputline h3, .profileinputline h2{
+        margin: 1% 10% 0% 2%;
+        text-align: left;
+    }
+    .profileinputline button{
+        margin: 1% 10% 0% 2%;
+    }
+    .mainmenuedit{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 22px;
+    }
+    .mainmenuedit .profileinputline{
+        margin: 1% 0%;
+        font-size: 20px;
+    }
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+        margin: 1% 0%;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 10px;
+        height: 30px;
+    }
+    .sizeradio{
+        transform: scale(1.5);
+        margin-right: 1%;
+    }
+    .space{
+        margin: 0% 1%;
+    }
+    .mainmenuedit h3, .mainmenuedit h4, .mainmenuedit button,.mainmenuedit h3{
+        width: 11.11%;
+        overflow: auto;
+        font-size: 20px;
+    }
+    .horizontal-menuedit{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .grid-item.item9.menuedit button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 22px;
+    }
+}
+@media (min-width: 1024px ) and (max-width: 1439px) {
+    .sidemenuedit{
+        width: 100%;
+        height: auto;
+        background-color: #2C2929;
+        border-radius: 20px;
+        color: white;
+    }
+    .sidemenuedit .profileinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuedit .profileinputline h3{
+        margin: 40px 0px;
+        text-align: left;
+        width: 100%;
+        font-size: 25px;
+    }
+    .sidemenuedit .profileinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .sidemenuedit .profileinputline{
+        margin: 5% auto;
+    }
+    .sidemenuedit .profileinputline.active i {
+        opacity: 1.0;
+    }
+    .profileinputline{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+    .profileinputline h3, .profileinputline h2{
+        margin: 1% 10% 0% 2%;
+        text-align: left;
+    }
+    .profileinputline button{
+        margin: 1% 10% 0% 2%;
+    }
+    .mainmenuedit{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 22px;
+    }
+    .mainmenuedit .profileinputline{
+        margin: 1% 0%;
+        font-size: 20px;
+    }
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+        margin: 1% 0%;
+        font-size: 15px;
+        border-radius: 5px;
+        padding-left: 10px;
+        height: 25px;
+    }
+    .sizeradio{
+        transform: scale(1.25);
+        margin-right: 1%;
+    }
+    .space{
+        margin: 0% 1%;
+    }
+    .mainmenuedit h3, .mainmenuedit h4, .mainmenuedit button,.mainmenuedit h3{
+        width: 15%;
+        overflow: auto;
+        font-size: 20px;
+    }
+    .horizontal-menuedit{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .grid-item.item9.menuedit button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 22px;
+    }
+}
+@media (min-width: 768px ) and (max-width: 1023px) {
+    .sidemenuedit{
+        width: 100%;
+        height: auto;
+        background-color: #2C2929;
+        border-radius: 20px;
+        color: white;
+    }
+    .sidemenuedit .profileinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuedit .profileinputline h3{
+        margin: 40px 0px;
+        text-align: left;
+        width: 100%;
+        font-size: 25px;
+    }
+    .sidemenuedit .profileinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .sidemenuedit .profileinputline{
+        margin: 5% auto;
+    }
+    .sidemenuedit .profileinputline.active i {
+        opacity: 1.0;
+    }
+    .profileinputline{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+    .profileinputline h3, .profileinputline h2{
+        margin: 1% 10% 0% 2%;
+        text-align: left;
+    }
+    .profileinputline button{
+        margin: 1% 10% 0% 2%;
+    }
+    .mainmenuedit{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 22px;
+    }
+    .mainmenuedit .profileinputline{
+        margin: 1% 0%;
+        font-size: 20px;
+    }
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+        margin: 1% 0%;
+        font-size: 15px;
+        border-radius: 5px;
+        padding-left: 10px;
+        height: 25px;
+    }
+    .sizeradio{
+        transform: scale(1.15);
+        margin-right: 1%;
+    }
+    .space{
+        margin: 0% 1%;
+    }
+    .mainmenuedit h3, .mainmenuedit h4, .mainmenuedit button,.mainmenuedit h3{
+        width: 25%;
+        overflow: auto;
+        font-size: 20px;
+    }
+    .horizontal-menuedit{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .grid-item.item9.menuedit button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 25px;
+        color: white;
+        font-size: 16px;
+    }
+}
+@media (min-width: 425px ) and (max-width: 767px) {
+    .grid-item.item3.menuedit{
+        grid-column: span 1;
+    }
+    .grid-item.item9.menuedit{
+        grid-column: span 1;
+    }
+    .sidemenuedit{
+        width: 100%;
+        height: auto;
+        background-color: #2C2929;
+        border-radius: 20px;
+        color: white;
+    }
+    .sidemenuedit .profileinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuedit .profileinputline h3{
+        margin: 40px 0px;
+        text-align: left;
+        width: 100%;
+        font-size: 20px;
+    }
+    .sidemenuedit .profileinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .sidemenuedit .profileinputline{
+        margin: 5% auto;
+    }
+    .sidemenuedit .profileinputline.active i {
+        opacity: 1.0;
+    }
+    .profileinputline{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+    .profileinputline h3, .profileinputline h2{
+        margin: 1% 2% 0% 2%;
+        text-align: left;
+    }
+    .profileinputline button{
+        margin: 1% 10% 0% 2%;
+    }
+    .mainmenuedit{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+    }
+    .mainmenuedit .profileinputline{
+        margin: 1% 0%;
+        font-size: 16px;
+    }
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+        margin: 1% 0%;
+        font-size: 12px;
+        border-radius: 5px;
+        padding-left: 10px;
+        height: 25px;
+        width: 60%;
+    }
+    .profileinputline.radio{
+        font-size: 14px;
+    }
+    .space{
+        margin: 0% 1%;
+    }
+    .mainmenuedit h3, .mainmenuedit h4, .mainmenuedit button,.mainmenuedit h3{
+        width: 45%;
+        overflow: auto;
+        font-size: 14px;
+    }
+    .horizontal-menuedit{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .grid-item.item9.menuedit button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 25px;
+        color: white;
+        font-size: 14px;
+    }
+}
+@media (min-width: 375px ) and (max-width: 424px) {
+    .grid-item.item3.menuedit{
+        grid-column: span 2;
+    }
+    .grid-item.item9.menuedit{
+        grid-column: span 2;
+    }
+    .sidemenuedit{
+        width: 100%;
+        height: auto;
+        background-color: #2C2929;
+        border-radius: 20px;
+        color: white;
+    }
+    .sidemenuedit .profileinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuedit .profileinputline h3{
+        margin: 40px 0px;
+        text-align: left;
+        width: 100%;
+        font-size: 16px;
+    }
+    .sidemenuedit .profileinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .sidemenuedit .profileinputline{
+        margin: 5% auto;
+    }
+    .sidemenuedit .profileinputline.active i {
+        opacity: 1.0;
+    }
+    .profileinputline{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+    .profileinputline h3, .profileinputline h2{
+        margin: 1% 2% 0% 2%;
+        text-align: left;
+    }
+    .profileinputline button{
+        margin: 1% 10% 0% 2%;
+    }
+    .mainmenuedit{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+    }
+    .mainmenuedit .profileinputline{
+        margin: 1% 0%;
+        font-size: 16px;
+    }
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+        margin: 1% 0%;
+        font-size: 12px;
+        border-radius: 5px;
+        padding-left: 10px;
+        height: 25px;
+        width: 60%;
+    }
+    .profileinputline.radio{
+        font-size: 14px;
+    }
+    .space{
+        margin: 0% 1%;
+    }
+    .mainmenuedit h3, .mainmenuedit h4, .mainmenuedit button,.mainmenuedit h3{
+        width: 45%;
+        overflow: auto;
+        font-size: 14px;
+    }
+    .horizontal-menuedit{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .grid-item.item9.menuedit button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 25px;
+        color: white;
+        font-size: 14px;
+    }
+}
+@media (min-width: 320px ) and (max-width: 374px) {
+    .grid-item.item3.menuedit{
+        grid-column: span 2;
+    }
+    .grid-item.item9.menuedit{
+        grid-column: span 2;
+    }
+    .sidemenuedit{
+        width: 100%;
+        height: auto;
+        background-color: #2C2929;
+        border-radius: 20px;
+        color: white;
+    }
+    .sidemenuedit .profileinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuedit .profileinputline h3{
+        margin: 40px 0px;
+        text-align: left;
+        width: 100%;
+        font-size: 16px;
+    }
+    .sidemenuedit .profileinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .sidemenuedit .profileinputline{
+        margin: 5% auto;
+    }
+    .sidemenuedit .profileinputline.active i {
+        opacity: 1.0;
+    }
+    .profileinputline{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+    .profileinputline h3, .profileinputline h2{
+        margin: 1% 2% 0% 2%;
+        text-align: left;
+    }
+    .profileinputline button{
+        margin: 1% 10% 0% 2%;
+    }
+    .mainmenuedit{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+    }
+    .mainmenuedit .profileinputline{
+        margin: 1% 0%;
+        font-size: 16px;
+    }
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+        margin: 1% 0%;
+        font-size: 12px;
+        border-radius: 5px;
+        padding-left: 10px;
+        height: 25px;
+        width: 60%;
+    }
+    .profileinputline.radio{
+        font-size: 14px;
+    }
+    .space{
+        margin: 0% 1%;
+    }
+    .mainmenuedit h3, .mainmenuedit h4, .mainmenuedit button,.mainmenuedit h3{
+        width: 45%;
+        overflow: auto;
+        font-size: 14px;
+    }
+    .horizontal-menuedit{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .grid-item.item9.menuedit button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 25px;
+        color: white;
+        font-size: 14px;
+    }
+}
 /*checkoutmenu*/
 
 .menu1{/*caixa preta da esquerda*/
@@ -1960,6 +2619,1928 @@ li a{
         margin-top: auto;
     }
 }
+
+/*admin orders*/
+@media (min-width: 2560px){
+    .sidemenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 30px;
+    }
+    .sidemenu .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenu .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenu .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenu .checkoutinputline{
+        width: 60%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenu .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 22px;
+    }
+    .mainmenu .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenu h3, .mainmenu h4, .mainmenu button,.upmainmenu h3{
+        width: 11.11%;
+        overflow: auto;
+    }
+    .horizontal-adorder{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenu{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 22px;
+    }
+    .upmainmenu .btnnew{
+        width: 66.67%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenu button{
+        width: 11.11%;
+        margin-right: 25px;
+    }
+    .grid-item.item9.adorder button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 22px;
+    }
+    .upmainmenu h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 1440px ) and (max-width: 2559px){
+    .sidemenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 14px;
+    }
+    .sidemenu .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenu .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenu .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenu .checkoutinputline{
+        width: 60%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenu .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 16px;
+    }
+    .mainmenu .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenu h3, .mainmenu h4, .mainmenu button,.upmainmenu h3{
+        width: 11.11%;
+        overflow: auto;
+    }
+    .horizontal-adorder{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenu{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 16px;
+    }
+    .upmainmenu .btnnew{
+        width: 66.67%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenu button{
+        width: 11.11%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adorder button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 16px;
+    }
+    .upmainmenu h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 1024px ) and (max-width: 1439px){
+    .sidemenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 12px;
+    }
+    .sidemenu .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenu .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenu .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenu .checkoutinputline{
+        width: 80%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenu .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 12px;
+    }
+    .mainmenu .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenu h3, .mainmenu h4, .mainmenu button,.upmainmenu h3{
+        width: 11.11%;
+        overflow: auto;
+    }
+    .horizontal-adorder{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenu{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 12px;
+    }
+    .upmainmenu .btnnew{
+        width: 66.67%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenu button{
+        width: 11.11%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adorder button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 12px;
+    }
+    .upmainmenu h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 768px ) and (max-width: 1023px){
+    .sidemenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 10px;
+    }
+    .sidemenu .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenu .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenu .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenu .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenu .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 10px;
+    }
+    .mainmenu .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenu h3, .mainmenu h4, .mainmenu button,.upmainmenu h3{
+        width: 11.11%;
+        overflow: auto;
+    }
+    .horizontal-adorder{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenu{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenu .btnnew{
+        width: 66.67%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenu button{
+        width: 11.11%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adorder button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 10px;
+    }
+    .upmainmenu h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 425px ) and (max-width: 767px){
+    .grid-item.item2.adorder{
+        grid-column: span 1;
+    }
+    .grid-item.item1.adorder{
+        display: none;
+    }
+    .grid-item.item9.adorder{
+        grid-column: span 2;
+    }
+    .sidemenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 10px;
+    }
+    .sidemenu .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenu .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenu .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenu .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenu .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 8px;
+    }
+    .mainmenu .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenu h3, .mainmenu h4, .mainmenu button{
+        width: 15%;
+        overflow: auto;
+    }
+    .upmainmenu h3{
+        width: 30%;
+        overflow: auto;
+    }
+    .horizontal-adorder{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenu{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenu .btnnew{
+        width: 40%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenu button{
+        width: 60%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adorder button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 20px;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenu h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 375px ) and (max-width: 424px){
+    .grid-item.item2.adorder{
+        grid-column: span 1;
+    }
+    .grid-item.item1.adorder{
+        display: none;
+    }
+    .grid-item.item9.adorder{
+        grid-column: span 1;
+    }
+    .sidemenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 10px;
+    }
+    .sidemenu .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenu .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenu .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenu .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenu .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 10px;
+    }
+    .mainmenu .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenu h3, .mainmenu h4, .mainmenu button{
+        width: 100%;
+        overflow: auto;
+    }
+    .upmainmenu h3{
+        width: 30%;
+        overflow: auto;
+    }
+    .horizontal-adorder{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenu{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenu .btnnew{
+        width: 40%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenu button{
+        width: 60%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adorder button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 20px;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenu h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 320px ) and (max-width: 374px){
+    .grid-item.item2.adorder{
+        grid-column: span 1;
+    }
+    .grid-item.item1.adorder{
+        display: none;
+    }
+    .grid-item.item9.adorder{
+        grid-column: span 1;
+    }
+    .sidemenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 8px;
+    }
+    .sidemenu .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenu .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenu .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenu .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenu .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenu{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 10px;
+    }
+    .mainmenu .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenu h3, .mainmenu h4, .mainmenu button{
+        width: 100%;
+        overflow: auto;
+    }
+    .upmainmenu h3{
+        width: 30%;
+        overflow: auto;
+    }
+    .horizontal-adorder{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenu{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenu .btnnew{
+        width: 40%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenu button{
+        width: 60%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adorder button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 20px;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenu h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+/*admin clients*/
+@media (min-width: 2560px){
+    .sidemenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 30px;
+    }
+    .sidemenuclient .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuclient .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuclient .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuclient .checkoutinputline{
+        width: 60%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuclient .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        color: white;
+        font-size: 25px;
+    }
+    .mainmenuclient .checkoutinputline{
+        margin: 1% 0%;
+        width: 100%;
+    }
+    .mainmenuclient h3, .mainmenuclient h4, .mainmenuclient button,.upmainmenuclient h3{
+        width: 12.5%;
+        overflow: auto;
+    }
+    .horizontal-adclient{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuclient{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 22px;
+    }
+    .upmainmenuclient .checkoutinputline{
+        width: 100%;
+    }
+    .upmainmenuclient .btnnewclient{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+    }
+    .upmainmenuclient button{
+        width: 12.5%;
+    }
+    .grid-item.item9.adclient button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 22px;
+    }
+    .upmainmenuclient h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 1440px ) and (max-width: 2559px){
+    .sidemenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 20px;
+    }
+    .sidemenuclient .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuclient .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuclient .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuclient .checkoutinputline{
+        width: 60%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuclient .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        color: white;
+        font-size: 20px;
+    }
+    .mainmenuclient .checkoutinputline{
+        margin: 1% 0%;
+        width: 100%;
+    }
+    .mainmenuclient h3, .mainmenuclient h4, .mainmenuclient button,.upmainmenuclient h3{
+        width: 12.5%;
+        overflow: auto;
+    }
+    .horizontal-adclient{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuclient{
+        margin-bottom: 1%;
+        color: white;
+    }
+    .upmainmenuclient .checkoutinputline{
+        width: 100%;
+    }
+    .upmainmenuclient .btnnewclient{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+    }
+    .upmainmenuclient button{
+        width: 12.5%;
+    }
+    .grid-item.item9.adclient button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 20px;
+    }
+    .upmainmenuclient h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 1024px ) and (max-width: 1439px){
+    .grid-item.item2.adclient{
+        grid-column: span 3;
+    }
+    .grid-item.item1.adclient{
+        display: none;
+    }
+    
+    .sidemenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 16px;
+    }
+    .sidemenuclient .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuclient .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuclient .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuclient .checkoutinputline{
+        width: 60%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuclient .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        color: white;
+        font-size: 14px;
+    }
+    .mainmenuclient .checkoutinputline{
+        margin: 1% 0%;
+        width: 100%;
+    }
+    .mainmenuclient h3, .mainmenuclient h4, .mainmenuclient button,.upmainmenuclient h3{
+        width: 12.5%;
+        overflow: auto;
+    }
+    .horizontal-adclient{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuclient{
+        margin-bottom: 1%;
+        color: white;
+    }
+    .upmainmenuclient .checkoutinputline{
+        width: 100%;
+    }
+    .upmainmenuclient .btnnewclient{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+    }
+    .upmainmenuclient button{
+        width: 12.5%;
+    }
+    .grid-item.item9.adclient button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 14px;
+    }
+    .upmainmenuclient h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 768px ) and (max-width: 1023px){
+    .grid-item.item2.adclient{
+        grid-column: span 3;
+    }
+    .grid-item.item1.adclient{
+        display: none;
+    }
+    
+    .sidemenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 14px;
+    }
+    .sidemenuclient .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuclient .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuclient .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuclient .checkoutinputline{
+        width: 80%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuclient .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        color: white;
+        font-size: 11px;
+    }
+    .mainmenuclient .checkoutinputline{
+        margin: 1% 0%;
+        width: 100%;
+    }
+    .mainmenuclient h3, .mainmenuclient h4, .mainmenuclient button,.upmainmenuclient h3{
+        width: 12.5%;
+        overflow: auto;
+    }
+    .horizontal-adclient{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuclient{
+        margin-bottom: 1%;
+        color: white;
+    }
+    .upmainmenuclient .checkoutinputline{
+        width: 100%;
+    }
+    .upmainmenuclient .btnnewclient{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+    }
+    .upmainmenuclient button{
+        width: 12.5%;
+    }
+    .grid-item.item9.adclient button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 11px;
+    }
+    .upmainmenuclient h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 425px ) and (max-width: 767px){
+    .grid-item.item2.adclient{
+        grid-column: span 1;
+    }
+    .grid-item.item1.adclient{
+        display: none;
+    }
+    .grid-item.item9.adclient{
+        grid-column: span 2;
+    }
+    
+    .sidemenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 14px;
+    }
+    .sidemenuclient .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuclient .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuclient .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuclient .checkoutinputline{
+        width: 80%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuclient .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        color: white;
+        font-size: 9px;
+    }
+    .mainmenuclient .checkoutinputline{
+        margin: 1% 0%;
+        width: 100%;
+    }
+    .mainmenuclient h3, .mainmenuclient h4, .mainmenuclient button,.upmainmenuclient h3{
+        width: 12.5%;
+        overflow: auto;
+    }
+    .horizontal-adclient{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuclient{
+        margin-bottom: 1%;
+        color: white;
+    }
+    .upmainmenuclient .checkoutinputline{
+        width: 100%;
+    }
+    .upmainmenuclient .btnnewclient{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+    }
+    .upmainmenuclient button{
+        width: 12.5%;
+    }
+    .grid-item.item9.adclient button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 25px;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenuclient h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 375px ) and (max-width: 424px){
+    .grid-item.item2.adclient{
+        grid-column: span 1;
+    }
+    .grid-item.item1.adclient{
+        display: none;
+    }
+    .grid-item.item9.adclient{
+        grid-column: span 1;
+    }
+    
+    .sidemenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 10px;
+    }
+    .sidemenuclient .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuclient .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuclient .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuclient .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuclient .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        color: white;
+        font-size: 7px;
+    }
+    .mainmenuclient .checkoutinputline{
+        margin: 1% 0%;
+        width: 100%;
+    }
+    .mainmenuclient h3, .mainmenuclient h4, .mainmenuclient button,.upmainmenuclient h3{
+        width: 12.5%;
+        overflow: auto;
+    }
+    .horizontal-adclient{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuclient{
+        margin-bottom: 1%;
+        color: white;
+    }
+    .upmainmenuclient .checkoutinputline{
+        width: 100%;
+    }
+    .upmainmenuclient .btnnewclient{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+    }
+    .upmainmenuclient button{
+        width: 12.5%;
+    }
+    .grid-item.item9.adclient button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 25px;
+        color: white;
+        font-size: 7px;
+    }
+    .upmainmenuclient h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 320px ) and (max-width: 374px){
+    .grid-item.item2.adclient{
+        grid-column: span 1;
+    }
+    .grid-item.item1.adclient{
+        display: none;
+    }
+    .grid-item.item9.adclient{
+        grid-column: span 1;
+    }
+    
+    .sidemenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 10px;
+    }
+    .sidemenuclient .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuclient .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuclient .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuclient .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuclient .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuclient{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        color: white;
+        font-size: 10px;
+    }
+    .mainmenuclient .checkoutinputline{
+        margin: 1% 0%;
+        width: 100%;
+    }
+    .mainmenuclient h3, .mainmenuclient h4, .mainmenuclient button,.upmainmenuclient h3{
+        width: 12.5%;
+        overflow: auto;
+    }
+    .horizontal-adclient{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuclient{
+        margin-bottom: 1%;
+        color: white;
+    }
+    .upmainmenuclient .checkoutinputline{
+        width: 100%;
+    }
+    .upmainmenuclient .btnnewclient{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+    }
+    .upmainmenuclient button{
+        width: 12.5%;
+    }
+    .grid-item.item9.adclient button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 15px;
+        color: white;
+        font-size: 10px;
+    }
+    .upmainmenuclient h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+/*admin products*/
+@media (min-width: 2560px){
+    .sidemenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 30px;
+    }
+    .sidemenuproduct .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuproduct .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuproduct .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuproduct .checkoutinputline{
+        width: 60%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuproduct .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 22px;
+    }
+    .mainmenuproduct .checkoutinputline{
+        margin: 1% 0%;
+        width: 100%;
+    }
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3{
+        width: 11.11%;
+        overflow: auto;
+    }
+    .horizontal-adproduct{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuproduct{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 22px;
+    }
+    .upmainmenuproduct .btnnewproduct{
+        width: 66.67%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenuproduct button{
+        width: 11.11%;
+        margin-right: 25px;
+    }
+    .grid-item.item9.adproduct button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 22px;
+    }
+    .upmainmenuproduct h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 1440px ) and (max-width: 2559px){
+    .sidemenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 14px;
+    }
+    .sidemenuproduct .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuproduct .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuproduct .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuproduct .checkoutinputline{
+        width: 60%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuproduct .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 16px;
+    }
+    .mainmenuproduct .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3{
+        width: 11.11%;
+        overflow: auto;
+    }
+    .horizontal-adproduct{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuproduct{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 16px;
+    }
+    .upmainmenuproduct .btnnewproduct{
+        width: 66.67%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenuproduct button{
+        width: 11.11%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adproduct button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 16px;
+    }
+    .upmainmenuproduct h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 1024px ) and (max-width: 1439px){
+    .sidemenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 12px;
+    }
+    .sidemenuproduct .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuproduct .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuproduct .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuproduct .checkoutinputline{
+        width: 80%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuproduct .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 12px;
+    }
+    .mainmenuproduct .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3{
+        width: 11.11%;
+        overflow: auto;
+    }
+    .horizontal-adproduct{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuproduct{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 12px;
+    }
+    .upmainmenuproduct .btnnewproduct{
+        width: 66.67%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenuproduct button{
+        width: 11.11%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adproduct button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 12px;
+    }
+    .upmainmenuproduct h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 768px ) and (max-width: 1023px){
+    .sidemenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 10px;
+    }
+    .sidemenuproduct .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuproduct .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuproduct .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuproduct .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuproduct .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 10px;
+    }
+    .mainmenuproduct .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3{
+        width: 11.11%;
+        overflow: auto;
+    }
+    .horizontal-adproduct{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuproduct{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenuproduct .btnnewproduct{
+        width: 66.67%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenuproduct button{
+        width: 11.11%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adproduct button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 35px;
+        color: white;
+        font-size: 10px;
+    }
+    .upmainmenuproduct h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 425px ) and (max-width: 767px){
+    .grid-item.item2.adproduct{
+        grid-column: span 1;
+    }
+    .grid-item.item1.adproduct{
+        display: none;
+    }
+    .grid-item.item9.adproduct{
+        grid-column: span 2;
+    }
+    .sidemenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 10px;
+    }
+    .sidemenuproduct .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuproduct .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuproduct .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuproduct .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuproduct .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 8px;
+    }
+    .mainmenuproduct .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button{
+        width: 15%;
+        overflow: auto;
+    }
+    .upmainmenuproduct h3{
+        width: 30%;
+        overflow: auto;
+    }
+    .horizontal-adproduct{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuproduct{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenuproduct .btnnewproduct{
+        width: 40%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenuproduct button{
+        width: 60%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adproduct button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 20px;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenuproduct h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 375px ) and (max-width: 424px){
+    .grid-item.item2.adproduct{
+        grid-column: span 1;
+    }
+    .grid-item.item1.adproduct{
+        display: none;
+    }
+    .grid-item.item9.adproduct{
+        grid-column: span 1;
+    }
+    .sidemenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 10px;
+    }
+    .sidemenuproduct .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuproduct .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuproduct .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuproduct .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuproduct .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 10px;
+    }
+    .mainmenuproduct .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button{
+        width: 100%;
+        overflow: auto;
+    }
+    .upmainmenuproduct h3{
+        width: 30%;
+        overflow: auto;
+    }
+    .horizontal-adproduct{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuproduct{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenuproduct .btnnewproduct{
+        width: 40%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenuproduct button{
+        width: 60%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adproduct button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 20px;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenuproduct h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+@media (min-width: 320px ) and (max-width: 374px){
+    .grid-item.item2.adproduct{
+        grid-column: span 1;
+    }
+    .grid-item.item1.adproduct{
+        display: none;
+    }
+    .grid-item.item9.adproduct{
+        grid-column: span 1;
+    }
+    .sidemenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        color: white;
+        font-size: 8px;
+    }
+    .sidemenuproduct .checkoutinputline i{
+        color: #FF7352;
+        opacity: 1.0;
+    }
+    .sidemenuproduct .checkoutinputline h3{
+        margin-top: 40px;
+    }
+    .sidemenuproduct .checkoutinputline.active{
+        background-color: #FF7352;
+        opacity: 0.25;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 5%;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .sidemenuproduct .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+    }
+    .sidemenuproduct .checkoutinputline.active i {
+        opacity: 1.0;
+    }
+    .mainmenuproduct{
+        width: 100%;
+        height: 100vh;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 10px;
+    }
+    .mainmenuproduct .checkoutinputline{
+        margin: 1% 0%;
+    }
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button{
+        width: 100%;
+        overflow: auto;
+    }
+    .upmainmenuproduct h3{
+        width: 30%;
+        overflow: auto;
+    }
+    .horizontal-adproduct{
+        border-bottom: 1px solid white;
+        width: 100%;
+    }
+    .upmainmenuproduct{
+        margin-bottom: 1%;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenuproduct .btnnewproduct{
+        width: 40%;
+        display: flex;
+        justify-content: right;
+    }
+    .upmainmenuproduct button{
+        width: 60%;
+        margin-right: 16px;
+    }
+    .grid-item.item9.adproduct button{
+        background-color: #FF7352;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        height: 20px;
+        color: white;
+        font-size: 8px;
+    }
+    .upmainmenuproduct h3.active{
+        color: #FF7352;
+        border-bottom: 1px solid #FF7352;
+    }
+}
+ 
+
     /*   NEWSLETTER   */
 
 .container-newsletter{
