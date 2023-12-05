@@ -23,3 +23,4 @@ Route::get('/adminorders', [MainController::class, 'adminorders'])->name('admino
 Route::get('/adminclients', [MainController::class, 'adminclients'])->name('adminclients');
 Route::get('/adminproducts', [MainController::class, 'adminproducts'])->name('adminproducts');
 Route::get('/editprofile', [MainController::class, 'editprofile'])->name('editprofile');
+

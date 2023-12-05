@@ -19,18 +19,17 @@ class MainController extends Controller
     }
     public function Menucheckout() {
         return view('menu-checkout');
-    }
-    public function AdminOrders() {
-        return view('adminorders');
-    }
-    public function AdminClients() {
-        return view('adminclients');
-    }
-    public function AdminProducts() {
-        return view('adminproducts');
-    }
-    public function EditProfile() {
-        return view('editprofile');
-    }
-   
+}
+public function AdminOrders() {
+    return view('adminorders');
+}
+public function AdminClients() {
+    return view('adminclients');
+}
+public function AdminProducts() {
+    return view('adminproducts');
+}
+public function EditProfile() {
+    return view('editprofile');
+}
 }
