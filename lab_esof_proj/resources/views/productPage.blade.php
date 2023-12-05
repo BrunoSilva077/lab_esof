@@ -43,7 +43,7 @@
             </div>
             <div class="detalhes-produto">
                 <div class="opcoes">
-                    <a class="">Detalhes do produto</a>
+                    <a class="selected">Detalhes do produto</a>
                     <a class="">Avaliacoes</a>
                 </div>
                 <hr class="barra-opcoes">
@@ -59,6 +59,12 @@
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
+                    </div>
+                    <div class="escrever-comentario">
+                        <form>
+                            <textarea name="comentario" id="comentario" placeholder="leave your review..."></textarea>
+                            <button class="enviar-comentario-btn">Enviar</button>
+                        </form>
                     </div>
                     <div class="nome-produto">
                         <a>Iphone14 black</a>

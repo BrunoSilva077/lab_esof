@@ -10,12 +10,12 @@
     <!-- Fancybox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <!-- <script src="{{ asset('js/navbar.js') }}"></script> -->
+    <script src="{{ asset('js/facybox-init.js') }}"></script>    
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>@yield('title')</title>
 </head>
 <body>
-    @include('includes.header')
+    @include('includes.navbarAdmin')
     <main>
         @yield('content')
     </main>

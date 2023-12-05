@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="grid-container newsletter">
-        <div class="grid-item item1"></div>
+        <div class="grid-item item1 left-side"></div>
         <div class="grid-item item5 img">
             <img src="img/newsletter/newsletter.png" alt="newsletter.png">
         </div>
