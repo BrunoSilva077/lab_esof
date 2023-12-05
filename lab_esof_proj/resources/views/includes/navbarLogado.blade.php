@@ -8,7 +8,7 @@
                     <ul class="ul-container-menu">
                         <div class="group-li">
                             <li>
-                                <a href="{{ route('login') }}">Login/Register</a>
+                                <a href="#profile">Profile</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -16,14 +16,21 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="{{ route('login') }}">Favorites</a>
+                                <a href="#favorites">Favorites</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li history">
                             <li>
-                                <a href="{{ route('login') }}">Purchase History</a>
+                                <a href="#history">Purchase History</a>
+                                <i class="fas fa-chevron-right"></i>
+                            </li>
+                        </div>
+                        <hr class="user-menu-hr">
+                        <div class="group-li">
+                            <li>
+                                <a href="#logout">Logout</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -39,9 +46,9 @@
         </div>
         <div class="user-menu">
                     <ul class="ul-container-menu">
-                        <div class="group-li">
+                    <div class="group-li">
                             <li>
-                                <a href="{{ route('login') }}">Login/Register</a>
+                                <a href="#profile">Profile</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -49,14 +56,21 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="{{ route('login') }}">Favorites</a>
+                                <a href="#favorites">Favorites</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li history">
                             <li>
-                                <a href="{{ route('login') }}">Purchase History</a>
+                                <a href="#history">Purchase History</a>
+                                <i class="fas fa-chevron-right"></i>
+                            </li>
+                        </div>
+                        <hr class="user-menu-hr">
+                        <div class="group-li">
+                            <li>
+                                <a href="#logout">Logout</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
