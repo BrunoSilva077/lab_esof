@@ -18,7 +18,16 @@ class MainController extends Controller
         return view('newsletter');
     }
 
-    public function ProductPage() {
-        return view('productPage');
+
+    public function About() {
+        return view('about');
+    }
+
+    public function Contact() {
+        return view('contact');
+    }
+
+    public function products() {
+        return view('products');
     }
 }
