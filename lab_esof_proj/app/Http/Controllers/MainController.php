@@ -17,4 +17,8 @@ class MainController extends Controller
     public function Newsletter() {
         return view('newsletter');
     }
+
+    public function ProductPage() {
+        return view('productPage');
+    }
 }
