@@ -22,7 +22,6 @@
             </div>
         </div>
 
-
         <div class="grid-item item12 about">
             <div class="About-container"> 
                 <div class="titAbout">
