@@ -30,4 +30,8 @@ class MainController extends Controller
     public function products() {
         return view('products');
     }
+
+    public function ProductPage() {
+        return view('productPage');
+}
 }

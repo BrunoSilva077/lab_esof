@@ -22,4 +22,4 @@ Route::get('/newsletter', [MainController::class, 'newsletter'])->name('newslett
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/products', [MainController::class, 'products'])->name('products');
-
+Route::get('/product-page', [MainController::class, 'productPage'])->name('productPage');
