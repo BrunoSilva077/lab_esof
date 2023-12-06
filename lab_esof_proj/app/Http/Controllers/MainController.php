@@ -18,6 +18,7 @@ class MainController extends Controller
         return view('newsletter');
     }
 
+
     public function About() {
         return view('about');
     }

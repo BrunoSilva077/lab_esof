@@ -18,6 +18,8 @@ Route::get('/', [MainController::class, 'home'])->name('home');
 Route::get('/home', [MainController::class, 'home'])->name('home');
 Route::get('/login', [MainController::class, 'login'])->name('login');
 Route::get('/newsletter', [MainController::class, 'newsletter'])->name('newsletter');
+
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/products', [MainController::class, 'products'])->name('products');
+
