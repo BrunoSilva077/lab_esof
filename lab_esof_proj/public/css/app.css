@@ -601,9 +601,11 @@ li a{
     margin-left: 10%;
     margin-right: 10%;
     background-color: white;
-    display: flex;
-    flex-direction: row;
     border-radius: 20px;
+}
+
+.img-contact{
+    width: 100%;
 }
 
 .Form-Contact{
@@ -655,9 +657,6 @@ li a{
     margin: 4% 12% 4% 12%;
 }
 
-.grid-item.item6.cont{
-    background-color: white;
-}
 
 @media(min-width:2560px){
     .contact-title{
@@ -688,6 +687,7 @@ li a{
 }
 
 /* Products */
+
 
 .grid-item.item3.products{
     border-radius: 30px;
@@ -727,6 +727,12 @@ li a{
     margin-right: 7%;
     width: 100%;
     text-align: right;
+}
+
+.img-prod img{
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
 }
 
 .fa-solid.fa-chevron-down{
@@ -953,6 +959,11 @@ li a{
     height: 50%;
     margin:auto;
     margin-top: 4%;
+    width: 100%;
+  }
+
+  .img-prod image{
+    width: 100%;
   }
 
   .text-prod{

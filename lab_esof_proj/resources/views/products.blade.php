@@ -122,7 +122,29 @@
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="img-prod">
-                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                    <img src="img/products/iphone14.jpg">
+                </div> 
+                
+                <div class="text-prod">
+                    Iphone 14
+                </div>
+                <div class="precfrab-prod">
+                    PVPR: 899€
+                </div>
+                <div class="prec-prod">
+                    699.99€
+                </div>
+                <div class="stock-prod">
+                    <i class="fa-solid fa-circle-check"></i>In Stock
+                </div>
+            </div>
+            
+            <div class="each-prod">
+                <div class="fav-prod">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="img-prod">
+                    <img src="img/products/iphone14.jpg"></i>
                 </div>
                 <div class="text-prod">
                     Iphone 14
@@ -143,28 +165,7 @@
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="img-prod">
-                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
-                </div>
-                <div class="text-prod">
-                    Iphone 14
-                </div>
-                <div class="precfrab-prod">
-                    PVPR: 899€
-                </div>
-                <div class="prec-prod">
-                    699.99€
-                </div>
-                <div class="stock-prod">
-                    <i class="fa-solid fa-circle-check"></i>In Stock
-                </div>
-            </div>
-            
-            <div class="each-prod">
-                <div class="fav-prod">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="img-prod">
-                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                    <img src="img/products/iphone14.jpg"></i>
                 </div>
                 <div class="text-prod">
                     Iphone 14
@@ -184,7 +185,7 @@
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="img-prod">
-                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                    <img src="img/products/iphone14.jpg"></i>
                 </div>
                 <div class="text-prod">
                     Iphone 14
@@ -204,7 +205,7 @@
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="img-prod">
-                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                    <img src="img/products/iphone14.jpg"></i>
                 </div>
                 <div class="text-prod">
                     Iphone 14
@@ -224,7 +225,7 @@
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="img-prod">
-                    <img src="https://www.shutterstock.com/image-photo/mobile-phone-premium-png-digital-600nw-2240659385.jpg"></i>
+                    <img src="img/products/iphone14.jpg"></i>
                 </div>
                 <div class="text-prod">
                     Iphone 14
@@ -238,7 +239,7 @@
                 <div class="stock-prod">
                     <i class="fa-solid fa-circle-check"></i>In Stock
                 </div>
-            </div>
+            </div> 
             
 
         </div> 
