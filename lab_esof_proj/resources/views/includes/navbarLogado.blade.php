@@ -216,7 +216,7 @@
                     <li class="btn"><a href="/home">Home</a></li>
                 </ul>
             </div>
-            <div class="grid-item item1 products">
+            <div class="grid-item item1 products-options">
                 <ul class="ul-container">
                     <li class="btn"><a href="#products">Products</a></li>
                 </ul>

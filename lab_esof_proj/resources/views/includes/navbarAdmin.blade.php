@@ -53,19 +53,19 @@
         </div>
         <div class="user-menu">
                 <ul class="ul-container-menu">
-                    <div class="group-li">
+                        <div class="group-li">
                             <li>
                                 <a href="#profile">Profile</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
-                    </div>
-                    <div class="group-li">
+                        </div>
+                        <hr class="user-menu-hr">
+                        <div class="group-li">
                             <li>
                                 <a href="#profile">Admin Panel</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
-                    </div>
-                        
+                        </div>
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
@@ -229,7 +229,7 @@
                     <li class="btn"><a href="/home">Home</a></li>
                 </ul>
             </div>
-            <div class="grid-item item1 products">
+            <div class="grid-item item1 products-options">
                 <ul class="ul-container">
                     <li class="btn"><a href="#products">Products</a></li>
                 </ul>
