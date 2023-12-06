@@ -33,5 +33,23 @@ class MainController extends Controller
 
     public function ProductPage() {
         return view('productPage');
-}
+    }
+    public function Footer() {
+        return view('footer');
+    }
+    public function Menucheckout() {
+        return view('menu-checkout');
+    }
+    public function Editprofile() {
+        return view('editprofile');
+    }
+    public function AdminOrders() {
+        return view('adminorders');
+    }
+    public function AdminClients() {
+        return view('adminclients');
+    }
+    public function AdminProducts() {
+        return view('adminproducts');
+    }
 }
