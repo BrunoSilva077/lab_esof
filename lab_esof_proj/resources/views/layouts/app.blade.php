@@ -15,7 +15,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    @include('includes.navbarAdmin')
+    @include('includes.header')
     <main>
         @yield('content')
     </main>
