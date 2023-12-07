@@ -25,6 +25,7 @@
                     <ul class="ul-container-footer">
                         <li class="btn"><a href="#home">Home</a></li>
                         <li class="btn"><a href="#products">Products</a></li>
+                        <li class="btn"><a href="#products">About us</a></li>
                         <li class="btn"><a href="#contacts">Contact us</a></li>
                     </ul>
                     <div class="horizontal-line2"></div>

@@ -5,31 +5,34 @@
             <i class="fas fa-times" onclick="closeCart(this)"></i>
         </div>
         <div class="user-menu">
-                    <ul class="ul-container-menu">
-                        <div class="group-li">
-                            <li>
-                                <a href="{{ route('login') }}">Login/Register</a>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
+                <ul class="ul-container-menu">
+                    <div class="group-li">
+                        <input type="text" placeholder="Search.." name="search">
+                    </div>
+                    <div class="group-li">
+                        <li>
+                            <a href="{{ route('login') }}">Login/Register</a>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                    </div>
                         
-                        <hr class="user-menu-hr">
-                        <div class="group-li">
-                            <li>
-                                <a href="{{ route('login') }}">Favorites</a>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-                        <div class="group-li history">
-                            <li>
-                                <a href="{{ route('login') }}">Purchase History</a>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-                    </ul>
-                </div>
+                    <hr class="user-menu-hr">
+                    <div class="group-li">
+                        <li>
+                            <a href="{{ route('login') }}">Favorites</a>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                    </div>
+                    <hr class="user-menu-hr">
+                    <div class="group-li history">
+                        <li>
+                            <a href="{{ route('login') }}">Purchase History</a>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                    </div>
+                    <hr class="user-menu-hr">
+                </ul>
+        </div>
     </div>
 
     <div class="side-cart responsive-menu">
@@ -39,6 +42,9 @@
         </div>
         <div class="user-menu">
                     <ul class="ul-container-menu">
+                        <div class="group-li">
+                            <input type="text" placeholder="Search.." name="search">
+                        </div>
                         <div class="group-li">
                             <li>
                                 <a href="{{ route('login') }}">Login/Register</a>

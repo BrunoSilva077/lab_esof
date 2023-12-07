@@ -338,6 +338,10 @@ body{
     padding: 2%;
 }
 
+.group-li input{
+    display: none;
+}
+
 @media (min-width: 320px) and (max-width: 374px) {
     .grid-container {
       grid-template-columns: repeat(2, 1fr);
@@ -352,9 +356,15 @@ body{
         grid-column: span 2;
     }
 
+    .responsive-menu .group-li input{
+        display: block;
+        padding: 10px;
+    }
+
+
     .side-cart{
-        width: 70%;
-        right: -70%; /* Posição inicial fora da tela */
+        width: 100%;
+        right: -100%; /* Posição inicial fora da tela */
         z-index: 1;
     }
 
@@ -435,9 +445,15 @@ body{
         grid-column: span 1;
     }
 
+    .responsive-menu .group-li input{
+        display: block;
+        padding: 10px;
+    }
+
+
     .side-cart{
-        width: 70%;
-        right: -70%; /* Posição inicial fora da tela */
+        width: 100%;
+        right: -100%; /* Posição inicial fora da tela */
         z-index: 1;
     }
 
@@ -540,66 +556,18 @@ body{
         grid-column: span 1;
     }
 
+    .responsive-menu .group-li input{
+        display: block;
+        padding: 10px;
+    }
+
     .side-cart{
-        width: 60%;
-        right: -60%; /* Posição inicial fora da tela */
+        width: 100%;
+        right: -100%; /* Posição inicial fora da tela */
         z-index: 1;
     }
 
-    /* .user-menu-item{
-        grid-column: span 3;
-        display: none;
-    } */
-
-    /* .item-space{
-        display: none;
-    } */
-
-    /* .grid-item.item1{
-        grid-column: span 1;
-    } */
-
-    /* .grid-item.item2.responsive-menu-options{
-        grid-column: span 3;
-    } */
-    
-    /* .responsive-menu-options{
-        width: 100%;
-        background-color: #DFDFDF;
-        transition: all 5s ease;
-    } */
-    
-    /* .grid-item.item2.responsive-input input{
-        padding: 3% 0%;
-        width: 100%;
-        outline: none;
-        border: none;
-    } */
-
-    /* .grid-item.item2.responsive-menu{
-        grid-column: span 3;
-    }
-
-    .grid-item.item2.responsive-input{
-        grid-column: span 3;
-    } */
-    
-    /* .grid-item.item2.responsive-input input{
-        width: 100%;
-        outline: none;
-        border: none;
-    } */
-/* 
-    .grid-item.item2.grid-item.item2.responsive-menu .ul-container{
-        position: static;
-        justify-content: flex-start;
-    } */
-
-    /* .grid-item.item1.search .cart-container{
-        display: none;
-    } */
-
-    .search-container input[type=text], textarea{
+    .search-container input[type=text], textarea,.search-cart-container .search-container{
         display: none;
     }
 
@@ -673,16 +641,17 @@ body{
         grid-column: span 1;
     }
 
-    /* .user-menu-item{
-        display: none;
-    } */
+    .group-li input{
+        display: block;
+        padding: 10px;
+    }
 
     .search-cart-container{
         display: flex;
         flex-direction: row;
     }
 
-    .search-container input[type=text], textarea,.grid-item.item1.menu{
+    .search-container input[type=text], textarea,.grid-item.item1.menu,.search-cart-container .search-container{
         display: none;
     }
 
@@ -2042,7 +2011,7 @@ body{
   .productf{
     border-radius: 10px;
     background-color: #333;
-    height: 6%;
+    padding: 2%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -2482,7 +2451,7 @@ body{
         bottom: 0;
     }
     .textnewsletter .newsletter, .item4.footer .newsletter{
-        font-size: 1px;
+        /* font-size: 1px; */
         text-align: left;
     }
     .textnewsletter .newsletter h1, h2{
@@ -6496,6 +6465,15 @@ body{
     max-width: 600px;
     margin: auto;
 }
+.slideshow-container img{
+    object-fit: cover; 
+    object-position: 50% 50%; 
+    width: 100%;
+    cursor: pointer;
+}
+.wrapper .item12{
+    display: block;
+}
 .slide {
     display: none;
 }
@@ -6515,9 +6493,11 @@ body{
 }
 .prev {
     left: 10px;
+    cursor: pointer;
 }
 .next {
     right: 10px;
+    cursor: pointer;
 }
 .trace {
     height: 5px;
@@ -6526,6 +6506,7 @@ body{
     background-color: #bbb;
     display: inline-block;
     transition: background-color 0.6s ease;
+    cursor: pointer;
 }
 .trace.active {
     background-color: white;

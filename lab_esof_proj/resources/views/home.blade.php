@@ -11,13 +11,13 @@
                 <div class="grid-item item12 home">
                 <div class="slideshow-container">
                     <div class="slide fade">
-                        <img src="https://assets.holyart.it/images/BR005319/pt/500/A/SN020798/CLOSEUP01_HD/h-70c42cac/pulseira-terco-dezena-contas-e-cruz-madeira.jpg" alt="Imagem 1">
+                        <img src="img/products/iphone14.jpg" alt="Imagem 1">
                     </div>
                     <div class="slide fade">
-                        <img src="https://assets.holyart.it/images/BR005319/pt/500/A/SN020798/CLOSEUP01_HD/h-70c42cac/pulseira-terco-dezena-contas-e-cruz-madeira.jpg" alt="Imagem 2">
+                    <img src="img/products/iphone14.jpg" alt="Imagem 2">
                     </div>
                     <div class="slide fade">
-                        <img src="https://assets.holyart.it/images/BR005319/pt/500/A/SN020798/CLOSEUP01_HD/h-70c42cac/pulseira-terco-dezena-contas-e-cruz-madeira.jpg" alt="Imagem 3">
+                    <img src="img/products/iphone14.jpg" alt="Imagem 3">
                     </div>
                     <a class="prev" onclick="plusSlides(1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(-1)">&#10095;</a>

@@ -7,6 +7,9 @@
         <div class="user-menu">
                     <ul class="ul-container-menu">
                         <div class="group-li">
+                            <input type="text" placeholder="Search.." name="search">
+                        </div>
+                        <div class="group-li">
                             <li>
                                 <a href="#profile">Profile</a>
                                 <i class="fas fa-chevron-right"></i>
@@ -46,6 +49,9 @@
         </div>
         <div class="user-menu">
                     <ul class="ul-container-menu">
+                        <div class="group-li">
+                            <input type="text" placeholder="Search.." name="search">
+                        </div>
                     <div class="group-li">
                             <li>
                                 <a href="#profile">Profile</a>
@@ -206,7 +212,7 @@
                 </div>
             </div>
         <div class="grid-container">
-            <div class="grid-item item4">
+            <div class="grid-item item4 logo">
                 <div class="logo">
                     <h1></h1>
                 </div>

@@ -219,7 +219,7 @@
                 </div>
             </div>
         <div class="grid-container">
-            <div class="grid-item item4">
+            <div class="grid-item item4 logo">
                 <div class="logo">
                     <h1></h1>
                 </div>
