@@ -11,7 +11,7 @@
                         </div>
                         <div class="group-li">
                             <li>
-                                <a href="#profile">Profile</a>
+                                <a href="{{ route('editprofile') }}">Profile</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -19,14 +19,14 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="#favorites">Favorites</a>
+                                <a href="{{ route('editprofile') }}">Favorites</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li history">
                             <li>
-                                <a href="#history">Purchase History</a>
+                                <a href="{{ route('editprofile') }}">Purchase History</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -57,7 +57,7 @@
                         </div>
                     <div class="group-li">
                             <li>
-                                <a href="#profile">Profile</a>
+                                <a href="{{ route('editprofile') }}">Profile</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -65,14 +65,14 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="#favorites">Favorites</a>
+                                <a href="{{ route('editprofile') }}">Favorites</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li history">
                             <li>
-                                <a href="#history">Purchase History</a>
+                                <a href="{{ route('editprofile') }}">Purchase History</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -95,13 +95,13 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li class="btn">
-                                <a href="/home">Products</a>
+                                <a href="{{ route('products') }}">Products</a>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li class="btn">
-                                <a href="/home">Contact us</a>
+                                <a href="{{ route('contact') }}">Contact us</a>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
@@ -225,17 +225,17 @@
             </div>
             <div class="grid-item item1 home">
                 <ul class="ul-container">
-                    <li class="btn"><a href="/home">Home</a></li>
+                    <li class="btn"><a href="{{ route('home') }}">Home</a></li>
                 </ul>
             </div>
             <div class="grid-item item1 products-options">
                 <ul class="ul-container">
-                    <li class="btn"><a href="#products">Products</a></li>
+                    <li class="btn"><a href="{{ route('products') }}">Products</a></li>
                 </ul>
             </div>
             <div class="grid-item item4 contact">
                 <ul class="ul-container">
-                    <li class="btn"><a href="#contacts">Contact us</a></li>
+                    <li class="btn"><a href="{{ route('contact') }}">Contact us</a></li>
                 </ul>
             </div>
             <div class="grid-item item1 search">

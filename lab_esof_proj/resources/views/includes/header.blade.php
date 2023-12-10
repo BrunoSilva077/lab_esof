@@ -11,7 +11,7 @@
                     </div>
                     <div class="group-li">
                         <li>
-                            <a href="{{ route('register') }}">Login/Register</a>
+                        <a href="{{ route('login') }}">Login/</a><a href="{{ route('register') }}">Register</a>
                             <i class="fas fa-chevron-right"></i>
                         </li>
                     </div>
@@ -47,11 +47,10 @@
                         </div>
                         <div class="group-li">
                             <li>
-                                <a href="{{ route('login') }}">Login/Register</a>
+                                <a href="{{ route('login') }}">Login/</a><a href="{{ route('register') }}">Register</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
-                        
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
