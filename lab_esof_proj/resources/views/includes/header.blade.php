@@ -11,7 +11,7 @@
                     </div>
                     <div class="group-li">
                         <li>
-                            <a href="{{ route('login') }}">Login/Register</a>
+                            <a href="{{ route('register') }}">Login/Register</a>
                             <i class="fas fa-chevron-right"></i>
                         </li>
                     </div>

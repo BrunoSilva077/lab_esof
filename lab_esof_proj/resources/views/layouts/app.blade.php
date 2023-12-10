@@ -15,7 +15,15 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    @include('includes.navbarAdmin')
+@auth
+        @if(auth()->user()->is_admin)
+            @include('includes.navbarAdmin')
+        @else
+            @include('includes.navbarLogado')
+        @endif
+    @else
+        @include('includes.header')
+    @endauth
     <main>
         @yield('content')
     </main>

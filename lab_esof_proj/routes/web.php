@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MainController::class, 'home'])->name('home');
-Route::get('/home', [MainController::class, 'home'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/login', [MainController::class, 'login'])->name('login');
+Route::get('/register', [MainController::class, 'register'])->name('register');
 Route::get('/newsletter', [MainController::class, 'newsletter'])->name('newsletter');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
@@ -25,7 +27,11 @@ Route::get('/productPage', [MainController::class, 'productPage'])->name('produc
 Route::get('/footer', [MainController::class, 'footer'])->name('footer');
 Route::get('/menucheckout', [MainController::class, 'menucheckout'])->name('menucheckout');
 Route::get('/editprofile', [MainController::class, 'editprofile'])->name('editprofile');
-Route::get('/adminorders', [MainController::class, 'adminorders'])->name('adminorders');
-Route::get('/adminclients', [MainController::class, 'adminclients'])->name('adminclients');
-Route::get('/adminproducts', [MainController::class, 'adminproducts'])->name('adminproducts');
+Route::get('/adminorders', [MainController::class, 'adminorders'])->name('adminorders')->middleware('is_admin');
+Route::get('/adminclients', [MainController::class, 'adminclients'])->name('adminclients')->middleware('is_admin');
+Route::get('/adminproducts', [MainController::class, 'adminproducts'])->name('adminproducts')->middleware('is_admin');
 
+
+Auth::routes(['verify' => true]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -37,7 +37,10 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="#logout">Logout</a>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -83,7 +86,10 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="#logout">Logout</a>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
