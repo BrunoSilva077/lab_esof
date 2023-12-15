@@ -22,8 +22,8 @@ Route::resource('products', ProductsController::class);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/login', [MainController::class, 'login'])->name('login');
-Route::get('/register', [MainController::class, 'register'])->name('register');
+// Route::get('/login', [MainController::class, 'login'])->name('login');
+// Route::get('/register', [MainController::class, 'register'])->name('register');
 Route::get('/newsletter', [MainController::class, 'newsletter'])->name('newsletter');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
