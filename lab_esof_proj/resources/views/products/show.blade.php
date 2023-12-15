@@ -10,6 +10,7 @@
         <div class="grid-item item7">
             <div class="images">
                 <div class="up-images">
+                    
                     <a class="fancybox" data-fancybox="gallery" href="img/products/imagem_principal.png">
                         <div class="main-image">
                             <img src="img/products/imagem_principal.png" alt="product1.png">
@@ -49,7 +50,8 @@
                 <hr class="barra-opcoes">
                 <div class="product-text">
                     <a> 
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur inventore et autem, eligendi distinctio at doloribus repudiandae dolorum, maxime pariatur sit dolor architecto maiores eius in? In adipisci beatae cupiditate veritatis aliquam magni velit illo blanditiis possimus odit numquam quaerat, dicta ratione excepturi repellat consequatur est inventore distinctio sequi similique? Aspernatur ratione dolorum eaque itaque adipisci deleniti quam odit fuga, sequi explicabo repellat magnam assumenda iure tempore accusamus ipsam iste magni suscipit. Rem iure tenetur esse natus voluptate voluptatibus saepe sit ut provident cumque repellendus nulla aspernatur sequi, blanditiis laudantium autem officiis pariatur iusto error totam vero itaque deleniti possimus.
+                        <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur inventore et autem, eligendi distinctio at doloribus repudiandae dolorum, maxime pariatur sit dolor architecto maiores eius in? In adipisci beatae cupiditate veritatis aliquam magni velit illo blanditiis possimus odit numquam quaerat, dicta ratione excepturi repellat consequatur est inventore distinctio sequi similique? Aspernatur ratione dolorum eaque itaque adipisci deleniti quam odit fuga, sequi explicabo repellat magnam assumenda iure tempore accusamus ipsam iste magni suscipit. Rem iure tenetur esse natus voluptate voluptatibus saepe sit ut provident cumque repellendus nulla aspernatur sequi, blanditiis laudantium autem officiis pariatur iusto error totam vero itaque deleniti possimus. -->
+                        {{ $product->description }}
                     </a>
                 </div>
                 <div class="avaliacoes">
@@ -67,7 +69,7 @@
                         </form>
                     </div>
                     <div class="nome-produto">
-                        <a>Iphone14 black</a>
+                        <a>{{ $product->name }}</a>
                     </div>
                     <div class="avaliacoes-texto">
 
@@ -90,15 +92,22 @@
         <div class="grid-item item5 sideimage">
             <div class="informacoes-produto">
                 <div class="nome-produto">
-                    <a>Iphone14 black</a>
+                    <a>{{ $product->name }}</a>
                 </div>
                 <div class="preco-produto">
-                    <a>869,00€</a>
+                    <a>{{ $product->price }}€</a>
                 </div>
-                <div class="stock">
+                    @if ($product->active)
+                    <div class="stock in-stock">
                     <i class="fas fa-check-circle"></i>
-                    <a>In stock</a>
-                </div>
+                    <a>{{ $product->stock }} In Stock</a>
+                    </div>
+                    @else
+                    <div class="stock no-stock">
+                    <i class="fas fa-times-circle"></i>
+                    <a>{{ $product->stock }} Out of Stock</a>
+                    </div>
+                    @endif
                 <div class="quantidade-botoes">
                     <div class="quantidade">
                         <button class="menos" onclick="removeProduct()">-</button>

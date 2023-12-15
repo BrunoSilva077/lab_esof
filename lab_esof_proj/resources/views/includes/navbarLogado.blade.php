@@ -95,7 +95,7 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li class="btn">
-                                <a href="{{ route('products') }}">Products</a>
+                                <a href="{{ route('products.index') }}">Products</a>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
@@ -230,7 +230,7 @@
             </div>
             <div class="grid-item item1 products-options">
                 <ul class="ul-container">
-                    <li class="btn"><a href="{{ route('products') }}">Products</a></li>
+                    <li class="btn"><a href="{{ route('products.index') }}">Products</a></li>
                 </ul>
             </div>
             <div class="grid-item item4 contact">
