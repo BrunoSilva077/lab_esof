@@ -17,7 +17,6 @@ class MainController extends Controller
         return view('newsletter');
     }
 
-
     public function About() {
         return view('about');
     }
@@ -41,6 +40,12 @@ class MainController extends Controller
     }
     public function Editprofile() {
         return view('editprofile');
+    }
+    public function Favprofile() {
+        return view('favprofile');
+    }
+    public function Historyprofile() {
+        return view('historyprofile');
     }
     public function AdminOrders() {
         return view('adminorders');

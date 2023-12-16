@@ -2108,16 +2108,12 @@ body{
   .space{
     width: 12.5%;
   }
-
+  
   .fav-prod{
+    margin: 5% 5% 0% 5%;
     display: flex;
-    justify-content: right;
-    margin-right: 5%;
-    margin-top: 5%;
-  }
-
-  .fa-regular.fa-heart{
-    color:white;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .img-prod{
@@ -3777,6 +3773,16 @@ body{
     gap: 20px;
     padding: 0% 5%;
 }
+.btnsave{
+    cursor: pointer;
+}
+.profileinputline a{
+    text-decoration: none;
+    color: white;
+}
+.profileinputline input[type=text]::placeholder{
+    color: white;
+}
 @media (min-width: 2560px) {
     .sidemenuedit{
         width: 100%;
@@ -3937,7 +3943,7 @@ body{
         margin: 1% 0%;
         font-size: 20px;
     }
-    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date],input[type=password]{
         margin: 1% 0%;
         font-size: 20px;
         border-radius: 5px;
@@ -4029,7 +4035,7 @@ body{
         margin: 1% 0%;
         font-size: 20px;
     }
-    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date],input[type=password]{
         margin: 1% 0%;
         font-size: 15px;
         border-radius: 5px;
@@ -4121,7 +4127,7 @@ body{
         margin: 1% 0%;
         font-size: 20px;
     }
-    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date],input[type=password]{
         margin: 1% 0%;
         font-size: 15px;
         border-radius: 5px;
@@ -4224,7 +4230,7 @@ body{
         margin: 1% 0%;
         font-size: 16px;
     }
-    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date],input[type=password]{
         margin: 1% 0%;
         font-size: 12px;
         border-radius: 5px;
@@ -4327,7 +4333,7 @@ body{
         margin: 1% 0%;
         font-size: 16px;
     }
-    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date],input[type=password]{
         margin: 1% 0%;
         font-size: 12px;
         border-radius: 5px;
@@ -4430,7 +4436,7 @@ body{
         margin: 1% 0%;
         font-size: 16px;
     }
-    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date]{
+    .mainmenuedit .profileinputline input[type=text], input[type=email], input[type=date],input[type=password]{
         margin: 1% 0%;
         font-size: 12px;
         border-radius: 5px;
