@@ -10,11 +10,11 @@
         <div class="grid-item item10">
             <div class="container-form">
                 <div class="form-container sign-in">
-                        <h1>Sign In</h1>
                         <form method="POST" action="{{ route('login') }}">
+                        <h1>Sign In</h1>
                         @csrf
                             <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
-                            <input type="password" name="password" placeholder="PassWord" required autocomplete="current-password">
+                            <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

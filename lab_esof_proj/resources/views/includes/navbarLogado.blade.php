@@ -11,7 +11,7 @@
                         </div>
                         <div class="group-li">
                             <li>
-                                <a href="{{ route('editprofile') }}">Profile</a>
+                            <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Profile</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -19,14 +19,14 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="{{ route('editprofile') }}">Favorites</a>
+                                <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Favorites</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li history">
                             <li>
-                                <a href="{{ route('editprofile') }}">Purchase History</a>
+                                <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Purchase History</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -57,7 +57,7 @@
                         </div>
                     <div class="group-li">
                             <li>
-                                <a href="{{ route('editprofile') }}">Profile</a>
+                            <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Profile</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -65,14 +65,14 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="{{ route('editprofile') }}">Favorites</a>
+                                <a href="favprofile">Favorites</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li history">
                             <li>
-                                <a href="{{ route('editprofile') }}">Purchase History</a>
+                                <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Purchase History</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
