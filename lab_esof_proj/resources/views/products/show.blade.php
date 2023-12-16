@@ -10,31 +10,51 @@
         <div class="grid-item item7">
             <div class="images">
                 <div class="up-images">
-                    <a class="fancybox" data-fancybox="gallery" href="img/products/imagem_principal.png">
+                    @forelse($product->images->take(2) as $image)
+                        <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
+                            <div class="main-image">
+                                <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
+                            </div>
+                        </a>
+                        <br>
+                    @empty
+                        <p>Nenhuma imagem disponível para este produto.</p>
+                    @endforelse
+                    <!-- <a class="fancybox" data-fancybox="gallery" href="{{ asset('storage/images/imagem_principal.png') }}">
                         <div class="main-image">
-                            <img src="img/products/imagem_principal.png" alt="product1.png">
+                            <img src="{{ asset('storage/images/imagem_principal.png') }}" alt="product1.png">
                         </div>
                     </a>
                     <br>
-                    <a class="fancybox" data-fancybox="gallery" href="img/products/imagem_principal.png">
+                    <a class="fancybox" data-fancybox="gallery" href="{{ asset('storage/images/imagem_principal.png') }}">
                         <div class="main-image">
-                            <img src="img/products/imagem_principal.png" alt="product1.png">
+                            <img src="{{ asset('storage/images/imagem_principal.png') }}" alt="product1.png">
                         </div>
                     </a>
-                    <br>
+                    <br> -->
                 </div>
                 <div class="down-images">
-                    <a class="fancybox" data-fancybox="gallery" href="img/products/imagem_principal.png">
+                    <!-- <a class="fancybox" data-fancybox="gallery" href="{{ asset('storage/images/iphone14.png') }}">
                         <div class="main-image">
-                            <img src="img/products/imagem_principal.png" alt="product1.png">
+                            <img src="{{ asset('storage/images/iphone14.png') }}" alt="product1.png">
                         </div>
                     </a>
                         <br>
-                    <a class="fancybox" data-fancybox="gallery" href="img/products/imagem_principal.png">
+                    <a class="fancybox" data-fancybox="gallery" href="{{ asset('storage/images/iphone14.png') }}">
                             <div class="main-image">
-                                <img src="img/products/imagem_principal.png" alt="product1.png">
+                                <img src="{{ asset('storage/images/iphone14.png') }}" alt="product1.png">
                             </div>
-                    </a>
+                    </a> -->
+                    @forelse($product->images->take(2) as $image)
+                        <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
+                            <div class="main-image">
+                                <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
+                            </div>
+                        </a>
+                        <br>
+                    @empty
+                        <p>Nenhuma imagem disponível para este produto.</p>
+                    @endforelse
                 </div>
                 <div class="favorites">
                     <i class="far fa-heart"></i>
@@ -104,7 +124,7 @@
                     @else
                     <div class="stock no-stock">
                     <i class="fas fa-times-circle"></i>
-                    <a>{{ $product->stock }} Out of Stock</a>
+                     <a><!--{{ $product->stock }}--> Out of Stock</a>
                     </div>
                     @endif
                 <div class="quantidade-botoes">

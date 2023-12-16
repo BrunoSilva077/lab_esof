@@ -123,7 +123,11 @@
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="img-prod">
-                    <img src="img/products/iphone14.jpg">
+                    @if ($product->images->count() > 0)
+                        <img src="{{ asset($product->images->first()->path) }}" alt="{{ $product->name }}">
+                    @else
+                        <img src="img/products/default_image.jpg" alt="{{ $product->name }}">
+                    @endif                
                 </div> 
                 
                 <div class="text-prod">

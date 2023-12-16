@@ -29,7 +29,7 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 // Route::get('/products', [ProductsController::class, 'index'])->name('products');
 Route::get('/productPage', [MainController::class, 'productPage'])->name('productPage');
-Route::get('/footer', [MainController::class, 'footer'])->name('footer');
+// Route::get('/footer', [MainController::class, 'footer'])->name('footer');
 Route::get('/menucheckout', [MainController::class, 'menucheckout'])->name('menucheckout');
 Route::get('/editprofile', [MainController::class, 'editprofile'])->name('editprofile');
 Route::get('/adminorders', [MainController::class, 'adminorders'])->name('adminorders')->middleware('is_admin');
