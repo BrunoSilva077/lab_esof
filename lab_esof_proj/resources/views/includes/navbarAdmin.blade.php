@@ -237,7 +237,7 @@
             </div>
             <div class="grid-item item1 products-options">
                 <ul class="ul-container">
-                    <li class="btn"><a href="#products">Products</a></li>
+                    <li class="btn"><a href="{{ route('products.index') }}">Products</a></li>
                 </ul>
             </div>
             <div class="grid-item item4 contact">
