@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('path');
-            $table->unsignedBigInteger('img_id');
+            $table->unsignedBigInteger('product_id');
             $table->timestamps();
 
-            $table->foreign('img_id')
+            $table->foreign('product_id')
             ->references('id')
             ->on('products')
             ->onUpdate('cascade')

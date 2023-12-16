@@ -13,14 +13,12 @@ class Products extends Model
         'name',
         'price',
         'description',
-        'image',
         'stock',
         'active',
-        'referece',
     ];
 
     public function images()
     {
-        return $this->hasMany(Images::class, 'img_id', 'id');
+        return $this->hasMany(Images::class, 'product_id', 'id');
     }
 }

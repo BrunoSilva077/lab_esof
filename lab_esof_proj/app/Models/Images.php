@@ -10,11 +10,11 @@ class Images extends Model
     use HasFactory;
 
     protected $fillable = [
-        'img_id',
+        'product_id',
     ];
 
     public function product()
     {
-        return $this->belongsTo(Products::class, 'img_id', 'id');
+        return $this->belongsTo(Products::class, 'product_id', 'id');
     }
 }

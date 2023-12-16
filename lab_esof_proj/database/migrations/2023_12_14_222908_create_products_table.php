@@ -16,10 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->Float('price');
             $table->string('description');
-            $table->string('image');
             $table->integer('stock');
             $table->boolean('active');
-            $table->string('reference');
             $table->timestamps();
         });
     }

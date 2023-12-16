@@ -10,7 +10,6 @@
         <div class="grid-item item7">
             <div class="images">
                 <div class="up-images">
-                    
                     <a class="fancybox" data-fancybox="gallery" href="img/products/imagem_principal.png">
                         <div class="main-image">
                             <img src="img/products/imagem_principal.png" alt="product1.png">
@@ -25,16 +24,16 @@
                     <br>
                 </div>
                 <div class="down-images">
-                <a class="fancybox" data-fancybox="gallery" href="img/products/imagem_principal.png">
-                    <div class="main-image">
-                        <img src="img/products/imagem_principal.png" alt="product1.png">
-                    </div>
-                </a>
-                    <br>
                     <a class="fancybox" data-fancybox="gallery" href="img/products/imagem_principal.png">
                         <div class="main-image">
                             <img src="img/products/imagem_principal.png" alt="product1.png">
                         </div>
+                    </a>
+                        <br>
+                    <a class="fancybox" data-fancybox="gallery" href="img/products/imagem_principal.png">
+                            <div class="main-image">
+                                <img src="img/products/imagem_principal.png" alt="product1.png">
+                            </div>
                     </a>
                 </div>
                 <div class="favorites">
