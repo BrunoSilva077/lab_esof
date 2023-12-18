@@ -8,7 +8,7 @@
                     <ul class="ul-container-menu">
                         <div class="group-li">
                             <li>
-                                <a href="#profile">Profile</a>
+                                <a href="{{ route('editprofile') }}">Profile</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -16,21 +16,21 @@
 
                         <div class="group-li">
                             <li>
-                                <a href="#profile">Admin Panel</a>
+                                <a href="{{route('adminclients')}}">Admin Panel</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="#favorites">Favorites</a>
+                                <a href="{{ route('editprofile') }}">Favorites</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li history">
                             <li>
-                                <a href="#history">Purchase History</a>
+                                <a href="{{ route('editprofile') }}">Purchase History</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -58,28 +58,28 @@
                 <ul class="ul-container-menu">
                         <div class="group-li">
                             <li>
-                                <a href="#profile">Profile</a>
+                                <a href="{{ route('editprofile') }}">Profile</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="#profile">Admin Panel</a>
+                                <a href="{{route('adminclients')}}">Admin Panel</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="#favorites">Favorites</a>
+                                <a href="{{ route('editprofile') }}">Favorites</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li history">
                             <li>
-                                <a href="#history">Purchase History</a>
+                                <a href="{{ route('editprofile') }}">Purchase History</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
@@ -102,13 +102,13 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li class="btn">
-                                <a href="/home">Products</a>
+                                <a href="{{ route('products.index') }}">Products</a>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li class="btn">
-                                <a href="/home">Contact us</a>
+                                <a href="{{ route('contact') }}">Contact us</a>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
