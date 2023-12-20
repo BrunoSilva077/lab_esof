@@ -21,9 +21,9 @@ class AdminController extends Controller
         return view('admin.users.index', compact('users'));
     }
 
-    public function listOrders()
-    {
-        $orders = Order::all();
-        return view('admin.orders.index', compact('orders'));
-    }
+    // public function listOrders()
+    // {
+    //     $orders = Order::all();
+    //     return view('admin.orders.index', compact('orders'));
+    // }
 }

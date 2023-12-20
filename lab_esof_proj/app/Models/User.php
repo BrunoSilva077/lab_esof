@@ -13,11 +13,6 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-
-    public function favorito(): HasOne
-    {
-        return $this->hasOne(Favorito::class,'favorito_id','id');
-    }
     /**
      * The attributes that are mass assignable.
      *
@@ -55,5 +50,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function products()
     {
         return $this->belongsToMany(Products::class, 'product_user', 'product_id', 'user_id');
+    }
+
+    public function favorito()
+    {
+        return $this->hasMany(Favorito::class,'user_id','id');
     }
 }

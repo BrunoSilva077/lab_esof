@@ -1327,17 +1327,21 @@ body{
         flex-direction: row;
         justify-content: right;
         margin: 1% 4% 0% 0%;
-        cursor: pointer;
+        text-decoration: none;
         color: #fff;
     }
-    
-    .favorites:hover{
-        color: #FF7352;
-        transition: all 0.3s ease;
+
+    .favorites i{
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        margin-right: 1%;
+        margin-top: 2%;
     }
     
-    .favorites i{
-        margin-right: 1%;
+    .favorites i:hover{
+        color: #FF7352;
+        transition: all 0.3s ease;
     }
     
     .detalhes-produto{
@@ -2141,7 +2145,7 @@ body{
   .each-prod{
     background-color: #333;
     margin-top: 5%;
-    height: 40vh;
+    /* height: 40vh; */
     width: 25%;
     margin-right: 4%;
     margin-left: 4%;
@@ -3893,6 +3897,17 @@ body{
     .profileinputline button{
         margin: 1% 10% 0% 2%;
     }
+
+    /* .mainmenuedit.favoritos{
+        width: 100%;
+        background-color: #2C2929;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        color: white;
+        font-size: 22px;
+    } */
+
     .mainmenuedit{
         width: 100%;
         height: 100vh;

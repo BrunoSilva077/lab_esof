@@ -36,4 +36,9 @@ class Products extends Model
         return $this->belongsTo(Brands::class, 'brand_id', 'id');
     }
 
+    public function favoritos()
+    {
+        return $this->hasMany(Favorito::class,'product_id','id');
+    }
+
 }
