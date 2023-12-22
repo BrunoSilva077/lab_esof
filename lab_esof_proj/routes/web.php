@@ -8,6 +8,8 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VoucherController;
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\FavoritoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,10 +21,7 @@ use App\Http\Controllers\VoucherController;
 |
 */
 
-Auth::routes(['verify' => true]);
-
-Route::resource('products', ProductsController::class);
-
+// Route::resource('/user', UserController::class);
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/newsletter', [MainController::class, 'newsletter'])->name('newsletter');
@@ -41,3 +40,8 @@ Route::get('/admin/create', [VoucherController::class, 'create'])->name('create'
 Route::post('/admin/store', [VoucherController::class, 'store'])->name('store')->middleware('is_admin');
 Route::get('/admin/edituser/{user}', [AdminController::class, 'edituser'])->name('edituser')->middleware('is_admin');
 Route::post('/admin/updateuser/{user}', [AdminController::class, 'updateuser'])->name('updateuser')->middleware('is_admin');
+Route::get('/user/edit/{user}', [UserController::class, 'edit'])->name('editprofile');
+Route::post('/user/update/{user}', [UserController::class, 'update'])->name('updateprofile');
+Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito');
+Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos');
+Route::get('/historyprofile', [MainController::class, 'historyprofile'])->name('historyprofile');

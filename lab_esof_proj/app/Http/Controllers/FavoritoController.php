@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Favorito;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class FavoritoController extends Controller
 {
     /**
@@ -12,8 +12,14 @@ class FavoritoController extends Controller
      */
     public function index()
     {
-        $favoritos = Favorito::all();
-        return view('fav.favprofile', compact('favoritos'));
+       // Obtém o ID do usuário autenticado
+    $id_user = Auth::id();
+
+    // Busca os favoritos associados ao usuário autenticado
+    $favoritos = Favorito::where('user_id', $id_user)->get();
+
+    // Passa os favoritos para a view
+    return view('favorites.index', compact('favoritos'));
     }
 
     /**
@@ -27,9 +33,23 @@ class FavoritoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store($id_produto)
     {
-        //
+        $id_user = Auth::id();
+        // $jaFavorito = Favorito::where('user_id', $user_id)
+        // ->where('product_id', $id_produto)
+        // ->exists();
+
+        // if ($jaFavorito) {
+        //     // Produto já está nos favoritos
+        //     return redirect()->back()->with('error', 'Este produto já está nos seus favoritos.');
+        // }
+
+            $favorito = new Favorito();
+            $favorito->user_id = $id_user;
+            $favorito->product_id = $id_produto;
+            $favorito->save();
+            return redirect()->route('home');
     }
 
     /**

@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
-use CarrinhoDeCompras\Cart; 
-
-
+use App\Models\Favorito;
+use Illuminate\Support\Facades\Auth;
+use CarrinhoDeCompras\Cart;
 class ProductsController extends Controller
 {
     
@@ -17,8 +17,8 @@ class ProductsController extends Controller
     {
         // $products = Products::paginate(2);
         $products = Products::all();
-
-        return view('products.index', compact('products'));
+        $favoritos = Auth::user()->favorito;
+        return view('products.index', compact('products','favoritos'));
     }
 
     /**
@@ -42,7 +42,8 @@ class ProductsController extends Controller
      */
     public function show(Products $product)
     {
-        return view('products.show', compact('product'));
+        $favoritos = Auth::user()->favorito;
+        return view('products.show', compact('product','favoritos'));
     }
 
     /**

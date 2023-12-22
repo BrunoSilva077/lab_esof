@@ -119,9 +119,22 @@
         <div class="all-prod">
         @forelse($products as $product)
         <a href="{{ route('products.show', ['product' => $product]) }}" class="each-prod">
-                <div class="fav-prod">
+                <!-- <div class="fav-prod">
                     <i class="fa-regular fa-heart"></i>
-                </div>
+                </div> -->
+
+                <form action="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" method="GET">
+                    @csrf
+                    <button type="submit" class="fav-prod" style="outline:none;border:none;background-color:transparent;cursor:pointer;">
+                    @if ($favoritos && $favoritos->contains('product_id', $product->id))
+                        <i class="fa-solid fa-heart fa-lg"></i>
+                    @else
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    @endif
+                    </button>
+                </form>
+                <br>
+     
                 <div class="img-prod">
                     @if ($product->images->count() > 0)
                         <img src="{{ asset($product->images->first()->path) }}" alt="{{ $product->name }}">

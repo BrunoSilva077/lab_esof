@@ -19,7 +19,7 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
-                                <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Favorites</a>
+                                <a href="">Favorites</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
