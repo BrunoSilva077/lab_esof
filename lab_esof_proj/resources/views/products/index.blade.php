@@ -125,7 +125,7 @@
 
                 <form action="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" method="GET">
                     @csrf
-                    <button type="submit" class="fav-prod" style="outline:none;border:none;background-color:transparent;cursor:pointer;">
+                    <button type="submit" class="fav-prod botaoFormfix">
                     @if ($favoritos && $favoritos->contains('product_id', $product->id))
                         <i class="fa-solid fa-heart fa-lg"></i>
                     @else

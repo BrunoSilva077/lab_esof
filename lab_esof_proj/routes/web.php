@@ -20,7 +20,7 @@ use App\Http\Controllers\FavoritoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Auth::routes(['verify' => true]);
 // Route::resource('/user', UserController::class);
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -42,6 +42,13 @@ Route::get('/admin/edituser/{user}', [AdminController::class, 'edituser'])->name
 Route::post('/admin/updateuser/{user}', [AdminController::class, 'updateuser'])->name('updateuser')->middleware('is_admin');
 Route::get('/user/edit/{user}', [UserController::class, 'edit'])->name('editprofile');
 Route::post('/user/update/{user}', [UserController::class, 'update'])->name('updateprofile');
+
 Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito');
 Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos');
+Route::post('/user/favoritos/delete/{favorito}', [FavoritoController::class, 'destroy'])->name('removerfavorito');
 Route::get('/historyprofile', [MainController::class, 'historyprofile'])->name('historyprofile');
+
+Route::resource('products', ProductsController::class)->only(['create', 'store', 'edit', 'update', 'destroy'])->middleware('is_admin');
+Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+Route::get('/products/{product}', [ProductsController::class, 'show'])->name('products.show');
+Route::post('/products/{product}',[ProductsController::class,'update'])->name('updateProduct');

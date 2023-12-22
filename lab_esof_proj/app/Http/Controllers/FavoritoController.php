@@ -81,6 +81,7 @@ class FavoritoController extends Controller
      */
     public function destroy(Favorito $favorito)
     {
-        //
+        $favorito->delete();
+        return back()->with('success', 'Product removed successfully');
     }
 }

@@ -2165,8 +2165,7 @@ body{
   .fav-prod.profile{
     margin: 5% 5% 0% 5%;
     display: flex;
-    justify-content: right;
-    align-items: center;
+    justify-content: space-between;
     color: white;
   }
 
@@ -2240,6 +2239,9 @@ body{
     .productf, .dropbtn, .dropbtn1{
         font-size: 15px;
     }
+    .each-prod{
+        width: 100%;
+    }
   }
 
   @media (max-width:425px) {
@@ -2247,6 +2249,9 @@ body{
         grid-template-columns: repeat(3, 1fr);
         padding: 0% 5%;
     
+    }
+    .each-prod{
+        width: 100%;
     }
   }
 
@@ -6623,5 +6628,19 @@ body{
 }
 
 .but_voucher{
+    width: 100%;
+}
+.grid-item.item9.menuedit .botaoFormfix{
+    outline:none;
+    border:none;
+    background-color:transparent;
+    cursor:pointer;
+    width: 100%;
+    overflow: hidden;
+
+}
+.formFav{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
 }

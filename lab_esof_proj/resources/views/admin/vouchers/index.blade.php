@@ -14,7 +14,7 @@
                         <h3>Orders<i class="fa-solid fa-box"></i></h3>
                     </div>
                 </a>
-                <div class="checkoutinputline active">
+                <div class="checkoutinputline">
                     <h3>Clients<i class="fa-solid fa-user"></i></h3>
                 </div>
                 <a href="{{ route('adminproducts') }}">
@@ -23,7 +23,7 @@
                     </div>
                 </a>
                 <a href="{{ route('adminvouchers') }}">
-                    <div class="checkoutinputline">
+                    <div class="checkoutinputline active">
                         <h3>Vouchers<i class="fa-solid"></i></h3>
                     </div>
                 </a>

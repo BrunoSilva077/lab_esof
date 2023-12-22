@@ -25,10 +25,17 @@
         <div class="mainmenuedit" style="height:auto">
             <div class="all-prod">
                 @forelse($favoritos as $favorito)
-                    <div class="each-prod">
+                <a href="{{ route('products.show', ['product' => $favorito]) }}" class="each-prod">
                         <div class="fav-prod profile">
-                            <i class="fa-solid fa-xmark"></i>
-                            <i class="fa-solid fa-heart"></i>
+                            <form action="{{ route('removerfavorito', ['favorito' => $favorito]) }}" method="POST" class="formFav">
+                                @csrf
+                                <button type="submit" class="botaoFormfix" style="float:left;">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <button type="submit" class="botaoFormfix" style="float:right;">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </form>
                         </div>
                         <div class="img-prod">
                             @if ($favorito->product->images->count() > 0)
@@ -53,7 +60,7 @@
                             </div>
                          @endif
                         <!-- ... (outros detalhes do produto) ... -->
-                    </div>
+                    </a>
                 @empty
                     <div class="alert alert-danger">
                         No favorite products found.

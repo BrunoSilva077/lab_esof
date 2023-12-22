@@ -18,7 +18,22 @@ return new class extends Migration
             $table->string('description');
             $table->integer('stock');
             $table->boolean('active');
+            $table->unsignedBigInteger('categories_id');
+            $table->unsignedBigInteger('brand_id');
             $table->timestamps();
+
+
+            $table->foreign('brand_id', 'fk_products_brands')
+            ->references('id')
+            ->on('brands')
+            ->onUpdate('cascade')
+            ->onDelete('RESTRICT');
+
+            $table->foreign('categories_id', 'fk_products_categories')
+            ->references('id')
+            ->on('categories')
+            ->onUpdate('cascade')
+            ->onDelete('RESTRICT');
         });
     }
 
