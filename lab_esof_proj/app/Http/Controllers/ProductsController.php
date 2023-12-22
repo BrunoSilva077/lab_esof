@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
+use CarrinhoDeCompras\Cart; 
+
 
 class ProductsController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      */

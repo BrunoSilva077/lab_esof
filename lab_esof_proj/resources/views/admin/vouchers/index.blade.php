@@ -9,7 +9,7 @@
     <div class="grid-container">
         <div class="grid-item item2 adproduct">
             <div class="sidemenuproduct">
-                <a href="{{ route('adminclients') }}">
+            <a href="{{ route('adminclients') }}">
                     <div class="checkoutinputline">
                         <h3>Orders<i class="fa-solid fa-box"></i></h3>
                     </div>
@@ -37,33 +37,32 @@
                     <h3>Completed</h3>
                     <h3>Pending</h3>
                     <div class="btnnewproduct">
-                        <button>New</button>
+                    <a href="{{ route('create') }}">
+                        @csrf
+                        <button type="submit" class="but_voucher">New</button>
+                    </a>
                     </div>
                 </div>
             </div>
             <div class="mainmenuproduct">
                 <div class="checkoutinputline">
                     <h3>#</h3>
-                    <h3>Order ID</h3>
-                    <h3>Product Name</h3>
-                    <h3>Address</h3>
-                    <h3>Date</h3>
-                    <h3>Price</h3>
-                    <h3>Status</h3>
-                    <h3>Edit</h3>
-                    <h3>Remove</h3>
+                    <h3>Cod Voucher</h3>
+                    <h3>Valor Desconto</h3>
+                    <h3>Tipo Percentual</h3>
+                    <h3></h3>
+                    <h3></h3>
                 </div>
                 <hr class="horizontal-adproduct">
-                @forelse($products as $product)
+                @forelse($vouchers as $voucher)
                 <div class="checkoutinputline">
-                    <h4>{{$product->id}}</h4>
-                    <h4>{{$product->id}}</h4>
-                    <h4>{{$product->name}}</h4>
-                    <h4>{{$product->description}}</h4>
-                    <h4>{{$product->stock}}</h4>
-                    <h4>{{$product->price}}</h4>
-                    <h4>{{$product->active}}</h4>
-                    <button>Edit</button>
+                    <h4>{{$voucher->id}}</h4>
+                    <h4>{{$voucher->cod_voucher}}</h4>
+                    <h4>{{$voucher->tipo_percentual}}</h4>
+                    <h4>{{$voucher->valor_desconto}}</h4>
+                    <a href="{{ route('editvoucher', ['voucher' => $voucher]) }}" class="a_voucher">
+                        <button class="but_voucher">Edit</button>
+                    </a> 
                     <button>Remove</button>
                     </div>
 

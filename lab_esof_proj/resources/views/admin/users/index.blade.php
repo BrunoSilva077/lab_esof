@@ -9,7 +9,7 @@
     <div class="grid-container">
         <div class="grid-item item2 adclient">
             <div class="sidemenuclient">
-                <a href="{{ route('adminorders') }}">
+                <a href="{{ route('adminclients') }}">
                     <div class="checkoutinputline">
                         <h3>Orders<i class="fa-solid fa-box"></i></h3>
                     </div>
@@ -22,6 +22,12 @@
                         <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
                     </div>
                 </a>
+                <a href="{{ route('adminvouchers') }}">
+                    <div class="checkoutinputline">
+                        <h3>Vouchers<i class="fa-solid"></i></h3>
+                    </div>
+                </a>
+
             </div>
         </div>
         <div class="grid-item item1 adclient"></div>
@@ -55,7 +61,9 @@
                         <h4>Female</h4>
                     @endif    
                     <h4>{{ $user->password }}</h4>
-                    <button>Edit</button>
+                    <a href="{{ route('edituser', ['user' => $user]) }}">
+                        <button>Edit</button>
+                    </a>
                     <button>Remove</button>
                     </div>
 

@@ -9,6 +9,7 @@ use App\Models\Products;
 use App\Models\Images;
 use App\Models\Categories;
 use App\Models\Brands;
+use App\Models\Voucher;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +26,8 @@ class DatabaseSeeder extends Seeder
         Categories::factory(5)->create();
         $products = Products::factory(5)->create();
         Images::factory(15)->create();
+        Voucher::factory(10)->create();
+
 
         // Obtém todos os usuários administradores
         $admins = User::where('is_admin', true)->get();
