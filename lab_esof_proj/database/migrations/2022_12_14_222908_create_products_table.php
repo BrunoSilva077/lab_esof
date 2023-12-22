@@ -11,9 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('favoritos', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->Float('price');
+            $table->string('description');
+            $table->integer('stock');
+            $table->boolean('active');
             $table->timestamps();
+
         });
     }
 
@@ -22,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('favoritos');
+        Schema::dropIfExists('products');
     }
 };

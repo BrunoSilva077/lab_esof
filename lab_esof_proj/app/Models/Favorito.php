@@ -10,12 +10,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Favorito extends Model
 {
     use HasFactory;
-    public function user(): BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class,'user_id','id');
     }
-    // public function favoritos_produto(): HasMany
-    // {
-    //     return $this->hasMany(Favoritos_Produto::class);
-    // }
+    public function product()
+    {
+        return $this->belongsTo(Products::class, 'product_id' ,'id');
+    }
 }

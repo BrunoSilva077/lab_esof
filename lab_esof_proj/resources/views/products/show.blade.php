@@ -9,6 +9,15 @@
     <div class="product-container grid-container">
         <div class="grid-item item7">
             <div class="images">
+                <a href="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" style="text-decoration:none">
+                    <div class="favorites">
+                        @if ($favoritos && $favoritos->contains('product_id', $product->id))
+                            <i class="fa-solid fa-heart fa-lg"></i>
+                        @else
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        @endif            
+                    </div>
+                </a>
                 <div class="up-images">
                     @forelse($product->images->take(2) as $image)
                         <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
@@ -55,10 +64,6 @@
                     @empty
                         <p>Nenhuma imagem disponível para este produto.</p>
                     @endforelse
-                </div>
-                <div class="favorites">
-                    <i class="far fa-heart"></i>
-                    <a>Favoritos</a>
                 </div>
             </div>
             <div class="detalhes-produto">

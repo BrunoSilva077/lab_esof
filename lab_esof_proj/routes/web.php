@@ -3,11 +3,9 @@
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
-
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FavoritoController;
-
+use App\Http\Controllers\ProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +16,10 @@ use App\Http\Controllers\FavoritoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Auth::routes(['verify' => true]);
+Route::group(['middleware' => 'auth'], function () {
+Route::resource('products', ProductsController::class);
+});
 // Route::resource('/user', UserController::class);
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -34,7 +35,8 @@ Route::get('/productPage', [MainController::class, 'productPage'])->name('produc
 Route::get('/menucheckout', [MainController::class, 'menucheckout'])->name('menucheckout');
 Route::get('/user/edit/{user}', [UserController::class, 'edit'])->name('editprofile');
 Route::post('/user/update/{user}', [UserController::class, 'update'])->name('updateprofile');
-Route::get('/fav/favprofile', [FavoritoController::class, 'index'])->name('favprofile');
+Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito');
+Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos');
 Route::get('/historyprofile', [MainController::class, 'historyprofile'])->name('historyprofile');
 Route::get('/adminorders', [MainController::class, 'adminorders'])->name('adminorders')->middleware('is_admin');
 Route::get('/adminclients', [MainController::class, 'adminclients'])->name('adminclients')->middleware('is_admin');

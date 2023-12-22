@@ -42,7 +42,7 @@ class MainController extends Controller
         return view('editprofile');
     }
     public function Favprofile() {
-        return view('favprofile');
+        return view('favoritos/favprofile');
     }
     public function Historyprofile() {
         return view('historyprofile');
