@@ -121,23 +121,25 @@
                             <h1>Total(2 items): 1399.98€</h1>
                         </div>
                         <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                        
+                            <div class="each-item">
+                                <div class="item-img">
+                                    <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                                </div>
+                                <div class="item-info">
+                                    <div class="item-name">
+                                        <h1>$row->name</h1>
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                    <h2>PVPR: 889€</h2>
+                                    <h2>669,99€</h2>
+                                    <div class="stock">
+                                        <i class="fas fa-check-circle"></i>
+                                        <a>In stock</a>
+                                    </div>
+                                </div>    
                             </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
+                        
                         <hr class="barra-opcoes">
                         <div class="each-item">
                             <div class="item-img">

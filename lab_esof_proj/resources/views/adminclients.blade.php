@@ -22,17 +22,10 @@
         </div>
         <div class="grid-item item1 adclient"></div>
         <div class="grid-item item9 adclient">
-            <div class="upmainmenuclient">
-                <div class="checkoutinputline">
-                    <div class="btnnewclient">
-                        <button>New</button>
-                    </div>
-                </div>
-            </div>
             <div class="mainmenuclient">
                 <div class="checkoutinputline">
                     <h3>#</h3>
-                    <h3>Client ID</h3>
+                    <h3>Active</h3>
                     <h3>Name</h3>
                     <h3>Email</h3>
                     <h3>Phone Number</h3>
@@ -42,8 +35,9 @@
                 </div>
                 <hr class="horizontal-adclient">
                 <div class="checkoutinputline">
+                    
                     <h4>1</h4>
-                    <h4>#45435</h4>
+                    <h4>True</h4>
                     <h4>Joaquim Alberto</h4>
                     <h4>jquim@gmail.com</h4>
                     <h4>98736326</h4>

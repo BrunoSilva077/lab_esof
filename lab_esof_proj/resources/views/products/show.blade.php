@@ -118,6 +118,10 @@
                 <div class="nome-produto">
                     <a>{{ $product->name }}</a>
                 </div>
+                <br>
+                <div class="nome-produto">
+                    <a>Brand: {{ $product->brand->name }}</a>
+                </div>
                 <div class="preco-produto">
                     <a>{{ $product->price }}€</a>
                 </div>

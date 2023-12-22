@@ -2165,10 +2165,15 @@ body{
   .fav-prod.profile{
     margin: 5% 5% 0% 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     color: white;
   }
+
+    .fa-regular.fa-heart{
+        color: #fff;
+        cursor: pointer;
+    }
 
     .fa-regular.fa-heart:hover{
         color: #FF7352;
@@ -5168,6 +5173,12 @@ body{
     }
 }
 /*admin clients*/
+.adclient button{
+    cursor: pointer;
+}
+.sidemenuclient .checkoutinputline{
+    cursor: pointer;
+}
 @media (min-width: 2560px){
     .adclientmenu .grid-container{
         display: grid;
@@ -5915,7 +5926,7 @@ body{
     }
     .mainmenuproduct{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6006,7 +6017,7 @@ body{
     }
     .mainmenuproduct{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6096,7 +6107,7 @@ body{
     }
     .mainmenuproduct{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6186,7 +6197,7 @@ body{
     }
     .mainmenuproduct{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6285,7 +6296,7 @@ body{
     }
     .mainmenuproduct{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6388,7 +6399,7 @@ body{
     }
     .mainmenuproduct{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6491,7 +6502,7 @@ body{
     }
     .mainmenuproduct{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6605,4 +6616,12 @@ body{
 }
 .linhahome2{
     margin-left: 5%;
+}
+
+.a_voucher{
+    width: 100px;
+}
+
+.but_voucher{
+    width: 100%;
 }
