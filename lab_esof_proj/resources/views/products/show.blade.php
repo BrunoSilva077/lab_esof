@@ -9,10 +9,16 @@
     <div class="product-container grid-container">
         <div class="grid-item item7">
             <div class="images">
+            @if($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif 
                 <a href="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" style="text-decoration:none">
                     <div class="favorites">
                         <i class="far fa-heart fa-lg" ></i>                    </div>
                 </a>
+                <br>
                 <div class="up-images">
                     @forelse($product->images->take(2) as $image)
                         <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
@@ -137,9 +143,17 @@
                         <input type="text" value="1" class="numero" disabled>
                         <button class="mais" onclick="addProduct()">+</button>
                     </div>
-                    <div class="adicionar">
-                        <button class="adicionar-carrinho-btn"><i class="fas fa-shopping-cart"></i>Adicionar</button>
-                    </div>   
+                    <form action=" {{ route('cart.store') }}" method="POST">
+                        @csrf
+                            <input type="hidden" name="id" value="{{ $product->id }}">
+                            <input type="hidden" name="name" value="{{ $product->name }}">
+                            <input type="hidden" name="price" value="{{ $product->price }}">
+                            <input type="hidden" name="quantity" id="quantity" value="1">
+                            <input type="hidden" name="image" id="image" value="{{ $product->images->first()->path }}">
+                        <div class="adicionar">
+                            <button class="adicionar-carrinho-btn"><i class="fas fa-shopping-cart"></i>Adicionar</button>
+                        </div>   
+                    </form>
                     <div class="comprar-ja">
                         <button class="comprar-ja-btn">Comprar já<i class="fas fa-arrow-right"></i></button>
                     </div>
@@ -179,6 +193,7 @@
         const quantidade = document.querySelector('.quantidade .numero');
         const quantidadeValue = parseInt(quantidade.value);
         quantidade.value = quantidadeValue + 1;
+        document.getElementById('quantity').value = quantidade.value;
     }
 
     function removeProduct() {
@@ -186,6 +201,7 @@
         const quantidadeValue = parseInt(quantidade.value);
         if (quantidadeValue > 1) {
             quantidade.value = quantidadeValue - 1;
+            document.getElementById('quantity').value = quantidade.value;
         }
     }
 

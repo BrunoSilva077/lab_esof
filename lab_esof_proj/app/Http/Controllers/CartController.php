@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EditUser;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
-class EditUserController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,21 +28,25 @@ class EditUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cart= Cart::instance('shopping')->add($request->id, $request->name, $request->quantity,$request->price*$request->quantity,['totalQty'=>$request->quantity,'img'=>$request->image]) ->associate('App\Models\Products');
+        // dd($cart);
+
+        return back()->with('Sucess','Product added to cart sucessfully');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(EditUser $editUser)
+    public function show(string $id)
     {
-        //
+        $cartItems = Cart::content();
+        return view('includes.navbarAdmin', compact('cartItems'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(EditUser $editUser)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +54,7 @@ class EditUserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, EditUser $editUser)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +62,7 @@ class EditUserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(EditUser $editUser)
+    public function destroy(string $id)
     {
         //
     }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    AdminProducts
+    AdminImages
 @endsection
 
 @section('content')
@@ -19,13 +19,13 @@
                     <h3>Clients<i class="fa-solid fa-user"></i></h3>
                 </div>
             </a>
-            <a href="{{ route('adminimages') }}">
-                <div class="checkoutinputline active">
+            <a href="{{ route('adminproducts') }}">
+                <div class="checkoutinputline">
                     <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
                 </div>
             </a>
             <a href="{{ route('adminimages') }}">
-                <div class="checkoutinputline ">
+                <div class="checkoutinputline active">
                     <h3>Images<i class="fa-solid fa-image"></i></h3>
                 </div>
             </a>
@@ -39,10 +39,10 @@
                     <h3>Completed</h3>
                     <h3>Pending</h3> -->
                     <div class="btnnewproduct">
-                            <a href="{{ route('products.create') }}">
-                            <button>New</button>
-                        </a>
-                        </div>
+                            <!-- <a href="{{ route('products.create') }}"> -->
+                                <button>New</button>
+                            <!-- </a> -->
+                    </div>
                 </div>
             </div>
             <div class="mainmenuproduct">
@@ -51,32 +51,36 @@
                     <p>{{ $message }}</p>
                 </div>
             @endif 
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach 
+                        </ul>
+                </div>
+            @endif
                 <div class="checkoutinputline">
-                    <h3>Product ID</h3>
-                    <h3>Product Name</h3>
-                    <h3>Description</h3>
-                    <h3>Brand</h3>
-                    <h3>Stock</h3>
-                    <h3>Price</h3>
-                    <h3>Active</h3>
+                    <h3></h3>
+                    <h3>Image ID</h3>
+                    <h3>Image Name</h3>
+                    <h3>Image Path</h3>
+                    <h3>Product Associated</h3>
+                    <h3>Image</h3>
                     <h3>Edit</h3>
                     <h3>Remove</h3>
+                    <h3></h3>
                 </div>
                 <hr class="horizontal-adproduct">
-                @forelse($products as $product)
-                <div class="checkoutinputline">
-                    <h4>{{$product->id}}</h4>
-                    <h4>{{$product->name}}</h4>
-                    <h4>{{$product->description}}</h4>
-                    <h4>{{$product->brand->name}}</h4>
-                    <h4>{{$product->stock}}</h4>
-                    <h4>{{$product->price}}€</h4>
-                    @if($product->active)
-                        <h4>True</h4>
-                    @else
-                        <h4>False</h4>
-                    @endif
-                    <a href="{{ route('products.edit',['product' => $product]) }}">
+                @forelse($images as $image)
+                <div class="checkoutinputline img_edit">
+                    <h4>{{ $image->id }}</h4>
+                    <h4>{{ $image->name }}</h4>
+                    <h4>{{ $image->path }}</h4>
+                    <h4>{{ $image->product->name }}</h4>
+                    <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
+                    <a href="{{ route('partials.edit',['image' => $image]) }}">
                     <button>Edit</button>
                     </a>
                     <button>Remove</button>

@@ -13,7 +13,9 @@ class FavoritoController extends Controller
      */
     public function index()
     {
-        $favoritos = Favorito::all();
+        $userId = Auth::id();
+
+        $favoritos = Favorito::where('user_id', $userId)->get();
         return view('favorites.index', compact('favoritos'));
     }
 
