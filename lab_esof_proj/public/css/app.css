@@ -294,10 +294,6 @@ body{
     color: #DFDFDF;
 }
 
-.item-info h2:nth-child(2){
-    text-decoration: line-through;
-}
-
 .item-info h2:nth-child(3){
     color: #FF7352;
 }
@@ -1491,6 +1487,14 @@ body{
     .quantidade{
         border: 1px solid #8d929b;
         width: 33%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 5%;
+    }
+    .quantidade.menu{
+        border: 1px solid #8d929b;
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;

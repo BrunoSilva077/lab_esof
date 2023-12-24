@@ -37,3 +37,18 @@ function openResponsiveMenu(clickedElement){
     Menu.classList.add('active')
     Menu.style.position = 'absolute';
 }
+function addProduct() {
+    const quantidade = document.querySelector('.quantidade .numero');
+    const quantidadeValue = parseInt(quantidade.value);
+    quantidade.value = quantidadeValue + 1;
+    document.getElementById('quantity').value = quantidade.value;
+}
+
+function removeProduct() {
+    const quantidade = document.querySelector('.quantidade .numero');
+    const quantidadeValue = parseInt(quantidade.value);
+    if (quantidadeValue > 1) {
+        quantidade.value = quantidadeValue - 1;
+        document.getElementById('quantity').value = quantidade.value;
+    }
+}

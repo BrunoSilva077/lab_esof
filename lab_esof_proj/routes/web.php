@@ -10,7 +10,6 @@ use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\CartController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +24,9 @@ use App\Http\Controllers\CartController;
 Auth::routes(['verify' => true]);
 //cart routes
 Route::post('cart',[CartController::class,'store'])->name('cart.store');
-Route::get('cart',[CartController::class,'show'])->name('cart.show');
+// Route::get('cart',[CartController::class,'index'])->name('cart.index');
+Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
 //products routes
 Route::resource('products', ProductsController::class)->only(['create', 'store', 'edit', 'update', 'destroy'])->middleware('is_admin');
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
@@ -55,3 +56,6 @@ Route::get('/adminorders', [AdminController::class, 'listOrders'])->name('admino
 Route::get('/adminclients', [AdminController::class, 'listUsers'])->name('adminclients')->middleware('is_admin');
 Route::get('/adminproducts', [AdminController::class, 'listProducts'])->name('adminproducts')->middleware('is_admin');
 Route::get('/adminimages', [AdminController::class, 'listImages'])->name('adminimages')->middleware('is_admin');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

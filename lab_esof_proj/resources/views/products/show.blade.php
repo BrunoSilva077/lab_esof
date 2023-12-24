@@ -16,7 +16,8 @@
             @endif 
                 <a href="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" style="text-decoration:none">
                     <div class="favorites">
-                        <i class="far fa-heart fa-lg" ></i>                    </div>
+                        <i class="far fa-heart fa-lg" ></i>                    
+                    </div>
                 </a>
                 <br>
                 <div class="up-images">

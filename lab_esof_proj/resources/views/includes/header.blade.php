@@ -95,7 +95,7 @@
                     <i class="fas fa-times" onclick="closeCart(this)"></i>
                 </div>
                 <div class="side-cart-options">
-                    <div class="items">
+                   <!--  <div class="items">
                         <div class="total-price">
                             <h1>Total(2 items): 1399.98€</h1>
                         </div>
@@ -189,7 +189,7 @@
                                 </div>
                             </div>    
                         </div>
-                        <hr class="barra-opcoes">
+                        <hr class="barra-opcoes"> -->
                     </div>
                     <div class="side-cart-checkout">
                         <a>checkout</a>
