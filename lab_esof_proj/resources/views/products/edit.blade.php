@@ -54,8 +54,14 @@
                         <input type="text" name="name" value="{{ $product->brand->name }}" disabled>              
                     </div>
                     <div class="profileinputline">
-                        <h3>Categorie</h3>
-                        <input type="text" name="name" value="{{ $product->categorie->name }}" disabled>              
+                    <h3><label for="category">Categoria</label></h3>
+                        <select id="category" name="category" class="category">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="profileinputline">
                         <h3>Last update</h3>
@@ -101,7 +107,7 @@
                     <div class="profileinputline">
                         <button class="btnsave">Save</button>
                     </div>
-                    <hr class="horizontal-menuedit">
+                    <!-- <hr class="horizontal-menuedit"> -->
                 </form>
             </div>
         </div>

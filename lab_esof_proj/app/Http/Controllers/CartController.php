@@ -31,8 +31,8 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $cart= Cart::instance('shopping')->add($request->id, $request->name, $request->quantity,$request->price*$request->quantity,['totalQty'=>$request->quantity,'img'=>$request->image]) ->associate('App\Models\Products');
-        //  dd($cart);
+        $cart= Cart::instance('shopping')->add($request->id, $request->name, $request->quantity,$request->price*$request->quantity,['img'=>$request->image]) ->associate('App\Models\Products');
+        // dd($cart);
         $rowId = $cart->rowId;
         return back()->with('Sucess','Product added to cart sucessfully');
     }
@@ -55,12 +55,30 @@ class CartController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,string $rowId)
+    public function update(Request $request, string $rowId)
     {
         $cart = Cart::instance('shopping');
-        $cart->update($rowId, $request->quantity); // Will update the quantity
-        return back()->with('success', 'Product removed successfully');
+        $cartItem = $cart->get($rowId);
+    
+        // Verifique se o item existe no carrinho
+        if ($cartItem) {
+            // Atualize a quantidade
+            $cart->update($rowId, $request->quantity);
+    
+            // Recalcule o preço total com base na nova quantidade
+            $newTotalPrice = $cartItem->model->price * $request->quantity;
+    
+            // Atualize o preço total do item no carrinho
+            $cart->update($rowId, [
+                'price' => $newTotalPrice,
+            ]);
+    
+            return back()->with('success', 'Product updated successfully');
+        }
+    
+        return back()->with('error', 'Product not found in the cart');
     }
+    
 
     /**
      * Remove the specified resource from storage.

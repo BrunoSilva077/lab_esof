@@ -206,7 +206,7 @@ body{
     text-decoration: none;
 }
 
-.cart{ 
+.cart i{ 
     cursor: pointer;
 }
 
@@ -1521,8 +1521,9 @@ body{
     .adicionar{
         display: flex;
         align-items: center;
-        width: 45%;
-        margin: 3%;
+        /* width: 45%; */
+        /* margin: 3%; */
+        margin-top: 10%;
     }
     
     .adicionar-carrinho-btn{
@@ -1637,9 +1638,13 @@ body{
         .quantidade-botoes{
             width: 100%;
         }
-        .adicionar, .comprar-ja{
+        /*.adicionar,*/ .comprar-ja{
             width: 26%;
             margin: 1%;
+        }
+        .adicionar{
+            width: 95%;
+            margin-top:18%;
         }
         .comprar-ja-btn, .adicionar-carrinho-btn{
             font-size: 11px;
@@ -1661,9 +1666,13 @@ body{
         .quantidade-botoes{
             width: 100%;
         }
-        .adicionar, .comprar-ja{
+        /*.adicionar,*/ .comprar-ja{
             width: 26%;
             margin: 1%;
+        }
+        .adicionar{
+            width: 95%;
+            margin-top:15%;
         }
         .comprar-ja-btn, .adicionar-carrinho-btn{
             font-size: 10px;
@@ -1694,7 +1703,10 @@ body{
             margin: 0 5%;
         }
         .item5.sideimage{
-            grid-column: span 5;
+            grid-column: span 12;
+        }
+        .grid-item.item7{
+            grid-column: span 12;
         }
         .quantidade-botoes{
             width: 100%;
@@ -1732,7 +1744,10 @@ body{
             margin-top: 5%;
         }
         .item5.sideimage{
-            grid-column: span 5;
+            grid-column: span 12;
+        }
+        .grid-item.item7{
+            grid-column: span 12;
         }
         .up-images,.down-images,.quantidade-botoes{
             display: flex;
@@ -1785,7 +1800,10 @@ body{
             margin-top: 5%;
         }
         .item5.sideimage{
-            grid-column: span 5;
+            grid-column: span 12;
+        }
+        .grid-item.item7{
+            grid-column: span 12;
         }
         .informacoes-produto a{
             font-size: 19px;
@@ -3921,7 +3939,7 @@ body{
 
     .mainmenuedit{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -4018,7 +4036,7 @@ body{
     }
     .mainmenuedit{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -4110,7 +4128,7 @@ body{
     }
     .mainmenuedit{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -4202,7 +4220,7 @@ body{
     }
     .mainmenuedit{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -4306,7 +4324,7 @@ body{
     }
     .mainmenuedit{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -4409,7 +4427,7 @@ body{
     }
     .mainmenuedit{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -4512,7 +4530,7 @@ body{
     }
     .mainmenuedit{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6484,7 +6502,7 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adproduct{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .grid-item.item1.adproduct{
         display: none;
@@ -6494,7 +6512,7 @@ body{
     }
     .sidemenuproduct{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6578,6 +6596,9 @@ body{
     .upmainmenuproduct h3.active{
         color: #FF7352;
         border-bottom: 1px solid #FF7352;
+    }
+    .category{
+        width: 60%;
     }
 }
 
@@ -6665,4 +6686,12 @@ body{
 .checkoutinputline h4{
     word-wrap: break-word; /* Faz com que as palavras longas se quebrem para a próxima linha */
     white-space: normal; 
+}
+.category{
+    /* width: 22.5%; */
+    padding: 5px 0px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
 }

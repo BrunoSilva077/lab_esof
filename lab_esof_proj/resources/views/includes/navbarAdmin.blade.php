@@ -124,14 +124,18 @@
                 <div class="side-cart-options">
                     <div class="items">
                         <div class="total-price">
-                            <h1>Total({{ $cartItems->count() }} items): 1399.98€</h1>
+                                <h1>Total({{ $cartItems->count() }} items): {{ $totalPrice }}€</h1>
+                            <!-- <h1>Total({{ $cartItems->count() }} items): 1399.98€</h1> -->
                         </div>
                         <hr class="barra-opcoes">
                         @forelse ($cartItems->content() as $cartItem)
                         <div class="each-item">
                             <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
+                            @if ($cartItem->options->has('img'))
+                                <img src="{{ asset($cartItem->options->get('img')) }}" alt="{{ $cartItem->name }}">
+                            @else
+                                <img src="img/cartItems/default_image.jpg" alt="{{ $cartItem->name }}">
+                            @endif                            </div>
                             <div class="item-info">
                                 <div class="item-name">
                                     <h1>{{$cartItem->name}}</h1>
@@ -144,16 +148,16 @@
                                     </form>
                                 </div>
                                 <div class="quantidade-botoes">
-                                    <div class="quantidade menu">
-                                        <button class="menos" onclick="removeProduct()">-</button>
-                                        <input type="text" value="{{$cartItem->qty}}" class="numero" disabled>
-                                        <button class="mais" onclick="addProduct()">+</button>
+                                    <div class="quantidade menu cart">
+                                        <button class="menos" onclick="removeProduct2('{{$cartItem->rowId}}')">-</button>
+                                        <input type="text" value="{{$cartItem->qty}}" class="numero" disabled id="quantity_{{$cartItem->rowId}}">
+                                        <button class="mais" onclick="addProduct2('{{$cartItem->rowId}}')">+</button>
                                     </div>
                                 </div>
                                 <form method="POST" action="{{ route('cart.update', ['id' => $cartItem->rowId])}}">
                                     @csrf
                                     @method('PUT')
-                                    <input type="hidden" name="quantity" id="quantity" value="{{$cartItem->qty}}">
+                                    <input type="hidden" name="quantity" id="quantity_cart_{{$cartItem->rowId}}" value="{{$cartItem->qty}}">
                                     <button type="submit" class="side-cart-checkout">
                                         Update
                                     </button>

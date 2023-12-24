@@ -131,14 +131,7 @@
                     <div class="stock in-stock">
                     <i class="fas fa-check-circle"></i>
                     <a>{{ $product->stock }} In Stock</a>
-                    </div>
-                    @else
-                    <div class="stock no-stock">
-                    <i class="fas fa-times-circle"></i>
-                     <a><!--{{ $product->stock }}--> Out of Stock</a>
-                    </div>
-                    @endif
-                <div class="quantidade-botoes">
+                    <div class="quantidade-botoes">
                     <div class="quantidade">
                         <button class="menos" onclick="removeProduct()">-</button>
                         <input type="text" value="1" class="numero" disabled>
@@ -159,6 +152,14 @@
                         <button class="comprar-ja-btn">Comprar já<i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
+                    </div>
+                    @else
+                    <div class="stock no-stock">
+                    <i class="fas fa-times-circle"></i>
+                     <a><!--{{ $product->stock }}--> Out of Stock</a>
+                    </div>
+                    @endif
+
             </div>
         </div>
     </div>
@@ -192,6 +193,7 @@
 
     function addProduct() {
         const quantidade = document.querySelector('.quantidade .numero');
+        console.log(quantidade);
         const quantidadeValue = parseInt(quantidade.value);
         quantidade.value = quantidadeValue + 1;
         document.getElementById('quantity').value = quantidade.value;

@@ -23,7 +23,11 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function ($view) {
             $cartItems = Cart::instance('shopping');
-            $view->with('cartItems', $cartItems);
+            $totalPrice = 0;
+            foreach ($cartItems->content() as $cartItem) {
+                $totalPrice += $cartItem->price ;//* $cartItem->qty;
+            }
+            $view->with('cartItems', $cartItems)->with('totalPrice', $totalPrice);
         });
     }
 }
