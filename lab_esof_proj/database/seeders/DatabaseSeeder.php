@@ -9,6 +9,7 @@ use App\Models\Products;
 use App\Models\Images;
 use App\Models\Categories;
 use App\Models\Brands;
+use App\Models\ProductUser;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,7 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(10)->create();
+        $users=User::factory(10)->create();
         // Products::factory(5)->create();
         
         // Cria 5 produtos
@@ -26,8 +27,16 @@ class DatabaseSeeder extends Seeder
         $products = Products::factory(5)->create();
         Images::factory(15)->create();
 
-        // Obtém todos os usuários administradores
-        $admins = User::where('is_admin', true)->get();
+        $adminUsers = $users->filter(function ($user) {
+            return $user->is_admin; // Filtra usuários que são admins
+        });
+
+        $adminUsers->each(function ($admin) use ($products) {
+            ProductUser::factory(1)->create([
+                'user_id' => $admin->id,
+                'product_id' => $products->random()->id,
+            ]);
+        });
 
         // Associa todos os produtos a todos os usuários administradores
         // foreach ($admins as $admin) {

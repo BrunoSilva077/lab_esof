@@ -64,7 +64,7 @@
                     <div class="profileinputline">
                         <button class="btnsave">Save</button>
                     </div>
-                    <hr class="horizontal-menuedit">
+                    <!-- <hr class="horizontal-menuedit"> -->
                 </form>
             </div>
         </div>

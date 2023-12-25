@@ -134,7 +134,7 @@
                     <div class="quantidade-botoes">
                     <div class="quantidade">
                         <button class="menos" onclick="removeProduct()">-</button>
-                        <input type="text" value="1" class="numero" disabled>
+                        <input type="text" value="1" class="numero show" disabled>
                         <button class="mais" onclick="addProduct()">+</button>
                     </div>
                     <form action=" {{ route('cart.store') }}" method="POST">
@@ -166,6 +166,8 @@
 
 <script>
     const opcoes = document.querySelectorAll('.opcoes a');
+    const stock = {{ $product->stock }}; // Obtém o valor do estoque do Laravel
+
 
     opcoes.forEach(opcao => {
         opcao.addEventListener('click', function() {
@@ -192,20 +194,22 @@
     });
 
     function addProduct() {
-        const quantidade = document.querySelector('.quantidade .numero');
-        console.log(quantidade);
+        const quantidade = document.querySelector('.quantidade .numero.show');
+        // console.log(quantidade);
         const quantidadeValue = parseInt(quantidade.value);
-        quantidade.value = quantidadeValue + 1;
+        if (quantidadeValue < stock){
+            quantidade.value = quantidadeValue + 1;
+        }
         document.getElementById('quantity').value = quantidade.value;
     }
 
     function removeProduct() {
-        const quantidade = document.querySelector('.quantidade .numero');
+        const quantidade = document.querySelector('.quantidade .numero.show');
         const quantidadeValue = parseInt(quantidade.value);
         if (quantidadeValue > 1) {
             quantidade.value = quantidadeValue - 1;
-            document.getElementById('quantity').value = quantidade.value;
         }
+        document.getElementById('quantity').value = quantidade.value;
     }
 
 </script>

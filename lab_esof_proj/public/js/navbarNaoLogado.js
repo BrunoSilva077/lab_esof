@@ -45,16 +45,16 @@ function addProduct2(rowId) {
     // console.log(quantidade);
     // document.getElementById('quantity_cart'+rowId).value = quantidade.value;
     const quantidade = document.getElementById('quantity_' + rowId);
-    if (quantidade) {
+    // if (quantidade) {
         const quantidadeValue = parseInt(quantidade.value);
         quantidade.value = quantidadeValue + 1;
 
         // Modifique o ID para incluir o rowId
         const quantityCart = document.getElementById('quantity_cart_' + rowId);
-        if (quantityCart) {
+        // if (quantityCart) {
             quantityCart.value = quantidade.value;
-        }
-    }
+        // }
+    // }
 }
 
 function removeProduct2(rowId) {

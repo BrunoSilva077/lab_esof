@@ -75,7 +75,8 @@ class ProductsController extends Controller
     public function edit(Products $product)
     {
         $categories = Categories::all();
-        return view('products.edit',compact('product', 'categories'));
+        $brands = Brands::all();
+        return view('products.edit',compact('product', 'categories', 'brands'));
     }
 
     /**
@@ -96,8 +97,10 @@ class ProductsController extends Controller
             'stock' => $request->input('stock'),
             'active' => $request->input('radio') === 'true',
             'price' => $request->input('price'),
+            'brand_id' => $request->input('brand'),
+            'categories_id' => $request->input('category'),
         ]);
-        
+        // dd($product);
         return redirect('adminproducts')->with('success', 'Product updated successfully');
     }
 

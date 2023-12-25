@@ -50,22 +50,28 @@
                         <h2>Product</h2>
                     </div>
                     <div class="profileinputline">
-                        <h3>Brand</h3>
-                        <input type="text" name="name" value="{{ $product->brand->name }}" disabled>              
+                        <h3>Last update</h3>
+                        <input type="text" name="name" value="{{ $product->updated_at }}" disabled>              
                     </div>
                     <div class="profileinputline">
-                    <h3><label for="category">Categoria</label></h3>
+                    <h3><label for="brands">Brand</label></h3>
+                        <select id="brand" name="brand" class="category">
+                            @foreach ($brands as $brand)
+                                <option value="{{ $brand->id }}" {{ $product->brand_id == $brand->id ? 'selected' : '' }}>
+                                    {{ $brand->name }}
+                                </option>
+                            @endforeach
+                        </select>             
+                    </div>
+                    <div class="profileinputline">
+                    <h3><label for="categories">Categoria</label></h3>
                         <select id="category" name="category" class="category">
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
+                                <option value="{{ $category->id }}" {{ $product->categories_id == $category->id ? 'selected' : '' }}>
                                     {{ $category->name }}
                                 </option>
                             @endforeach
                         </select>
-                    </div>
-                    <div class="profileinputline">
-                        <h3>Last update</h3>
-                        <input type="text" name="name" value="{{ $product->updated_at }}" disabled>              
                     </div>
                     <div class="profileinputline">
                         <h3>Name</h3>
