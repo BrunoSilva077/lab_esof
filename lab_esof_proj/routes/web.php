@@ -29,7 +29,7 @@ Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.dest
 Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
 //products routes
 Route::resource('products', ProductsController::class)->only(['create', 'store', 'edit', 'update', 'destroy'])->middleware('is_admin');
-Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+Route::get('/products/{pagesize?}', [ProductsController::class, 'index'])->name('products.index');
 Route::get('/products/{product}', [ProductsController::class, 'show'])->name('products.show');
 Route::post('/products/{product}',[ProductsController::class,'update'])->name('updateProduct');
 //image routes

@@ -107,16 +107,15 @@
             </div>
             <div class="dropdown1">
                 Products per page:
-                <button onclick="myFunction1()" class="dropbtn1">3<i class="fa-solid fa-chevron-down"></i></button>
+                <button onclick="myFunction1()" class="dropbtn1" onchange="changePageSize(this.value)">3<i class="fa-solid fa-chevron-down"></i></button>
                 <div id="myDropdown1" class="dropdown-content1">
-                    <a href="#">3</a><hr class="border-hr">
-                    <a href="#">6</a><hr class="border-hr">
-                    <a href="#">9</a><hr class="border-hr">
-                    <a href="#">12</a><hr class="border-hr">
+                    <a href="#" onclick="changePageSize(3)">3</a><hr class="border-hr">
+                    <a href="#" onclick="changePageSize(6)">6</a><hr class="border-hr">
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="all-prod">
+    
         @forelse($products as $product)
         <a href="{{ route('products.show', ['product' => $product]) }}" class="each-prod">
                 <div class="fav-prod">
@@ -150,9 +149,9 @@
             <div class="alert alert-danger">
                 No products found.
             </div>
-        @endforelse 
-   
-
+        @endforelse
+        
+    
             <!-- <div class="each-prod">
                 <div class="fav-prod">
                     <i class="fa-regular fa-heart"></i>
@@ -176,6 +175,9 @@
             </div> -->
 
         </div> 
+        <ul class="pagination">
+            {!! $products->links('pagination::bootstrap-4')!!}
+        </ul>
     </div>
     
     

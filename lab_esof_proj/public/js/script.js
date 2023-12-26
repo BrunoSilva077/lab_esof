@@ -86,3 +86,7 @@ window.onclick = function(event) {
     }
   }
 }
+
+function changePageSize(pageSize) {
+  window.location.href = '/products/' + pageSize;
+}

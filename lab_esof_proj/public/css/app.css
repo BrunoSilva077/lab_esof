@@ -6744,3 +6744,41 @@ body{
     outline: none;
     font-size: 15px;
 }
+
+.pagination {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    justify-content: center;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+  }
+  
+  .page-item.active .page-link {
+    z-index: 2;
+    color: #fff;
+    background-color: #0FACF3;
+    border-color: #0FACF3;
+  }
+  
+  .page-item.disabled .page-link {
+    color: #868e96;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #ddd;
+  }
+  
+  .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #0FACF3;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+
+
+  
