@@ -3987,6 +3987,19 @@ body{
         color: white;
         font-size: 30px;
     }
+    .category{
+        width: 20%;
+    }
+    .category option[selected]{
+        font-size: 20px;
+    }
+    .profileinputline textarea{
+        font-size: 20px;
+    }
+    .main-image.img_edit.prod img{
+        width:200px;
+        height:200px;
+    }
 }
 @media (min-width: 1440px ) and (max-width: 2559px) {
     .sidemenuedit{
@@ -4080,6 +4093,9 @@ body{
         color: white;
         font-size: 22px;
     }
+    .category{
+        width: 26%;
+    }
 }
 @media (min-width: 1024px ) and (max-width: 1439px) {
     .sidemenuedit{
@@ -4156,7 +4172,7 @@ body{
     }
     .mainmenuedit h3, .mainmenuedit h4, .mainmenuedit button,.mainmenuedit h3{
         width: 15%;
-        overflow: auto;
+        /* overflow: auto; */
         font-size: 20px;
     }
     .horizontal-menuedit{
@@ -4171,6 +4187,9 @@ body{
         height: 35px;
         color: white;
         font-size: 22px;
+    }
+    .category{
+        width: 30%;
     }
 }
 @media (min-width: 768px ) and (max-width: 1023px) {
@@ -4248,7 +4267,7 @@ body{
     }
     .mainmenuedit h3, .mainmenuedit h4, .mainmenuedit button,.mainmenuedit h3{
         width: 25%;
-        overflow: auto;
+        /* overflow: auto; */
         font-size: 20px;
     }
     .horizontal-menuedit{
@@ -4263,6 +4282,12 @@ body{
         height: 25px;
         color: white;
         font-size: 16px;
+    }
+        .profileinputline.images{
+        display: block;
+    }
+    .category{
+        width: 40%;
     }
 }
 @media (min-width: 425px ) and (max-width: 767px) {
@@ -4278,6 +4303,12 @@ body{
     .grid-item.item9.menuedit{
         grid-column: span 4;
     }
+    .grid-item.item2.adproduct.prod{
+        grid-column: span 4;
+    }
+    .sidemenuproduct.prod{
+        height: auto;
+    }
     .sidemenuedit{
         width: 100%;
         height: auto;
@@ -4367,6 +4398,12 @@ body{
         color: white;
         font-size: 14px;
     }
+    .profileinputline.images{
+        display: block;
+    }
+    .category{
+        width: 60%;
+    }
 }
 @media (min-width: 375px ) and (max-width: 424px) {
     .editprofilemenu .grid-container{
@@ -4375,7 +4412,7 @@ body{
         gap: 20px;
         padding: 0% 5%;
     }
-    .grid-item.item3.menuedit{
+    .grid-item.item2.adproduct.prod{
         grid-column: span 2;
     }
     .grid-item.item9.menuedit{
@@ -4387,6 +4424,9 @@ body{
         background-color: #2C2929;
         border-radius: 20px;
         color: white;
+    }
+    .sidemenuproduct.prod{
+        height: auto;
     }
     .sidemenuedit .profileinputline i{
         color: #FF7352;
@@ -4417,6 +4457,9 @@ body{
         flex-direction: row;
         justify-content: left;
         align-items: center;
+    }
+    .profileinputline.images{
+        display: block;
     }
     .profileinputline h3, .profileinputline h2{
         margin: 1% 2% 0% 2%;
@@ -4469,6 +4512,9 @@ body{
         height: 25px;
         color: white;
         font-size: 14px;
+    }
+    .category{
+        width: 60%;
     }
 }
 @media (min-width: 320px ) and (max-width: 374px) {
@@ -4520,6 +4566,9 @@ body{
         flex-direction: row;
         justify-content: left;
         align-items: center;
+    }
+    .profileinputline.images{
+        display: block;
     }
     .profileinputline h3, .profileinputline h2{
         margin: 1% 2% 0% 2%;

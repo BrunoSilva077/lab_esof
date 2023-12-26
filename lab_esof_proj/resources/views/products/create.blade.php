@@ -62,12 +62,26 @@
                     <input type="text" name="stock" value="{{ old('stock') }}">
                     </div>
                     <div class="profileinputline">
-                    <h3>Brand</h3>
-                    <input type="text" name="brand" value="{{ old('brand') }}">
+                        <h3><label for="brands">Brand</label></h3>
+                        <select id="brand" name="brand" class="category">
+                            <option value="" selected disabled>Select a brand</option>
+                            @foreach ($brands  as $brand)
+                                <option value="{{ $brand->id }}">
+                                    {{ $brand->name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="profileinputline">
-                    <h3>Categorie</h3>
-                    <input type="text" name="categorie" value="{{ old('categorie') }}">
+                        <h3><label for="categories">Categorie</label></h3>
+                        <select id="category" name="category" class="category">
+                            <option value="" selected disabled>Select a category</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">
+                                    {{ $category->name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="profileinputline">
                     <h3>Preco</h3>
@@ -80,11 +94,10 @@
                         <div class="space"></div>
                         <input type="radio" name="radio" class="sizeradio" value="false">False
                     </div>
-                    <!-- @include('partials.store') -->
                     <div class="profileinputline">
                         <button class="btnsave">Save</button>
                     </div>
-                    <hr class="horizontal-menuedit">
+                    <!-- <hr class="horizontal-menuedit"> -->
                 </form>
             </div>
         </div>

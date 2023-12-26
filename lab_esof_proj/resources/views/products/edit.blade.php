@@ -7,8 +7,8 @@
 @section('content')
 <div class="adproductmenu">
     <div class="grid-container">
-        <div class="grid-item item2 adproduct">
-            <div class="sidemenuproduct">
+        <div class="grid-item item2 adproduct prod">
+            <div class="sidemenuproduct prod">
             <a href="{{ route('adminorders') }}">
                 <div class="checkoutinputline">
                     <h3>Orders<i class="fa-solid fa-box"></i></h3>
@@ -64,7 +64,7 @@
                         </select>             
                     </div>
                     <div class="profileinputline">
-                    <h3><label for="categories">Categoria</label></h3>
+                    <h3><label for="categories">Categorie</label></h3>
                         <select id="category" name="category" class="category">
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}" {{ $product->categories_id == $category->id ? 'selected' : '' }}>
@@ -96,12 +96,12 @@
                         <div class="space"></div>
                         <input type="radio" name="radio" class="sizeradio" value="false"{{ $product->active === false ? 'checked' : '' }}>False
                     </div>
-                    <div class="profileinputline">
+                    <div class="profileinputline images">
                         <h3>Images</h3>
                     @if ($product->images->count() > 0)
                         @foreach($product->images as $image)
                         <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
-                            <div class="main-image img_edit">
+                            <div class="main-image img_edit prod">
                                 <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
                             </div>
                         </a>

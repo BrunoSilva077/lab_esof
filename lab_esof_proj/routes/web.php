@@ -33,8 +33,9 @@ Route::get('/products', [ProductsController::class, 'index'])->name('products.in
 Route::get('/products/{product}', [ProductsController::class, 'show'])->name('products.show');
 Route::post('/products/{product}',[ProductsController::class,'update'])->name('updateProduct');
 //image routes
+Route::get('/image/create',[ImagesController::class,'create'])->name('partials.create');
 Route::post('save',[ImagesController::class,'store'])->name('partials.store');
-Route::get('/image/{image}/edit]',[ImagesController::class,'edit'])->name('partials.edit');
+Route::get('/image/{image}/edit]',[ImagesController::class,'edit'])->name('partials.edit')->middleware('CheckUserPermissions')->middleware('is_admin');
 Route::post('/image/{image}',[ImagesController::class,'update'])->name('partials.update');
 //home routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -43,7 +44,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/newsletter', [MainController::class, 'newsletter'])->name('newsletter');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
-Route::get('/productPage', [MainController::class, 'productPage'])->name('productPage');
+// Route::get('/productPage', [MainController::class, 'productPage'])->name('productPage');
 Route::get('/menucheckout', [MainController::class, 'menucheckout'])->name('menucheckout');
 //favorite routes
 Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito')->middleware('CheckUserPermissions');

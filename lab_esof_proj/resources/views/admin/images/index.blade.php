@@ -39,9 +39,9 @@
                     <h3>Completed</h3>
                     <h3>Pending</h3> -->
                     <div class="btnnewproduct">
-                            <!-- <a href="{{ route('products.create') }}"> -->
+                            <a href="{{ route('partials.create') }}">
                                 <button>New</button>
-                            <!-- </a> -->
+                            </a>
                     </div>
                 </div>
             </div>

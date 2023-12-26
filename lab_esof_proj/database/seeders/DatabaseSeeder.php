@@ -27,16 +27,16 @@ class DatabaseSeeder extends Seeder
         $products = Products::factory(5)->create();
         Images::factory(15)->create();
 
-        $adminUsers = $users->filter(function ($user) {
-            return $user->is_admin; // Filtra usuários que são admins
-        });
+        // $adminUsers = $users->filter(function ($user) {
+        //     return $user->is_admin; // Filtra usuários que são admins
+        // });
 
-        $adminUsers->each(function ($admin) use ($products) {
-            ProductUser::factory(1)->create([
-                'user_id' => $admin->id,
-                'product_id' => $products->random()->id,
-            ]);
-        });
+        // $adminUsers->each(function ($admin) use ($products) {
+        //     ProductUser::factory(1)->create([
+        //         'user_id' => $admin->id,
+        //         'product_id' => $products->random()->id,
+        //     ]);
+        // });
 
         // Associa todos os produtos a todos os usuários administradores
         // foreach ($admins as $admin) {

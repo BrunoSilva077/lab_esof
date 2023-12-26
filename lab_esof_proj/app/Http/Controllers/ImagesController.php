@@ -22,42 +22,30 @@ class ImagesController extends Controller
      */
     public function create()
     {
-        //
+        $products = Products::all();
+        return view('partials.create',compact('products'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Products $product)
     {
-        // $request->validate([
-        //     'image' => 'required|image|mimes:png|max:2048',
-        // ]);
-
-        // $name = $request->file('image')->getClientOriginalName();
-        // $path = $request->file('image')->store('public/images');
-
-        // $image = new Images();
-        // $image->name = $name;
-        // $image->path = $path;
-        // $image->save();
-        // return back()->with('success', 'Image Uploaded Successfully');
         $request->validate([
-            'images.*' => 'required|image|mimes:png|max:2048',
-            'images' => 'required|array|size:4',
+            'image' => 'required|image|mimes:png|max:2048',
+            // 'product' => 'required'
         ]);
-    
-        foreach ($request->file('images') as $uploadedImage) {
-            $name = $uploadedImage->getClientOriginalName();
-            $path = $uploadedImage->store('public/images');
-    
-            $image = new Images();
-            $image->name = $name;
-            $image->path = $path;
-            $image->save();
-        }
-    
-        return back()->with('success', 'Images Uploaded Successfully');
+
+        $name = $request->file('image')->getClientOriginalName();
+        $request->file('image')->store('public/images');
+
+        $image = new Images();
+        $image->name = $name;
+        $image->path = $request->file('image')->hashName();
+        // $image->product_id = $request->input('product');
+        $image->product_id = 1;
+        $image->save();
+        return redirect('adminimages')->with('success', 'Image Uploaded Successfully');
     }
 
     /**
@@ -73,7 +61,8 @@ class ImagesController extends Controller
      */
     public function edit(Images $image)
     {
-        return view('partials.edit',compact('image'));
+        $products = Products::all();
+        return view('partials.edit',compact('image','products'));
     }
 
     /**
@@ -84,20 +73,11 @@ class ImagesController extends Controller
         $request->validate([
             'name' => 'required|string',
             'product' => 'required|string',
-        ]);
-
-
-            $product = Products::where('name', $request->input('product'))->first();
-
-            if (!$product) {
-                return back()->withErrors(['error' => 'Invalid product selected.']);
-            }
-    
+        ]);    
             $image->update([
                 'name' => $request->input('name'),
-                'product_id' => $product->id,
+                'product_id' => $request->input('product'),
             ]);
-
             return redirect('adminimages')->with('success', 'Image updated successfully');
     }
 

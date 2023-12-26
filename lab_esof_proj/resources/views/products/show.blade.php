@@ -143,8 +143,11 @@
                             <input type="hidden" name="name" value="{{ $product->name }}">
                             <input type="hidden" name="price" value="{{ $product->price }}">
                             <input type="hidden" name="quantity" id="quantity" value="1">
-                            <input type="hidden" name="image" id="image" value="{{ $product->images->first()->path }}">
-                        <div class="adicionar">
+                            @if ($product->images->count() > 0)
+                                <input type="hidden" src="{{'storage/images/' . asset($product->images->first()->path) }}" alt="{{ $product->name }}">
+                            @else
+                                <input type="hidden" src="img/products/default_image.jpg" alt="{{ $product->name }}">
+                            @endif                           <div class="adicionar">
                             <button class="adicionar-carrinho-btn"><i class="fas fa-shopping-cart"></i>Adicionar</button>
                         </div>   
                     </form>

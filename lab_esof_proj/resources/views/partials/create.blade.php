@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    EditImage
+    CreateProduct
 @endsection
 
 @section('content')
@@ -20,12 +20,12 @@
                 </div>
             </a>
             <a href="{{ route('adminproducts') }}">
-                <div class="checkoutinputline">
+                <div class="checkoutinputline active">
                     <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
                 </div>
-            </a>    
+            </a>
             <a href="{{ route('adminimages') }}">
-                <div class="checkoutinputline active">
+                <div class="checkoutinputline ">
                     <h3>Images<i class="fa-solid fa-image"></i></h3>
                 </div>
             </a>
@@ -44,29 +44,21 @@
                         </ul>
                 </div>
             @endif
-                <form action=" {{ route('partials.update', ['image' => $image]) }}" method="POST">
+                <form method="POST" enctype="multipart/form-data" action="{{ route('partials.store') }}">
                     @csrf
                     <div class="profileinputline">
-                        <h2>Image</h2>
-                        <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
-                            <div class="main-image img_edit">
-                                <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
-                            </div>
-                        </a>                 
-                    </div>
-                    <div class="profileinputline">
-                        <h3>Last update</h3>
-                        <input type="text" name="updated" value="{{ $image->updated_at }}" disabled>              
-                    </div>
-                    <div class="profileinputline">
-                        <h3>Name</h3>
-                        <input type="text" name="name" value="{{ $image->name }}">              
+                        <h3>Choose Image</h3>
+                        <input type="file" class="form-control" name="image" placeholder="Choose image">
+                        @error('image')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="profileinputline">
                         <h3>Product Associated</h3>
                         <select id="product" name="product" class="category">
+                            <option value="" selected disabled>Select a product</option>
                             @foreach ($products as $product)
-                                <option value="{{ $product->id }}" {{ $image->product_id == $product->id ? 'selected' : '' }}>
+                                <option value="{{ $product->id }}">
                                     {{ $product->name }}
                                 </option>
                             @endforeach
@@ -75,10 +67,9 @@
                     <div class="profileinputline">
                         <button class="btnsave">Save</button>
                     </div>
-                    <!-- <hr class="horizontal-menuedit"> -->
                 </form>
             </div>
         </div>
     </div>
 </div>
-@endsection('content')
+@endsection

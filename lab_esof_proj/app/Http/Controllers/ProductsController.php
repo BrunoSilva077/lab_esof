@@ -25,41 +25,82 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $categories = Categories::all();
+        $brands = Brands::all();
+        return view('products.create',compact('categories', 'brands'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'name' => 'required|string',
+    //         'description' => 'required|string',
+    //         'stock' => 'required|numeric',
+    //         'price' => 'required|numeric',
+    //         ]);
+
+    //     $product=Products::create([
+    //         'name' => $request->input('name'),
+    //         'description' => $request->input('description'),
+    //         'stock' => $request->input('stock'),
+    //         'active' => $request->input('radio') === 'true', // Assume que o valor do rádio é uma string 'true' ou 'false'
+    //         'price' => $request->input('price'),   
+    //         'brand_id' => $request->input('brand'),
+    //         'categories_id' => $request->input('category'), 
+    //     ]);
+    //     if ($request->has('images')) {
+    //         foreach ($request->file('images') as $image) {
+    //             $name = $image->getClientOriginalName();
+    //             $path = $image->store('public/images');
+    
+    //             $product->images()->create([
+    //                 'name' => $name,
+    //                 'path' => $path,
+    //             ]);
+    //         }
+    //     }
+    //     return redirect('adminproducts')->with('success', 'Product created successfully');
+    // }
+
     public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string',
-            'description' => 'required|string',
-            'stock' => 'required|numeric',
-            'price' => 'required|numeric',
-            'brand' => 'required|string',
-            'categorie' => 'required|string'
-            ]);
+{
+    $request->validate([
+        'name' => 'required|string',
+        'description' => 'required|string',
+        'stock' => 'required|numeric',
+        'price' => 'required|numeric',
+        'images.*' => 'required|image|mimes:png|max:2048', // Validar cada imagem no array
+    ]);
 
-            try {
-                $brand = Brands::where('name', $request->input('brand'))->firstOrFail();
-                $categorie = Categories::where('name', $request->input('categorie'))->firstOrFail();
-            } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-                return back()->withErrors(['error' => 'Invalid brand or category selected.']);
-            }
+    $product = Products::create([
+        'name' => $request->input('name'),
+        'description' => $request->input('description'),
+        'stock' => $request->input('stock'),
+        'active' => $request->input('radio') === 'true',
+        'price' => $request->input('price'),
+        'brand_id' => $request->input('brand'),
+        'categories_id' => $request->input('category'),
+    ]);
 
-        Products::create([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-            'stock' => $request->input('stock'),
-            'active' => $request->input('radio') === 'true', // Assume que o valor do rádio é uma string 'true' ou 'false'
-            'price' => $request->input('price'),   
-            'brand_id' => $brand->id,
-            'categories_id' => $categorie->id,     
-        ]);
-        return redirect('adminproducts')->with('success', 'Product created successfully');
-    }
+    // // Associar imagens ao produto
+    // if ($request->has('images')) {
+    //     foreach ($request->file('images') as $image) {
+    //         $name = $image->getClientOriginalName();
+    //         $path = $image->store('public/images');
+
+    //         $product->images()->create([
+    //             'name' => $name,
+    //             'path' => $path,
+    //         ]);
+    //     }
+    // }
+
+    return redirect('adminproducts')->with('success', 'Product created successfully');
+}
+
 
     /**
      * Display the specified resource.
