@@ -2771,7 +2771,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 90%;
     }
     .linhacheckout{
@@ -2893,7 +2893,7 @@ body{
         font-size: 20px;
     }
     .contentyourbag img{
-        margin-top: auto;
+        margin: auto;
         width: 90px;
         height: 90px;
     }
@@ -2930,7 +2930,7 @@ body{
         #fname,#pcode,#email{
             margin-right: 3%;
         }
-        #address,#ContRegion{
+        #address,#ContRegion,#voucher{
            width: 90%;
         }
         .linhacheckout{
@@ -3037,7 +3037,7 @@ body{
             font-size: 14px;
         }
         .contentyourbag img{
-            margin-top: auto;
+            margin: auto;
         }
     }
 @media (min-width: 1024px ) and (max-width: 1439px) {
@@ -3083,7 +3083,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 83%;
     }
     .linhacheckout{
@@ -3236,7 +3236,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 83%;
     }
     .linhacheckout{
@@ -3343,7 +3343,7 @@ body{
         font-size: 13px;
     }
     .contentyourbag img{
-        margin-top: auto;
+        margin: auto;
     }
 }
 @media (min-width: 425px ) and (max-width: 767px) {
@@ -3401,7 +3401,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 90%;
     }
     .linhacheckout{
@@ -3508,7 +3508,7 @@ body{
         font-size: 13px;
     }
     .contentyourbag img{
-        margin-top: auto;
+        margin: auto;
     }
 }
 @media (min-width: 375px ) and (max-width: 424px) {
@@ -3566,7 +3566,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 83%;
     }
     .linhacheckout{
@@ -3673,7 +3673,7 @@ body{
         font-size: 13px;
     }
     .contentyourbag img{
-        margin-top: auto;
+        margin: auto;
     }
 }
 @media (min-width: 320px ) and (max-width: 374px) {
@@ -3732,7 +3732,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 83%;
     }
     .linhacheckout{
@@ -3840,7 +3840,7 @@ body{
         font-size: 13px;
     }
     .contentyourbag img{
-        margin-top: auto;
+        margin: auto;
     }
 }
 

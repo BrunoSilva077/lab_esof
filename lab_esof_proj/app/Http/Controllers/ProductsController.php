@@ -69,4 +69,22 @@ class ProductsController extends Controller
     {
         //
     }
+    public function search(Request $request)
+    {
+        $request->validate([
+            'search' => 'required|string'
+        ]);
+
+        $search = $request->input('search');
+
+        $products = Products::where('name', 'like', "%$search%")->get();
+
+        return view('products.index', compact('products'));
+    }
+
+    public function slideshow(Request $request){
+        $randomProducts = Products::inRandomOrder()->limit(3)->get();
+
+        return view('home', compact('randomProducts'));
+    }
 }
