@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Favorito;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 class FavoritoController extends Controller
 {
     /**
@@ -13,10 +12,14 @@ class FavoritoController extends Controller
      */
     public function index()
     {
-        $userId = Auth::id();
+       // Obtém o ID do usuário autenticado
+    $id_user = Auth::id();
 
-        $favoritos = Favorito::where('user_id', $userId)->get();
-        return view('favorites.index', compact('favoritos'));
+    // Busca os favoritos associados ao usuário autenticado
+    $favoritos = Favorito::where('user_id', $id_user)->get();
+
+    // Passa os favoritos para a view
+    return view('favorites.index', compact('favoritos'));
     }
 
     /**
@@ -78,6 +81,7 @@ class FavoritoController extends Controller
      */
     public function destroy(Favorito $favorito)
     {
-        //
+        $favorito->delete();
+        return back()->with('success', 'Product removed successfully');
     }
 }

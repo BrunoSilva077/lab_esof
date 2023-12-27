@@ -22,6 +22,12 @@
                         <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
                     </div>
                 </a>
+                <a href="{{ route('adminvouchers') }}">
+                    <div class="checkoutinputline">
+                        <h3>Vouchers<i class="fa-solid"></i></h3>
+                    </div>
+                </a>
+
                 <a href="{{ route('adminimages') }}">
                     <div class="checkoutinputline ">
                         <h3>Images<i class="fa-solid fa-image"></i></h3>
@@ -61,7 +67,9 @@
                         <h4>False</h4>
                     @endif
                     <h4>{{ $user->password }}</h4>
-                    <button>Edit</button>
+                    <a href="{{ route('edituser', ['user' => $user]) }}">
+                        <button>Edit</button>
+                    </a>
                     <button>Remove</button>
                     </div>
 

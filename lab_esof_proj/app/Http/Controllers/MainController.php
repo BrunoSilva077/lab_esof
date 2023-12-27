@@ -42,7 +42,7 @@ class MainController extends Controller
         return view('editprofile');
     }
     public function Favprofile() {
-        return view('favprofile');
+        return view('favoritos/favprofile');
     }
     public function Historyprofile() {
         return view('historyprofile');
@@ -56,4 +56,14 @@ class MainController extends Controller
     public function AdminProducts() {
         return view('adminproducts');
     }
+
+    public function AdminVouchers() {
+        return view('adminvouchers');
+    }
+
+    public function AdminVouchersEdit() {
+        return view('editvoucher');
+    }
+
+
 }

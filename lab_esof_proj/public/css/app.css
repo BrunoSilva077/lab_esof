@@ -2183,10 +2183,17 @@ body{
   }
   
   .fav-prod{
-    margin: 5% 5% 0% 5%;
+    margin: 5% 5% 0% 0%;
     display: flex;
     justify-content: right;
     align-items: center;
+    color: white;
+  }
+  .fav-prod.profile{
+    margin: 5% 5% 0% 5%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
   }
 
     .fa-regular.fa-heart{
@@ -2198,6 +2205,11 @@ body{
         color: #FF7352;
         transition: all 0.3s ease;
     }
+    .fa-solid.fa-heart:hover{
+        color: #FF7352;
+        transition: all 0.3s ease;
+    }
+
 
   .img-prod{
     display: flex;
@@ -2254,6 +2266,9 @@ body{
     .productf, .dropbtn, .dropbtn1{
         font-size: 15px;
     }
+    .each-prod{
+        width: 100%;
+    }
   }
 
   @media (max-width:425px) {
@@ -2261,6 +2276,9 @@ body{
         grid-template-columns: repeat(3, 1fr);
         padding: 0% 5%;
     
+    }
+    .each-prod{
+        width: 100%;
     }
   }
 
@@ -2780,7 +2798,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 90%;
     }
     .linhacheckout{
@@ -2902,7 +2920,7 @@ body{
         font-size: 20px;
     }
     .contentyourbag img{
-        margin-top: auto;
+        margin: auto;
         width: 90px;
         height: 90px;
     }
@@ -2939,7 +2957,7 @@ body{
         #fname,#pcode,#email{
             margin-right: 3%;
         }
-        #address,#ContRegion{
+        #address,#ContRegion,#voucher{
            width: 90%;
         }
         .linhacheckout{
@@ -3046,7 +3064,7 @@ body{
             font-size: 14px;
         }
         .contentyourbag img{
-            margin-top: auto;
+            margin: auto;
         }
     }
 @media (min-width: 1024px ) and (max-width: 1439px) {
@@ -3092,7 +3110,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 83%;
     }
     .linhacheckout{
@@ -3245,7 +3263,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 83%;
     }
     .linhacheckout{
@@ -3352,7 +3370,7 @@ body{
         font-size: 13px;
     }
     .contentyourbag img{
-        margin-top: auto;
+        margin: auto;
     }
 }
 @media (min-width: 425px ) and (max-width: 767px) {
@@ -3410,7 +3428,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 90%;
     }
     .linhacheckout{
@@ -3517,7 +3535,7 @@ body{
         font-size: 13px;
     }
     .contentyourbag img{
-        margin-top: auto;
+        margin: auto;
     }
 }
 @media (min-width: 375px ) and (max-width: 424px) {
@@ -3575,7 +3593,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 83%;
     }
     .linhacheckout{
@@ -3682,7 +3700,7 @@ body{
         font-size: 13px;
     }
     .contentyourbag img{
-        margin-top: auto;
+        margin: auto;
     }
 }
 @media (min-width: 320px ) and (max-width: 374px) {
@@ -3741,7 +3759,7 @@ body{
     #fname,#pcode,#email{
         margin-right: 3%;
     }
-    #address,#ContRegion{
+    #address,#ContRegion,#voucher{
        width: 83%;
     }
     .linhacheckout{
@@ -3849,7 +3867,7 @@ body{
         font-size: 13px;
     }
     .contentyourbag img{
-        margin-top: auto;
+        margin: auto;
     }
 }
 
@@ -5658,18 +5676,18 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adclient{
-        grid-column: span 1;
+        grid-column: span 6;
     }
     .grid-item.item1.adclient{
         display: none;
     }
     .grid-item.item9.adclient{
-        grid-column: span 2;
+        grid-column: span 6;
     }
     
     .sidemenuclient{
         width: 100%;
-        height: 100vh;
+        height: 40vh;
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5762,18 +5780,18 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adclient{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .grid-item.item1.adclient{
         display: none;
     }
     .grid-item.item9.adclient{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     
     .sidemenuclient{
         width: 100%;
-        height: 100vh;
+        height: 40vh;
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5866,17 +5884,17 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adclient{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .grid-item.item1.adclient{
         display: none;
     }
     .grid-item.item9.adclient{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .sidemenuclient{
         width: 100%;
-        height: 100vh;
+        height: 30vh;
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6343,17 +6361,17 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adproduct{
-        grid-column: span 1;
+        grid-column: span 3;
     }
     .grid-item.item1.adproduct{
         display: none;
     }
     .grid-item.item9.adproduct{
-        grid-column: span 2;
+        grid-column: span 3;
     }
     .sidemenuproduct{
         width: 100%;
-        height: 100vh;
+        height: 40vh;
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6447,17 +6465,17 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adproduct{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .grid-item.item1.adproduct{
         display: none;
     }
     .grid-item.item9.adproduct{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .sidemenuproduct{
         width: 100%;
-        height: 100vh;
+        height: 30vh;
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6557,7 +6575,7 @@ body{
         display: none;
     }
     .grid-item.item9.adproduct{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .sidemenuproduct{
         width: 100%;
@@ -6713,6 +6731,28 @@ body{
 }
 .linhahome2{
     margin-left: 5%;
+}
+
+.a_voucher{
+    width: 100px;
+}
+
+.but_voucher{
+    width: 100%;
+}
+.grid-item.item9.menuedit .botaoFormfix{
+    outline:none;
+    border:none;
+    background-color:transparent;
+    cursor:pointer;
+    width: 100%;
+    overflow: hidden;
+
+}
+.formFav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .profileinputline input:disabled{

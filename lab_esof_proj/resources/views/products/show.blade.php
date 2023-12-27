@@ -9,16 +9,25 @@
     <div class="product-container grid-container">
         <div class="grid-item item7">
             <div class="images">
+                <a href="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" style="text-decoration:none">
+                    <div class="favorites">
+                        @if ($favoritos && $favoritos->contains('product_id', $product->id))
+                            <i class="fa-solid fa-heart fa-lg"></i>
+                        @else
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        @endif            
+                    </div>
+                </a>
             @if($message = Session::get('success'))
                 <div class="alert alert-success">
                     <p>{{ $message }}</p>
                 </div>
             @endif 
-                <a href="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" style="text-decoration:none">
+                <!-- <a href="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" style="text-decoration:none">
                     <div class="favorites">
                         <i class="far fa-heart fa-lg" ></i>                    
                     </div>
-                </a>
+                </a> -->
                 <br>
                 <div class="up-images">
                     @forelse($product->images->take(2) as $image)

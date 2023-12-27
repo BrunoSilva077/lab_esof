@@ -4,19 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
+use App\Models\Favorito;
+use Illuminate\Support\Facades\Auth;
+use CarrinhoDeCompras\Cart;
 use App\Models\Brands;
 use App\Models\Categories;
 
 class ProductsController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request, $pageSize = 3)
         {
             $products = Products::paginate($pageSize);
-
-            return view('products.index', compact('products'));
+        $favoritos = Auth::user()->favorito;
+            return view('products.index', compact('products','favoritos'));
         }
 
     /**
@@ -106,7 +110,8 @@ class ProductsController extends Controller
      */
     public function show(Products $product)
     {
-        return view('products.show', compact('product'));
+        $favoritos = Auth::user()->favorito;
+        return view('products.show', compact('product','favoritos'));
     }
 
     /**

@@ -18,11 +18,18 @@
                 <div class="checkoutinputline">
                     <h3>Clients<i class="fa-solid fa-user"></i></h3>
                 </div>
-            </a>
+                <!-- <a href="{{ route('adminproducts') }}">
+                </a> -->
             <a href="{{ route('adminimages') }}">
-                <div class="checkoutinputline active">
-                    <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
-                </div>
+                <div class="checkoutinputline">
+                        <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminvouchers') }}">
+                    <div class="checkoutinputline">
+                        <h3>Vouchers<i class="fa-solid"></i></h3>
+                    </div>
+                </a>
             </a>
             <a href="{{ route('adminimages') }}">
                 <div class="checkoutinputline ">

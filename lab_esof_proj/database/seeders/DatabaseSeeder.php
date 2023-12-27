@@ -9,8 +9,10 @@ use App\Models\Products;
 use App\Models\Images;
 use App\Models\Categories;
 use App\Models\Brands;
+use App\Models\Voucher;
+use App\Models\Favorito;
+use App\Models\FavoritoProdutos;
 use App\Models\ProductUser;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -24,7 +26,7 @@ class DatabaseSeeder extends Seeder
         // Cria 5 produtos
         Brands::factory(5)->create();
         Categories::factory(5)->create();
-        $products = Products::factory(5)->create();
+        $products = Products::factory(20)->create();
         Images::factory(15)->create();
 
         // $adminUsers = $users->filter(function ($user) {
@@ -58,5 +60,7 @@ class DatabaseSeeder extends Seeder
         //     // Associa a imagem ao produto
         //     $image->products()->attach($product);
         // });
+        // Favorito::factory(20)->create();
+        // FavoritoProdutos::factory(20)->create();
     }
 }
