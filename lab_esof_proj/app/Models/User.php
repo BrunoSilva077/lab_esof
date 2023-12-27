@@ -8,11 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Laravel\Cashier\Billable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable,Billable;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -48,16 +47,13 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
-    public function products()
-    {
-        return $this->belongsToMany(Products::class, 'product_user', 'product_id', 'user_id');
-    }
-
     public function favorito()
     {
         return $this->hasMany(Favorito::class,'user_id','id');
     }
-    public function checkout(){
-        return $this->hasMany(Checkout::class,'user_id','id');
+    
+    public function products()
+    {
+        return $this->belongsToMany(Products::class, 'product_user', 'product_id', 'user_id');
     }
 }

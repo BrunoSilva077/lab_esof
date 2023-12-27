@@ -9,9 +9,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FavoritoController;
+<<<<<<< HEAD
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+=======
+>>>>>>> parent of a1eb3b1 (inicio da implementação dos pagamentos)
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,20 +49,9 @@ Route::get('/newsletter', [MainController::class, 'newsletter'])->name('newslett
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/productPage', [MainController::class, 'productPage'])->name('productPage');
+Route::get('/menucheckout', [MainController::class, 'menucheckout'])->name('menucheckout');
 Route::get('/editprofile', [MainController::class, 'editprofile'])->name('editprofile');
 // Route::get('/adminorders', [AdminController::class, 'listOrders'])->name('adminorders')->middleware('is_admin');
-
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
-Route::post('/session', [CheckoutController::class, 'session'])->name('session');
-Route::get('/success', [CheckoutController::class, 'success'])->name('success');
-//favorite routes
-Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito')->middleware('CheckUserPermissions');
-Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos')->middleware('CheckUserPermissions');
-//user routes
-Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('editprofile')->middleware('CheckUserPermissions');
-Route::post('/user/update/{user}', [UserController::class, 'update'])->name('updateprofile');
-// Admin Routes
-Route::get('/adminorders', [AdminController::class, 'listOrders'])->name('adminorders')->middleware('is_admin');
 Route::get('/adminclients', [AdminController::class, 'listUsers'])->name('adminclients')->middleware('is_admin');
 Route::get('/adminproducts', [AdminController::class, 'listProducts'])->name('adminproducts')->middleware('is_admin');
 Route::get('/adminvouchers', [VoucherController::class, 'index'])->name('adminvouchers')->middleware('is_admin');

@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 <div class="checkoutmenu">
     <div class="grid-container">
         <div class="grid-item item2 checkout"></div>
@@ -13,22 +12,40 @@
             <div class="menu1">
                 <h1>Delivery Options</h1>
                     <div class="inputsdelivery"><!--Depois meter os required e meter form tb-->
+                        <div class="checkoutinputline">
+                            <input type="text" placeholder="First Name" id="fname" >
+                            <input type="text" placeholder="Last Name" id="lname" >
+                        </div>
                         <input type="text" placeholder="Address" id="address" >
                         <div class="checkoutinputline">
                             <input type="text" placeholder="Post code" id="pcode" >
                             <input type="text" placeholder="Village/City" id="VillCity" >
                         </div>
                         <input type="text" placeholder="Country/Region" id="ContRegion" >
-                        <input type="text" placeholder="Voucher" id="voucher" >
-                        <br>
-                        <form action="/session" method="POST">
-                            <a href="{{ url('/') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Go back</a>
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <input type='hidden' name="total" value="6">
-                            <input type='hidden' name="voucher_code" value="ric">
-                            <input type='hidden' name="productname" value="Asus Vivobook 17 Laptop - Intel Core 10th">
-                            <button class="btn btn-success" type="submit" id="checkout-live-button"><i class="fa fa-money"></i> Checkout</button>
-                        </form>
+                        <div class="checkoutinputline">
+                            <input type="email" placeholder="Email" id="email" >
+                            <input type="text" placeholder="Phone Number" id="pnumber" >
+                        </div>
+                        <button type="submit" id="cntbutton" onclick="mostrarInput()" style="cursor: pointer;">Continue</button>
+                        <hr class="linhacheckout">
+                    </div>
+                    <div id="menuescondido">
+                        <h1>Payment</h1>
+                        <div class="inputspayment">
+                            <div class="checkoutinputline">
+                                <input type="checkbox" value="promo" id="habilitarInput">
+                                <label for="habilitarInput" style="color:white">Do you have any promo code?</label>
+                            </div>
+                            <input type="text" id="textoInput" placeholder="Code" disabled>
+                            <h2>Add Card</h2>
+                            <div>
+                                <input type="text" placeholder="Card Number" id="cnumb">
+                                <input type="text" placeholder="MM/YY" id="mmyy">
+                                <input type="text" placeholder="CVV" id="cvv">
+                            </div>
+                            <hr class="linhacheckout2">
+                            <button type="submit" id="placeorder" style="cursor: pointer;">Place Order</button>
+                        </div>
                     </div>
             </div>
         </div>

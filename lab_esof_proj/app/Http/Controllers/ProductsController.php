@@ -156,6 +156,7 @@ class ProductsController extends Controller
     {
         //
     }
+<<<<<<< HEAD
 
     public function search(Request $request)
     {
@@ -175,4 +176,6 @@ class ProductsController extends Controller
 
         return view('home', compact('randomProducts'));
     }
+=======
+>>>>>>> parent of a1eb3b1 (inicio da implementação dos pagamentos)
 }
