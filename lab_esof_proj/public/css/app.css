@@ -6630,14 +6630,18 @@ body{
 .but_voucher{
     width: 100%;
 }
-.grid-item.item9.menuedit .botaoFormfix{
+.grid-item.item9.menuedit .botaoFormfix, .grid-item.item8 .botaoFormfix, .grid-item.item7 .botaoFormfix{
     outline:none;
     border:none;
     background-color:transparent;
     cursor:pointer;
     width: 100%;
     overflow: hidden;
-
+    color: white;
+}
+.grid-item.item8 .botaoFormfix, .grid-item.item7 .botaoFormfix{
+    margin-top: 2%;
+    width: auto;
 }
 .formFav{
     display: flex;

@@ -27,7 +27,7 @@
                 @forelse($favoritos as $favorito)
                 <a href="{{ route('products.show', ['product' => $favorito]) }}" class="each-prod">
                         <div class="fav-prod profile">
-                            <form action="{{ route('removerfavorito', ['favorito' => $favorito]) }}" method="POST" class="formFav">
+                            <form action="{{ route('removerfavorito', ['product_id' => $favorito->product_id]) }}" method="POST" class="formFav">
                                 @csrf
                                 <button type="submit" class="botaoFormfix" style="float:left;">
                                     <i class="fa-solid fa-xmark"></i>

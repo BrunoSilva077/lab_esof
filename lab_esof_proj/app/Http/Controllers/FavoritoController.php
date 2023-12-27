@@ -49,7 +49,7 @@ class FavoritoController extends Controller
             $favorito->user_id = $id_user;
             $favorito->product_id = $id_produto;
             $favorito->save();
-            return redirect()->route('home');
+            return back()->with('success', 'Favorito added successfully');
     }
 
     /**
@@ -79,9 +79,17 @@ class FavoritoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Favorito $favorito)
+    public function destroy($id_produto)
     {
-        $favorito->delete();
-        return back()->with('success', 'Product removed successfully');
+        $favorito = Favorito::where('product_id', $id_produto)->first();
+
+        if ($favorito) {
+            // Access the attributes of the favorito
+            $favoritoId = $favorito->id;
+            // Delete the favorito
+            Favorito::destroy($favoritoId);
+    
+            return back()->with('success', 'Favorito removed successfully');
+        }
     }
 }
