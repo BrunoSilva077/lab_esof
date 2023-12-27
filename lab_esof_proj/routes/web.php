@@ -9,12 +9,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FavoritoController;
-<<<<<<< HEAD
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
-=======
->>>>>>> parent of a1eb3b1 (inicio da implementação dos pagamentos)
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
