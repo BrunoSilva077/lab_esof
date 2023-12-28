@@ -122,17 +122,26 @@
                 <!-- <div class="fav-prod">
                     <i class="fa-regular fa-heart"></i>
                 </div> -->
-
-                <form action="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" method="GET">
-                    @csrf
-                    <button type="submit" class="fav-prod botaoFormfix">
-                    @if ($favoritos && $favoritos->contains('product_id', $product->id))
-                        <i class="fa-solid fa-heart fa-lg"></i>
+                @auth
+                @if ($favoritos && $favoritos->contains('product_id', $product->id))
+                    <form action="{{ route('removerfavorito', ['product_id' => $product->id]) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="botaoFormfix" style="float:left;">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <button type="submit" class="botaoFormfix" style="float:right;">
+                                    <i class="fa-solid fa-heart fa-lg"></i>
+                                </button>
+                    </form>
                     @else
+                    <form action="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" method="GET">
+                    @csrf
+                    <button type="submit" class="botaoFormfix" style="float:right;">
                         <i class="fa-regular fa-heart fa-lg"></i>
-                    @endif
                     </button>
-                </form>
+                    </form>
+                    @endif
+                @endauth
                 <br>
      
                 <div class="img-prod">

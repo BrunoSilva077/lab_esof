@@ -17,8 +17,11 @@ class ProductsController extends Controller
     {
         // $products = Products::paginate(2);
         $products = Products::all();
-        $favoritos = Auth::user()->favorito;
-        return view('products.index', compact('products','favoritos'));
+        if(Auth::user()){
+            $favoritos = Auth::user()->favorito;
+            return view('products.index', compact('products','favoritos'));
+        }
+            return view('products.index', compact('products'));
     }
 
     /**
@@ -42,8 +45,11 @@ class ProductsController extends Controller
      */
     public function show(Products $product)
     {
-        $favoritos = Auth::user()->favorito;
-        return view('products.show', compact('product','favoritos'));
+        if(Auth::user()){
+            $favoritos = Auth::user()->favorito;
+            return view('products.show', compact('product','favoritos'));
+        }
+        return view('products.show', compact('product'));
     }
 
     /**

@@ -60,7 +60,7 @@ Route::post('/user/update/{user}', [UserController::class, 'update'])->name('upd
 
 Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito');
 Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos');
-Route::post('/user/favoritos/delete/{favorito}', [FavoritoController::class, 'destroy'])->name('removerfavorito');
+Route::post('/user/favoritos/delete/{product_id}', [FavoritoController::class, 'destroy'])->name('removerfavorito');
 Route::get('/historyprofile', [MainController::class, 'historyprofile'])->name('historyprofile');
 
 Route::resource('products', ProductsController::class)->only(['create', 'store', 'edit', 'update', 'destroy'])->middleware('is_admin');

@@ -9,15 +9,24 @@
     <div class="product-container grid-container">
         <div class="grid-item item7">
             <div class="images">
-                <a href="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" style="text-decoration:none">
-                    <div class="favorites">
-                        @if ($favoritos && $favoritos->contains('product_id', $product->id))
-                            <i class="fa-solid fa-heart fa-lg"></i>
-                        @else
-                            <i class="fa-regular fa-heart fa-lg"></i>
-                        @endif            
-                    </div>
-                </a>
+                @auth
+                @if ($favoritos && $favoritos->contains('product_id', $product->id))
+                    <form action="{{ route('removerfavorito', ['product_id' => $product->id]) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="botaoFormfix" style="float:right;">
+                                    <i class="fa-solid fa-heart fa-lg"></i>
+                                </button>
+                    </form>
+                    @else
+                    <form action="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" method="GET">
+                    @csrf
+                    <button type="submit" class="botaoFormfix" style="float:right;">
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </button>
+                    </form>
+                @endif
+                @endauth
+                <br>
                 <div class="up-images">
                     @forelse($product->images->take(2) as $image)
                         <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
