@@ -9,17 +9,24 @@
     <div class="grid-container">
         <div class="grid-item item2 adclient">
             <div class="sidemenuclient">
-                <a href="{{ route('adminclients') }}">
+                <a href="{{ route('adminorders') }}">
                     <div class="checkoutinputline">
                         <h3>Orders<i class="fa-solid fa-box"></i></h3>
                     </div>
                 </a>
-                <div class="checkoutinputline active">
-                    <h3>Clients<i class="fa-solid fa-user"></i></h3>
-                </div>
+                <a href="{{ route('adminclients') }}">
+                    <div class="checkoutinputline active">
+                        <h3>Clients<i class="fa-solid fa-user"></i></h3>
+                    </div>
+                </a>
                 <a href="{{ route('adminproducts') }}">
                     <div class="checkoutinputline">
                         <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminimages') }}">
+                    <div class="checkoutinputline ">
+                        <h3>Images<i class="fa-solid fa-image"></i></h3>
                     </div>
                 </a>
                 <a href="{{ route('adminvouchers') }}">
@@ -45,30 +52,29 @@
                 </div>
                 <hr class="horizontal-adclient">
                     @forelse($users as $user)
-                    <div class="checkoutinputline">
+                        <div class="checkoutinputline">
 
-                    <h4>{{ $user->id }}</h4>
-                    @if($user->active)
-                        <h4>True</h4>
-                    @else
-                        <h4>False</h4>
-                    @endif
-                    <h4>{{ $user->name }}</h4>
-                    <h4>{{ $user->email }}</h4>
-                    @if($user->gender)
-                        <h4>Male</h4>
-                    @else
-                        <h4>Female</h4>
-                    @endif    
-                    <h4>{{ $user->password }}</h4>
-                    <a href="{{ route('edituser', ['user' => $user]) }}">
+                        <h4>{{ $user->id }}</h4>
+
+                        <h4>{{ $user->name }}</h4>
+                        <h4>{{ $user->email }}</h4>
+                        @if($user->gender)
+                            <h4>Male</h4>
+                        @else
+                            <h4>Female</h4>
+                        @endif    
+                        @if($user->active)
+                            <h4>True</h4>
+                        @else
+                            <h4>False</h4>
+                        @endif
+                        <h4>{{ $user->password }}</h4>
                         <button>Edit</button>
-                    </a>
-                    <button>Remove</button>
-                    </div>
+                        <button>Remove</button>
+                        </div>
 
-                    @empty
-                    <p>Nenhum cliente cadastrado.</p>
+                        @empty
+                        <p>Nenhum cliente cadastrado.</p>
                     @endforelse
 
                     <!-- <h4>1</h4>

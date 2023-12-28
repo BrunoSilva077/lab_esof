@@ -9,6 +9,11 @@
     <div class="product-container grid-container">
         <div class="grid-item item7">
             <div class="images">
+                @if($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
+                @endif 
                 @auth
                 @if ($favoritos && $favoritos->contains('product_id', $product->id))
                     <form action="{{ route('removerfavorito', ['product_id' => $product->id]) }}" method="POST">
@@ -138,6 +143,30 @@
                     <div class="stock in-stock">
                     <i class="fas fa-check-circle"></i>
                     <a>{{ $product->stock }} In Stock</a>
+                    <div class="quantidade-botoes">
+                    <div class="quantidade">
+                        <button class="menos" onclick="removeProduct()">-</button>
+                        <input type="text" value="1" class="numero show" disabled>
+                        <button class="mais" onclick="addProduct()">+</button>
+                    </div>
+                    <form action=" {{ route('cart.store') }}" method="POST">
+                        @csrf
+                            <input type="hidden" name="id" value="{{ $product->id }}">
+                            <input type="hidden" name="name" value="{{ $product->name }}">
+                            <input type="hidden" name="price" value="{{ $product->price }}">
+                            <input type="hidden" name="quantity" id="quantity" value="1">
+                            @if ($product->images->count() > 0)
+                                <input type="hidden" src="{{'storage/images/' . asset($product->images->first()->path) }}" alt="{{ $product->name }}">
+                            @else
+                                <input type="hidden" src="img/products/default_image.jpg" alt="{{ $product->name }}">
+                            @endif                           <div class="adicionar">
+                            <button class="adicionar-carrinho-btn"><i class="fas fa-shopping-cart"></i>Adicionar</button>
+                        </div>   
+                    </form>
+                    <div class="comprar-ja">
+                        <button class="comprar-ja-btn">Comprar já<i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
                     </div>
                     @else
                     <div class="stock no-stock">
@@ -145,25 +174,15 @@
                      <a><!--{{ $product->stock }}--> Out of Stock</a>
                     </div>
                     @endif
-                <div class="quantidade-botoes">
-                    <div class="quantidade">
-                        <button class="menos" onclick="removeProduct()">-</button>
-                        <input type="text" value="1" class="numero" disabled>
-                        <button class="mais" onclick="addProduct()">+</button>
-                    </div>
-                    <div class="adicionar">
-                        <button class="adicionar-carrinho-btn"><i class="fas fa-shopping-cart"></i>Adicionar</button>
-                    </div>   
-                    <div class="comprar-ja">
-                        <button class="comprar-ja-btn">Comprar já<i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
 
 <script>
     const opcoes = document.querySelectorAll('.opcoes a');
+    const stock = {{ $product->stock }}; // Obtém o valor do estoque do Laravel
+
 
     opcoes.forEach(opcao => {
         opcao.addEventListener('click', function() {
@@ -190,17 +209,22 @@
     });
 
     function addProduct() {
-        const quantidade = document.querySelector('.quantidade .numero');
+        const quantidade = document.querySelector('.quantidade .numero.show');
+        // console.log(quantidade);
         const quantidadeValue = parseInt(quantidade.value);
-        quantidade.value = quantidadeValue + 1;
+        if (quantidadeValue < stock){
+            quantidade.value = quantidadeValue + 1;
+        }
+        document.getElementById('quantity').value = quantidade.value;
     }
 
     function removeProduct() {
-        const quantidade = document.querySelector('.quantidade .numero');
+        const quantidade = document.querySelector('.quantidade .numero.show');
         const quantidadeValue = parseInt(quantidade.value);
         if (quantidadeValue > 1) {
             quantidade.value = quantidadeValue - 1;
         }
+        document.getElementById('quantity').value = quantidade.value;
     }
 
 </script>

@@ -116,29 +116,53 @@
                     </ul>
                 </div>
     </div>
-
             <div class="side-cart cart">
-                <div class="side-cart-name">
-                    <h1>Cart</h1>
-                    <i class="fas fa-times" onclick="closeCart(this)"></i>
-                </div>
+                    <div class="side-cart-name">
+                        <h1>Cart</h1>
+                        <i class="fas fa-times" onclick="closeCart(this)"></i>
+                    </div>
                 <div class="side-cart-options">
                     <div class="items">
                         <div class="total-price">
-                            <h1>Total(2 items): 1399.98€</h1>
+                                <h1>Total({{ $cartItems->count() }} items): {{ $totalPrice }}€</h1>
+                            <!-- <h1>Total({{ $cartItems->count() }} items): 1399.98€</h1> -->
                         </div>
                         <hr class="barra-opcoes">
+                        @forelse ($cartItems->content() as $cartItem)
                         <div class="each-item">
                             <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
+                            @if ($cartItem->options->has('img'))
+                                <img src="{{ asset($cartItem->options->get('img')) }}" alt="{{ $cartItem->name }}">
+                            @else
+                                <img src="img/cartItems/default_image.jpg" alt="{{ $cartItem->name }}">
+                            @endif                            </div>
                             <div class="item-info">
                                 <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
+                                    <h1>{{$cartItem->name}}</h1>
+                                    <form method="POST" action="{{ route('cart.destroy', ['id' => $cartItem->rowId]) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="remove-button">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </form>
                                 </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
+                                <div class="quantidade-botoes">
+                                    <div class="quantidade menu cart">
+                                        <button class="menos" onclick="removeProduct2('{{$cartItem->rowId}}')">-</button>
+                                        <input type="text" value="{{$cartItem->qty}}" class="numero" disabled id="quantity_{{$cartItem->rowId}}">
+                                        <button class="mais" onclick="addProduct2('{{$cartItem->rowId}}')">+</button>
+                                    </div>
+                                </div>
+                                <form method="POST" action="{{ route('cart.update', ['id' => $cartItem->rowId])}}">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="quantity" id="quantity_cart_{{$cartItem->rowId}}" value="{{$cartItem->qty}}">
+                                    <button type="submit" class="side-cart-checkout">
+                                        Update
+                                    </button>
+                                </form>
+                                <h2>{{$cartItem->price}}€</h2>
                                 <div class="stock">
                                     <i class="fas fa-check-circle"></i>
                                     <a>In stock</a>
@@ -146,78 +170,10 @@
                             </div>    
                         </div>
                         <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
+                        @empty
+                            <p>O carrinho está vazio.</p>
+                        @endforelse
+              
                     </div>
                     <div class="side-cart-checkout">
                         <a>checkout</a>

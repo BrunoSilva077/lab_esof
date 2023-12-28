@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer('*', function ($view) {
+            $cartItems = Cart::instance('shopping');
+            $totalPrice = 0;
+            foreach ($cartItems->content() as $cartItem) {
+                $totalPrice += $cartItem->price ;//* $cartItem->qty;
+            }
+            $view->with('cartItems', $cartItems)->with('totalPrice', $totalPrice);
+        });
     }
 }

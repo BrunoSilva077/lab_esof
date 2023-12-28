@@ -13,9 +13,9 @@ class ProductsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(/*$pageSize = 3*/)
     {
-        // $products = Products::paginate(2);
+        // $products = Products::paginate($pageSize);
         $products = Products::all();
         if(Auth::user()){
             $favoritos = Auth::user()->favorito;
@@ -29,16 +29,35 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Categories::all();
+        $brands = Brands::all();
+        return view('products.create',compact('categories', 'brands'));
     }
-
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function store(Request $request){
+    $request->validate([
+        'name' => 'required|string',
+        'description' => 'required|string',
+        'stock' => 'required|numeric',
+        'price' => 'required|numeric',
+        'images.*' => 'required|image|mimes:png|max:2048', // Validar cada imagem no array
+    ]);
+
+    $product = Products::create([
+        'name' => $request->input('name'),
+        'description' => $request->input('description'),
+        'stock' => $request->input('stock'),
+        'active' => $request->input('radio') === 'true',
+        'price' => $request->input('price'),
+        'brand_id' => $request->input('brand'),
+        'categories_id' => $request->input('category'),
+    ]);
+
+
+    return redirect('adminproducts')->with('success', 'Product created successfully');
+}
 
     /**
      * Display the specified resource.
@@ -55,19 +74,37 @@ class ProductsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Products $products)
+    public function edit(Products $product)
     {
-        //
+        $categories = Categories::all();
+        $brands = Brands::all();
+        return view('products.edit',compact('product', 'categories', 'brands'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Products $products)
+    public function update(Request $request, Products $product)
     {
-        //
-    }
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'stock' => 'required|numeric',
+            'price' => 'required',
+        ]);
 
+        $product->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'stock' => $request->input('stock'),
+            'active' => $request->input('radio') === 'true',
+            'price' => $request->input('price'),
+            'brand_id' => $request->input('brand'),
+            'categories_id' => $request->input('category'),
+        ]);
+        // dd($product);
+        return redirect('adminproducts')->with('success', 'Product updated successfully');
+    }
     /**
      * Remove the specified resource from storage.
      */

@@ -22,6 +22,11 @@
                         <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
                     </div>
                 </a>
+                <a href="{{ route('adminimages') }}">
+                    <div class="checkoutinputline">
+                        <h3>Images<i class="fa-solid fa-image"></i></h3>
+                    </div>
+                </a>
                 <a href="{{ route('adminvouchers') }}">
                     <div class="checkoutinputline active">
                         <h3>Vouchers<i class="fa-solid"></i></h3>

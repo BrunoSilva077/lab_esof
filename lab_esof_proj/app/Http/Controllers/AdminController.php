@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Models\User;
+use App\Models\Images;
 
 
 class AdminController extends Controller
@@ -50,7 +51,10 @@ class AdminController extends Controller
         ]);
         return back()->with('success', 'User updated successfully');
     }
-
+    public function listImages(){
+        $images = Images::all();
+        return view('admin.images.index', compact('images'));
+    }
     // public function listOrders()
     // {
     //     $orders = Order::all();
