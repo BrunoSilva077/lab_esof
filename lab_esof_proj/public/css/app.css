@@ -6757,3 +6757,12 @@ body{
     background-color: #fff;
     border: 1px solid #ddd;
   }
+
+.fav-prod.botaoFormfix{
+    outline:none;
+    border:none;
+    background-color:transparent;
+    cursor:pointer;
+    width: 100%;
+    overflow: hidden;
+}
