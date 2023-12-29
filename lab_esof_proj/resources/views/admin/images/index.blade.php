@@ -31,7 +31,7 @@
             </a>
             <a href="{{ route('adminvouchers') }}">
                 <div class="checkoutinputline">
-                    <h3>Vouchers<i class="fa-solid"></i></h3>
+                    <h3>Vouchers<i class="fas fa-tag"></i></h3>
                 </div>
             </a>
             </div>

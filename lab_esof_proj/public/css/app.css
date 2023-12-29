@@ -5227,7 +5227,7 @@ body{
     }
     .mainmenuclient{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5322,7 +5322,7 @@ body{
     }
     .mainmenuclient{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5524,7 +5524,7 @@ body{
     }
     .mainmenuclient{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5583,18 +5583,18 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adclient{
-        grid-column: span 6;
+        grid-column: span 1;
     }
     .grid-item.item1.adclient{
         display: none;
     }
     .grid-item.item9.adclient{
-        grid-column: span 6;
+        grid-column: span 2;
     }
     
     .sidemenuclient{
         width: 100%;
-        height: 40vh;
+        height: 100vh;
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5628,7 +5628,7 @@ body{
     }
     .mainmenuclient{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5687,18 +5687,18 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adclient{
-        grid-column: span 2;
+        grid-column: span 1;
     }
     .grid-item.item1.adclient{
         display: none;
     }
     .grid-item.item9.adclient{
-        grid-column: span 2;
+        grid-column: span 1;
     }
     
     .sidemenuclient{
         width: 100%;
-        height: 40vh;
+        height: 100vh;
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5732,7 +5732,7 @@ body{
     }
     .mainmenuclient{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5791,18 +5791,17 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adclient{
-        grid-column: span 2;
+        grid-column: span 1;
     }
     .grid-item.item1.adclient{
         display: none;
     }
     .grid-item.item9.adclient{
-        grid-column: span 2;
+        grid-column: span 1;
     }
-    
     .sidemenuclient{
         width: 100%;
-        height: 30vh;
+        height: 100vh;
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5836,7 +5835,7 @@ body{
     }
     .mainmenuclient{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5888,6 +5887,15 @@ body{
     }
 }
 /*admin products*/
+
+.grid-item.item9.adproduct a button{
+    width: 100%;
+}
+
+.btnnewproduct a{
+    width: 10%;
+}
+
 @media (min-width: 2560px){
     .adproductmenu .grid-container{
         display: grid;
@@ -5943,7 +5951,7 @@ body{
         margin: 1% 0%;
         width: 100%;
     }
-    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3{
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3,.grid-item.item9 .checkoutinputline:nth-child(n+3) a{
         width: 11.11%;
         overflow: auto;
     }
@@ -5957,7 +5965,7 @@ body{
         font-size: 22px;
     }
     .upmainmenuproduct .btnnewproduct{
-        width: 66.67%;
+        width: 100%;
         display: flex;
         justify-content: right;
     }
@@ -5965,7 +5973,7 @@ body{
         width: 11.11%;
         margin-right: 25px;
     }
-    .grid-item.item9.adproduct button{
+    .grid-item.item9.adproduct button,.grid-item.item9.adproduct a{
         background-color: #FF7352;
         border-radius: 25px;
         outline: none;
@@ -5973,6 +5981,7 @@ body{
         height: 35px;
         color: white;
         font-size: 22px;
+        cursor: pointer;
     }
     .upmainmenuproduct h3.active{
         color: #FF7352;
@@ -5994,7 +6003,7 @@ body{
         flex-direction: column;
         border-radius: 0px 20px 20px 0px;
         color: white;
-        font-size: 14px;
+        font-size: 18px;
     }
     .sidemenuproduct .checkoutinputline i{
         color: #FF7352;
@@ -6033,7 +6042,7 @@ body{
     .mainmenuproduct .checkoutinputline{
         margin: 1% 0%;
     }
-    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3{
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3,.grid-item.item9 .checkoutinputline:nth-child(n+3) a{
         width: 11.11%;
         overflow: auto;
     }
@@ -6047,7 +6056,7 @@ body{
         font-size: 16px;
     }
     .upmainmenuproduct .btnnewproduct{
-        width: 66.67%;
+        width: 100%;
         display: flex;
         justify-content: right;
     }
@@ -6055,7 +6064,7 @@ body{
         width: 11.11%;
         margin-right: 16px;
     }
-    .grid-item.item9.adproduct button{
+    .grid-item.item9.adproduct button,.grid-item.item9.adproduct a{
         background-color: #FF7352;
         border-radius: 25px;
         outline: none;
@@ -6063,6 +6072,7 @@ body{
         height: 35px;
         color: white;
         font-size: 16px;
+        cursor: pointer;
     }
     .upmainmenuproduct h3.active{
         color: #FF7352;
@@ -6084,7 +6094,7 @@ body{
         flex-direction: column;
         border-radius: 0px 20px 20px 0px;
         color: white;
-        font-size: 12px;
+        font-size: 15px;
     }
     .sidemenuproduct .checkoutinputline i{
         color: #FF7352;
@@ -6123,7 +6133,7 @@ body{
     .mainmenuproduct .checkoutinputline{
         margin: 1% 0%;
     }
-    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3{
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3,.grid-item.item9 .checkoutinputline:nth-child(n+3) a{
         width: 11.11%;
         overflow: auto;
     }
@@ -6137,7 +6147,7 @@ body{
         font-size: 12px;
     }
     .upmainmenuproduct .btnnewproduct{
-        width: 66.67%;
+        width: 100%;
         display: flex;
         justify-content: right;
     }
@@ -6145,7 +6155,7 @@ body{
         width: 11.11%;
         margin-right: 16px;
     }
-    .grid-item.item9.adproduct button{
+    .grid-item.item9.adproduct button,.grid-item.item9.adproduct a{
         background-color: #FF7352;
         border-radius: 25px;
         outline: none;
@@ -6153,6 +6163,7 @@ body{
         height: 35px;
         color: white;
         font-size: 12px;
+        cursor: pointer;
     }
     .upmainmenuproduct h3.active{
         color: #FF7352;
@@ -6176,6 +6187,12 @@ body{
         color: white;
         font-size: 10px;
     }
+    .grid-item.item2.adproduct{
+        grid-column: span 3;
+    }
+    .grid-item.item9.menuedit{
+        grid-column: span 8;
+    }
     .sidemenuproduct .checkoutinputline i{
         color: #FF7352;
         opacity: 1.0;
@@ -6208,12 +6225,12 @@ body{
         flex-direction: column;
         border-radius: 20px;
         color: white;
-        font-size: 10px;
+        font-size: 15px;
     }
     .mainmenuproduct .checkoutinputline{
         margin: 1% 0%;
     }
-    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3{
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.upmainmenuproduct h3,.grid-item.item9 .checkoutinputline:nth-child(n+3) a{
         width: 11.11%;
         overflow: auto;
     }
@@ -6227,7 +6244,7 @@ body{
         font-size: 8px;
     }
     .upmainmenuproduct .btnnewproduct{
-        width: 66.67%;
+        width: 100%;
         display: flex;
         justify-content: right;
     }
@@ -6235,7 +6252,7 @@ body{
         width: 11.11%;
         margin-right: 16px;
     }
-    .grid-item.item9.adproduct button{
+    .grid-item.item9.adproduct button,.grid-item.item9.adproduct a{
         background-color: #FF7352;
         border-radius: 25px;
         outline: none;
@@ -6248,6 +6265,13 @@ body{
         color: #FF7352;
         border-bottom: 1px solid #FF7352;
     }
+    .category{
+        width: 45%;
+    }
+    .mainmenuedit .profileinputline h3{
+        overflow: hidden;
+        color: rebeccapurple;
+    }
 }
 @media (min-width: 425px ) and (max-width: 767px){
     .adproductmenu .grid-container{
@@ -6257,7 +6281,7 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adproduct{
-        grid-column: span 3;
+        grid-column: span 4;
     }
     .grid-item.item1.adproduct{
         display: none;
@@ -6267,7 +6291,7 @@ body{
     }
     .sidemenuproduct{
         width: 100%;
-        height: 40vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6312,7 +6336,7 @@ body{
     .mainmenuproduct .checkoutinputline{
         margin: 1% 0%;
     }
-    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button{
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.grid-item.item9 .checkoutinputline:nth-child(n+3) a{
         width: 15%;
         overflow: auto;
     }
@@ -6330,7 +6354,7 @@ body{
         font-size: 8px;
     }
     .upmainmenuproduct .btnnewproduct{
-        width: 40%;
+        width: 100%;
         display: flex;
         justify-content: right;
     }
@@ -6338,7 +6362,7 @@ body{
         width: 60%;
         margin-right: 16px;
     }
-    .grid-item.item9.adproduct button{
+    .grid-item.item9.adproduct button,.grid-item.item9.adproduct a{
         background-color: #FF7352;
         border-radius: 25px;
         outline: none;
@@ -6346,11 +6370,29 @@ body{
         height: 20px;
         color: white;
         font-size: 8px;
+        cursor: pointer;
     }
     .upmainmenuproduct h3.active{
         color: #FF7352;
         border-bottom: 1px solid #FF7352;
     }
+    .sidemenuproduct .checkoutinputline{
+        width: 100%;
+        margin: 5% auto;
+        text-align: center;
+        font-size: 15px;
+    }
+    .mainmenuedit .profileinputline{
+        margin: 10% 0%;
+    }
+    .category{
+        width: 50%;
+        /* color: rebeccapurple; */
+    }
+    .menuedit .mainmenuedit{
+        height: auto;
+    }
+        
 }
 @media (min-width: 375px ) and (max-width: 424px){
     .adproductmenu .grid-container{
@@ -6366,11 +6408,11 @@ body{
         display: none;
     }
     .grid-item.item9.adproduct{
-        grid-column: span 2;
+        grid-column: span 3;
     }
     .sidemenuproduct{
         width: 100%;
-        height: 30vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6398,6 +6440,7 @@ body{
         width: 100%;
         margin: 5% auto;
         text-align: center;
+        font-size: 15px;
     }
     .sidemenuproduct .checkoutinputline.active i {
         opacity: 1.0;
@@ -6415,7 +6458,10 @@ body{
     .mainmenuproduct .checkoutinputline{
         margin: 1% 0%;
     }
-    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button{
+    .mainmenuedit .profileinputline{
+        margin: 10% 0%;
+    }
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.grid-item.item9 .checkoutinputline:nth-child(n+3) a{
         width: 100%;
         overflow: auto;
     }
@@ -6433,7 +6479,7 @@ body{
         font-size: 8px;
     }
     .upmainmenuproduct .btnnewproduct{
-        width: 40%;
+        width: 100%;
         display: flex;
         justify-content: right;
     }
@@ -6441,7 +6487,7 @@ body{
         width: 60%;
         margin-right: 16px;
     }
-    .grid-item.item9.adproduct button{
+    .grid-item.item9.adproduct button,.grid-item.item9.adproduct a{
         background-color: #FF7352;
         border-radius: 25px;
         outline: none;
@@ -6449,10 +6495,18 @@ body{
         height: 20px;
         color: white;
         font-size: 8px;
+        cursor: pointer;
     }
     .upmainmenuproduct h3.active{
         color: #FF7352;
         border-bottom: 1px solid #FF7352;
+    }
+    .category{
+        width: 50%;
+        /* color: rebeccapurple; */
+    }
+    .menuedit .mainmenuedit{
+        height: auto;
     }
 }
 @media (min-width: 320px ) and (max-width: 374px){
@@ -6469,11 +6523,11 @@ body{
         display: none;
     }
     .grid-item.item9.adproduct{
-        grid-column: span 2;
+        grid-column: span 1;
     }
     .sidemenuproduct{
         width: 100%;
-        height: 30vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6501,6 +6555,7 @@ body{
         width: 100%;
         margin: 5% auto;
         text-align: center;
+        font-size: 15px;
     }
     .sidemenuproduct .checkoutinputline.active i {
         opacity: 1.0;
@@ -6515,10 +6570,13 @@ body{
         color: white;
         font-size: 10px;
     }
+    .menuedit .mainmenuedit{
+        height: auto;
+    }
     .mainmenuproduct .checkoutinputline{
         margin: 1% 0%;
     }
-    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button{
+    .mainmenuproduct h3, .mainmenuproduct h4, .mainmenuproduct button,.grid-item.item9 .checkoutinputline:nth-child(n+3) a{
         width: 100%;
         overflow: auto;
     }
@@ -6536,7 +6594,7 @@ body{
         font-size: 8px;
     }
     .upmainmenuproduct .btnnewproduct{
-        width: 40%;
+        width: 100%;
         display: flex;
         justify-content: right;
     }
@@ -6544,7 +6602,7 @@ body{
         width: 60%;
         margin-right: 16px;
     }
-    .grid-item.item9.adproduct button{
+    .grid-item.item9.adproduct button,.grid-item.item9.adproduct a{
         background-color: #FF7352;
         border-radius: 25px;
         outline: none;
@@ -6552,10 +6610,22 @@ body{
         height: 20px;
         color: white;
         font-size: 8px;
+        cursor: pointer;
     }
     .upmainmenuproduct h3.active{
         color: #FF7352;
         border-bottom: 1px solid #FF7352;
+    }
+    .mainmenuedit .profileinputline.category{
+        width: 60%;
+        color: rebeccapurple;
+    }
+    .mainmenuedit .profileinputline{
+        margin: 10% 0%;
+    }
+    .category{
+        width: 50%;
+        /* color: rebeccapurple; */
     }
 }
 
@@ -6623,29 +6693,67 @@ body{
     margin-left: 5%;
 }
 
-.a_voucher{
+.profileinputline input:disabled{
+    color: #fff;
+}
+
+.main-image.img_edit img,.img_edit img{
     width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.but_voucher{
-    width: 100%;
-}
-.grid-item.item9.menuedit .botaoFormfix,.grid-item.item8 .botaoFormfix, .grid-item.item7 .botaoFormfix{
-    outline:none;
-    border:none;
-    background-color:transparent;
-    cursor:pointer;
-    width: 100%;
-    overflow: hidden;
+.sidemenuproduct a{
+    text-decoration: none;
     color: white;
+}
+.checkoutinputline h4,.checkoutinputline h3{
+    word-wrap: break-word; /* Faz com que as palavras longas se quebrem para a próxima linha */
+    white-space: normal; 
+}
+.category{
+    /* width: 22.5%; */
+    padding: 5px 0px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
 
-}
-.grid-item.item8 .botaoFormfix, .grid-item.item7 .botaoFormfix{
-    margin-top: 2%;
-    width: auto;
-}
-.formFav{
+.pagination {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    justify-content: center;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+  }
+  
+  .page-item.active .page-link {
+    z-index: 2;
+    color: #fff;
+    background-color: #0FACF3;
+    border-color: #0FACF3;
+  }
+  
+  .page-item.disabled .page-link {
+    color: #868e96;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #ddd;
+  }
+  
+  .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #0FACF3;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }

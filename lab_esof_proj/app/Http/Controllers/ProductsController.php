@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Favorito;
 use Illuminate\Support\Facades\Auth;
 use CarrinhoDeCompras\Cart;
+use App\Models\Categories;
+use App\Models\Brands;
 class ProductsController extends Controller
 {
     
