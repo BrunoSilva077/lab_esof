@@ -19,7 +19,7 @@
                     <h3>Clients<i class="fa-solid fa-user"></i></h3>
                 </div>
             </a>
-            <a href="{{ route('adminimages') }}">
+            <a href="{{ route('adminproducts') }}">
                 <div class="checkoutinputline active">
                     <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
                 </div>
@@ -42,7 +42,7 @@
                             <a href="{{ route('products.create') }}">
                             <button>New</button>
                         </a>
-                        </div>
+                    </div>
                 </div>
             </div>
             <div class="mainmenuproduct">
