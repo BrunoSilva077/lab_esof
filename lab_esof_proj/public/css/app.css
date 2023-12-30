@@ -1520,7 +1520,7 @@ body{
         padding: 20px;
         border: none;
         outline: none;
-        width: 100%;
+        /* width: 100%; */
         cursor: pointer;
         background-color: #FF7352;
         color: #fff;
@@ -1601,9 +1601,16 @@ body{
             width: 340px;
             height: 320px;
         }
-         .adicionar-carrinho-btn, .comprar-ja-btn{
+         /*.adicionar-carrinho-btn,*/ .comprar-ja-btn{
             width: 100%;
         }
+        .adicionar-carrinho-btn{
+            margin-top: 15%;
+        }
+        /* .adicionar a{
+            margin: auto;
+            color: red;
+        } */
         
         .opcoes a /*, .informacoes-produto .nome-produto , .informacoes-produto a*/{
             font-size: 20px;
@@ -1636,6 +1643,9 @@ body{
             font-size: 11px;
             padding: 12px;
         } 
+        .adicionar-carrinho-btn{
+            margin-top: 70%;
+        }
     }
     
     @media (min-width:768px) and (max-width:1023px) {
@@ -1659,6 +1669,9 @@ body{
         .comprar-ja-btn, .adicionar-carrinho-btn{
             font-size: 10px;
             padding: 12px;
+        }
+        .adicionar-carrinho-btn{
+            margin-top: 55%;
         }
     }
     
@@ -1684,8 +1697,11 @@ body{
         .opcoes{
             margin: 0 5%;
         }
+        .item7.produto{
+            grid-column: span 12;
+        }
         .item5.sideimage{
-            grid-column: span 5;
+            grid-column: span 12;
         }
         .quantidade-botoes{
             width: 100%;
@@ -1701,6 +1717,10 @@ body{
         }
         .comprar-ja-btn, .adicionar-carrinho-btn{
             font-size: 11px;
+            border-radius: 10px;
+        }
+        .adicionar-carrinho-btn{
+            width: 100%;
         }
     }
     
@@ -1722,8 +1742,11 @@ body{
         .comentario p{
             margin-top: 5%;
         }
+        .item7.produto{
+            grid-column: span 12;
+        }
         .item5.sideimage{
-            grid-column: span 5;
+            grid-column: span 12;
         }
         .up-images,.down-images,.quantidade-botoes{
             display: flex;
@@ -1741,15 +1764,26 @@ body{
             width: 100%;
             margin: 0%;
         }
-        .comprar-ja-btn{
+        .comprar-ja-btn,.adicionar-carrinho-btn{
             font-size: 11px;
+            border-radius: 10px;
         }
         .adicionar-carrinho-btn{
-            font-size: 11px;
+            width: 100%;
+        }
+        .informacoes-produto .nome-produto{
+            font-size: 27px;
         }
     }
     
     @media (min-width: 320px) and (max-width: 374px){
+
+        .item7.produto{
+            grid-column: span 12;
+        }
+        .item5.sideimage{
+            grid-column: span 12;
+        }
         .main-image img{
             width: 150px;
             height: 150px;
@@ -1775,9 +1809,9 @@ body{
         .comentario p{
             margin-top: 5%;
         }
-        .item5.sideimage{
+        /* .item5.sideimage{
             grid-column: span 5;
-        }
+        } */
         .informacoes-produto a{
             font-size: 19px;
         }
@@ -1795,6 +1829,8 @@ body{
         }
         .comprar-ja-btn, .adicionar-carrinho-btn{
             font-size: 11px;
+            border-radius: 10px;
+            width: 100%;
         }
     }
 
@@ -5987,6 +6023,13 @@ body{
         color: #FF7352;
         border-bottom: 1px solid #FF7352;
     }
+    .category{
+        width: 20%;
+    }
+    .main-image .img_edit img{
+        width: 200px;
+        height: 200px;
+    }
 }
 @media (min-width: 1440px ) and (max-width: 2559px){
     .adproductmenu .grid-container{
@@ -6077,6 +6120,9 @@ body{
     .upmainmenuproduct h3.active{
         color: #FF7352;
         border-bottom: 1px solid #FF7352;
+    }
+    .category{
+        width: 26.5%;
     }
 }
 @media (min-width: 1024px ) and (max-width: 1439px){
@@ -6169,6 +6215,13 @@ body{
         color: #FF7352;
         border-bottom: 1px solid #FF7352;
     }
+    .category{
+        width: 30%;
+    }
+    .mainmenuedit .profileinputline h3{
+        overflow: initial;
+        /* color: rebeccapurple; */
+    }
 }
 @media (min-width: 768px ) and (max-width: 1023px){
     .adproductmenu .grid-container{
@@ -6188,7 +6241,7 @@ body{
         font-size: 10px;
     }
     .grid-item.item2.adproduct{
-        grid-column: span 3;
+        grid-column: span 2;
     }
     .grid-item.item9.menuedit{
         grid-column: span 8;
@@ -6270,7 +6323,7 @@ body{
     }
     .mainmenuedit .profileinputline h3{
         overflow: hidden;
-        color: rebeccapurple;
+        /* color: rebeccapurple; */
     }
 }
 @media (min-width: 425px ) and (max-width: 767px){
@@ -6392,7 +6445,12 @@ body{
     .menuedit .mainmenuedit{
         height: auto;
     }
-        
+    .create-prod{
+        display: block;
+        border: none;
+        outline: none;
+        height: 50px;
+    }   
 }
 @media (min-width: 375px ) and (max-width: 424px){
     .adproductmenu .grid-container{
@@ -6765,4 +6823,13 @@ body{
     cursor:pointer;
     width: 100%;
     overflow: hidden;
+}
+.botaoFormfix{
+    outline:none;
+    border:none;
+    background-color:transparent;
+    cursor:pointer;
+    /* width: 100%; */
+    overflow: hidden;
+    font-size: 20px;
 }

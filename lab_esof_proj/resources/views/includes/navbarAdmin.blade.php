@@ -135,7 +135,8 @@
                                 <img src="{{ asset($cartItem->options->get('img')) }}" alt="{{ $cartItem->name }}">
                             @else
                                 <img src="img/cartItems/default_image.jpg" alt="{{ $cartItem->name }}">
-                            @endif                            </div>
+                            @endif
+                        </div>
                             <div class="item-info">
                                 <div class="item-name">
                                     <h1>{{$cartItem->name}}</h1>

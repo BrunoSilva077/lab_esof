@@ -60,7 +60,7 @@
                     </div>
                     <div class="profileinputline">
                     <h3>Description</h3>
-                    <textarea name="description" cols="32" rows="10">{{ old('description') }}</textarea>
+                    <textarea name="description" cols="32" rows="10" class="create-prod" maxlength="200">{{ old('description') }}</textarea>
                     </div>
                     <div class="profileinputline">
                     <h3>Stock</h3>

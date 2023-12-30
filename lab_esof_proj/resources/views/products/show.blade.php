@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="product-container grid-container">
-        <div class="grid-item item7">
+        <div class="grid-item item7 produto">
             <div class="images">
                 @if($message = Session::get('success'))
                     <div class="alert alert-success">
@@ -93,19 +93,21 @@
                     </a>
                 </div>
                 <div class="avaliacoes">
-                    <div class="estrelas">
+                    <!-- <div class="estrelas">
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>(1)</a>
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
-                    </div>
+                    </div> -->
+                    @if ($product->active)
                     <div class="escrever-comentario">
                         <form>
                             <textarea name="comentario" id="comentario" placeholder="leave your review..."></textarea>
                             <button class="enviar-comentario-btn">Enviar</button>
                         </form>
                     </div>
+                    @endif
                     <div class="nome-produto">
                         <a>{{ $product->name }}</a>
                     </div>
@@ -159,7 +161,8 @@
                                 <input type="hidden" src="{{'storage/images/' . asset($product->images->first()->path) }}" alt="{{ $product->name }}">
                             @else
                                 <input type="hidden" src="img/products/default_image.jpg" alt="{{ $product->name }}">
-                            @endif                           <div class="adicionar">
+                            @endif                           
+                        <div class="adicionar">
                             <button class="adicionar-carrinho-btn"><i class="fas fa-shopping-cart"></i>Adicionar</button>
                         </div>   
                     </form>
