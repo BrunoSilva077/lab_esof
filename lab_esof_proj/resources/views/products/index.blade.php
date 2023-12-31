@@ -93,7 +93,7 @@
         </div>
     </div>
     <div class="grid-item item1"></div>
-    <div class="grid-item item8" style="padding: 0px 0px">
+    <div class="grid-item item8 all-prods" style="padding: 0px 0px">
         <div class="productf">
             <div class="dropdown">
                 Order by:
@@ -107,10 +107,10 @@
             </div>
             <div class="dropdown1">
                 Products per page:
-                <button onclick="myFunction1()" class="dropbtn1" onchange="changePageSize(this.value)">3<i class="fa-solid fa-chevron-down"></i></button>
+                <button onclick="myFunction1()" class="dropbtn1">3<i class="fa-solid fa-chevron-down"></i></button>
                 <div id="myDropdown1" class="dropdown-content1">
-                    <a href="#" onclick="changePageSize(3)">3</a><hr class="border-hr">
-                    <a href="#" onclick="changePageSize(6)">6</a><hr class="border-hr">
+                    <a href="#" >3</a><hr class="border-hr">
+                    <a href="#" >6</a><hr class="border-hr">
                 </div>
             </div>
         </div>
@@ -176,6 +176,7 @@
 
         </div> 
         <ul class="pagination">
+            {!! $products->links('pagination::bootstrap-4')!!}
         </ul>
     </div>
     

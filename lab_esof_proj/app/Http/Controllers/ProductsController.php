@@ -12,10 +12,10 @@ class ProductsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request/*, $pageSize = 3*/)
+    public function index(Request $request)
         {
-            // $products = Products::paginate($pageSize);
-             $products = Products::all();
+            $products = Products::paginate(3);
+            //  $products = Products::all();
 
             return view('products.index', compact('products'));
         }

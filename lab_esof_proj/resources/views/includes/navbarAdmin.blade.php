@@ -162,7 +162,7 @@
                                         Update
                                     </button>
                                 </form>
-                                <h2>{{$cartItem->price}}€</h2>
+                                <h2>{{$cartItem->options->totalPrice}}€</h2>
                                 <div class="stock">
                                     <i class="fas fa-check-circle"></i>
                                     <a>In stock</a>

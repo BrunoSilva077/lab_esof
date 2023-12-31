@@ -2168,7 +2168,7 @@ body{
   .each-prod{
     background-color: #333;
     margin-top: 5%;
-    /* height: 40vh; */
+    height: 40vh;
     width: 25%;
     margin-right: 4%;
     margin-left: 4%;
@@ -2260,7 +2260,15 @@ body{
     .medi-prod{
         grid-template-columns: repeat(3, 1fr);
         padding: 0% 5%;
-    
+    }
+    .grid-item.item3.products{
+        grid-column: span 10;
+    }
+    .grid-item.item8.all-prods{
+        grid-column: span 10;
+    }
+    .all-prod{
+        display: block;
     }
   }
 
@@ -6778,7 +6786,5 @@ body{
     color: #0FACF3;
     background-color: #fff;
     border: 1px solid #ddd;
+    text-decoration: none;
   }
-
-
-  

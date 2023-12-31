@@ -9,11 +9,6 @@
     <div class="product-container grid-container">
         <div class="grid-item item7">
             <div class="images">
-            @if($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-            @endif 
                 <a href="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" style="text-decoration:none">
                     <div class="favorites">
                         <i class="far fa-heart fa-lg" ></i>                    
@@ -148,7 +143,7 @@
                                 <input type="hidden" name="image" value="{{asset($product->images->first()->path) }}" alt="{{ $product->name }}">
                                 <!-- <img src="{{asset($product->images->first()->path) }}" alt=""> -->
                             @else
-                                <input type="hidden" name="image" src="img/products/default_image.jpg" alt="{{ $product->name }}">
+                                <input type="hidden" name="image" value="img/products/default_image.jpg" alt="{{ $product->name }}">
                             @endif                           
                             <div class="adicionar">
                                 <button class="adicionar-carrinho-btn"><i class="fas fa-shopping-cart"></i>Adicionar</button>
