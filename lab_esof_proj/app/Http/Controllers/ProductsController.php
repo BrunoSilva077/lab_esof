@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Auth;
 use CarrinhoDeCompras\Cart;
 use App\Models\Categories;
 use App\Models\Brands;
+use App\Models\Images;
 class ProductsController extends Controller
 {
-    
     /**
      * Display a listing of the resource.
      */
@@ -109,9 +109,23 @@ class ProductsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Products $products)
+    public function destroy(Products $product)
     {
-        //
+
+        if ($product) {
+            // Verifica se o produto existe antes de continuar
+            if (Products::find($product->id)) {
+                // Atualiza o campo product_id para null nas imagens associadas ao produto
+                Images::where('product_id', $product->id)->update(['product_id' => null]);
+    
+                // Em seguida, exclua o produto
+                $product->delete();
+    
+                return back()->with('success', 'Product removed successfully');
+            } else {
+                return back()->with('error', 'Product does not exist');
+            }
+        }
     }
     public function search(Request $request)
     {

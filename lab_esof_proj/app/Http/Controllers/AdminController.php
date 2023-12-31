@@ -12,7 +12,7 @@ class AdminController extends Controller
 {
     public function listProducts()
     {
-        $products = Products::all();
+        $products = Products::withTrashed()->orderBy('id')->get();
         return view('admin.products.index', compact('products'));
     }
 

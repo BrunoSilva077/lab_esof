@@ -84,7 +84,10 @@
                     <a href="{{ route('products.edit',['product' => $product]) }}">
                     <button>Edit</button>
                     </a>
-                    <button>Remove</button>
+                    <form action="{{ route('products.destroy',['product' => $product]) }}" method="POST">
+                    @csrf
+                        <button type="submit">Remove</button>
+                    </form>
                     </div>
 
                 @empty

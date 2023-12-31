@@ -74,7 +74,8 @@ Route::get('/historyprofile', [MainController::class, 'historyprofile'])->name('
 Route::resource('products', ProductsController::class)->only(['create', 'store', 'edit', 'update', 'destroy'])->middleware('is_admin');
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
 Route::get('/products/{product}', [ProductsController::class, 'show'])->name('products.show');
-Route::post('/products/{product}',[ProductsController::class,'update'])->name('updateProduct');
+Route::post('/products/{product}',[ProductsController::class,'update'])->name('products.update');
+Route::post('/products/{product}', [ProductsController::class, 'destroy'])->name('products.destroy');
 
 //image routes
 Route::get('/image/create',[ImagesController::class,'create'])->name('partials.create');
