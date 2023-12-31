@@ -131,8 +131,8 @@
                         @forelse ($cartItems->content() as $cartItem)
                         <div class="each-item">
                             <div class="item-img">
-                            @if ($cartItem->options->has('img'))
-                                <img src="{{ asset($cartItem->options->get('img')) }}" alt="{{ $cartItem->name }}">
+                            @if ($cartItem->options->has('image'))
+                                <img src="{{ asset($cartItem->options->get('image')) }}" alt="{{ $cartItem->name }}">
                             @else
                                 <img src="img/cartItems/default_image.jpg" alt="{{ $cartItem->name }}">
                             @endif                            </div>

@@ -58,5 +58,3 @@ Route::get('/adminclients', [AdminController::class, 'listUsers'])->name('adminc
 Route::get('/adminproducts', [AdminController::class, 'listProducts'])->name('adminproducts')->middleware('is_admin');
 Route::get('/adminimages', [AdminController::class, 'listImages'])->name('adminimages')->middleware('is_admin');
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

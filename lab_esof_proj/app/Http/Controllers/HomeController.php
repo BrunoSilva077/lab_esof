@@ -28,8 +28,4 @@ class HomeController extends Controller
 
         return view('home',compact('randomProducts'));
     }
-    public function AdminHome()
-    {
-        return view('adminproducts');
-    }
 }

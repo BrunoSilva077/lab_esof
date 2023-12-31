@@ -31,7 +31,15 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $cart= Cart::instance('shopping')->add($request->id, $request->name, $request->quantity,$request->price*$request->quantity,['img'=>$request->image])->associate('App\Models\Products');
+        $imagePath = str_replace(url('/'), '', $request->image);
+        //   dd($imagePath);
+        $cart= Cart::instance('shopping')
+        ->add($request->id, 
+        $request->name, 
+        $request->quantity,
+        $request->price*$request->quantity,
+        ['image'=>$imagePath]);
+
         // dd($cart);
         $rowId = $cart->rowId;
         return back()->with('Sucess','Product added to cart sucessfully');
