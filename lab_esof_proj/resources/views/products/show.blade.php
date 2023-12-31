@@ -7,30 +7,13 @@
 @section('content')
 
     <div class="product-container grid-container">
-        <div class="grid-item item7 produto">
+        <div class="grid-item item7">
             <div class="images">
-                @if($message = Session::get('success'))
-                    <div class="alert alert-success">
-                        <p>{{ $message }}</p>
+                <a href="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" style="text-decoration:none">
+                    <div class="favorites">
+                        <i class="far fa-heart fa-lg" ></i>                    
                     </div>
-                @endif 
-                @auth
-                @if ($favoritos && $favoritos->contains('product_id', $product->id))
-                    <form action="{{ route('removerfavorito', ['product_id' => $product->id]) }}" method="POST">
-                                @csrf
-                                <button type="submit" class="botaoFormfix" style="float:right;">
-                                    <i class="fa-solid fa-heart fa-lg"></i>
-                                </button>
-                    </form>
-                    @else
-                    <form action="{{ route('adicionarfavorito', ['product_id' => $product->id]) }}" method="GET">
-                    @csrf
-                    <button type="submit" class="botaoFormfix" style="float:right;">
-                        <i class="fa-regular fa-heart fa-lg"></i>
-                    </button>
-                    </form>
-                @endif
-                @endauth
+                </a>
                 <br>
                 <div class="up-images">
                     @forelse($product->images->take(2) as $image)
@@ -93,21 +76,19 @@
                     </a>
                 </div>
                 <div class="avaliacoes">
-                    <!-- <div class="estrelas">
+                    <div class="estrelas">
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>(1)</a>
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
-                    </div> -->
-                    @if ($product->active)
+                    </div>
                     <div class="escrever-comentario">
                         <form>
                             <textarea name="comentario" id="comentario" placeholder="leave your review..."></textarea>
                             <button class="enviar-comentario-btn">Enviar</button>
                         </form>
                     </div>
-                    @endif
                     <div class="nome-produto">
                         <a>{{ $product->name }}</a>
                     </div>
@@ -157,14 +138,16 @@
                             <input type="hidden" name="name" value="{{ $product->name }}">
                             <input type="hidden" name="price" value="{{ $product->price }}">
                             <input type="hidden" name="quantity" id="quantity" value="1">
+
                             @if ($product->images->count() > 0)
-                                <input type="hidden" src="{{'storage/images/' . asset($product->images->first()->path) }}" alt="{{ $product->name }}">
+                                <input type="hidden" name="image" value="{{asset($product->images->first()->path) }}" alt="{{ $product->name }}">
+                                <!-- <img src="{{asset($product->images->first()->path) }}" alt=""> -->
                             @else
-                                <input type="hidden" src="img/products/default_image.jpg" alt="{{ $product->name }}">
+                                <input type="hidden" name="image" value="img/products/default_image.jpg" alt="{{ $product->name }}">
                             @endif                           
-                        <div class="adicionar">
-                            <button class="adicionar-carrinho-btn"><i class="fas fa-shopping-cart"></i>Adicionar</button>
-                        </div>   
+                            <div class="adicionar">
+                                <button class="adicionar-carrinho-btn"><i class="fas fa-shopping-cart"></i>Adicionar</button>
+                            </div>   
                     </form>
                     <div class="comprar-ja">
                         <button class="comprar-ja-btn">Comprar já<i class="fas fa-arrow-right"></i></button>

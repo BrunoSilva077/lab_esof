@@ -119,9 +119,6 @@
         <div class="all-prod">
         @forelse($products as $product)
         <a href="{{ route('products.show', ['product' => $product]) }}" class="each-prod">
-                <!-- <div class="fav-prod">
-                    <i class="fa-regular fa-heart"></i>
-                </div> -->
                 @auth
                 @if ($favoritos && $favoritos->contains('product_id', $product->id))
                     <form action="{{ route('removerfavorito', ['product_id' => $product->id]) }}" method="POST">
@@ -198,6 +195,9 @@
             </div> -->
 
         </div> 
+        <ul class="pagination">
+            {!! $products->links('pagination::bootstrap-4')!!}
+        </ul>
     </div>
     
     

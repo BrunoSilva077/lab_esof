@@ -15,10 +15,9 @@ class ProductsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(/*$pageSize = 3*/)
+    public function index()
     {
-        // $products = Products::paginate($pageSize);
-        $products = Products::all();
+         $products = Products::paginate(3);
         if(Auth::user()){
             $favoritos = Auth::user()->favorito;
             return view('products.index', compact('products','favoritos'));

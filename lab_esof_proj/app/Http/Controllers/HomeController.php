@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Products;
 
 class HomeController extends Controller
 {
@@ -23,10 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
-    public function AdminHome()
-    {
-        return view('adminproducts');
+        $randomProducts = Products::inRandomOrder()->limit(3)->get();
+
+        return view('home',compact('randomProducts'));
     }
 }

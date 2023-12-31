@@ -40,4 +40,8 @@ class Products extends Model
     {
         return $this->hasMany(Favorito::class,'product_id','id');
     }
+    public function checkout()
+    {
+        return $this->hasMany(Cart::class,'product_id','id');
+    }
 }

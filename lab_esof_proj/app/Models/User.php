@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-//use Laravel\Cashier\Billable;
+// use Laravel\Cashier\Billable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -57,7 +57,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Favorito::class,'user_id','id');
     }
-    public function checkout(){
+    public function cart()
+    {
+        return $this->hasMany(Cart::class,'user_id','id');
+    }
+    public function checkouts(){
         return $this->hasMany(Checkout::class,'user_id','id');
     }
 }

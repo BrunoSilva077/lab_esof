@@ -31,9 +31,16 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $cart= Cart::instance('shopping')->add($request->id, $request->name, $request->quantity,$request->price*$request->quantity,['img'=>$request->image])->associate('App\Models\Products');
+        $imagePath = str_replace(url('/'), '', $request->image);
+        //   dd($imagePath);
+        $cart= Cart::instance('shopping')
+        ->add($request->id, 
+        $request->name, 
+        $request->quantity,
+        $request->price,
+        ['image'=>$imagePath,'totalPrice'=>$request->price*$request->quantity]);
+
         // dd($cart);
-        $rowId = $cart->rowId;
         return back()->with('Sucess','Product added to cart sucessfully');
     }
 
@@ -59,6 +66,7 @@ class CartController extends Controller
     {
         $cart = Cart::instance('shopping');
         $cartItem = $cart->get($rowId);
+        // dd($cartItem);
     
         // Verifique se o item existe no carrinho
         if ($cartItem) {
@@ -66,13 +74,18 @@ class CartController extends Controller
             $cart->update($rowId, $request->quantity);
     
             // Recalcule o preço total com base na nova quantidade
-            $newTotalPrice = $cartItem->model->price * $request->quantity;
+            $newTotalPrice = $cartItem->price * $request->quantity;    
     
-            // Atualize o preço total do item no carrinho
+            $options['image'] = $cartItem->options->image;
+            // Atualize a variável totalPrice nas opções
+            $options['totalPrice'] = $newTotalPrice;
+            // dd($options);
+
+            // Atualize o item no carrinho com as novas opções
             $cart->update($rowId, [
-                'price' => $newTotalPrice,
+                'options' => $options,
             ]);
-    
+
             return back()->with('success', 'Product updated successfully');
         }
     

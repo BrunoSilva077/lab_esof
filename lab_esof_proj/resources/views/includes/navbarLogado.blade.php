@@ -5,44 +5,43 @@
             <i class="fas fa-times" onclick="closeCart(this)"></i>
         </div>
         <div class="user-menu">
-                    <ul class="ul-container-menu">
-                        <div class="group-li">
-                            <input type="text" placeholder="Search.." name="search">
-                        </div>
-                        <div class="group-li">
-                            <li>
-                            <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Profile</a>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
-                        
-                        <hr class="user-menu-hr">
-                        <div class="group-li">
-                            <li>
-                                <a href="">Favorites</a>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-                        <div class="group-li history">
-                            <li>
-                                <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Purchase History</a>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-                        <div class="group-li">
-                            <li>
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-                    </ul>
+            <ul class="ul-container-menu">
+                <div class="group-li">
+                    <input type="text" placeholder="Search.." name="search">
                 </div>
+                <div class="group-li">
+                    <li>
+                        <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Profile</a>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                </div>
+                <hr class="user-menu-hr">
+                    <div class="group-li">
+                        <li>
+                            <a href="{{ route('listarfavoritos', ['user' => auth()->user()]) }}">Favorites</a>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                    </div>
+                    <hr class="user-menu-hr">
+                    <div class="group-li history">
+                        <li>
+                            <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Purchase History</a>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                    </div>
+                    <hr class="user-menu-hr">
+                    <div class="group-li">
+                        <li>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                    </div>
+                    <hr class="user-menu-hr">
+            </ul>
+        </div>
     </div>
 
     <div class="side-cart responsive-menu">
@@ -51,174 +50,127 @@
             <i class="fas fa-times" onclick="closeCart(this)"></i>
         </div>
         <div class="user-menu">
-                    <ul class="ul-container-menu">
-                        <div class="group-li">
-                            <input type="text" placeholder="Search.." name="search">
-                        </div>
-                    <div class="group-li">
-                            <li>
-                            <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Profile</a>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
-                        
-                        <hr class="user-menu-hr">
-                        <div class="group-li">
-                            <li>
-                                <a href="favprofile">Favorites</a>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-                        <div class="group-li history">
-                            <li>
-                                <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Purchase History</a>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-                        <div class="group-li">
-                            <li>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                <i class="fas fa-chevron-right"></i>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-                        <div class="group-li">
-                            <li class="btn">
-                                <a href="{{ route('home') }}">Home</a>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-                        <div class="group-li">
-                            <li class="btn">
-                                <a href="{{ route('products.index') }}">Products</a>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-                        <div class="group-li">
-                            <li class="btn">
-                                <a href="{{ route('contact') }}">Contact us</a>
-                            </li>
-                        </div>
-                        <hr class="user-menu-hr">
-
-                    </ul>
+            <ul class="ul-container-menu">
+                <div class="group-li">
+                    <input type="text" placeholder="Search.." name="search">
                 </div>
+                <div class="group-li">
+                    <li>
+                        <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Profile</a>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                </div>
+                <hr class="user-menu-hr">
+                <div class="group-li">
+                    <li>
+                        <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Favorites</a>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                </div>
+                <hr class="user-menu-hr">
+                <div class="group-li history">
+                    <li>
+                        <a href="{{ route('editprofile', ['user' => auth()->user()]) }}">Purchase History</a>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                </div>
+                <hr class="user-menu-hr">
+                <div class="group-li">
+                    <li>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                </div>
+                <hr class="user-menu-hr">
+                    <div class="group-li">
+                        <li class="btn">
+                            <a href="{{ route('home') }}">Home</a>
+                        </li>
+                    </div>
+                <hr class="user-menu-hr">
+                    <div class="group-li">
+                        <li class="btn">
+                            <a href="{{ route('products.index') }}">Products</a>
+                        </li>
+                    </div>
+                <hr class="user-menu-hr">
+                    <div class="group-li">
+                        <li class="btn">
+                            <a href="{{ route('contact') }}">Contact us</a>
+                        </li>
+                    </div>
+                <hr class="user-menu-hr">
+            </ul>
+        </div>
     </div>
 
-            <div class="side-cart cart">
-                <div class="side-cart-name">
-                    <h1>Cart</h1>
-                    <i class="fas fa-times" onclick="closeCart(this)"></i>
-                </div>
+    <div class="side-cart cart">
+                    <div class="side-cart-name">
+                        <h1>Cart</h1>
+                        <i class="fas fa-times" onclick="closeCart(this)"></i>
+                    </div>
                 <div class="side-cart-options">
                     <div class="items">
                         <div class="total-price">
-                            <h1>Total(2 items): 1399.98€</h1>
+                                <h1>Total({{ $cartItems->count() }} items): {{ $totalPrice }}€</h1>
+                            <!-- <h1>Total({{ $cartItems->count() }} items): 1399.98€</h1> -->
                         </div>
                         <hr class="barra-opcoes">
-                        
-                            <div class="each-item">
-                                <div class="item-img">
-                                    <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                                </div>
-                                <div class="item-info">
-                                    <div class="item-name">
-                                        <h1>$row->name</h1>
+                        @forelse ($cartItems->content() as $cartItem)
+                        <div class="each-item">
+                            <div class="item-img">
+                            @if ($cartItem->options->has('image'))
+                                <img src="{{ asset($cartItem->options->get('image')) }}" alt="{{ $cartItem->name }}">
+                            @else
+                                <img src="img/cartItems/default_image.jpg" alt="{{ $cartItem->name }}">
+                            @endif                            
+                        </div>
+                        <div class="item-info">
+                            <div class="item-name">
+                                <h1>{{$cartItem->name}}</h1>
+                                <form method="POST" action="{{ route('cart.destroy', ['id' => $cartItem->rowId]) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="botaoFormfix">
                                         <i class="fas fa-times"></i>
-                                    </div>
-                                    <h2>PVPR: 889€</h2>
-                                    <h2>669,99€</h2>
-                                    <div class="stock">
-                                        <i class="fas fa-check-circle"></i>
-                                        <a>In stock</a>
-                                    </div>
-                                </div>    
+                                    </button>
+                                </form>
                             </div>
-                        
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                        <div class="quantidade-botoes">
+                            <div class="quantidade menu cart">
+                                <button class="menos" onclick="removeProduct2('{{$cartItem->rowId}}')">-</button>
+                                <input type="text" value="{{$cartItem->qty}}" class="numero" disabled id="quantity_{{$cartItem->rowId}}">
+                                <button class="mais" onclick="addProduct2('{{$cartItem->rowId}}')">+</button>
                             </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
                         </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
+                        <form method="POST" action="{{ route('cart.update', ['id' => $cartItem->rowId])}}">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="quantity" id="quantity_cart_{{$cartItem->rowId}}" value="{{$cartItem->qty}}">
+                            <button type="submit" class="side-cart-checkout">
+                                Update
+                            </button>
+                        </form>
+                        <h2>{{$cartItem->options->totalPrice}}€</h2>
+                        <div class="stock">
+                            <i class="fas fa-check-circle"></i>
+                            <a>In stock</a>
                         </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
-                    </div>
-                    <div class="side-cart-checkout">
-                        <a>checkout</a>
-                    </div>
+                    </div>    
                 </div>
+                <hr class="barra-opcoes">
+                @empty
+                    <p>O carrinho está vazio.</p>
+                @endforelse
             </div>
+            <div class="side-cart-checkout">
+                <a href="{{ route('checkout') }}" style="text-decoration:none;color:black;">checkout</a>
+            </div>
+        </div>
+    </div>
         <div class="grid-container">
             <div class="grid-item item4 logo">
                 <div class="logo">

@@ -38,10 +38,10 @@ Route::get('/productPage', [MainController::class, 'productPage'])->name('produc
 Route::get('/editprofile', [MainController::class, 'editprofile'])->name('editprofile');
 // Route::get('/adminorders', [AdminController::class, 'listOrders'])->name('adminorders')->middleware('is_admin');
 
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::get('/checkout/create', [CheckoutController::class, 'create'])->name('checkout');
 Route::post('/session', [CheckoutController::class, 'session'])->name('session');
-Route::get('/success', [CheckoutController::class, 'success'])->name('success');
-
+Route::post('/success', [CheckoutController::class, 'success'])->name('success');
+Route::post('/store',[CheckoutController::class, 'store'])->name('store');
 //favorite routes
 Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito')->middleware('CheckUserPermissions');
 Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos')->middleware('CheckUserPermissions');

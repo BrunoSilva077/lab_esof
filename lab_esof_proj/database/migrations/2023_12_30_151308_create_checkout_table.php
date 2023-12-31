@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('checkouts', function (Blueprint $table) {
+        Schema::create('checkout', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->integer('quantity');
+            $table->decimal('total', 10, 2);
             $table->timestamps();
 
-            $table->foreign('user_id', 'fk_checkout_user_id')
+            $table->foreign('user_id', 'fk_checkout_users')
             ->references('id')
             ->on('users')
             ->onUpdate('cascade')
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('checkouts');
+        Schema::dropIfExists('checkout');
     }
 };
