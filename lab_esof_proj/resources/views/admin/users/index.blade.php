@@ -42,10 +42,10 @@
             <div class="mainmenuclient">
                 <div class="checkoutinputline">
                     <h3>Client id</h3>
-                    <h3>Active</h3>
                     <h3>Name</h3>
                     <h3>Email</h3>
-                    <h3>gender</h3>
+                    <h3>Gender</h3>
+                    <h3>Active</h3>
                     <h3>Password</h3>
                     <h3>Edit</h3>
                     <h3>Remove</h3>
@@ -69,7 +69,10 @@
                             <h4>False</h4>
                         @endif
                         <h4>{{ $user->password }}</h4>
-                        <button>Edit</button>
+                        <a href="{{ route('edituser', ['user' => $user]) }}" class="checkoutinputline" style="text-decoration: none;">
+                            <!-- Edit</a> -->
+                            <button style="width:100%">Edit</button>
+                        </a>
                         <button>Remove</button>
                         </div>
 

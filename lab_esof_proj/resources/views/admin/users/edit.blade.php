@@ -24,10 +24,15 @@
                         </ul>
                 </div>
             @endif
+ 
                 <form action=" {{ route('updateuser', ['user' => $user]) }}" method="POST">
                     @csrf
                     <div class="profileinputline">
                         <h2>User</h2>
+                    </div>
+                    <div class="profileinputline">
+                        <h3>Last update</h3>
+                        <input type="text" name="updated" value="{{ $user->updated_at }}" disabled>              
                     </div>
                     <div class="profileinputline">
                         <h3>Name</h3>
