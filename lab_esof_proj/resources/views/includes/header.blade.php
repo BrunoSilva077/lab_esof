@@ -7,7 +7,10 @@
         <div class="user-menu">
                 <ul class="ul-container-menu">
                     <div class="group-li">
-                        <input type="text" placeholder="Search.." name="search">
+                        <form>
+                                <!-- <button><i class="fa-solid fa-magnifying-glass"></i></button> -->
+                                <input type="text" placeholder="Search.." name="search" style="width:100%">
+                        </form>                    
                     </div>
                     <div class="group-li">
                         <li>
@@ -43,7 +46,10 @@
         <div class="user-menu">
                     <ul class="ul-container-menu">
                         <div class="group-li">
-                            <input type="text" placeholder="Search.." name="search">
+                        <form>
+                            <!-- <button><i class="fa-solid fa-magnifying-glass"></i></button> -->
+                            <input type="text" placeholder="Search.." name="search" style="width:100%">
+                        </form>
                         </div>
                         <div class="group-li">
                             <li>
@@ -220,9 +226,9 @@
             <div class="grid-item item1 search">
                 <div class="search-cart-container">
                     <div class="search-container">
-                        <form>
+                    <form action="{{ route('products.search') }}" method="GET">                            
                             <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <input type="text" placeholder="Search.." name="search">
+                            <input type="search" placeholder="Search.." name="search">
                         </form>
                     </div>
                     <div class="cart-container">

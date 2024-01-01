@@ -4319,10 +4319,10 @@ body{
         grid-column: span 2;
     }
     .grid-item.item9.menuedit{
-        grid-column: span 4;
+        grid-column: span 6;
     }
     .grid-item.item2.adproduct.prod{
-        grid-column: span 4;
+        grid-column: span 6;
     }
     .sidemenuproduct.prod{
         height: auto;
@@ -5676,15 +5676,14 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adclient{
-        grid-column: span 1;
+        grid-column: span 3;
     }
     .grid-item.item1.adclient{
         display: none;
     }
     .grid-item.item9.adclient{
-        grid-column: span 2;
+        grid-column: span 3;
     }
-    
     .sidemenuclient{
         width: 100%;
         height: 100vh;
@@ -5780,18 +5779,18 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adclient{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .grid-item.item1.adclient{
         display: none;
     }
     .grid-item.item9.adclient{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     
     .sidemenuclient{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -5884,13 +5883,13 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adclient{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .grid-item.item1.adclient{
         display: none;
     }
     .grid-item.item9.adclient{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .sidemenuclient{
         width: 100%;
@@ -6361,17 +6360,17 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adproduct{
-        grid-column: span 1;
+        grid-column: span 3;
     }
     .grid-item.item1.adproduct{
         display: none;
     }
     .grid-item.item9.adproduct{
-        grid-column: span 2;
+        grid-column: span 3;
     }
     .sidemenuproduct{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6465,17 +6464,17 @@ body{
         padding: 0% 5%;
     }
     .grid-item.item2.adproduct{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .grid-item.item1.adproduct{
         display: none;
     }
     .grid-item.item9.adproduct{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .sidemenuproduct{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #2C2929;
         display: flex;
         flex-direction: column;
@@ -6575,7 +6574,7 @@ body{
         display: none;
     }
     .grid-item.item9.adproduct{
-        grid-column: span 1;
+        grid-column: span 2;
     }
     .sidemenuproduct{
         width: 100%;

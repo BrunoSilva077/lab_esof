@@ -76,13 +76,13 @@
                     </a>
                 </div>
                 <div class="avaliacoes">
-                    <div class="estrelas">
+                    <!-- <div class="estrelas">
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>(1)</a>
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
                         <a><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
-                    </div>
+                    </div> -->
                     <div class="escrever-comentario">
                         <form>
                             <textarea name="comentario" id="comentario" placeholder="leave your review..."></textarea>

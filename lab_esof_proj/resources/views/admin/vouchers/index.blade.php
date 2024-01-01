@@ -9,14 +9,16 @@
     <div class="grid-container">
         <div class="grid-item item2 adproduct">
             <div class="sidemenuproduct">
-            <a href="{{ route('adminclients') }}">
+            <a href="{{ route('adminorders') }}">
                     <div class="checkoutinputline">
                         <h3>Orders<i class="fa-solid fa-box"></i></h3>
                     </div>
-                </a>
+            </a>
+                <a href="{{ route('adminclients') }}">
                 <div class="checkoutinputline">
                     <h3>Clients<i class="fa-solid fa-user"></i></h3>
                 </div>
+                </a>
                 <a href="{{ route('adminproducts') }}">
                     <div class="checkoutinputline">
                         <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
@@ -38,9 +40,9 @@
         <div class="grid-item item9 adproduct">
             <div class="upmainmenuproduct">
                 <div class="checkoutinputline">
-                    <h3 class="active">All Orders</h3>
+                    <!-- <h3 class="active">All Orders</h3>
                     <h3>Completed</h3>
-                    <h3>Pending</h3>
+                    <h3>Pending</h3> -->
                     <div class="btnnewproduct">
                     <a href="{{ route('create') }}">
                         @csrf

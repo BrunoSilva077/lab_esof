@@ -84,9 +84,9 @@
                     <a href="{{ route('products.edit',['product' => $product]) }}">
                     <button>Edit</button>
                     </a>
-                    <form action="{{ route('products.destroy',['product' => $product]) }}" method="POST">
+                    <form action="{{ route('products.destroy',['product' => $product]) }}" method="POST" style="width: 11.1%;">
                     @csrf
-                        <button type="submit">Remove</button>
+                        <button type="submit" style="width:100%">Remove</button>
                     </form>
                     </div>
 

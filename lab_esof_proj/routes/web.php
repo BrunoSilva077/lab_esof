@@ -30,18 +30,19 @@ Auth::routes(['verify' => true]);
 //home routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
 Route::get('/newsletter', [MainController::class, 'newsletter'])->name('newsletter');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
-Route::get('/productPage', [MainController::class, 'productPage'])->name('productPage');
-Route::get('/editprofile', [MainController::class, 'editprofile'])->name('editprofile');
+// Route::get('/productPage', [MainController::class, 'productPage'])->name('productPage');
+// Route::get('/editprofile', [MainController::class, 'editprofile'])->name('editprofile');
 // Route::get('/adminorders', [AdminController::class, 'listOrders'])->name('adminorders')->middleware('is_admin');
 
+//checkout routes
 Route::get('/checkout/create', [CheckoutController::class, 'create'])->name('checkout');
 Route::post('/session', [CheckoutController::class, 'session'])->name('session');
 Route::post('/success', [CheckoutController::class, 'success'])->name('success');
 Route::post('/store',[CheckoutController::class, 'store'])->name('store');
+
 //favorite routes
 Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito')->middleware('CheckUserPermissions');
 Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos')->middleware('CheckUserPermissions');
@@ -49,6 +50,7 @@ Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name
 //user routes
 Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('editprofile')->middleware('CheckUserPermissions');
 Route::post('/user/update/{user}', [UserController::class, 'update'])->name('updateprofile');
+
 // Admin Routes
 Route::get('/adminorders', [AdminController::class, 'listOrders'])->name('adminorders')->middleware('is_admin');
 Route::get('/adminclients', [AdminController::class, 'listUsers'])->name('adminclients')->middleware('is_admin');
@@ -76,6 +78,8 @@ Route::get('/products', [ProductsController::class, 'index'])->name('products.in
 Route::get('/products/{product}', [ProductsController::class, 'show'])->name('products.show');
 Route::post('/products/{product}',[ProductsController::class,'update'])->name('products.update');
 Route::post('/products/{product}', [ProductsController::class, 'destroy'])->name('products.destroy');
+Route::get('/search', [ProductsController::class, 'search'])->name('products.search');
+
 
 //image routes
 Route::get('/image/create',[ImagesController::class,'create'])->name('partials.create');
