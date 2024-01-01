@@ -51,6 +51,7 @@ class AdminController extends Controller
         ]);
         return back()->with('success', 'User updated successfully');
     }
+
     public function listImages(){
         $images = Images::all();
         return view('admin.images.index', compact('images'));

@@ -43,9 +43,7 @@ Route::post('/session', [CheckoutController::class, 'session'])->name('session')
 Route::post('/success', [CheckoutController::class, 'success'])->name('success');
 Route::post('/store',[CheckoutController::class, 'store'])->name('store');
 
-//favorite routes
-Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito')->middleware('CheckUserPermissions');
-Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos')->middleware('CheckUserPermissions');
+
 
 //user routes
 Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('editprofile')->middleware('CheckUserPermissions');
@@ -66,9 +64,9 @@ Route::get('/user/edit/{user}', [UserController::class, 'edit'])->name('editprof
 Route::post('/user/update/{user}', [UserController::class, 'update'])->name('updateprofile');
 Route::get('/adminimages', [AdminController::class, 'listImages'])->name('adminimages')->middleware('is_admin');
 
-
-Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito');
-Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos');
+//favorite routes
+Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito')->middleware('CheckUserPermissions');;
+Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos')->middleware('CheckUserPermissions');
 Route::post('/user/favoritos/delete/{product_id}', [FavoritoController::class, 'destroy'])->name('removerfavorito');
 Route::get('/historyprofile', [MainController::class, 'historyprofile'])->name('historyprofile');
 
@@ -86,6 +84,7 @@ Route::get('/image/create',[ImagesController::class,'create'])->name('partials.c
 Route::post('save',[ImagesController::class,'store'])->name('partials.store');
 Route::get('/image/{image}/edit]',[ImagesController::class,'edit'])->name('partials.edit')->middleware('CheckUserPermissions')->middleware('is_admin');
 Route::post('/image/{image}',[ImagesController::class,'update'])->name('partials.update');
+Route::post('/image/{image}',[ImagesController::class,'destroy'])->name('partials.destroy');
 
 //cart routes
 Route::post('cart',[CartController::class,'store'])->name('cart.store');

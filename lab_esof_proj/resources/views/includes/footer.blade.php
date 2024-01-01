@@ -6,14 +6,16 @@
                     <div class="newsletter">
                         <h1>Subscribe newsletter</h1>
                         <p>Subscribe to our newsletter for exclusive information on our Events, Promotions and Offers.</p>
+                        <a href="{{ route('newsletter') }}"class="newsletter" style="text-decoration:none">
                         <h2 class="lowres">@ SUBSCRIBE TO OUR NEWSLETTER</h2>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="grid-item item4 footer">
-                <div class="newsletter">
+                <a href="{{ route('newsletter') }}"class="newsletter" style="text-decoration:none">
                     <h2>@ SUBSCRIBE TO OUR NEWSLETTER</h2>
-                </div>
+                </a>
             </div>
             <div class="grid-item item12 footer">
                 <div class="footerColumn">

@@ -27,7 +27,7 @@ class FavoritoController extends Controller
      */
     public function create()
     {
-        //
+        return back();
     }
 
     /**
@@ -35,21 +35,21 @@ class FavoritoController extends Controller
      */
     public function store($id_produto)
     {
-        $id_user = Auth::id();
-        // $jaFavorito = Favorito::where('user_id', $user_id)
-        // ->where('product_id', $id_produto)
-        // ->exists();
-
-        // if ($jaFavorito) {
-        //     // Produto já está nos favoritos
-        //     return redirect()->back()->with('error', 'Este produto já está nos seus favoritos.');
-        // }
-
-            $favorito = new Favorito();
-            $favorito->user_id = $id_user;
-            $favorito->product_id = $id_produto;
-            $favorito->save();
-            return back()->with('success', 'Favorito added successfully');
+            $id_user = Auth::id();
+            // $jaFavorito = Favorito::where('user_id', $user_id)
+            // ->where('product_id', $id_produto)
+            // ->exists();
+    
+            // if ($jaFavorito) {
+            //     // Produto já está nos favoritos
+            //     return redirect()->back()->with('error', 'Este produto já está nos seus favoritos.');
+            // }
+    
+                $favorito = new Favorito();
+                $favorito->user_id = $id_user;
+                $favorito->product_id = $id_produto;
+                $favorito->save();
+                return back()->with('success', 'Favorito added successfully');
     }
 
     /**
@@ -57,7 +57,7 @@ class FavoritoController extends Controller
      */
     public function show(Favorito $favorito)
     {
-        //
+        return back();
     }
 
     /**
@@ -65,7 +65,7 @@ class FavoritoController extends Controller
      */
     public function edit(Favorito $favorito)
     {
-        //
+        return back();
     }
 
     /**
@@ -73,7 +73,7 @@ class FavoritoController extends Controller
      */
     public function update(Request $request, Favorito $favorito)
     {
-        //
+        return back();
     }
 
     /**

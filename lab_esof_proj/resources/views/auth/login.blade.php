@@ -13,8 +13,8 @@
                         <form method="POST" action="{{ route('login') }}">
                         <h1>Sign In</h1>
                         @csrf
-                            <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
-                            <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
+                            <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus style="width:100%;">
+                            <input type="password" name="password" placeholder="Password" required autocomplete="current-password" style="width:100%;">
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

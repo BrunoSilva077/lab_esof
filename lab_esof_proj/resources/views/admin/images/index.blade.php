@@ -83,12 +83,20 @@
                     <h4>{{ $image->id }}</h4>
                     <h4>{{ $image->name }}</h4>
                     <h4>{{ $image->path }}</h4>
+                    @if( $image->product_id  == null )
+                        <h4>None</h4>
+                    @else
                     <h4>{{ $image->product->name }}</h4>
+                    @endif
                     <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
                     <a href="{{ route('partials.edit',['image' => $image]) }}">
                     <button>Edit</button>
                     </a>
-                    <button>Remove</button>
+                    <form action="{{ route('partials.destroy', ['image' => $image]) }}" method="POST"  style="width:11.1%;">
+                        @csrf
+                        <button type="submit" style="width:100%;">Remove</button>
+                    </form>
+                    <!-- <button>Remove</button> -->
                     </div>
 
                 @empty

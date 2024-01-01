@@ -13,10 +13,10 @@
                     <form method="POST" action="{{ route('register') }}">
                     @csrf
                         <h1>Create Account</h1>
-                        <input type="text" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Name" autofocus>
-                        <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
-                        <input type="password" name="password" required autocomplete="new-password" placeholder="New Password">
-                        <input type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                        <input type="text" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Name" autofocus style="width:100%;">
+                        <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" style="width:100%;">
+                        <input type="password" name="password" required autocomplete="new-password" placeholder="New Password" style="width:100%;">
+                        <input type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password" style="width:100%;">
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

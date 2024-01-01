@@ -132,24 +132,16 @@ class ProductsController extends Controller
         $request->validate([
             'search' => 'required|string'
         ]);
-
         $search = $request->input('search');
-
-        // $products = Products::where('name', 'like', "%$search%")->get();
-        // // $products = Products::where('name', 'like', "%$search%")->paginate(3);
-        // // dd($request->input('search'));
-        // dd($products);
-        // dd($search);
-
         // $products = Products::where('name', 'like', "%$search%")->toSql();
         $products = Products::whereRaw('lower("name") like ?', ['%' . strtolower($search) . '%'])
-    ->whereNull('deleted_at')
-    ->paginate(3);
-// dd($products);
-if(Auth::user()){
-    $favoritos = Auth::user()->favorito;
-    return view('products.index', compact('products','favoritos'));
-}
+        ->whereNull('deleted_at')
+        ->paginate(3);
+        
+        if(Auth::user()){
+        $favoritos = Auth::user()->favorito;
+        return view('products.index', compact('products','favoritos'));
+        }
 
         return view('products.index', compact('products'));
     }

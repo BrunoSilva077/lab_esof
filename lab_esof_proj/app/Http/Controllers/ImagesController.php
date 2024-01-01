@@ -14,7 +14,7 @@ class ImagesController extends Controller
      */
     public function index()
     {
-        //
+        return back();
     }
 
     /**
@@ -53,7 +53,8 @@ class ImagesController extends Controller
      */
     public function show(Images $image)
     {
-        //
+        return back();
+
     }
 
     /**
@@ -86,6 +87,7 @@ class ImagesController extends Controller
      */
     public function destroy(Images $image)
     {
-        //
+        $image->delete();
+        return redirect('adminimages')->with('success', 'Image deleted successfully');
     }
 }

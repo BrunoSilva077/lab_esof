@@ -7,7 +7,7 @@
         <div class="user-menu">
                 <ul class="ul-container-menu">
                     <div class="group-li">
-                        <form>
+                        <form action="{{ route('products.search') }}" method="GET">
                                 <!-- <button><i class="fa-solid fa-magnifying-glass"></i></button> -->
                                 <input type="text" placeholder="Search.." name="search" style="width:100%">
                         </form>                    
@@ -46,7 +46,7 @@
         <div class="user-menu">
                     <ul class="ul-container-menu">
                         <div class="group-li">
-                        <form>
+                        <form action="{{ route('products.search') }}" method="GET">
                             <!-- <button><i class="fa-solid fa-magnifying-glass"></i></button> -->
                             <input type="text" placeholder="Search.." name="search" style="width:100%">
                         </form>
@@ -103,10 +103,64 @@
                 <div class="side-cart-options">
                     <div class="items">
                         <div class="total-price">
-                            <h1>Total(2 items): 1399.98€</h1>
+                            <h1>Total(0 items): 0</h1>
                         </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
+                        <!-- <hr class="barra-opcoes"> -->
+                        <!-- <div class="each-item">
+                            <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>    
+                        </div> -->
+                        <!-- <hr class="barra-opcoes"> -->
+                        <!-- <div class="each-item"> -->
+                            <!-- <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>    
+                        </div> -->
+                        <!-- <hr class="barra-opcoes"> -->
+                        <!-- <div class="each-item">
+                            <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>     -->
+                        <!-- </div> -->
+                        <!-- <hr class="barra-opcoes"> -->
+                        <!-- <div class="each-item">
                             <div class="item-img">
                                 <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
                             </div>
@@ -141,64 +195,10 @@
                                 </div>
                             </div>    
                         </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
+                        <hr class="barra-opcoes"> -->
                     </div>
                     <div class="side-cart-checkout">
-                        <a>checkout</a>
+                        <a href="{{route('login')}}" style="text-decoration:none; color:black;">checkout</a>
                     </div>
                 </div>
             </div>
