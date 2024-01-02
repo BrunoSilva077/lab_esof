@@ -127,6 +127,11 @@ class ProductsController extends Controller
             }
         }
     }
+    public function restore(Products $product)
+    {
+        $product->restore();
+        return back()->with('success', 'Product restores successfully');
+    }
     public function search(Request $request)
     {
         $request->validate([

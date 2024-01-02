@@ -34,6 +34,16 @@
                         <h3>Vouchers<i class="fas fa-tag"></i></h3>
                     </div>
                 </a>
+                <a href="{{ route('admincategories') }}">
+                    <div class="checkoutinputline">
+                        <h3>Categories</h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminbrands') }}">
+                    <div class="checkoutinputline">
+                        <h3>Brands</h3>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="grid-item item1 adproduct"></div>
@@ -73,7 +83,11 @@
                     <h4>{{$product->id}}</h4>
                     <h4>{{$product->name}}</h4>
                     <h4>{{$product->description}}</h4>
+                    @if($product->brand_id == null)
+                        <h4>None</h4>
+                    @else
                     <h4>{{$product->brand->name}}</h4>
+                    @endif
                     <h4>{{$product->stock}}</h4>
                     <h4>{{$product->price}}€</h4>
                     @if($product->active)
@@ -81,14 +95,25 @@
                     @else
                         <h4>False</h4>
                     @endif
-                    <a href="{{ route('products.edit',['product' => $product]) }}">
-                    <button>Edit</button>
-                    </a>
-                    <form action="{{ route('products.destroy',['product' => $product]) }}" method="POST" style="width: 11.1%;">
-                    @csrf
-                        <button type="submit" style="width:100%">Remove</button>
-                    </form>
+                    @if($product->trashed())
+                        <a style="visibility:hidden;">
+                            <button></button>
+                        </a>
+                        <form action="{{ route('products.restore',['product' => $product]) }}" method="POST" style="width: 11.1%;">
+                        @csrf
+                            <button type="submit" style="width:100%">Restore</button>
+                        </form>
+                    @else
+                        <a href="{{ route('products.edit',['product' => $product]) }}">
+                            <button>Edit</button>
+                        </a>
+                        <form action="{{ route('products.destroy',['product' => $product]) }}" method="POST" style="width: 11.1%;">
+                        @csrf
+                            <button type="submit" style="width:100%">Remove</button>
+                        </form>
+                    @endif
                     </div>
+                
 
                 @empty
                     <h4>No products found</h4>

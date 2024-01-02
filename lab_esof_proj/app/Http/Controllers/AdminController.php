@@ -18,7 +18,7 @@ class AdminController extends Controller
 
     public function listUsers()
     {
-        $users = User::all();
+        $users = User::withTrashed()->orderBy('id')->get();
         return view('admin.users.index', compact('users'));
     }
     

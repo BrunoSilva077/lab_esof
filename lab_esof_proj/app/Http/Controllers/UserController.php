@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\Favorito;
 
 class UserController extends Controller
 {
@@ -78,8 +79,26 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        if ($user) {
+            // Verifica se o produto existe antes de continuar
+            if (User::find($user->id)) {
+                // Atualiza o campo product_id para null nas imagens associadas ao produto
+                Favorito::where('user_id', $user->id)->update(['user_id' => null]);
+    
+                // Em seguida, exclua o produto
+                $user->delete();
+    
+                return back()->with('success', 'User removed successfully');
+            } else {
+                return back()->with('error', 'User does not exist');
+            }
+        }
+    }
+    public function restore(User $user)
+    {
+        $user->restore();
+        return back()->with('success', 'User restored successfully');
     }
 }

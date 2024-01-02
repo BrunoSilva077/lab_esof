@@ -34,6 +34,16 @@
                         <h3>Vouchers<i class="fas fa-tag"></i></h3>
                     </div>
                 </a>
+                <a href="{{ route('admincategories') }}">
+                    <div class="checkoutinputline">
+                        <h3>Categories</h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminbrands') }}">
+                    <div class="checkoutinputline">
+                        <h3>Brands</h3>
+                    </div>
+                </a>
 
             </div>
         </div>
@@ -69,11 +79,28 @@
                             <h4>False</h4>
                         @endif
                         <h4>{{ $user->password }}</h4>
+                     
+                      
+                        
+                    @if($user->trashed())
+                        <a style="visibility:hidden;">
+                            <button></button>
+                        </a>
+                        <form action="{{ route('users.restore',['user' => $user]) }}" method="POST" style="width: 11.1%;">
+                        @csrf
+                            <button type="submit" style="width:100%">Restore</button>
+                        </form>
+                    @else
                         <a href="{{ route('edituser', ['user' => $user]) }}" class="checkoutinputline" style="text-decoration: none;">
                             <!-- Edit</a> -->
                             <button style="width:100%">Edit</button>
                         </a>
-                        <button>Remove</button>
+                        <form action="{{ route('users.destroy',['user' => $user]) }}" method="POST" style="width: 11.1%;">
+                        @csrf
+                            <button type="submit" style="width:100%">Remove</button>
+                        </form>
+                    @endif
+
                         </div>
 
                         @empty

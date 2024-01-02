@@ -13,6 +13,8 @@ use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\BrandsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,12 +44,16 @@ Route::get('/checkout/create', [CheckoutController::class, 'create'])->name('che
 Route::post('/session', [CheckoutController::class, 'session'])->name('session');
 Route::post('/success', [CheckoutController::class, 'success'])->name('success');
 Route::post('/store',[CheckoutController::class, 'store'])->name('store');
+Route::get('/storecheckout', [CheckoutController::class, 'storecheckout'])->name('storecheckout');
+
 
 
 
 //user routes
 Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('editprofile')->middleware('CheckUserPermissions');
 Route::post('/user/update/{user}', [UserController::class, 'update'])->name('updateprofile');
+Route::post('/user/delete/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::post('/user/restore/{user}', [UserController::class, 'restore'])->withTrashed()->name('users.restore');
 
 // Admin Routes
 Route::get('/adminorders', [AdminController::class, 'listOrders'])->name('adminorders')->middleware('is_admin');
@@ -75,7 +81,8 @@ Route::resource('products', ProductsController::class)->only(['create', 'store',
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
 Route::get('/products/{product}', [ProductsController::class, 'show'])->name('products.show');
 Route::post('/products/{product}',[ProductsController::class,'update'])->name('products.update');
-Route::post('/products/{product}', [ProductsController::class, 'destroy'])->name('products.destroy');
+Route::post('/products/delete/{product}', [ProductsController::class, 'destroy'])->name('products.destroy');
+Route::post('/products/restore/{product}', [ProductsController::class, 'restore'])->withTrashed()->name('products.restore');
 Route::get('/search', [ProductsController::class, 'search'])->name('products.search');
 
 
@@ -91,3 +98,19 @@ Route::post('cart',[CartController::class,'store'])->name('cart.store');
 // Route::get('cart',[CartController::class,'index'])->name('cart.index');
 Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
 Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
+
+//categories
+Route::get('/categories',[CategoriesController::class,'index'])->name('admincategories')->middleware('is_admin');
+Route::get('/categories/create',[CategoriesController::class,'create'])->name('categories.create')->middleware('is_admin');
+Route::post('/categories/store',[CategoriesController::class,'store'])->name('categories.store')->middleware('is_admin');
+Route::get('/categories/edit/{categories}',[CategoriesController::class,'edit'])->name('categories.edit')->middleware('is_admin');
+Route::post('/categories/update/{categories}',[CategoriesController::class,'update'])->name('categories.update')->middleware('is_admin');
+Route::post('/categories/delete/{categories}',[CategoriesController::class,'destroy'])->name('categories.destroy')->middleware('is_admin');
+
+//brands
+Route::get('/brands',[BrandsController::class,'index'])->name('adminbrands')->middleware('is_admin');
+Route::get('/brands/create',[BrandsController::class,'create'])->name('brands.create')->middleware('is_admin');
+Route::post('/brands/store',[BrandsController::class,'store'])->name('brands.store')->middleware('is_admin');
+Route::get('/brands/edit/{brands}',[BrandsController::class,'edit'])->name('brands.edit')->middleware('is_admin');
+Route::post('/brands/update/{brands}',[BrandsController::class,'update'])->name('brands.update')->middleware('is_admin');
+Route::post('/brands/delete/{brands}',[BrandsController::class,'destroy'])->name('brands.destroy')->middleware('is_admin');

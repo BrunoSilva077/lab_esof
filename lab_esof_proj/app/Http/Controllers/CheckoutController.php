@@ -16,7 +16,7 @@ class CheckoutController extends Controller
         //
     }
     public function session(Request $request)
-    {
+{
     \Stripe\Stripe::setApiKey(config('stripe.sk'));
 
     $rowIds = $request->input('rowIds');
@@ -46,18 +46,32 @@ class CheckoutController extends Controller
             'quantity'   => $qty,
         ];
     }
+
+    $user = Auth::user();
+
     $session = \Stripe\Checkout\Session::create([
-        'payment_method_types' => ['card'], // ou outros métodos de pagamento suportados
+        'payment_method_types' => ['card'],
         'line_items' => $lineItems,
         'metadata' => [
             'voucher_code' => $voucherCode,
         ],
         'mode' => 'payment',
-        'success_url' => route('store'),
+        'success_url' => route('home'), //deveria ser store mas nao esta a funcionar por enquanto
         'cancel_url' => route('checkout', ['user' => auth()->id()]),
+        'customer_email' => $user->email, 
     ]);
-        return redirect()->away($session->url);
-    }
+
+    $request->session()->put('checkout_data', [
+        'rowIds' => $rowIds,
+        'totals' => $totals,
+        'qtys' => $qtys,
+        'productnames' => $productnames,
+        'voucherCode' => $voucherCode,
+        'session_id' => $session->id,
+    ]);
+
+    return redirect()->away($session->url);
+}
     public function success()
     {
         return redirect('home')->with('success', 'Thanks for you order You have just completed your payment. The seeler will reach out to you as soon as possible');
@@ -77,63 +91,16 @@ class CheckoutController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function storecheckout(Request $request)
     {
-        // // Valide os dados, se necessário
-        // $request->validate([
-        //     'productname'   => 'required',
-        //     'total'         => 'required',
-        //     'qty'           => 'required|integer|min:1',
-        //     'voucher_code'  => 'nullable|string',
-        //     // Adicione outras regras de validação conforme necessário
-        // ]);
-        // // Recupere detalhes da compra da sessão
-        // $lineItems = session('lineItems');
-        // $voucherCode = session('voucherCode');
+      $payload = $request->getContent();
+    $event = \Stripe\Webhook::constructEvent(
+        $payload, $request->header('Stripe-Signature'), config('cashier.webhook_secret')
+    );
 
-        // // Crie e salve uma nova ordem na base de dados usando o modelo Checkout
-        // $order = new Checkout([
-        //     'user_id' => auth()->id(), // Supondo que você está usando autenticação
-        //     // 'total' => /* Calcule o total com base nos itens no carrinho */,
-        //     'voucher_code' => $voucherCode,
-        //     // Outros campos necessários
-        // ]);
-
-        // $order->save();
-
-        // // Você também pode associar os itens da compra à ordem, dependendo de como sua relação está configurada
-        // $order->items()->createMany($lineItems);
-
-        // // Limpe as informações da compra da sessão
-        // session()->forget(['lineItems', 'voucherCode']);
-        // return back()->with('success', 'Favorito added successfully');
-
-            // Recupere a sessão do Stripe
-    $stripe = new \Stripe\StripeClient(config('stripe.sk'));
-    $checkout_session = $stripe->checkout->sessions->retrieve($request->input('session_id'));
-
-    // Acesse as informações da compra
-    $payment_intent = $checkout_session->payment_intent;
-    $line_items = $checkout_session->display_items;
-
-    // Agora você pode percorrer os itens da compra e salvá-los no banco de dados
-    foreach ($line_items as $item) {
-        $product_name = $item->custom->name; // Nome do produto
-        $quantity = $item->quantity; // Quantidade
-        $unit_amount = $item->amount->value; // Valor unitário em centavos
-        $total_amount = $quantity * $unit_amount; // Valor total em centavos
-
-        // Execute a lógica para salvar essas informações no banco de dados, por exemplo:
-        $orderItem = new OrderItem([
-            'product_name' => $product_name,
-            'quantity' => $quantity,
-            'unit_amount' => $unit_amount,
-            'total_amount' => $total_amount,
-            // Outros campos necessários
-        ]);
-        $orderItem->save();
-    }
-    return back()->with('success', 'Favorito added successfully');
+    // Use the $event object to access payment intent details
+    $paymentIntentId = $event->data->object->id;
+        return $this->successMethod(); // Implement your own success response
     }
 
     // ... outros métodos
