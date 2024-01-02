@@ -34,6 +34,16 @@
                     <h3>Vouchers<i class="fas fa-tag"></i></h3>
                 </div>
             </a>
+            <a href="{{ route('admincategories') }}">
+                    <div class="checkoutinputline">
+                        <h3>Categories</h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminbrands') }}">
+                    <div class="checkoutinputline">
+                        <h3>Brands</h3>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="grid-item item1 adproduct"></div>

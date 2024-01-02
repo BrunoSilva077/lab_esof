@@ -9,7 +9,7 @@
     <div class="grid-container">
         <div class="grid-item item2 adproduct">
             <div class="sidemenuproduct">
-            <a href="{{ route('adminorders') }}">
+            <a href="{{ route('adminclients') }}">
                     <div class="checkoutinputline">
                         <h3>Orders<i class="fa-solid fa-box"></i></h3>
                     </div>
@@ -66,17 +66,23 @@
                     <h3>#</h3>
                     <h3>Cod Voucher</h3>
                     <h3>Valor Desconto</h3>
-                    <h3>Tipo Percentual</h3>
-                    <h3></h3>
-                    <h3></h3>
+                    <h3>Tipo Desconto</h3>
+                    <h3>Edit</h3>
+                    <h3>Remove</h3>
                 </div>
                 <hr class="horizontal-adproduct">
                 @forelse($vouchers as $voucher)
                 <div class="checkoutinputline">
                     <h4>{{$voucher->id}}</h4>
                     <h4>{{$voucher->cod_voucher}}</h4>
-                    <h4>{{$voucher->tipo_percentual}}</h4>
                     <h4>{{$voucher->valor_desconto}}</h4>
+                    <!-- <h4>{{$voucher->tipo_percentual}}</h4> -->
+                    @if($voucher->tipo_percentual )
+                        <h4>Percentagem</h4>
+                    @else
+                        <h4>Valor</h4>
+                    
+                    @endif
                     <a href="{{ route('editvoucher', ['voucher' => $voucher]) }}" class="a_voucher">
                         <button class="but_voucher">Edit</button>
                     </a> 

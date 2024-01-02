@@ -33,7 +33,7 @@ class CheckoutController extends Controller
         $qty = $qtys[$index];
         $totalprice = $totalprice / $qty;
         $two0 = "00";
-        $totalAmountInCents = $totalprice * 100;
+        $totalAmountInCents = round($totalprice * 100) ;
 
         $lineItems[] = [
             'price_data' => [
@@ -111,6 +111,8 @@ class CheckoutController extends Controller
     public function show(Checkout $checkout)
     {
         //
+        return back();
+
     }
 
     /**
@@ -119,6 +121,8 @@ class CheckoutController extends Controller
     public function edit(Checkout $checkout)
     {
         //
+        return back();
+
     }
 
     /**
@@ -127,6 +131,8 @@ class CheckoutController extends Controller
     public function update(Request $request, Checkout $checkout)
     {
         //
+        return back();
+
     }
 
     /**
@@ -135,5 +141,6 @@ class CheckoutController extends Controller
     public function destroy(Checkout $checkout)
     {
         //
+        return back();
     }
 }

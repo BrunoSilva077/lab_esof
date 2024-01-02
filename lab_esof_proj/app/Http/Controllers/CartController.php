@@ -16,6 +16,8 @@ class CartController extends Controller
         // $cartItems = Cart::instance('shopping')->content();
         // dd($cartItems);
         // return view('includes.navbarAdmin', compact('cartItems'));
+        return back();
+
     }
 
     /**
@@ -24,6 +26,8 @@ class CartController extends Controller
     public function create()
     {
         //
+        return back();
+
     }
 
     /**
@@ -49,6 +53,8 @@ class CartController extends Controller
      */
     public function show()
     {
+        return back();
+
     }
 
     /**
@@ -57,6 +63,8 @@ class CartController extends Controller
     public function edit(string $id)
     {
         //
+        return back();
+
     }
 
     /**

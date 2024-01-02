@@ -9,11 +9,10 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
-// use Laravel\Cashier\Billable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory,SoftDeletes,Notifiable/*,Billable*/;
+    use HasApiTokens, HasFactory,SoftDeletes,Notifiable;
 
     /**
      * The attributes that are mass assignable.

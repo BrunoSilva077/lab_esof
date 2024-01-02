@@ -40,20 +40,18 @@ Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 // Route::get('/adminorders', [AdminController::class, 'listOrders'])->name('adminorders')->middleware('is_admin');
 
 //checkout routes
-Route::get('/checkout/create', [CheckoutController::class, 'create'])->name('checkout');
-Route::post('/session', [CheckoutController::class, 'session'])->name('session');
-Route::post('/success', [CheckoutController::class, 'success'])->name('success');
-Route::post('/store',[CheckoutController::class, 'store'])->name('store');
-Route::get('/storecheckout', [CheckoutController::class, 'storecheckout'])->name('storecheckout');
-
-
+Route::get('/checkout/create', [CheckoutController::class, 'create'])->name('checkout')->middleware('CheckUserPermissions');
+Route::post('/session', [CheckoutController::class, 'session'])->name('session')->middleware('CheckUserPermissions');
+Route::post('/success', [CheckoutController::class, 'success'])->name('success')->middleware('CheckUserPermissions');
+Route::post('/store',[CheckoutController::class, 'store'])->name('store')->middleware('CheckUserPermissions');
+Route::get('/storecheckout', [CheckoutController::class, 'storecheckout'])->name('storecheckout')->middleware('CheckUserPermissions');
 
 
 //user routes
 Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('editprofile')->middleware('CheckUserPermissions');
 Route::post('/user/update/{user}', [UserController::class, 'update'])->name('updateprofile');
-Route::post('/user/delete/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-Route::post('/user/restore/{user}', [UserController::class, 'restore'])->withTrashed()->name('users.restore');
+Route::post('/user/delete/{user}', [UserController::class, 'destroy'])->name('users.destroy')->middleware('is_admin');
+Route::post('/user/restore/{user}', [UserController::class, 'restore'])->withTrashed()->name('users.restore')->middleware('is_admin');
 
 // Admin Routes
 Route::get('/adminorders', [AdminController::class, 'listOrders'])->name('adminorders')->middleware('is_admin');
@@ -74,24 +72,24 @@ Route::get('/adminimages', [AdminController::class, 'listImages'])->name('admini
 Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito')->middleware('CheckUserPermissions');;
 Route::get('/user/favoritos/{user}', [FavoritoController::class, 'index'])->name('listarfavoritos')->middleware('CheckUserPermissions');
 Route::post('/user/favoritos/delete/{product_id}', [FavoritoController::class, 'destroy'])->name('removerfavorito');
-Route::get('/historyprofile', [MainController::class, 'historyprofile'])->name('historyprofile');
+// Route::get('/historyprofile', [MainController::class, 'historyprofile'])->name('historyprofile');
 
 //products routes
 Route::resource('products', ProductsController::class)->only(['create', 'store', 'edit', 'update', 'destroy'])->middleware('is_admin');
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
 Route::get('/products/{product}', [ProductsController::class, 'show'])->name('products.show');
 Route::post('/products/{product}',[ProductsController::class,'update'])->name('products.update');
-Route::post('/products/delete/{product}', [ProductsController::class, 'destroy'])->name('products.destroy');
-Route::post('/products/restore/{product}', [ProductsController::class, 'restore'])->withTrashed()->name('products.restore');
+Route::post('/products/delete/{product}', [ProductsController::class, 'destroy'])->name('products.destroy')->middleware('is_admin');
+Route::post('/products/restore/{product}', [ProductsController::class, 'restore'])->withTrashed()->name('products.restore')->middleware('is_admin');
 Route::get('/search', [ProductsController::class, 'search'])->name('products.search');
 
 
 //image routes
-Route::get('/image/create',[ImagesController::class,'create'])->name('partials.create');
+Route::get('/image/create',[ImagesController::class,'create'])->name('partials.create')->middleware('CheckUserPermissions')->middleware('is_admin');
 Route::post('save',[ImagesController::class,'store'])->name('partials.store');
 Route::get('/image/{image}/edit]',[ImagesController::class,'edit'])->name('partials.edit')->middleware('CheckUserPermissions')->middleware('is_admin');
-Route::post('/image/{image}',[ImagesController::class,'update'])->name('partials.update');
-Route::post('/image/{image}',[ImagesController::class,'destroy'])->name('partials.destroy');
+Route::post('/image/{image}',[ImagesController::class,'update'])->name('partials.update')->middleware('CheckUserPermissions')->middleware('is_admin');
+Route::post('/image/destroy/{image}',[ImagesController::class,'destroy'])->name('partials.destroy')->middleware('CheckUserPermissions')->middleware('is_admin');
 
 //cart routes
 Route::post('cart',[CartController::class,'store'])->name('cart.store');

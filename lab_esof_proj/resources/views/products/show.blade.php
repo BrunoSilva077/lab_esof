@@ -114,11 +114,16 @@
                     <i class="fas fa-check-circle"></i>
                     <a>{{ $product->stock }} In Stock</a>
                     <div class="quantidade-botoes">
+                    @auth                           
+
                     <div class="quantidade">
                         <button class="menos" onclick="removeProduct()">-</button>
                         <input type="text" value="1" class="numero show" disabled>
                         <button class="mais" onclick="addProduct()">+</button>
                     </div>
+                    @else
+                    <p style="color:white;">Log in to add this product to your cart.</p>
+                    @endauth
                     <form action=" {{ route('cart.store') }}" method="POST">
                         @csrf
                             <input type="hidden" name="id" value="{{ $product->id }}">
@@ -130,14 +135,17 @@
                                 <input type="hidden" name="image" value="{{asset($product->images->first()->path) }}" alt="{{ $product->name }}">
                             @else
                                 <input type="hidden" name="image" value="img/products/default_image.jpg" alt="{{ $product->name }}">
-                            @endif                           
+                            @endif
+                            @auth                           
                             <div class="adicionar">
                                 <button class="adicionar-carrinho-btn"><i class="fas fa-shopping-cart"></i>Adicionar</button>
-                            </div>   
+                            </div> 
+                            @else
+                            @endauth  
                     </form>
-                    <div class="comprar-ja">
+                    <!-- <div class="comprar-ja">
                         <button class="comprar-ja-btn">Comprar já<i class="fas fa-arrow-right"></i></button>
-                    </div>
+                    </div> -->
                 </div>
                     </div>
                     @else

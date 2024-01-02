@@ -15,6 +15,10 @@ class ProductsController extends Controller
     /**
      * Display a listing of the resource.
      */
+    // public function __construct()
+    // {
+    // $this->middleware(['auth','verified']);
+    // }
     public function index()
     {
          $products = Products::paginate(3);
@@ -65,6 +69,7 @@ class ProductsController extends Controller
      */
     public function show(Products $product)
     {
+        // dd($product);
         if(Auth::user()){
             $favoritos = Auth::user()->favorito;
             return view('products.show', compact('product','favoritos'));

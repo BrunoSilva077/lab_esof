@@ -9,7 +9,7 @@
     <div class="grid-container">
     <div class="grid-item item2 adproduct prod">
             <div class="sidemenuproduct prod">
-            <a href="{{ route('adminorders') }}">
+            <a href="{{ route('adminclients') }}">
                 <div class="checkoutinputline">
                     <h3>Orders<i class="fa-solid fa-box"></i></h3>
                 </div>
