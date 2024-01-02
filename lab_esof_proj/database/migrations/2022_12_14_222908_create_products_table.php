@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('description');
             $table->integer('stock');
             $table->boolean('active');
-            $table->unsignedBigInteger('categories_id');
-            $table->unsignedBigInteger('brand_id');
+            $table->unsignedBigInteger('categories_id')->nullable();
+            $table->unsignedBigInteger('brand_id')->nullable();
             $table->timestamps();
 
 

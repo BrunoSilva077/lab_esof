@@ -56,7 +56,7 @@ class VoucherController extends Controller
      */
     public function show(Voucher $voucher)
     {
-        //
+        return back();
     }
 
     /**

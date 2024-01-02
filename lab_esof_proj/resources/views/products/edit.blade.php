@@ -34,6 +34,16 @@
                     <h3>Vouchers<i class="fas fa-tag"></i></h3>
                 </div>
             </a>
+            <a href="{{ route('admincategories') }}">
+                    <div class="checkoutinputline">
+                        <h3>Categories</h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminbrands') }}">
+                    <div class="checkoutinputline">
+                        <h3>Brands</h3>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="grid-item item1 adproduct"></div>
@@ -61,6 +71,9 @@
                     <div class="profileinputline">
                     <h3><label for="brands">Brand</label></h3>
                         <select id="brand" name="brand" class="category">
+                            <option value="" {{ $product->brand_id == null ? 'selected' : '' }} disabled>
+                                Select Brand
+                            </option>
                             @foreach ($brands as $brand)
                                 <option value="{{ $brand->id }}" {{ $product->brand_id == $brand->id ? 'selected' : '' }}>
                                     {{ $brand->name }}
@@ -71,6 +84,9 @@
                     <div class="profileinputline">
                     <h3><label for="categories">Categorie</label></h3>
                         <select id="category" name="category" class="category">
+                        <option value="" {{ $product->categories_id == null ? 'selected' : '' }} disabled>
+                            Select Categorie
+                        </option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}" {{ $product->categories_id == $category->id ? 'selected' : '' }}>
                                     {{ $category->name }}
@@ -84,7 +100,6 @@
                     </div>
                     <div class="profileinputline">
                     <h3>Description</h3>
-                    <!-- <input type="text" name="description" value="{{  $product->description }}"> -->
                     <textarea name="description" cols="32" rows="10">{{  $product->description }}</textarea>
                     </div>
                     <div class="profileinputline">
@@ -112,13 +127,12 @@
                         </a>
                         @endforeach
                     @else
-                        <img src="img/products/default_image.jpg" alt="{{ $product->name }}">
+                        <img src="{{ asset('public/img/default_image.png') }}" alt="{{ $product->name }}">
                     @endif  
                     </div>
                     <div class="profileinputline">
                         <button class="btnsave">Save</button>
                     </div>
-                    <!-- <hr class="horizontal-menuedit"> -->
                 </form>
             </div>
         </div>

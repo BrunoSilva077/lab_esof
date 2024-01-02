@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\categories;
 use Illuminate\Http\Request;
+use App\Models\Products;
 
 class CategoriesController extends Controller
 {
@@ -12,7 +13,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories = categories::all();
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -20,7 +22,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -28,7 +30,19 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            'name' => 'required|string',
+        ]);
+
+        // Criar um novo voucher
+        $categorie = new Categories();
+        $categorie->name = $request->input('name');
+
+        // Salvar o voucher na base de dados
+        $categorie->save();
+
+        // Redirecionar para a página de exibição do voucher ou outra página desejada
+        return redirect()->route('admincategories')->with('success', 'Categorie added success');
     }
 
     /**
@@ -36,7 +50,7 @@ class CategoriesController extends Controller
      */
     public function show(categories $categories)
     {
-        //
+        return back();
     }
 
     /**
@@ -44,7 +58,7 @@ class CategoriesController extends Controller
      */
     public function edit(categories $categories)
     {
-        //
+        return view('admin.categories.edit',compact('categories'));
     }
 
     /**
@@ -52,7 +66,15 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, categories $categories)
     {
-        //
+         // Validação dos dados do formulário
+         $request->validate([
+            'name' => 'required|string',
+            // Adicione outras regras de validação conforme necessário
+        ]);
+        $categories->update([
+            'name' => $request->input('name'),
+        ]);
+        return redirect()->route('admincategories')->with('success', 'Categorie edited with sucess');    
     }
 
     /**
@@ -60,6 +82,14 @@ class CategoriesController extends Controller
      */
     public function destroy(categories $categories)
     {
-        //
+        $products = Products::where('categories_id', $categories->id)->get();
+
+
+        foreach ($products as $product) {
+            $product->update(['categories_id' => null]);
+        }
+
+        $categories->delete();
+        return redirect()->route('admincategories')->with('success', 'Categorie deleted with sucess');
     }
 }

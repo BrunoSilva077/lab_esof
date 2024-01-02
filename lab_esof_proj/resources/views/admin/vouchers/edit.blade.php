@@ -7,6 +7,45 @@
 @section('content')
 <div class="editprofilemenu">
     <div class="grid-container">
+    <div class="grid-item item2 adproduct">
+            <div class="sidemenuproduct">
+                <a href="{{ route('adminorders') }}">
+                    <div class="checkoutinputline">
+                        <h3>Orders<i class="fa-solid fa-box"></i></h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminclients') }}">
+                    <div class="checkoutinputline">
+                        <h3>Clients<i class="fa-solid fa-user"></i></h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminproducts') }}">
+                    <div class="checkoutinputline ">
+                        <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminimages') }}">
+                    <div class="checkoutinputline ">
+                        <h3>Images<i class="fa-solid fa-image"></i></h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminvouchers') }}">
+                    <div class="checkoutinputline active">
+                        <h3>Vouchers<i class="fas fa-tag"></i></h3>
+                    </div>
+                </a>
+                <a href="{{ route('admincategories') }}">
+                    <div class="checkoutinputline">
+                        <h3>Categories</h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminbrands') }}">
+                    <div class="checkoutinputline">
+                        <h3>Brands</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
         <div class="grid-item item9 menuedit">
             <div class="mainmenuedit">
             @if($message = Session::get('success'))
@@ -28,10 +67,6 @@
                     @csrf
                     <div class="profileinputline">
                         <h2>Voucher</h2>
-                    </div>
-                    <div class="profileinputline">
-                        <h3>Id Voucher</h3>
-                        <input type="text" name="id" value="{{ $voucher->id }}" disabled>              
                     </div>
                     <div class="profileinputline">
                         <h3>Cod Voucher</h3>
