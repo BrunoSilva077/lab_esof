@@ -1,0 +1,95 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\categories;
+use Illuminate\Http\Request;
+use App\Models\Products;
+
+class CategoriesController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $categories = categories::all();
+        return view('admin.categories.index', compact('categories'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('admin.categories.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+         $request->validate([
+            'name' => 'required|string',
+        ]);
+
+        // Criar um novo voucher
+        $categorie = new Categories();
+        $categorie->name = $request->input('name');
+
+        // Salvar o voucher na base de dados
+        $categorie->save();
+
+        // Redirecionar para a página de exibição do voucher ou outra página desejada
+        return redirect()->route('admincategories')->with('success', 'Categorie added success');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(categories $categories)
+    {
+        return back();
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(categories $categories)
+    {
+        return view('admin.categories.edit',compact('categories'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, categories $categories)
+    {
+         // Validação dos dados do formulário
+         $request->validate([
+            'name' => 'required|string',
+            // Adicione outras regras de validação conforme necessário
+        ]);
+        $categories->update([
+            'name' => $request->input('name'),
+        ]);
+        return redirect()->route('admincategories')->with('success', 'Categorie edited with sucess');    
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(categories $categories)
+    {
+        $products = Products::where('categories_id', $categories->id)->get();
+
+
+        foreach ($products as $product) {
+            $product->update(['categories_id' => null]);
+        }
+
+        $categories->delete();
+        return redirect()->route('admincategories')->with('success', 'Categorie deleted with sucess');
+    }
+}

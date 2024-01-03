@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory,SoftDeletes,Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -21,6 +23,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'birthday',
+        'gender',
+        'is_admin'
     ];
 
     /**
@@ -42,4 +47,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function products()
+    {
+        return $this->belongsToMany(Products::class, 'product_user', 'product_id', 'user_id');
+    }
+
+    public function favorito()
+    {
+        return $this->hasMany(Favorito::class,'user_id','id');
+    }
+    public function cart()
+    {
+        return $this->hasMany(Cart::class,'user_id','id');
+    }
+    public function checkouts(){
+        return $this->hasMany(Checkout::class,'user_id','id');
+    }
 }

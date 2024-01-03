@@ -7,11 +7,14 @@
         <div class="user-menu">
                 <ul class="ul-container-menu">
                     <div class="group-li">
-                        <input type="text" placeholder="Search.." name="search">
+                        <form action="{{ route('products.search') }}" method="GET">
+                                <!-- <button><i class="fa-solid fa-magnifying-glass"></i></button> -->
+                                <input type="text" placeholder="Search.." name="search" style="width:100%">
+                        </form>                    
                     </div>
                     <div class="group-li">
                         <li>
-                            <a href="{{ route('login') }}">Login/Register</a>
+                        <a href="{{ route('login') }}">Login/</a><a href="{{ route('register') }}">Register</a>
                             <i class="fas fa-chevron-right"></i>
                         </li>
                     </div>
@@ -43,15 +46,17 @@
         <div class="user-menu">
                     <ul class="ul-container-menu">
                         <div class="group-li">
-                            <input type="text" placeholder="Search.." name="search">
+                        <form action="{{ route('products.search') }}" method="GET">
+                            <!-- <button><i class="fa-solid fa-magnifying-glass"></i></button> -->
+                            <input type="text" placeholder="Search.." name="search" style="width:100%">
+                        </form>
                         </div>
                         <div class="group-li">
                             <li>
-                                <a href="{{ route('login') }}">Login/Register</a>
+                                <a href="{{ route('login') }}">Login/</a><a href="{{ route('register') }}">Register</a>
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                         </div>
-                        
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li>
@@ -75,7 +80,7 @@
                         <hr class="user-menu-hr">
                         <div class="group-li">
                             <li class="btn">
-                                <a href="{{ route('products') }}">Products</a>
+                                <a href="{{ route('products.index') }}">Products</a>
                             </li>
                         </div>
                         <hr class="user-menu-hr">
@@ -98,10 +103,64 @@
                 <div class="side-cart-options">
                     <div class="items">
                         <div class="total-price">
-                            <h1>Total(2 items): 1399.98€</h1>
+                            <h1>Total(0 items): 0</h1>
                         </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
+                        <!-- <hr class="barra-opcoes"> -->
+                        <!-- <div class="each-item">
+                            <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>    
+                        </div> -->
+                        <!-- <hr class="barra-opcoes"> -->
+                        <!-- <div class="each-item"> -->
+                            <!-- <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>    
+                        </div> -->
+                        <!-- <hr class="barra-opcoes"> -->
+                        <!-- <div class="each-item">
+                            <div class="item-img">
+                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">
+                                    <h1>iPhone 14</h1>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h2>PVPR: 889€</h2>
+                                <h2>669,99€</h2>
+                                <div class="stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a>In stock</a>
+                                </div>
+                            </div>     -->
+                        <!-- </div> -->
+                        <!-- <hr class="barra-opcoes"> -->
+                        <!-- <div class="each-item">
                             <div class="item-img">
                                 <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
                             </div>
@@ -136,64 +195,10 @@
                                 </div>
                             </div>    
                         </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
-                        <div class="each-item">
-                            <div class="item-img">
-                                <img src="img/products/iphone14/imagem_principal.png" alt="imagem_principal.png">
-                            </div>
-                            <div class="item-info">
-                                <div class="item-name">
-                                    <h1>iPhone 14</h1>
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <h2>PVPR: 889€</h2>
-                                <h2>669,99€</h2>
-                                <div class="stock">
-                                    <i class="fas fa-check-circle"></i>
-                                    <a>In stock</a>
-                                </div>
-                            </div>    
-                        </div>
-                        <hr class="barra-opcoes">
+                        <hr class="barra-opcoes"> -->
                     </div>
                     <div class="side-cart-checkout">
-                        <a>checkout</a>
+                        <a href="{{route('login')}}" style="text-decoration:none; color:black;">checkout</a>
                     </div>
                 </div>
             </div>
@@ -210,7 +215,7 @@
             </div>
             <div class="grid-item item1 products-options">
                 <ul class="ul-container">
-                    <li class="btn"><a href="{{ route('products') }}">Products</a></li>
+                    <li class="btn"><a href="{{ route('products.index') }}">Products</a></li>
                 </ul>
             </div>
             <div class="grid-item item4 contact">
@@ -221,9 +226,9 @@
             <div class="grid-item item1 search">
                 <div class="search-cart-container">
                     <div class="search-container">
-                        <form>
+                    <form action="{{ route('products.search') }}" method="GET">                            
                             <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <input type="text" placeholder="Search.." name="search">
+                            <input type="search" placeholder="Search.." name="search">
                         </form>
                     </div>
                     <div class="cart-container">

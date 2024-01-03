@@ -6,18 +6,20 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function Home() {
-        return view('home');
-    }
-
+    // public function __construct()
+    // {
+    // $this->middleware(['auth','verified']);
+    // }
     public function Login() {
         return view('login');
+    }
+    public function Register() {
+        return view('register');
     }
 
     public function Newsletter() {
         return view('newsletter');
     }
-
 
     public function About() {
         return view('about');
@@ -43,6 +45,12 @@ class MainController extends Controller
     public function Editprofile() {
         return view('editprofile');
     }
+    public function Favprofile() {
+        return view('favoritos/favprofile');
+    }
+    public function Historyprofile() {
+        return view('historyprofile');
+    }
     public function AdminOrders() {
         return view('adminorders');
     }
@@ -52,4 +60,14 @@ class MainController extends Controller
     public function AdminProducts() {
         return view('adminproducts');
     }
+
+    public function AdminVouchers() {
+        return view('adminvouchers');
+    }
+
+    public function AdminVouchersEdit() {
+        return view('editvoucher');
+    }
+
+
 }

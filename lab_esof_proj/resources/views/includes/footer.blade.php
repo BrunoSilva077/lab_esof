@@ -6,14 +6,16 @@
                     <div class="newsletter">
                         <h1>Subscribe newsletter</h1>
                         <p>Subscribe to our newsletter for exclusive information on our Events, Promotions and Offers.</p>
+                        <a href="{{ route('newsletter') }}"class="newsletter" style="text-decoration:none">
                         <h2 class="lowres">@ SUBSCRIBE TO OUR NEWSLETTER</h2>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="grid-item item4 footer">
-                <div class="newsletter">
+                <a href="{{ route('newsletter') }}"class="newsletter" style="text-decoration:none">
                     <h2>@ SUBSCRIBE TO OUR NEWSLETTER</h2>
-                </div>
+                </a>
             </div>
             <div class="grid-item item12 footer">
                 <div class="footerColumn">
@@ -23,10 +25,10 @@
                         <h1></h1>
                     </div>
                     <ul class="ul-container-footer">
-                        <li class="btn"><a href="#home">Home</a></li>
-                        <li class="btn"><a href="#products">Products</a></li>
-                        <li class="btn"><a href="#products">About us</a></li>
-                        <li class="btn"><a href="#contacts">Contact us</a></li>
+                        <li class="btn"><a href="{{route('home')}}">Home</a></li>
+                        <li class="btn"><a href="{{route('products.index')}}">Products</a></li>
+                        <li class="btn"><a href="{{route('about')}}">About us</a></li>
+                        <li class="btn"><a href="{{route('contact')}}">Contact us</a></li>
                     </ul>
                     <div class="horizontal-line2"></div>
                     <h1 class="therights">© 2023 PROTOTYPE. ALL RIGHTS RESERVED</h1>

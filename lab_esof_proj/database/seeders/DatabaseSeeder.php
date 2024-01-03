@@ -4,6 +4,14 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Products;
+use App\Models\Images;
+use App\Models\Categories;
+use App\Models\Brands;
+use App\Models\Voucher;
+use App\Models\Favorito;
+use App\Models\FavoritoProdutos;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +20,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory(10)->create();
+        // Products::factory(5)->create();
+        
+        // Cria 5 produtos
+        Brands::factory(5)->create();
+        Categories::factory(5)->create();
+        Products::factory(5)->create();
+        Images::factory(15)->create();
+        Voucher::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+
+        // Obtém todos os usuários administradores
+        $admins = User::where('is_admin', true)->get();
     }
 }
