@@ -23,12 +23,10 @@ body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
-    /*background-color: #2196F3;*/
     padding: 0px 70px; 
 }
 
 .grid-item {
-    /*background-color: rgba(255, 255, 255, 0.8);*/
     text-align: center;
     padding: 20px 0px;
 }
@@ -225,9 +223,7 @@ body{
     cursor: pointer;
 }
 
-/* .responsive-menu-options,.grid-item.item2.responsive-input,.grid-item.item2.responsive-menu,.grid-item.item2.responsive-input{
-    display: none;
-} */
+
 
 
 .side-cart{
@@ -368,14 +364,6 @@ body{
         width: 100%;
         background-color: #DFDFDF;
     }
-
-    /* .grid-item.item2.responsive-input input{
-        padding: 3% 0%;
-        width: 100%;
-        outline: none;
-        border: none;
-    } */
-
     .grid-item.item2.grid-item.item2.responsive-menu .ul-container{
         position: static;
         justify-content: flex-start;
@@ -389,23 +377,17 @@ body{
         display: flex;
         align-items: center;
         margin-top: 0px;
-        justify-content: flex-start;   
+        justify-content: flex-start;  
+        margin-right: 30px; 
     }
 
     .vertical-line{
         margin: 0 15px 20px 15px;
     }
-
-    .cart-container{
-        margin-right: 30px;
-    }
-
     .logo h1{
         font-size: 30px;
     }
-
     .user-menu{
-        /* background-color: #DFDFDF; */
         width: 100%;
         height: 100%;
         border-radius: 20px 0px 0px 20px;
@@ -457,14 +439,6 @@ body{
         width: 100%;
         background-color: #DFDFDF;
     }
-    
-    /* .grid-item.item2.responsive-input input{
-        padding: 3% 0%;
-        width: 100%;
-        outline: none;
-        border: none;
-    } */
-
     .grid-item.item2.responsive-menu{
         grid-column: span 2;
     }
@@ -477,17 +451,6 @@ body{
     .grid-item.item1.search .cart-container{
         display: none;
     }
-
-    /* .grid-item.item2.responsive-input{
-        grid-column: span 2;
-    }
-    
-    .grid-item.item2.responsive-input input{
-        width: 100%;
-        outline: none;
-        border: none;
-    } */
-
     .grid-item.item1.search,.grid-item.item1.home,.grid-item.item1.products-options,.grid-item.item4.contact{
         display: none;
     }
@@ -497,18 +460,10 @@ body{
         align-items: center;
         margin-top: 0px;
         justify-content: center;   
+        margin-right: 30px;
     }
-
-    .grid-item.item1.search .cart-container{
-        display: none;
-    }
-
     .vertical-line{
         margin: 0 15px 20px 15px;
-    }
-
-    .cart-container{
-        margin-right: 30px;
     }
 
     .logo h1{
@@ -516,7 +471,6 @@ body{
     }
 
     .user-menu{
-        /* background-color: #DFDFDF; */
         width: 100%;
         height: 100%;
         border-radius: 20px 0px 0px 20px;
