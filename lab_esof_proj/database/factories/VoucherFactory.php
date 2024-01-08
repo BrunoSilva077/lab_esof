@@ -26,7 +26,7 @@ class VoucherFactory extends Factory
         return [
             'cod_voucher' => Str::upper(Str::random(3)),
             'tipo_percentual' => $this->faker->randomElement([0,1]),
-            'valor_desconto' => rand(0,100),
+            'valor_desconto' => random_int(0,100),
         ];
     }
 }
