@@ -1,0 +1,20 @@
+os metodos ficam todos no utilizador ou ficam em cada uma das classes
+se as tabelas levam id nas ligacoes muitos para muitos
+os favoritos para nao logados como é guardado se nao ha id utilizador
+faz sentido ter tabela admin ou campo admin no utilizador
+as funcoes retornam void ou bool?
+funcoes como criar produto sao no admin ou no produto?
+pergunta se devemos ter 3 htmls em 1 pagina pq é um menu ou é possivel ter 3 paginas html separadas.
+faz sentido o admin puder criar novos utilizadores?
+perguntar os requisitos nao funcionais no relatorio
+
+
+things to do:
+adicionar pagina de logs ao front-end e criar/editar/remover vouchers
+
+tabelas:
+comentarios
+marcas 
+categorias
+fotos
+imagem falta

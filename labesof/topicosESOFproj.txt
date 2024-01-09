@@ -1,0 +1,40 @@
+galeria de imagens:
+o sistema irá conter imagens dos produtos que estao na galeria disponiveis para venda
+comentários:
+cada produto ira conter uma caixa de texto onde poderão dar o feedback sobre o produto e visualizar outros comentarios de outros utilizadores.
+pontuações:
+cada produto ira conter uma pontuação que irá ser a média de pontuações de todos os utilizadores.
+pesquisas por tópico:
+
+compras de experiências:
+
+produtos:
+o sistema vai ter varios produtos disponiveis para venda, cada produto irá ter um preço o stock a pontuação um conjunto de imagens e esta numa galeria de imagens
+autenticação:
+o sistema deve permitir os utilizadores registarem-se e por sua vez realizar o log in
+favoritos:
+o sistema deve permitir utilizadores logados marcarem produtos como favoritos que podem ser depois visualizados na pagina favoritos
+utilizadores:
+o sistema vai conter utilizadores nao logados, logados e com permissões admin
+fatura:
+o sistema apos uma compra emite uma fatura com todas as informações do utilizador e da compra
+categoria:
+o sistema deve permitir pesquisas por categorias como por exemplo, telemoveis e apenas aparecem telemoveis ou computadores e apenas aparecem computadores etc.
+marcas:
+o sistema deve permitir pesquisar produtos de marcas especificas
+newsletter:
+o sistema deve enviar promoções ou atualizações por email aos utilizadores que assim subscreverem a newsletter
+pesquisas/filtros:
+o sistema vai permitir varias pesquisas e filtros como por exemplo pesquisas de marcas, categorias, produtos mais baratos e mais caros, com mais pontuação etc.
+encomendas:
+o sistema deve possuir um sistema de encomendas para informar o estado da mesma ao utilizador
+Suporte:
+o sistema deve permitir ter uma seccão de ajuda aos utilizadores para resolver qualquer erro ou duvida
+carrinho:
+o sistema deve possuir um carrinho com os produtos selecionados para compra
+historico:
+o sistema irá possuir um sistema de histórico de compras dos utilizadores
+devoluções:
+o sistema devera permitir caso o produto venha com defeito efetuar devoluções
+
+
