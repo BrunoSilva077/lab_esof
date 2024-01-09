@@ -13,7 +13,7 @@ use Illuminate\Support\Arr;
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
 class VoucherFactory extends Factory
-{   
+{
 
     protected $model = Voucher::class;
     /**

@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory(10)->create();
-        // Products::factory(5)->create();
         
         // Cria 5 produtos
         Brands::factory(5)->create();
@@ -29,9 +28,5 @@ class DatabaseSeeder extends Seeder
         Products::factory(5)->create();
         Images::factory(15)->create();
         Voucher::factory(10)->create();
-
-
-        // Obtém todos os usuários administradores
-        $admins = User::where('is_admin', true)->get();
     }
 }
