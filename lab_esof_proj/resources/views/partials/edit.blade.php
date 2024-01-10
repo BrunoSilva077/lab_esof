@@ -63,9 +63,9 @@
                     @csrf
                     <div class="profileinputline">
                         <h2>Image</h2>
-                        <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
+                        <a class="fancybox" data-fancybox="gallery" href="{{ asset('storage/images/' .$image->path) }}">
                             <div class="main-image img_edit">
-                                <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
+                                <img src="{{ asset('storage/images/' .$image->path) }}" alt="{{ $image->name }}">
                             </div>
                         </a>                 
                     </div>

@@ -42,8 +42,8 @@ class ImagesController extends Controller
         $image = new Images();
         $image->name = $name;
         $image->path = $request->file('image')->hashName();
-        // $image->product_id = $request->input('product');
-        $image->product_id = 1;
+        $image->product_id = $request->input('product');
+        // $image->product_id = 1;
         $image->save();
         return redirect('adminimages')->with('success', 'Image Uploaded Successfully');
     }

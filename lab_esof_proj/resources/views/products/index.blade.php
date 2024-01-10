@@ -143,7 +143,7 @@
      
                 <div class="img-prod">
                     @if ($product->images->count() > 0)
-                        <img src="{{ asset($product->images->first()->path) }}" alt="{{ $product->name }}">
+                        <img src="{{ asset('storage/images/' . $product->images->first()->path) }}" alt="{{ $product->name }}">
                     @else
                         <img src="img/products/default_image.jpg" alt="{{ $product->name }}">
                     @endif                
@@ -160,7 +160,7 @@
                         <i class="fa-solid fa-circle-check"></i>In Stock
                         </div>
                     @else
-                        <div class="stock-prod no-stock">
+                        <div class="stock-prod no-stock" style="color: #ff6b6b;">
                         <i class="fa-solid fa-times-circle"></i>Out of Stock
                         </div>
                     @endif
@@ -170,29 +170,6 @@
                 No products found.
             </div>
         @endforelse 
-   
-
-            <!-- <div class="each-prod">
-                <div class="fav-prod">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="img-prod">
-                    <img src="img/products/iphone14.jpg">
-                </div> 
-                
-                <div class="text-prod">
-                    Iphone 14
-                </div>
-                <div class="precfrab-prod">
-                    PVPR: 899€
-                </div>
-                <div class="prec-prod">
-                    699.99€
-                </div>
-                <div class="stock-prod">
-                    <i class="fa-solid fa-circle-check"></i>In Stock
-                </div>
-            </div> -->
 
         </div> 
         <ul class="pagination">

@@ -50,9 +50,6 @@
         <div class="grid-item item9 adproduct">
             <div class="upmainmenuproduct">
                 <div class="checkoutinputline">
-                    <!-- <h3 class="active">All Orders</h3>
-                    <h3>Completed</h3>
-                    <h3>Pending</h3> -->
                     <div class="btnnewproduct">
                             <a href="{{ route('partials.create') }}">
                                 <button>New</button>
@@ -98,7 +95,7 @@
                     @else
                     <h4>{{ $image->product->name }}</h4>
                     @endif
-                    <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
+                    <img src="{{ asset('storage/images/' . $image->path) }}" alt="{{ $image->name }}">
                     <a href="{{ route('partials.edit',['image' => $image]) }}">
                     <button>Edit</button>
                     </a>

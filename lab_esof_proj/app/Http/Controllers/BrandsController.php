@@ -34,14 +34,11 @@ class BrandsController extends Controller
             'name' => 'required|string',
         ]);
 
-        // Criar um novo voucher
         $brand = new brands();
         $brand->name = $request->input('name');
 
-        // Salvar o voucher na base de dados
         $brand->save();
 
-        // Redirecionar para a página de exibição do voucher ou outra página desejada
         return redirect()->route('adminbrands')->with('success', 'Brand added success');
     }
 
@@ -66,10 +63,8 @@ class BrandsController extends Controller
      */
     public function update(Request $request, Brands $brands)
     {
-         // Validação dos dados do formulário
          $request->validate([
             'name' => 'required|string',
-            // Adicione outras regras de validação conforme necessário
         ]);
         $brands->update([
             'name' => $request->input('name'),

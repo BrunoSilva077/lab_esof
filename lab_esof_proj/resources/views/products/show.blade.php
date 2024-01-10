@@ -28,9 +28,9 @@
                 <br>
                 <div class="up-images">
                     @forelse($product->images->take(2) as $image)
-                        <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
+                        <a class="fancybox" data-fancybox="gallery" href="{{ asset('storage/images/' .$image->path) }}">
                             <div class="main-image">
-                                <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
+                                <img src="{{asset('storage/images/' . $image->path) }}" alt="{{ $image->name }}">
                             </div>
                         </a>
                         <br>
@@ -40,9 +40,9 @@
                 </div>
                 <div class="down-images">
                     @forelse($product->images->take(2) as $image)
-                        <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
+                        <a class="fancybox" data-fancybox="gallery" href="{{ asset('storage/images/' .$image->path) }}">
                             <div class="main-image">
-                                <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
+                                <img src="{{ asset('storage/images/' .$image->path) }}" alt="{{ $image->name }}">
                             </div>
                         </a>
                         <br>
@@ -132,7 +132,7 @@
                             <input type="hidden" name="quantity" id="quantity" value="1">
 
                             @if ($product->images->count() > 0)
-                                <input type="hidden" name="image" value="{{asset($product->images->first()->path) }}" alt="{{ $product->name }}">
+                                <input type="hidden" name="image" value="{{'storage/images/' .asset($product->images->first()->path) }}" alt="{{ $product->name }}">
                             @else
                                 <input type="hidden" name="image" value="img/products/default_image.jpg" alt="{{ $product->name }}">
                             @endif

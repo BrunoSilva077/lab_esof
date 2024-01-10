@@ -92,7 +92,6 @@ class VoucherController extends Controller
      */
     public function destroy(Voucher $voucher)
     {
-        //
         return back();
     }
 }

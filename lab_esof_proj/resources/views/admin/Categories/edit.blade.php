@@ -20,7 +20,7 @@
                 </div>
             </a>
             <a href="{{ route('adminproducts') }}">
-                <div class="checkoutinputline active">
+                <div class="checkoutinputline">
                     <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
                 </div>
             </a>    
@@ -35,8 +35,13 @@
                 </div>
             </a>
             <a href="{{ route('admincategories') }}">
-                    <div class="checkoutinputline">
+                    <div class="checkoutinputline active">
                         <h3>Categories<i class="fas fa-tag"></i></h3>
+                    </div>
+                </a>
+                <a href="{{ route('adminbrands') }}">
+                    <div class="checkoutinputline">
+                        <h3>Brands</h3>
                     </div>
                 </a>
             </div>
@@ -61,7 +66,7 @@
                 <form action=" {{ route('categories.update', ['categories' => $categories]) }}" method="POST">
                     @csrf
                     <div class="profileinputline">
-                        <h2>Voucher</h2>
+                        <h2>Categorie</h2>
                     </div>
                     <div class="profileinputline">
                         <h3>Name</h3>

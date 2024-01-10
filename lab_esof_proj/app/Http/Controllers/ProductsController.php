@@ -143,7 +143,6 @@ class ProductsController extends Controller
             'search' => 'required|string'
         ]);
         $search = $request->input('search');
-        // $products = Products::where('name', 'like', "%$search%")->toSql();
         $products = Products::whereRaw('lower("name") like ?', ['%' . strtolower($search) . '%'])
         ->whereNull('deleted_at')
         ->paginate(3);

@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
             $cartItems = Cart::instance('shopping');
             $totalPrice = 0;
             foreach ($cartItems->content() as $cartItem) {
-                $totalPrice += $cartItem->options->totalPrice ;//* $cartItem->qty;
+                $totalPrice += $cartItem->options->totalPrice ;
             }
             $view->with('cartItems', $cartItems)->with('totalPrice', $totalPrice);
         });

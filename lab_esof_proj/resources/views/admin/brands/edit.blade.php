@@ -20,7 +20,7 @@
                 </div>
             </a>
             <a href="{{ route('adminproducts') }}">
-                <div class="checkoutinputline active">
+                <div class="checkoutinputline">
                     <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
                 </div>
             </a>    
@@ -40,7 +40,7 @@
                     </div>
                 </a>
                 <a href="{{ route('adminbrands') }}">
-                    <div class="checkoutinputline">
+                    <div class="checkoutinputline active">
                         <h3>Brands</h3>
                     </div>
                 </a>

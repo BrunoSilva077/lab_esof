@@ -13,11 +13,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        // $cartItems = Cart::instance('shopping')->content();
-        // dd($cartItems);
-        // return view('includes.navbarAdmin', compact('cartItems'));
         return back();
-
     }
 
     /**
@@ -25,9 +21,7 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
         return back();
-
     }
 
     /**
@@ -36,15 +30,12 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $imagePath = str_replace(url('/'), '', $request->image);
-        //   dd($imagePath);
         $cart= Cart::instance('shopping')
         ->add($request->id, 
         $request->name, 
         $request->quantity,
         $request->price,
         ['image'=>$imagePath,'totalPrice'=>$request->price*$request->quantity]);
-
-        // dd($cart);
         return back()->with('Sucess','Product added to cart sucessfully');
     }
 
@@ -62,9 +53,7 @@ class CartController extends Controller
      */
     public function edit(string $id)
     {
-        //
         return back();
-
     }
 
     /**
@@ -73,23 +62,17 @@ class CartController extends Controller
     public function update(Request $request, string $rowId)
     {
         $cart = Cart::instance('shopping');
-        $cartItem = $cart->get($rowId);
-        // dd($cartItem);
-    
-        // Verifique se o item existe no carrinho
+        $cartItem = $cart->get($rowId);    
+
         if ($cartItem) {
-            // Atualize a quantidade
             $cart->update($rowId, $request->quantity);
     
-            // Recalcule o preço total com base na nova quantidade
             $newTotalPrice = $cartItem->price * $request->quantity;    
     
             $options['image'] = $cartItem->options->image;
-            // Atualize a variável totalPrice nas opções
-            $options['totalPrice'] = $newTotalPrice;
-            // dd($options);
 
-            // Atualize o item no carrinho com as novas opções
+            $options['totalPrice'] = $newTotalPrice;
+
             $cart->update($rowId, [
                 'options' => $options,
             ]);

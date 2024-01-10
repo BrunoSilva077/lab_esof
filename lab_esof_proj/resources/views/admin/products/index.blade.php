@@ -113,11 +113,13 @@
                         </form>
                     @endif
                     </div>
-                
-
                 @empty
                     <h4>No products found</h4>
-                @endforelse    
+                @endforelse
+                <form action="{{ route('generate-pdf') }}"style="width: 11.1%;">
+                        @csrf
+                        <button type="submit" style="width:100%">PDF</button>
+                </form>
             </div>
         </div>
     </div>
