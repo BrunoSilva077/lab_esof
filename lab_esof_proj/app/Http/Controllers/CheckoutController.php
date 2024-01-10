@@ -81,7 +81,6 @@ class CheckoutController extends Controller
      */
     public function create()
     {
-        $id_user =Auth::id();
         $cart_products = Cart::instance('shopping')->content();
         return view('checkout.create', compact('cart_products'));
     }

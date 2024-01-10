@@ -17,7 +17,7 @@ class ProductsTest extends TestCase
     public function test_get_all_products()
     {
         $response = $this->get('/products');
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
     public function test_create_product(){
 

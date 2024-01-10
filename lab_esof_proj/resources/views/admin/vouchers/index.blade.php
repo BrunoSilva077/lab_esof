@@ -86,24 +86,7 @@
                     <a href="{{ route('editvoucher', ['voucher' => $voucher]) }}" class="a_voucher">
                         <button class="but_voucher">Edit</button>
                     </a> 
-                    @if($voucher->trashed())
-                        <a style="visibility:hidden;">
-                            <button></button>
-                        </a>
-                        <form action="{{ route('vouchers.restore',['voucher' => $voucher]) }}" method="POST" style="width: 11.1%;">
-                        @csrf
-                            <button type="submit" style="width:100%">Restore</button>
-                        </form>
-                    @else
-                        <a href="{{ route('editvoucher', ['voucher' => $voucher]) }}" class="checkoutinputline" style="text-decoration: none;">
-                            <!-- Edit</a> -->
-                            <button style="width:100%">Edit</button>
-                        </a>
-                        <form action="{{ route('users.destroy',['user' => $user]) }}" method="POST" style="width: 11.1%;">
-                        @csrf
-                            <button type="submit" style="width:100%">Remove</button>
-                        </form>
-                    @endif
+                <!--depois colocar remove -->
                     </div>
 
                 @empty
