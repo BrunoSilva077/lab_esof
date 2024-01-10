@@ -15,10 +15,6 @@ class ProductsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    // public function __construct()
-    // {
-    // $this->middleware(['auth','verified']);
-    // }
     public function index()
     {
          $products = Products::paginate(3);
@@ -47,7 +43,6 @@ class ProductsController extends Controller
         'description' => 'required|string',
         'stock' => 'required|numeric',
         'price' => 'required|numeric',
-        'images.*' => 'required|image|mimes:png|max:2048', // Validar cada imagem no array
     ]);
 
     $product = Products::create([
@@ -69,7 +64,6 @@ class ProductsController extends Controller
      */
     public function show(Products $product)
     {
-        // dd($product);
         if(Auth::user()){
             $favoritos = Auth::user()->favorito;
             return view('products.show', compact('product','favoritos'));
@@ -108,7 +102,6 @@ class ProductsController extends Controller
             'brand_id' => $request->input('brand'),
             'categories_id' => $request->input('category'),
         ]);
-        // dd($product);
         return redirect('adminproducts')->with('success', 'Product updated successfully');
     }
     /**
@@ -117,20 +110,20 @@ class ProductsController extends Controller
     public function destroy(Products $product)
     {
 
-        if ($product) {
-            // Verifica se o produto existe antes de continuar
+
+
             if (Products::find($product->id)) {
-                // Atualiza o campo product_id para null nas imagens associadas ao produto
+              
                 Images::where('product_id', $product->id)->update(['product_id' => null]);
     
-                // Em seguida, exclua o produto
+
                 $product->delete();
     
                 return back()->with('success', 'Product removed successfully');
             } else {
                 return back()->with('error', 'Product does not exist');
             }
-        }
+
     }
     public function restore(Products $product)
     {

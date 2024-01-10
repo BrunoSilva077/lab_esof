@@ -14,8 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
-        return view('students.index', compact('students'));
+        return back();
     }
 
     /**
@@ -23,7 +22,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('students.create');
+        return back();
     }
 
     /**
@@ -39,7 +38,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return back();
     }
 
     /**
@@ -55,22 +54,16 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        // $request->validate([
-            
-        // ]);
-        // $user->update($request->all());
         $request->validate([
             'email' => 'email',
             'birthday' => 'date',
-            // Adicione outras regras de validação conforme necessário
         ]);
     
         $user->update([
             'email' => $request->input('email'),
             'birthday' => $request->input('birthday'),
-            'gender' => $request->input('radio') === 'true', // Assume que o valor do rádio é uma string 'true' ou 'false'
+            'gender' => $request->input('radio') === 'true',
             'password' => bcrypt($request->input('new_password')),
-            // Adicione outros campos conforme necessário
         ]);
         return back()->with('success', 'User updated successfully');
     
@@ -81,20 +74,18 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        if ($user) {
-            // Verifica se o produto existe antes de continuar
+
+
             if (User::find($user->id)) {
-                // Atualiza o campo product_id para null nas imagens associadas ao produto
                 Favorito::where('user_id', $user->id)->update(['user_id' => null]);
     
-                // Em seguida, exclua o produto
                 $user->delete();
     
                 return back()->with('success', 'User removed successfully');
             } else {
                 return back()->with('error', 'User does not exist');
             }
-        }
+
     }
     public function restore(User $user)
     {

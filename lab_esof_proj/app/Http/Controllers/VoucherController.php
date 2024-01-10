@@ -29,25 +29,24 @@ class VoucherController extends Controller
      */
     public function store(Request $request)
     {
-         // Validação dos dados do formulário
+
          $request->validate([
             'cod_voucher' => 'required',
             'tipo_percentual' => 'required|numeric',
             'valor_desconto' => 'required|numeric',
-            // Adicione outras regras de validação conforme necessário
         ]);
 
-        // Criar um novo voucher
+
         $voucher = new Voucher();
         $voucher->cod_voucher = $request->input('cod_voucher');
         $voucher->tipo_percentual = $request->input('tipo_percentual');
         $voucher->valor_desconto = $request->input('valor_desconto');
-        // Adicione outros campos conforme necessário
 
-        // Salvar o voucher na base de dados
+
+
         $voucher->save();
 
-        // Redirecionar para a página de exibição do voucher ou outra página desejada
+
         return redirect()->route('adminvouchers')->with('success', 'Voucher adicionado com sucesso!');
     }
 
@@ -76,7 +75,6 @@ class VoucherController extends Controller
             'cod_voucher' => 'string',
             'tipo_percentual' => 'integer',
             'valor_desconto' => 'integer',
-            // Adicione outras regras de validação conforme necessário
         ]);
     
         $voucher->update([

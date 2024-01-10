@@ -12,13 +12,13 @@ class FavoritoController extends Controller
      */
     public function index()
     {
-       // Obtém o ID do usuário autenticado
+
     $id_user = Auth::id();
 
-    // Busca os favoritos associados ao usuário autenticado
+
     $favoritos = Favorito::where('user_id', $id_user)->get();
 
-    // Passa os favoritos para a view
+
     return view('favorites.index', compact('favoritos'));
     }
 
@@ -35,16 +35,7 @@ class FavoritoController extends Controller
      */
     public function store($id_produto)
     {
-            $id_user = Auth::id();
-            // $jaFavorito = Favorito::where('user_id', $user_id)
-            // ->where('product_id', $id_produto)
-            // ->exists();
-    
-            // if ($jaFavorito) {
-            //     // Produto já está nos favoritos
-            //     return redirect()->back()->with('error', 'Este produto já está nos seus favoritos.');
-            // }
-    
+            $id_user = Auth::id();    
                 $favorito = new Favorito();
                 $favorito->user_id = $id_user;
                 $favorito->product_id = $id_produto;
@@ -83,9 +74,9 @@ class FavoritoController extends Controller
     $favorito = Favorito::where('product_id', $id_produto)->first();
 
     if ($favorito) {
-        // Access the attributes of the favorito
+
         $favoritoId = $favorito->id;
-        // Delete the favorito
+
         Favorito::destroy($favoritoId);
 
         return back()->with('success', 'Favorito removed successfully');

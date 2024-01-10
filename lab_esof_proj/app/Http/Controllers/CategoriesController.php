@@ -34,14 +34,13 @@ class CategoriesController extends Controller
             'name' => 'required|string',
         ]);
 
-        // Criar um novo voucher
+
         $categorie = new Categories();
         $categorie->name = $request->input('name');
 
-        // Salvar o voucher na base de dados
+
         $categorie->save();
 
-        // Redirecionar para a página de exibição do voucher ou outra página desejada
         return redirect()->route('admincategories')->with('success', 'Categorie added success');
     }
 
@@ -66,10 +65,10 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, categories $categories)
     {
-         // Validação dos dados do formulário
+
          $request->validate([
             'name' => 'required|string',
-            // Adicione outras regras de validação conforme necessário
+
         ]);
         $categories->update([
             'name' => $request->input('name'),

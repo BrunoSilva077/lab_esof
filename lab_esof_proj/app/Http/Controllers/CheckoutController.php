@@ -58,7 +58,7 @@ class CheckoutController extends Controller
         'mode' => 'payment',
         'success_url' => route('home'), //deveria ser store mas nao esta a funcionar por enquanto
         'cancel_url' => route('checkout', ['user' => auth()->id()]),
-        'customer_email' => $user->email, 
+        'customer_email' => $user->email,
     ]);
 
     $request->session()->put('checkout_data', [
@@ -84,7 +84,6 @@ class CheckoutController extends Controller
     {
         $id_user =Auth::id();
         $cart_products = Cart::instance('shopping')->content();
-        // dd($cart_products);
         return view('checkout.create', compact('cart_products'));
     }
 
@@ -94,23 +93,19 @@ class CheckoutController extends Controller
     public function storecheckout(Request $request)
     {
       $payload = $request->getContent();
-    $event = \Stripe\Webhook::constructEvent(
+      $event = \Stripe\Webhook::constructEvent(
         $payload, $request->header('Stripe-Signature'), config('cashier.webhook_secret')
     );
 
-    // Use the $event object to access payment intent details
     $paymentIntentId = $event->data->object->id;
-        return $this->successMethod(); // Implement your own success response
+        return $this->successMethod();
     }
-
-    // ... outros métodos
 
     /**
      * Display the specified resource.
      */
     public function show(Checkout $checkout)
     {
-        //
         return back();
 
     }
@@ -120,7 +115,6 @@ class CheckoutController extends Controller
      */
     public function edit(Checkout $checkout)
     {
-        //
         return back();
 
     }
@@ -130,7 +124,6 @@ class CheckoutController extends Controller
      */
     public function update(Request $request, Checkout $checkout)
     {
-        //
         return back();
 
     }
@@ -140,7 +133,6 @@ class CheckoutController extends Controller
      */
     public function destroy(Checkout $checkout)
     {
-        //
         return back();
     }
 }

@@ -33,7 +33,6 @@ class ImagesController extends Controller
     {
         $request->validate([
             'image' => 'required|image|mimes:png|max:2048',
-            // 'product' => 'required'
         ]);
 
         $name = $request->file('image')->getClientOriginalName();
@@ -43,7 +42,6 @@ class ImagesController extends Controller
         $image->name = $name;
         $image->path = $request->file('image')->hashName();
         $image->product_id = $request->input('product');
-        // $image->product_id = 1;
         $image->save();
         return redirect('adminimages')->with('success', 'Image Uploaded Successfully');
     }
@@ -74,7 +72,7 @@ class ImagesController extends Controller
         $request->validate([
             'name' => 'required|string',
             'product' => 'required|string',
-        ]);    
+        ]);
             $image->update([
                 'name' => $request->input('name'),
                 'product_id' => $request->input('product'),

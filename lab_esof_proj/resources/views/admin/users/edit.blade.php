@@ -15,15 +15,15 @@
                 </div>
             </a>
             <a href="{{ route('adminclients') }}">
-                <div class="checkoutinputline">
+                <div class="checkoutinputline active">
                     <h3>Clients<i class="fa-solid fa-user"></i></h3>
                 </div>
             </a>
             <a href="{{ route('adminproducts') }}">
-                <div class="checkoutinputline active">
+                <div class="checkoutinputline">
                     <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
                 </div>
-            </a>    
+            </a>
             <a href="{{ route('adminimages') }}">
                 <div class="checkoutinputline ">
                     <h3>Images<i class="fa-solid fa-image"></i></h3>
@@ -90,6 +90,12 @@
                         <input type="radio" name="gender" class="sizeradio" value="true"{{ $user->gender === true ? 'checked' : '' }}>Male
                         <div class="space"></div>
                         <input type="radio" name="gender" class="sizeradio" value="false"{{ $user->gender === false ? 'checked' : '' }}>Female
+                    </div>
+                    <div class="profileinputline radio">
+                        <h3>Admin</h3>
+                        <input type="radio" name="admin" class="sizeradio" value="true"{{ $user->is_admin === true ? 'checked' : '' }}>True
+                        <div class="space"></div>
+                        <input type="radio" name="admin" class="sizeradio" value="false"{{ $user->is_admin === false ? 'checked' : '' }}>False
                     </div>
                     
                     <div class="profileinputline">

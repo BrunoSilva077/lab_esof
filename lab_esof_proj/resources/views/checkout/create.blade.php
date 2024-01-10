@@ -22,7 +22,7 @@
                         <br>
                         <form action="/session" method="POST">
                         @csrf
-                            <a href="{{ url('/') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Go back</a>
+                            <a href="{{ url('/') }}" class="btn btn-danger" style="text-decoration: none;color: white;"> <i class="fa fa-arrow-left"></i> Go back</a>
                         @forelse($cart_products as $product)
                             <input type='hidden' name="rowIds[]" value="{{$product->rowId}}">
                             <input type='hidden' name="totals[]" value="{{$product->price}}">
@@ -47,20 +47,6 @@
                 </div>
                 @forelse($cart_products as $product)
                 <div class="contentyourbag">
-                    <!-- <div class="checkoutinputline"> 
-                        <h4 class="Subtotal">Subtotal</h4>
-                        <h4 class="preco">€90,00</h4>
-                    </div> -->
-                    <!-- <div class="checkoutinputline"> 
-                        <h4 class="EstShip">Estimated Shipping</h4>
-                        <h4 class="preco">€90,00</h4>
-                    </div> -->
-                    <!-- <div class="checkoutinputline"> 
-                        <h4 class="EstTax">Estimated Tax</h4>
-                        <h4 class="preco">€90,00</h4>
-                    </div> -->
-                
-                    <!-- <h3 class="arrivesDate">Arrives by Mon, Nov 27</h3> -->
                     <div class="checkoutinputline img_edit">
                     @if ($product->options->has('image'))
                                 <img src="{{ asset($product->options->get('image')) }}" alt="{{ $product->name }}">

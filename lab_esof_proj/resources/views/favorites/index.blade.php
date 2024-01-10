@@ -39,7 +39,7 @@
                         </div>
                         <div class="img-prod">
                             @if ($favorito->product->images->count() > 0)
-                                <img src="{{ asset($favorito->product->images->first()->path) }}" alt="{{ $favorito->product->name }}">
+                                <img src="{{ asset('storage/images/' . $favorito->product->images->first()->path) }}" alt="{{ $favorito->product->name }}">
                             @else
                                 <img src="img/products/default_image.jpg" alt="{{ $favorito->product->name }}">
                             @endif                
@@ -55,7 +55,7 @@
                             <i class="fa-solid fa-circle-check"></i>In Stock
                             </div>
                         @else
-                            <div class="stock-prod no-stock">
+                            <div class="stock-prod no-stock" style="color:#ff6b6b;">
                             <i class="fa-solid fa-times-circle"></i>Out of Stock
                             </div>
                          @endif

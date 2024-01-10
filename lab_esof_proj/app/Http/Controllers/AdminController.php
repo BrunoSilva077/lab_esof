@@ -40,7 +40,6 @@ class AdminController extends Controller
             'name' => 'string',
             'birthday' => 'date',
             'email' => 'string',
-            // Adicione outras regras de validação conforme necessário
         ]);
     
         $user->update([
@@ -48,6 +47,7 @@ class AdminController extends Controller
             'birthday' => $request->input('birthday'),
             'email' => $request->input('email'),
             'gender' => $request->input('gender') === 'true',
+            'is_admin' => $request->input('admin') === 'true',
         ]);
         return back()->with('success', 'User updated successfully');
     }
