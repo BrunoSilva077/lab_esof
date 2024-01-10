@@ -39,7 +39,7 @@
                         </div>
                         <div class="img-prod">
                             @if ($favorito->product->images->count() > 0)
-                                <img src="{{ asset('storage/images/' . $favorito->product->images->first()->path) }}" alt="{{ $favorito->product->name }}">
+                                <img src="{{ asset($favorito->product->images->first()->path) }}" alt="{{ $favorito->product->name }}">
                             @else
                                 <img src="img/products/default_image.jpg" alt="{{ $favorito->product->name }}">
                             @endif                

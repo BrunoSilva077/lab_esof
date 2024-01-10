@@ -86,7 +86,7 @@
                     <a href="{{ route('editvoucher', ['voucher' => $voucher]) }}" class="a_voucher">
                         <button class="but_voucher">Edit</button>
                     </a> 
-                    <button>Remove</button>
+                <!--depois colocar remove -->
                     </div>
 
                 @empty

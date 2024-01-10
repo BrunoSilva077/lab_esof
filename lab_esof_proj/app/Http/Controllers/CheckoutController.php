@@ -31,7 +31,6 @@ class CheckoutController extends Controller
         $productname = $productnames[$index];
         $totalprice = $totals[$index];
         $qty = $qtys[$index];
-        $totalprice = $totalprice / $qty;
         $two0 = "00";
         $totalAmountInCents = round($totalprice * 100) ;
 
@@ -82,7 +81,6 @@ class CheckoutController extends Controller
      */
     public function create()
     {
-        $id_user =Auth::id();
         $cart_products = Cart::instance('shopping')->content();
         return view('checkout.create', compact('cart_products'));
     }
