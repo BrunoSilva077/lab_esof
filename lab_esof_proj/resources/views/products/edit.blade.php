@@ -120,9 +120,9 @@
                         <h3>Images</h3>
                     @if ($product->images->count() > 0)
                         @foreach($product->images as $image)
-                        <a class="fancybox" data-fancybox="gallery" href="{{ asset('storage/images/' .$image->path) }}">
+                        <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
                             <div class="main-image img_edit prod">
-                                <img src="{{ asset('storage/images/' .$image->path) }}" alt="{{ $image->name }}">
+                                <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
                             </div>
                         </a>
                         @endforeach

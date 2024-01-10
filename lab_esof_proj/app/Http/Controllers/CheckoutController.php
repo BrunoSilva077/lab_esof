@@ -31,7 +31,6 @@ class CheckoutController extends Controller
         $productname = $productnames[$index];
         $totalprice = $totals[$index];
         $qty = $qtys[$index];
-        $totalprice = $totalprice / $qty;
         $two0 = "00";
         $totalAmountInCents = round($totalprice * 100) ;
 

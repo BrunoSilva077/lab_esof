@@ -95,7 +95,7 @@
                     @else
                     <h4>{{ $image->product->name }}</h4>
                     @endif
-                    <img src="{{ asset('storage/images/' . $image->path) }}" alt="{{ $image->name }}">
+                    <img src="{{ asset( $image->path) }}" alt="{{ $image->name }}">
                     <a href="{{ route('partials.edit',['image' => $image]) }}">
                     <button>Edit</button>
                     </a>

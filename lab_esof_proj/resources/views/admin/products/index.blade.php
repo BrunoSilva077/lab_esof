@@ -50,9 +50,6 @@
         <div class="grid-item item9 adproduct">
             <div class="upmainmenuproduct">
                 <div class="checkoutinputline">
-                    <!-- <h3 class="active">All Orders</h3>
-                    <h3>Completed</h3>
-                    <h3>Pending</h3> -->
                     <div class="btnnewproduct">
                             <a href="{{ route('products.create') }}">
                             <button>New</button>

@@ -28,9 +28,9 @@
                 <br>
                 <div class="up-images">
                     @forelse($product->images->take(2) as $image)
-                        <a class="fancybox" data-fancybox="gallery" href="{{ asset('storage/images/' .$image->path) }}">
+                        <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
                             <div class="main-image">
-                                <img src="{{asset('storage/images/' . $image->path) }}" alt="{{ $image->name }}">
+                                <img src="{{asset($image->path) }}" alt="{{ $image->name }}">
                             </div>
                         </a>
                         <br>
@@ -40,9 +40,9 @@
                 </div>
                 <div class="down-images">
                     @forelse($product->images->take(2) as $image)
-                        <a class="fancybox" data-fancybox="gallery" href="{{ asset('storage/images/' .$image->path) }}">
+                        <a class="fancybox" data-fancybox="gallery" href="{{ asset($image->path) }}">
                             <div class="main-image">
-                                <img src="{{ asset('storage/images/' .$image->path) }}" alt="{{ $image->name }}">
+                                <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
                             </div>
                         </a>
                         <br>
@@ -63,13 +63,6 @@
                     </a>
                 </div>
                 <div class="avaliacoes">
-                    <!-- <div class="estrelas">
-                        <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>(1)</a>
-                        <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>(0)</a>
-                        <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
-                        <a><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
-                        <a><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>(0)</a>
-                    </div> -->
                     <div class="escrever-comentario">
                         <form>
                             <textarea name="comentario" id="comentario" placeholder="leave your review..."></textarea>
@@ -132,7 +125,7 @@
                             <input type="hidden" name="quantity" id="quantity" value="1">
 
                             @if ($product->images->count() > 0)
-                                <input type="hidden" name="image" value="{{'storage/images/' .asset($product->images->first()->path) }}" alt="{{ $product->name }}">
+                                <input type="hidden" name="image" value="{{asset($product->images->first()->path) }}" alt="{{ $product->name }}">
                             @else
                                 <input type="hidden" name="image" value="img/products/default_image.jpg" alt="{{ $product->name }}">
                             @endif
@@ -143,15 +136,12 @@
                             @else
                             @endauth  
                     </form>
-                    <!-- <div class="comprar-ja">
-                        <button class="comprar-ja-btn">Comprar já<i class="fas fa-arrow-right"></i></button>
-                    </div> -->
                 </div>
                     </div>
                     @else
                         <div class="stock no-stock">
                         <i class="fas fa-times-circle"></i>
-                        <a><!--{{ $product->stock }}--> Out of Stock</a>
+                        <a>Out of Stock</a>
                         </div>
                     @endif
 
@@ -161,7 +151,7 @@
 
 <script>
     const opcoes = document.querySelectorAll('.opcoes a');
-    const stock = {{ $product->stock }}; // Obtém o valor do estoque do Laravel
+    // const stock = {{ $product->stock }}; // Obtém o valor do estoque do Laravel
 
 
     opcoes.forEach(opcao => {
