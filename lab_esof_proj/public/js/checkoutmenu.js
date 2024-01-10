@@ -1,23 +1,16 @@
 function mostrarInput() {
-    var showmenu = document.getElementById("menuescondido");
-    var button = document.getElementById("cntbutton");
+    let showmenu = document.getElementById("menuescondido");
+    let button = document.getElementById("cntbutton");
 
-           var fname = document.getElementById("fname").value;
-           var lname = document.getElementById("lname").value;
-           var address = document.getElementById("address").value;
-           var pcode = document.getElementById("pcode").value;
-           var VillCity = document.getElementById("VillCity").value;
-           var ContRegion = document.getElementById("ContRegion").value;
-           var email = document.getElementById("email").value;
-           var pnumber = document.getElementById("pnumber").value;
+           let fname = document.getElementById("fname").value;
+           let lname = document.getElementById("lname").value;
+           let address = document.getElementById("address").value;
+           let pcode = document.getElementById("pcode").value;
+           let VillCity = document.getElementById("VillCity").value;
+           let ContRegion = document.getElementById("ContRegion").value;
+           let email = document.getElementById("email").value;
+           let pnumber = document.getElementById("pnumber").value;
    
-          /* if (fname === "" || lname === "" || address === "" || pcode === "" || VillCity === "" || ContRegion === "" || email === "" || pnumber === "") {
-            //colocar erro se quisermos aqui
-           } else {
-               showmenu.style.display = "block"
-               button.style.display="none"
-            
-           }*/
            showmenu.style.display = "block"
            button.style.display="none"
 
