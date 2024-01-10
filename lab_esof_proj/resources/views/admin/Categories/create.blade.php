@@ -23,7 +23,7 @@
                 <div class="checkoutinputline ">
                     <h3>Products<i class="fa-solid fa-cart-shopping"></i></h3>
                 </div>
-            </a>    
+            </a>
             <a href="{{ route('adminimages') }}">
                 <div class="checkoutinputline ">
                     <h3>Images<i class="fa-solid fa-image"></i></h3>
