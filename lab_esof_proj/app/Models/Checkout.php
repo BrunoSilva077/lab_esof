@@ -4,19 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Subscription as CashierSubscription;
+// use Laravel\Cashier\Subscription as CashierSubscription;
 
-class Checkout extends CashierSubscription
+class Checkout extends Model
 {
     use HasFactory;
-    protected $table = 'checkout';
+    protected $table = 'checkouts';
     protected $fillable = [
-        'user_id',         // ID do usuário associado à ordem
-        'product_id',      // ID do produto (se aplicável)
-        'quantity',        // Quantidade do produto
-        'total',           // Total da venda
-        'voucher_code',    // Código do voucher
-        'productnames',    // Nome do produto
+        'user_id',
+        'product_id',
+        'quantity',
+        'total',
+        'voucher_code',
+        'productnames',
+        'address',
+        'post_code',
+        'city',
+        'country',
     ];
     public function user()
     {

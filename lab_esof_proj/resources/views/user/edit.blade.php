@@ -16,7 +16,7 @@
                     <a href="{{ route('listarfavoritos', ['user' => auth()->user()]) }}"><h3>Favorites<i class="fa-solid fa-heart"></i></h3></a>
                 </div>
                 <div class="profileinputline">
-                    <a href="{{ route('editprofile', ['user' => auth()->user()]) }}"><h3>History<i class="fa-solid fa-clock-rotate-left"></i></h3></a>
+                    <a href="{{ route('userorder', ['user' => auth()->user()]) }}"><h3>History<i class="fa-solid fa-clock-rotate-left"></i></h3></a>
                 </div>
             </div>
         </div>

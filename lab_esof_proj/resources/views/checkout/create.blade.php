@@ -11,23 +11,23 @@
         <div class="grid-item item4 checkout">
             <div class="menu1">
                 <h1>Delivery Options</h1>
-                    <div class="inputsdelivery"><!--Depois meter os required e meter form tb-->
-                        <input type="text" placeholder="Address" id="address" >
+                <div class="inputsdelivery">
+                <form action="/session" method="POST">
+                    @csrf
+                        <input type="text" name="address" placeholder="address" id="address" >
                         <div class="checkoutinputline">
-                            <input type="text" placeholder="Post code" id="pcode" >
-                            <input type="text" placeholder="Village/City" id="VillCity" >
+                            <input type="text" name="post-code" placeholder="Post code" id="pcode" >
+                            <input type="text" name="city" placeholder="Village/City" id="VillCity" >
                         </div>
-                        <input type="text" placeholder="Country/Region" id="ContRegion" >
-                        <input type="text" placeholder="Voucher" id="voucher" >
+                        <input type="text" name="country" placeholder="Country/Region" id="ContRegion" >
+                        <input type="text" name="voucher_code" placeholder="Voucher" id="voucher" >
                         <br>
-                        <form action="/session" method="POST">
-                        @csrf
                             <a href="{{ url('/') }}" class="btn btn-danger" style="text-decoration: none;color: white;"> <i class="fa fa-arrow-left"></i> Go back</a>
                         @forelse($cart_products as $product)
                             <input type='hidden' name="rowIds[]" value="{{$product->rowId}}">
                             <input type='hidden' name="totals[]" value="{{$product->price}}">
                             <input type='hidden' name="qtys[]" value="{{$product->qty}}">
-                            <input type='hidden' name="voucher_code" value="ric">
+                            <!-- <input type='hidden' name="voucher_code" value="ric"> -->
                             <input type='hidden' name="productnames[]" value="{{$product->name}}">
                             @empty
                             <p>O carrinho está vazio.</p>

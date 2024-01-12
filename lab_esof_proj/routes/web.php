@@ -16,6 +16,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,7 @@ Route::get('/storecheckout', [CheckoutController::class, 'storecheckout'])->name
 //user routes
 Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('editprofile')->middleware('auth','verified');
 Route::post('/user/update/{user}', [UserController::class, 'update'])->name('updateprofile')->middleware('auth','verified');
+Route::get('/user/{user}/orders', [OrdersController::class, 'index'])->name('userorder')->middleware('auth','verified');
 Route::post('/user/delete/{user}', [UserController::class, 'destroy'])->name('users.destroy')->middleware('is_admin','auth','verified');
 Route::post('/user/restore/{user}', [UserController::class, 'restore'])->withTrashed()->name('users.restore')->middleware('is_admin','auth','verified');
 
@@ -67,6 +69,7 @@ Route::post('/admin/updateuser/{user}', [AdminController::class, 'updateuser'])-
 Route::get('/user/edit/{user}', [UserController::class, 'edit'])->name('editprofile')->middleware('auth','verified');
 Route::post('/user/update/{user}', [UserController::class, 'update'])->name('updateprofile')->middleware('auth','verified');
 Route::get('/adminimages', [AdminController::class, 'listImages'])->name('adminimages')->middleware('is_admin','auth','verified');
+
 
 //favorite routes
 Route::get('/adicionar_favorito/{product_id}',[FavoritoController::class,'store'])->name('adicionarfavorito')->middleware('auth','verified');

@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>PDF</title>
+    <title>Order PDF</title>
 </head>
 <body>
     <h1>{{ $title }}</h1>
     <p>{{ $date }}</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Impedit excepturi repellendus doloribus soluta explicabo, ipsum natus alias inventore, enim placeat
-         corrupti iure reprehenderit aliquam error?</p>
+    
+    <h2>Order Details</h2>
+    <p>Order Number: {{ $order->id }}</p>
+    <p>Address: {{ $order->address }}</p>
+    <p>Post Code: {{ $order->post_code }}</p>
+    <p>City: {{ $order->city }}</p>
+    <p>Country: {{ $order->country }}</p>
+    
+    <h3>Product Names:</h3>
+    <ul>
+        @foreach (json_decode($order->productnames, true) as $productName)
+            <li>{{ $productName }}</li>
+        @endforeach
+    </ul>
+    
+    <p>Quantity: {{ $order->quantity }}</p>
+    <p>Total: {{ $order->total }}€</p>
 </body>
 </html>

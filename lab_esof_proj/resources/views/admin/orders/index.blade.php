@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('title')
-    AdminProducts
+    AdminClients
 @endsection
 
 @section('content')
-<div class="adproductmenu">
+<div class="adclientmenu">
     <div class="grid-container">
-        <div class="grid-item item2 adproduct">
+        <div class="grid-item item2 adclient">
             <div class="sidemenuproduct">
                 <a href="{{ route('adminorders') }}">
-                    <div class="checkoutinputline">
+                    <div class="checkoutinputline active">
                         <h3>Orders<i class="fa-solid fa-box"></i></h3>
                     </div>
                 </a>
                 <a href="{{ route('adminclients') }}">
-                    <div class="checkoutinputline">
+                    <div class="checkoutinputline ">
                         <h3>Clients<i class="fa-solid fa-user"></i></h3>
                     </div>
                 </a>
@@ -40,58 +40,57 @@
                     </div>
                 </a>
                 <a href="{{ route('adminbrands') }}">
-                    <div class="checkoutinputline active">
+                    <div class="checkoutinputline">
                         <h3>Brands</h3>
                     </div>
                 </a>
+
             </div>
         </div>
-        <div class="grid-item item1 adproduct"></div>
-        <div class="grid-item item9 adproduct">
+        <div class="grid-item item1 adclient"></div>
+        <div class="grid-item item9 adclient">
+            <div class="mainmenuclient">
             <div class="upmainmenuproduct">
                 <div class="checkoutinputline">
-                    <div class="btnnewproduct">
-                            <a href="{{ route('brands.create') }}">
-                            <button>New</button>
-                        </a>
-                    </div>
                 </div>
             </div>
             <div class="mainmenuproduct">
-            @if($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-            @endif 
                 <div class="checkoutinputline">
-                    <h3></h3>
-                    <h3></h3>
-                    <h3></h3>
-                    <h3>Brand ID</h3>
-                    <h3>Brand Name</h3>
-                    <h3>Edit</h3>
-                    <h3>Remove</h3>
-                    <h3></h3>
-                    <h3></h3>
-                    <h3></h3>
+                    <!-- <h3>User</h3> -->
+                    <h3>Order Number</h3>
+                    <h3>User</h3>
+                    <h3>Post Code</h3>
+                    <h3>City</h3>
+                    <h3>Country</h3>
+                    <h3>Products</h3>
+                    <h3>Quantity</h3>
+                    <h3>Total</h3>
+                    <h3>PDF</h3>
                 </div>
                 <hr class="horizontal-adproduct">
-                @forelse($brands as $brand)
-                <div class="checkoutinputline">
-                    <h4>{{$brand->id}}</h4>
-                    <h4>{{$brand->name}}</h4>
-                    <a href="{{ route('brands.edit',['brands' => $brand]) }}">
-                        <button>Edit</button>
-                    </a>
-                    <form action="{{ route('brands.destroy',['brands' => $brand]) }}" method="POST" style="width: 11.1%;">
-                        @csrf
-                        @method('post')
-                        <button type="submit" style="width: 100%;">Remove</button>
-                    </form>
-                </div>
+                @forelse($orders as $order)
+                    <div class="checkoutinputline">
+                        <h4>{{ $order->id }}</h4>
+                        <h4>{{ $order->user->name}}</h4>
+                        <h4>{{ $order->post_code }}</h4>
+                        <h4>{{ $order->city }}</h4>
+                        <h4>{{ $order->country }}</h4>
+                        <ul>
+                            @foreach (json_decode($order->productnames, true) as $productName)
+                                <li>{{ $productName }}</li>
+                            @endforeach
+                        </ul>
+                        <h4>{{ $order->quantity }}</h4>
+                        <h4>{{ $order->total }}€</h4>
+                        <form action="{{ route('generate-pdf') }}" style="width: 11.1%;">
+                            @csrf
+                            <input type="hidden" name="order_id" value="{{ $order->id }}">
+                            <button type="submit" style="width:100%">Generate PDF</button>
+                        </form>
+                    </div>
                 @empty
-                    <h4>No brands found</h4>
-                @endforelse    
+                    <h4>No orders found</h4>
+                @endforelse
             </div>
         </div>
     </div>

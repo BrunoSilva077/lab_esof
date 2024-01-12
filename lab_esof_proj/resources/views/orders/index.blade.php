@@ -1,13 +1,26 @@
 @extends('layouts.app')
 
 @section('title')
-    AdminProducts
+    UserOrders
 @endsection
 
 @section('content')
 <div class="adproductmenu">
     <div class="grid-container">
-        <div class="grid-item item2 adproduct"></div>
+        <div class="grid-item item2 menuedit">
+        <div class="sidemenuedit">
+                <div class="profileinputline">
+                    <a href="{{ route('editprofile', ['user' => auth()->user()]) }}"><h3>Account<i class="fa-solid fa-box" style="opacity:1.0;"></i></h3></a>
+                </div>
+                <div class="profileinputline">
+                    <a href="{{ route('listarfavoritos', ['user' => auth()->user()]) }}"><h3>Favorites<i class="fa-solid fa-heart"></i></h3></a>
+                </div>
+                <div class="profileinputline active">
+                    <a href="{{ route('userorder', ['user' => auth()->user()]) }}"><h3>History<i class="fa-solid fa-clock-rotate-left"></i></h3></a>
+                </div>
+            </div>
+            </div>
+
         <div class="grid-item item1 adproduct"></div>
         <div class="grid-item item9 adproduct">
             <div class="upmainmenuproduct">
@@ -16,59 +29,40 @@
             </div>
             <div class="mainmenuproduct">
                 <div class="checkoutinputline">
-                    <!-- <h3>Product ID</h3>
-                    <h3>Product Name</h3>
-                    <h3>Description</h3>
-                    <h3>Brand</h3>
-                    <h3>Stock</h3>
-                    <h3>Price</h3>
-                    <h3>Active</h3>
-                    <h3>Edit</h3>
-                    <h3>Remove</h3> -->
+                    <h3>Order Number</h3>
+                    <h3>Address</h3>
+                    <h3>Post Code</h3>
+                    <h3>City</h3>
+                    <h3>Country</h3>
+                    <h3>Products</h3>
+                    <h3>Quantity</h3>
+                    <h3>Total</h3>
+                    <h3>PDF</h3>
                 </div>
                 <hr class="horizontal-adproduct">
                 @forelse($orders as $order)
-                <div class="checkoutinputline">
-                    <h4>{{$product->id}}</h4>
-                    <h4>{{$product->name}}</h4>
-                    <h4>{{$product->description}}</h4>
-                    @if($product->brand_id == null)
-                        <h4>None</h4>
-                    @else
-                    <h4>{{$product->brand->name}}</h4>
-                    @endif
-                    <h4>{{$product->stock}}</h4>
-                    <h4>{{$product->price}}€</h4>
-                    @if($product->active)
-                        <h4>True</h4>
-                    @else
-                        <h4>False</h4>
-                    @endif
-                    @if($product->trashed())
-                        <a style="visibility:hidden;">
-                            <button></button>
-                        </a>
-                        <form action="{{ route('products.restore',['product' => $product]) }}" method="POST" style="width: 11.1%;">
-                        @csrf
-                            <button type="submit" style="width:100%">Restore</button>
+                    <div class="checkoutinputline">
+                        <h4>{{ $order->id }}</h4>
+                        <h4>{{ $order->address }}</h4>
+                        <h4>{{ $order->post_code }}</h4>
+                        <h4>{{ $order->city }}</h4>
+                        <h4>{{ $order->country }}</h4>
+                        <ul>
+                            @foreach (json_decode($order->productnames, true) as $productName)
+                                <li>{{ $productName }}</li>
+                            @endforeach
+                        </ul>
+                        <h4>{{ $order->quantity }}</h4>
+                        <h4>{{ $order->total }}€</h4>
+                        <form action="{{ route('generate-pdf') }}" style="width: 11.1%;">
+                            @csrf
+                            <input type="hidden" name="order_id" value="{{ $order->id }}">
+                            <button type="submit" style="width:100%">Generate PDF</button>
                         </form>
-                    @else
-                        <a href="{{ route('products.edit',['product' => $product]) }}">
-                            <button>Edit</button>
-                        </a>
-                        <form action="{{ route('products.destroy',['product' => $product]) }}" method="POST" style="width: 11.1%;">
-                        @csrf
-                            <button type="submit" style="width:100%">Remove</button>
-                        </form>
-                    @endif
                     </div>
                 @empty
-                    <h4>No products found</h4>
+                    <h4>No orders found</h4>
                 @endforelse
-                <form action="{{ route('generate-pdf') }}"style="width: 11.1%;">
-                        @csrf
-                        <button type="submit" style="width:100%">PDF</button>
-                </form>
             </div>
         </div>
     </div>

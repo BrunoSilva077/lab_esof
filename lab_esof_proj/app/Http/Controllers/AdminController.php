@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Models\User;
 use App\Models\Images;
+use App\Models\Checkout;
 
 
 class AdminController extends Controller
@@ -56,9 +57,9 @@ class AdminController extends Controller
         $images = Images::all();
         return view('admin.images.index', compact('images'));
     }
-    // public function listOrders()
-    // {
-    //     $orders = Order::all();
-    //     return view('admin.orders.index', compact('orders'));
-    // }
+    public function listOrders()
+    {
+        $orders = Checkout::all();
+        return view('admin.orders.index', compact('orders'));
+    }
 }

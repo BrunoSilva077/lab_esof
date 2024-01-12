@@ -11,13 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('checkout', function (Blueprint $table) {
+        Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->string('address');
+            $table->integer('post_code');
+            $table->string('city');
+            $table->string('country');
             $table->integer('quantity');
             $table->decimal('total', 10, 2);
-            // $table->string('voucher');
+            $table->string('voucher')->nullable();
             $table->json('productnames')->nullable();
+
             $table->timestamps();
 
             $table->foreign('user_id', 'fk_checkout_users')

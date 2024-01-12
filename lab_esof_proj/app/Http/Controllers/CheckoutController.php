@@ -16,6 +16,7 @@ class CheckoutController extends Controller
         //
     }
     public function session(Request $request){
+
         \Stripe\Stripe::setApiKey(config('stripe.sk'));
     
         $rowIds = $request->input('rowIds');
@@ -23,6 +24,14 @@ class CheckoutController extends Controller
         $qtys = $request->input('qtys');
         $productnames = $request->input('productnames');
         $voucherCode = $request->input('voucher_code');
+
+        $request->validate([
+            'address' => 'required|string',
+            'post-code' => 'required|numeric',
+            'city' => 'required|string',
+            'country' => 'required|string',
+            'voucher_code' => 'nullable|string',
+        ]);
     
         $lineItems = [];
     
@@ -66,6 +75,10 @@ class CheckoutController extends Controller
             'productnames' => $productnames,
             'voucherCode' => $voucherCode,
             'session_id' => $session->id,
+            'address' => $request->input('address'),
+            'post_code' => $request->input('post-code'),
+            'city' => $request->input('city'),
+            'country' => $request->input('country'),
         ]);
     
         return redirect()->away($session->url);
@@ -97,21 +110,22 @@ class CheckoutController extends Controller
 
 
         // $requestData = $request->all();
-        // dd($checkoutData);
-
+        // dd($checkoutData['address']);
 
         $purchase = new Checkout([
             'user_id' => Auth::id(),
+            'address' => $checkoutData['address'],
+            'post_code' => $checkoutData['post_code'],
+            'city' => $checkoutData['city'],
+            'country' => $checkoutData['country'],
             'quantity' => array_sum($checkoutData['qtys']),
             'total' => array_sum($checkoutData['totals']),
-            // 'voucher' => $checkoutData['voucherCode'],
+            'voucher' => $checkoutData['voucherCode'],
             'productnames' => json_encode($checkoutData['productnames']),
         ]);
 
         $purchase->save();
-        // dd($purchase);
 
-        // Limpe os dados da sessão
         $request->session()->forget('checkout_data');
 
         return redirect()->route('home');

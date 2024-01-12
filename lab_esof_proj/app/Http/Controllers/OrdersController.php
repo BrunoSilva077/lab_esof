@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Checkout;
+use Illuminate\Support\Facades\Auth;
 
 class OrdersController extends Controller
 {
@@ -14,9 +15,8 @@ class OrdersController extends Controller
     {
         $id_user = Auth::id();
 
-
         $orders = Checkout::where('user_id', $id_user)->get();
-    
+   
     
         return view('orders.index', compact('orders'));
     }
