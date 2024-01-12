@@ -59,7 +59,7 @@
                         </ul>
                 </div>
             @endif
-                <form action=" {{ route('products.store') }}" method="POST">
+                <form action=" {{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="profileinputline">
                         <h2>Product</h2>
@@ -110,9 +110,12 @@
                         <input type="radio" name="radio" class="sizeradio" value="false">False
                     </div>
                     <div class="profileinputline">
+                        <h3>Images</h3>
+                        <input type="file" class="form-control" name="image" placeholder="Choose image">
+                    </div>
+                    <div class="profileinputline">
                         <button class="btnsave">Save</button>
                     </div>
-                    <!-- <hr class="horizontal-menuedit"> -->
                 </form>
             </div>
         </div>

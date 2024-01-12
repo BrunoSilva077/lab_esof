@@ -89,24 +89,27 @@ class CheckoutController extends Controller
      * Store a newly created resource in storage.
      */
     public function storecheckout(Request $request){
-        // Recupere os dados da sessão
+
         $checkoutData = session('checkout_data');
 
-        // Se precisar do objeto Request, você pode criá-lo manualmente
+
         $request = request();
 
-        // Se precisar acessar dados específicos do Request, faça algo como
-        // $requestData = $request->all();
 
-        // Crie um novo registro na tabela de compras
+        // $requestData = $request->all();
+        // dd($checkoutData);
+
+
         $purchase = new Checkout([
             'user_id' => Auth::id(),
-            'quantity' => array_sum($checkoutData['qtys']), // Soma das quantidades
-            'total' => array_sum($checkoutData['totals']), // Soma dos totais
-            // Adicione outros campos conforme necessário...
+            'quantity' => array_sum($checkoutData['qtys']),
+            'total' => array_sum($checkoutData['totals']),
+            // 'voucher' => $checkoutData['voucherCode'],
+            'productnames' => json_encode($checkoutData['productnames']),
         ]);
 
         $purchase->save();
+        // dd($purchase);
 
         // Limpe os dados da sessão
         $request->session()->forget('checkout_data');

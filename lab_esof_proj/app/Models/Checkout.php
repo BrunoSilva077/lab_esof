@@ -16,6 +16,7 @@ class Checkout extends CashierSubscription
         'quantity',        // Quantidade do produto
         'total',           // Total da venda
         'voucher_code',    // Código do voucher
+        'productnames',    // Nome do produto
     ];
     public function user()
     {

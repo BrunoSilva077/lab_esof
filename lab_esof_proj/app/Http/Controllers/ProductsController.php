@@ -43,6 +43,7 @@ class ProductsController extends Controller
         'description' => 'required|string',
         'stock' => 'required|numeric',
         'price' => 'required|numeric',
+        // 'image' => 'required|image|mimes:png|max:2048',
     ]);
 
     $product = Products::create([
@@ -54,6 +55,27 @@ class ProductsController extends Controller
         'brand_id' => $request->input('brand'),
         'categories_id' => $request->input('category'),
     ]);
+
+
+        // $name = $request->file('image')->getClientOriginalName();
+        // // $request->file('image')->store('public/images');
+        // $storedPath = $request->file('image')->storeAs('public/images', $name);
+    
+        // if ($storedPath) {
+        //     $fullPath = Storage::url($storedPath);
+
+        //     $product->images()->create([
+        //         'name' => $name,
+        //         'path' => $fullPath,  // Use o caminho retornado pela função store
+        //         'product_id' => $product->id,
+        //     ]);
+        
+        //     return redirect('adminproducts')->with('success', 'Product created successfully');
+        // } else {
+        //     // Lida com o erro de armazenamento
+        //     return redirect()->back()->with('error', 'Failed to store the image');
+        // }
+
 
 
     return redirect('adminproducts')->with('success', 'Product created successfully');

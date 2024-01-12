@@ -16,6 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->integer('quantity');
             $table->decimal('total', 10, 2);
+            // $table->string('voucher');
+            $table->json('productnames')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id', 'fk_checkout_users')

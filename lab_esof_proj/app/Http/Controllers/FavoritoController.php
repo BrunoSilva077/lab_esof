@@ -35,7 +35,7 @@ class FavoritoController extends Controller
      */
     public function store($id_produto)
     {
-            $id_user = Auth::id();    
+            $id_user = Auth::id();
                 $favorito = new Favorito();
                 $favorito->user_id = $id_user;
                 $favorito->product_id = $id_produto;
